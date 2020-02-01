@@ -74,6 +74,29 @@
 
 - 기간제 수강권 취소 가능 횟수 설정 및 잔여 횟수 보이기 / 안보이기 설정
   - 수강권 추가 / 수정 / 상세보기 창 모두 cancelCount flag 및 변수를 넣어야함
+- oh my zsh alias 설정
+```sh
+vim ~/.zshrc
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gs="git status"
+alias gl="git log"
+alias gd="git diff"
+alias gc="git checkout"
+alias gcm="git checkout master"
+alias gp="git pull"
+alias ys="yarn start"
+alias vd="vuepress dev"
+
+//원하시는 shortcut 커멘드 입력
+```
+`:wq` 로 저장 후 터미널로 나간 후 아래 커멘드로 변경사항 저장
+```sh
+source ~/.zshrc
+```
+
 
 
 

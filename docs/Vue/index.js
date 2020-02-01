@@ -23,6 +23,13 @@ module.exports = {
         '/Vue/vue-router/testFile/',
       ]
     },
+    {
+      collapsable: true,
+      title: 'vue-pwa',
+      children: [
+        '/Vue/vue-pwa/pwa개념/',
+      ]
+    },
     'vuepress/'
   ]
 }

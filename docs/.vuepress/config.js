@@ -34,7 +34,7 @@ module.exports = {
   },
   base: "/blog/",
   plugins: ['@vuepress/back-to-top'],
-  markdown: {
-    lineNumbers: true
-  }
+  // markdown: {
+  //   lineNumbers: true
+  // }
 };
