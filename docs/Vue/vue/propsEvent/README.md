@@ -1,4 +1,4 @@
-# 부모 - 자식 props 전달 및 event 상속
+# props 전달 및 event 상속 <Badge text="KH" />
 
 ## 서론
 vuex를 사용하는 경우는 대부분 여러 컴포넌트에서 사용할 때 vuex를 세팅하고 정보를 store에 저장하죠.

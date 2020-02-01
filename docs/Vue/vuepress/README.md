@@ -1,4 +1,4 @@
-# VuePress
+# vuePress
 
 ## 시작하기
 오늘은 vue에서 만든 정적 웹사이트인 vuepress로 블로그를 만든 경험을 토대로 vuepress 사이트를 만드는 방법에 대해 알아보겠습니다.
