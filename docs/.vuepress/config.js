@@ -1,5 +1,5 @@
 // const routes = ['Vue', '개발일기', 'Job', 'About'];
-const routes = ['Vue', 'About', '개발일기'];
+const routes = ['Vue', 'JS', 'About', '개발일기'];
 
 const createSidebar = () => {
   const sidebar = {}
@@ -15,6 +15,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Vue', link:"/Vue/"},
+      { text: 'JS', link:"/JS/"},
       { text: '개발일기', link:"/개발일기/"},
       { text: 'About', link:"/About/"},
       { text: "Job", link: "/Job/" },
@@ -22,9 +23,9 @@ module.exports = {
       {
         text: "project",
         items: [
-          { text: "web page", link: "https://www.knowgari.com/" },
+          { text: "It's my seat - web", link: "https://www.knowgari.com/" },
           {
-            text: "app github",
+            text: "마타드림 앱 깃헙 주소",
             link: "https://github.com/Kyounghwan01/mata-dream-app"
           }
         ]
