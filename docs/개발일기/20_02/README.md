@@ -38,3 +38,16 @@
   - getAll api 호출시 `취소` 를 제외한 나머지 자료 들어옴
   - 취소 포함 제공 요구
 - Sms payment 로직개선 - api 호출 최소화
+- reduce 함수 응용
+  ```js
+  let largeArray = [
+    [1,2,3,4,5,6,7,8,9,10],
+    [1,2,3,4,5,6,7,8,9,10],
+    [1,2,3,4,5,6,7,8,9,10],
+    [1,2,3,4,5,6,7,8,9,10],
+    [1,2,3,4,5,6,7,8,9,10],
+  ]
+  //위 배열을 하나의 통으로 만들고 싶을때
+  let concatArray = largeArray.reduce((combine, nextArray) => combine.concat(nextArray), []);
+  //concatArray = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8......]
+  ```
