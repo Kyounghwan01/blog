@@ -1,3 +1,15 @@
+---
+meta:
+  - name: description
+    content: ES2015
+  - property: og:title
+    content: 코린이를 위한 ES2015
+  - property: og:description
+    content: 초보자의 시선으로 정리한 ES2015
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/es2015/
+---
+
 # ES2015
 
 ## var / let / const
