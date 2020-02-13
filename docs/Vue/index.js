@@ -7,6 +7,7 @@ module.exports = {
       children: [
         '/Vue/vue/dir/',
         '/Vue/vue/propsEvent/',
+        '/Vue/vue/dynamicAllocation/',
       ]
     },
     {
