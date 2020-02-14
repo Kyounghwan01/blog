@@ -5,6 +5,7 @@ module.exports = {
       collapsable: true,
       title: 'vue',
       children: [
+        '/Vue/vue/computed/',
         '/Vue/vue/dir/',
         '/Vue/vue/propsEvent/',
         '/Vue/vue/dynamicAllocation/',
