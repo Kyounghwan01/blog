@@ -1,4 +1,5 @@
 ---
+title: 코린이를 위한 ES2015
 meta:
   - name: description
     content: ES2015
