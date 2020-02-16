@@ -16,7 +16,8 @@ module.exports = {
       collapsable: true,
       title: 'vuex',
       children: [
-        '/Vue/vuex/whatIsVuex/',
+        '/Vue/vuex/what-is-vuex/',
+        '/Vue/vuex/start-vuex/',
         '/Vue/vuex/vuex-persistedstate/',
       ]
     },

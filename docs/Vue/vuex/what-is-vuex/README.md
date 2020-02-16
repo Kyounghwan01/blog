@@ -12,7 +12,7 @@ vuex내 store가 앱 내 모든 컴포넌트에 대하여 전역적으로 관리
 즉, `view` -> `action` -> `state` -> `view` 이렇게 단방향으로 데이터가 흐릅니다.
 
 여기서 vuex는 `mutation`하나가 추가됩니다.<br>
-vuex의 데이터 흐름은 동일하게 단향으로 `view`에서 `Dispatch`라는 함수를 동해 `action`이 발동되고 `action`안에 정의된 `commit`함수에 의해 `mutations`이 실행되고 `mutations`에 정의된 로직에 따라 `state`가 변화하고 그 `state`를 쓰는 `view`가 변하는 흐름을 따릅니다.
+vuex의 데이터 흐름은 동일하게 단방향으로 `view`에서 `Dispatch`라는 함수를 동해 `action`이 발동되고 `action`안에 정의된 `commit`함수에 의해 `mutations`이 실행되고 `mutations`에 정의된 로직에 따라 `state`가 변화하고 그 `state`를 쓰는 `view`가 변하는 흐름을 따릅니다.
 
 ## 언제 사용하나요?
 vuex는 여러 컴포넌트에서 공유하는 상태 관리에는 유용하지만 한개의 컴포넌트에서만 사용한다면 vuex보단 간단한 [이벤트버스만](https://kyounghwan01.github.io/blog/Vue/vue/propsEvent/)으로 데이터 처리하는 것을 추천합니다.<br><br>
