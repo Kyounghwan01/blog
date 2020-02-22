@@ -10,7 +10,7 @@ const createSidebar = () => {
 };
 
 module.exports = {
-  title: "경환's 기술 블로그",
+  title: "기억보다 기록을",
   description: "vuepress 기반 기술 블로그입니다.",
   themeConfig: {
     nav: [
