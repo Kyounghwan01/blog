@@ -8,6 +8,7 @@ module.exports = {
         '/Vue/vue/computed/',
         '/Vue/vue/dir/',
         '/Vue/vue/propsEvent/',
+        '/Vue/vue/propsEvent2/',
         '/Vue/vue/dynamicAllocation/',
         '/Vue/vue/filter/',
       ]
