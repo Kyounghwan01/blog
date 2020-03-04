@@ -11,6 +11,7 @@ module.exports = {
         '/Vue/vue/propsEvent2/',
         '/Vue/vue/dynamicAllocation/',
         '/Vue/vue/filter/',
+        '/Vue/vue/commit-convention/'
       ]
     },
     {
