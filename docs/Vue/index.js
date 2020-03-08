@@ -12,7 +12,8 @@ module.exports = {
         '/Vue/vue/dynamicAllocation/',
         '/Vue/vue/filter/',
         '/Vue/vue/commit-convention/',
-        '/Vue/vue/event-handler/'
+        '/Vue/vue/event-handler/',
+        '/Vue/vue/aws-lambda-api-gateway/',
       ]
     },
     {
