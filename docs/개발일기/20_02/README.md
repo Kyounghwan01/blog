@@ -7,6 +7,7 @@
 - 회계장부 개인 프로젝트 시작
 - pagenation 및 next, prev 호출법
 - 릴리즈 이후 브랜치 관리법
+- 락커 시작
 
 ## 2.1
 
@@ -202,3 +203,8 @@ git push origin staging
 
 - sm : 락커 인원선택 구조
 - toy : 트렐로 이용 주요 기능 및 화면 구성 짜기
+
+## 2.28
+
+- sm : 락커 불러오기 구현(GET)
+- toy : 백엔드 firebase 사용 안함 (key, value로 데이터 다루는데 한계있음)
