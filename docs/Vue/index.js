@@ -6,6 +6,7 @@ module.exports = {
       title: 'vue',
       children: [
         '/Vue/vue/computed/',
+        '/Vue/vue/getter-setter/',
         '/Vue/vue/dir/',
         '/Vue/vue/propsEvent/',
         '/Vue/vue/propsEvent2/',
