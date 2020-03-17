@@ -48,6 +48,7 @@
 - aws lambda, api gateway로 백엔드 구축 완료
 - front : user 생성 및 조회 기능 완료
 - cors 해결 : 서버에서 클라이언트로 응답보낼때 header에 `Access-Control-Allow-Origin: *` 담아 보냄
+- 타입스크립트 프로젝트 내에서 자바스크립트 읽기 포스팅
 
 ## 3.9
 **SM**

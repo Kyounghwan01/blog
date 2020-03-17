@@ -28,7 +28,8 @@ module.exports = {
           {
             text: "마타드림 앱 깃헙 주소",
             link: "https://github.com/Kyounghwan01/mata-dream-app"
-          }
+          },
+          { text: "매출분석 - web(vue + aws-lambda)", link: "https://sales-statistics.netlify.com/" },
         ]
       }
     ],
