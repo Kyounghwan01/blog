@@ -71,3 +71,49 @@ base 브랜치 내용이 compare 브랜치에 들어간다.<br>
 
 **TOY**
 - getter, setter 사용 예제 포스팅
+
+## 3.11
+**SM**
+- 커스텀 컴포넌트의 경우 이벤트 뒤에 `.native`를 넣으면 이벤트 핸들러 발생 가능
+```vue
+<template>
+  <Custom @click.native.stop="test">
+</template>
+```
+
+## 3.14
+**TOY**
+- user 내부에 order_history 배열 추가
+
+## 3.17
+**SM**
+- vue ref: Ref focus안잡히는 경우 : `this.$refs.lockerNumber.$el.querySelector('input').focus();`
+**Toy**
+- 매출/매입 layout
+- 오더 히스토리가 유저안에 있으면 매출/매입 현황을 get 하기 너무 힘들고 api 남용이 심할 듯하다. db 재 구성 필요
+
+## 3.18
+**TOY**
+- slot 포스팅
+
+## 3.19
+**SM**
+- 서비스 워커 설치 (firebase: 5.6.1)
+- 로컬에서 fcm 부르기 성공
+- qa 진행중
+- 구글 fcm 서버로 토큰값, 브라우저 명을 헤더에 넣고, 바디에 받을 값을 넣으면 (post) 서비스 워커에 등록된 브라우저로 noti를 띄운다.
+
+**TOY**
+- order 컬럼 새로 만듬, post, get만 만듬
+- get - 날짜별, 고객별 조회 가능
+- 웹 order post 구현, layout 완료, validate 안됨
+- 웹 get 구현, layout 안됨
+
+## 3.20
+**SM**
+- firebase 5.6.1버전에서 토큰 삭제가 정상적으로 작동하지 않아 7.0.1로 올렸더니, noti 호출이 안됨
+- 다시 다운그레이드 실시
+- 로컬은 호출되나, qa는 호출되지 않음
+- 다운그레이드 버전 배포시 qa도 호출됨
+- fcm서버로 1번 ajax를 날리나, 받은 호출은 2번, 5번 (로그아웃, 로그인 횟수 당 *2배 호출됨) - 토큰 삭제와 연관이 있는 듯
+
