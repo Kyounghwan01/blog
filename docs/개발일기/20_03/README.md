@@ -10,6 +10,12 @@
 - scss mixin사용법
 - validate 사용법 (this.$v)
 
+## TODO
+- ~~SMS 페이지네이션 - SM(3.2)~~
+- ~~vue + typescript - TOY(3.3)~~
+- ~~락커 기능 추가 - SM(3.20 완)~~
+- TOY lambda api 구축 - TOY(작업중)
+
 ## 3.2
 **SM**
 - 기존 sms 회원 목록 불러오는 방법 : 전체 다 불러오기
@@ -99,21 +105,44 @@ base 브랜치 내용이 compare 브랜치에 들어간다.<br>
 ## 3.19
 **SM**
 - 서비스 워커 설치 (firebase: 5.6.1)
-- 로컬에서 fcm 부르기 성공
+- 로컬에서 fcm 부르기 성공!!!
 - qa 진행중
 - 구글 fcm 서버로 토큰값, 브라우저 명을 헤더에 넣고, 바디에 받을 값을 넣으면 (post) 서비스 워커에 등록된 브라우저로 noti를 띄운다.
 
 **TOY**
 - order 컬럼 새로 만듬, post, get만 만듬
 - get - 날짜별, 고객별 조회 가능
-- 웹 order post 구현, layout 완료, validate 안됨
-- 웹 get 구현, layout 안됨
+- `orderCreate.vue` 매출/매입 post 구현, layout 완료, validate 안됨
+- `orderHistory.vue` get 구현, layout 안됨
+**TODO**
+- `orderCreate.vue` data validate
+- `orderHistory.vue` layout css 작업
 
 ## 3.20
 **SM**
-- firebase 5.6.1버전에서 토큰 삭제가 정상적으로 작동하지 않아 7.0.1로 올렸더니, noti 호출이 안됨
-- 다시 다운그레이드 실시
+- firebase 5.6.1버전에서 토큰 삭제가 정상적으로 작동하지 않아 7.0.1로 올렸더니, noti 호출이 안됨 다운그레이드 실시
 - 로컬은 호출되나, qa는 호출되지 않음
 - 다운그레이드 버전 배포시 qa도 호출됨
-- fcm서버로 1번 ajax를 날리나, 받은 호출은 2번, 5번 (로그아웃, 로그인 횟수 당 *2배 호출됨) - 토큰 삭제와 연관이 있는 듯
+- fcm서버로 1번 ajax를 날리나, 받은 호출은 2번, 5번 (로그아웃, 로그인 횟수 당 *2배 호출됨) - ~~토큰 삭제와 연관이 있는 듯~~ (페이지 전환 수 만큼 호출)
 
+**TOY**
+- `orderCreate.vue` data validate 추가
+
+**TODO**
+
+- `기입` 디자인 필요
+
+## 3.21
+**SM**
+- fcm 여러번 날아오는 이유 -> onMessage 메소드를 여러번 호출해서 1번 호출하면 메소드 호출하는 횟수만큼 noti가 왔다. -> 최초 1회만 호출되게 수정
+- fcm 안됬던 이유
+1. manifest.json에 `"gcm_sender_id": "103953800507"` -> 이 id를 넣지 않음
+2. firebase.messaging `publicKey` 넣지 않음
+3. firebase 버전 차이
+4. 서비스워커 작성 후, fcm 구글로 post를 날리는 방법 미인지
+5. 기존 noti 웹 코드 미숙지
+
+**TODO**
+
+- 토큰 업데이트 작업 필요
+- vue로 만드는 pwa 작동 원리 숙지 필요
