@@ -33,6 +33,7 @@ module.exports = {
         '/JS/JSbasic/queryselector/',
         '/JS/JSbasic/getElementById/',
         '/JS/JSbasic/addEventListener/',
+        '/JS/JSbasic/flat/',
       ]
     }
   ]
