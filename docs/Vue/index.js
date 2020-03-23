@@ -15,6 +15,7 @@ module.exports = {
         '/Vue/vue/commit-convention/',
         '/Vue/vue/event-handler/',
         '/Vue/vue/slot/',
+        '/Vue/vue/audio/',
         '/Vue/vue/aws-lambda-api-gateway/',
       ]
     },
