@@ -14,7 +14,9 @@
 - ~~SMS 페이지네이션 - SM(3.2)~~
 - ~~vue + typescript - TOY(3.3)~~
 - ~~락커 기능 추가 - SM(3.20 완)~~
-- TOY lambda api 구축 - TOY(작업중)
+- ~~TOY lambda api 구축 - TOY(작업중)~~
+- ~~TOY 기입 디자인, 기능~~
+- TOY 현황 디자인
 
 ## 3.2
 **SM**
@@ -128,10 +130,6 @@ base 브랜치 내용이 compare 브랜치에 들어간다.<br>
 **TOY**
 - `orderCreate.vue` data validate 추가
 
-**TODO**
-
-- `기입` 디자인 필요
-
 ## 3.21
 **SM**
 - fcm 여러번 날아오는 이유 -> onMessage 메소드를 여러번 호출해서 1번 호출하면 메소드 호출하는 횟수만큼 noti가 왔다. -> 최초 1회만 호출되게 수정
@@ -151,3 +149,35 @@ base 브랜치 내용이 compare 브랜치에 들어간다.<br>
 **SM**
 - 회원목록 엑셀다운로드 페이지네이션으로 api 나눠서 호출
 - 같은 화면에서 재호출시 page 초기화!
+
+## 3.23
+**SM**
+- 자바스크립트 내장 객체 `new Audio()` 사용
+```js
+const sound = new Audio('사운드파일');
+sound.play(); //플레이
+sound.pause(); //중지
+sound.volum = 0.1; //0.1배로 줄인다 (0 ~ 1까지 가능)
+```
+
+## 3.24
+**SM**
+
+컴퓨터가 사용하는 github 계정 보기
+- git config user.email
+- git config user.name
+
+컴퓨터가 사용하는 github 계정 변경
+- git config --global user.email (바꿀 email)
+- git config --global user.name (바꿀 name)
+
+제한사항
+- master 브랜치 아닌 다른 브랜치에 push시 잔디밭에 적용되지 않는다. 만약 그 브랜치가 master에 머지될 경우 푸시 올린 날짜가 잔디밭에 기록된다.
+- 포크한 리포지토리에 한 푸시는 잔디밭에 적용되지 않는다.
+- 리포지토리에 contributors에 등록된 깃헙이메일과 컴퓨터가 사용하는 로컬 이메일이 동일해야한다.
+
+
+## 3.28
+**TOY**
+- `기입` (order 저장) validate, 기능 구현
+- 프로젝트내 공용으로 사용하는 컴포넌트(text, number, phone input) 제작
