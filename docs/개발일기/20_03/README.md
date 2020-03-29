@@ -2,13 +2,13 @@
 
 ## 3월 이슈 요약
 
-- 락커 릴리즈
-- SMS 2차 개발 시작
+- 락커 기능 릴리즈
 - SMS 회원 목록 (페이지네이션, 이전 페이지 선택 저장)
 - github 내에서 컨플릭 해결할시 base 브랜치 내용이 compare 브랜치내로 들어감
 - AWS lambda, api gateway로 토이프로젝트 백엔드 구축
 - scss mixin사용법
 - validate 사용법 (this.$v)
+- firebase cloud message , serviceWorker 구현
 
 ## TODO
 - ~~SMS 페이지네이션 - SM(3.2)~~
@@ -175,6 +175,29 @@ sound.volum = 0.1; //0.1배로 줄인다 (0 ~ 1까지 가능)
 - master 브랜치 아닌 다른 브랜치에 push시 잔디밭에 적용되지 않는다. 만약 그 브랜치가 master에 머지될 경우 푸시 올린 날짜가 잔디밭에 기록된다.
 - 포크한 리포지토리에 한 푸시는 잔디밭에 적용되지 않는다.
 - 리포지토리에 contributors에 등록된 깃헙이메일과 컴퓨터가 사용하는 로컬 이메일이 동일해야한다.
+
+## 3.35
+**SM**
+
+- `_` 사용 예시
+```js
+_.uniq(this.bookings.map({lecture} => lecture.id));
+//bookings안에 lecture의 객체에 id가 유일한 존재만 가져온다
+_.deepClone(object);
+//vue의 경우 prop로 data를 넘기는 경우 양방향으로 바인딩 되는 경우가 있다.
+//그럴때 JSON.parse(JSON.stringfy(object))보다는 lodash의 deepClone을 쓴다.
+
+```
+**fcm 배포 문제 및 해결**
+1. firebase 버전에 따라 fcm이 될수도 안될수도 있다. (사용 버전 : 5.6.1)
+- 사파리는 firebase를 지원하지 않는다.....
+- ipad, ipod의 경우 모든 브라우저는 사파리를 기반으로 실행된다.
+즉, 사파리가 안되면 크롬이든, 엣지든 지원되는 기능이 안된다는 뜻이다.
+- 그래서 ipad에서 웹을 사용해야 할 경우 firebase가 실행되지 않도록 분기처리 해야한다.
+```js
+firebase.messaging.isSupported()
+//위 값이 true이면 firebase 기능 실행 false면 실행 안함
+```
 
 
 ## 3.28
