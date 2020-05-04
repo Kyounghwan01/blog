@@ -17,6 +17,7 @@ module.exports = {
         '/Vue/vue/slot/',
         '/Vue/vue/audio/',
         '/Vue/vue/aws-lambda-api-gateway/',
+        '/Vue/vue/vue-cookies/',
       ]
     },
     {
