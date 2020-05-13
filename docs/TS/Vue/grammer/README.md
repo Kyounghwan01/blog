@@ -249,3 +249,51 @@ import { Components, Vue } from 'vue-property-decorator';
 })
 export default class Home extend Vue {}
 ```
+
+## @Emit
+
+- `@Emit`은 부모에서 전달한 함수를 자식에서 실행하는 방법입니다.
+
+### JavaScript
+
+```vue
+// 부모
+<template>
+  <Children @func="func">
+</template>
+
+//자식
+<script>
+export default {
+  // this.func로 실행
+}
+</script>
+```
+
+### TypeScript
+
+```vue
+// 부모
+<template>
+  <Children @func="func">
+</template>
+
+// 자식
+<script lang="ts">
+import { Components, Vue, Emit } from 'vue-property-decorator';
+
+@Component()
+export default class Home extend Vue {
+  // 1번 방법
+  onSubmit() {
+    this.$emit('func', this.value);
+  }
+
+  // 2번 방법
+  @Emit()
+  func() {
+    return this.value;
+  }
+}
+</script>
+```
