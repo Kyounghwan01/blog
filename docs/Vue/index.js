@@ -20,6 +20,7 @@ module.exports = {
         "/Vue/vue/vue-cookies/",
         "/Vue/vue/v-model/",
         "/Vue/vue/focus-blur/",
+        "/Vue/vue/infinite-scroll/",
       ],
     },
     {
