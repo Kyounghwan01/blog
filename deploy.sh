@@ -3,7 +3,7 @@
 # abort on errors
 set -e
 
-git pull 
+git pull
 git add -A
 git commit -m "feat: vue - focus, blur 추가"
 git push origin master
@@ -24,6 +24,6 @@ git commit -m 'deploy with vuepress'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push git@github.com:Kyounghwan01/blog.git master:gh-pages
+git push -f git@github.com:Kyounghwan01/blog.git master:gh-pages
 
 cd -
