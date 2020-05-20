@@ -5,7 +5,7 @@ set -e
 
 git pull 
 git add -A
-git commit -m "$1 $2 $3 --all.sh master"
+git commit -m "feat: vue - focus,blur 추가"
 git push origin master
 
 # build
@@ -18,12 +18,12 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'feat: vue - v-model 추가'
+git commit -m 'deploy with vuepress'
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:Kyounghwan01/blog.git master:gh-pages
+git push git@github.com:Kyounghwan01/blog.git master:gh-pages
 
 cd -

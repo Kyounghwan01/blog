@@ -19,6 +19,7 @@ module.exports = {
         "/Vue/vue/aws-lambda-api-gateway/",
         "/Vue/vue/vue-cookies/",
         "/Vue/vue/v-model/",
+        "/Vue/vue/focus-blur/",
       ],
     },
     {
