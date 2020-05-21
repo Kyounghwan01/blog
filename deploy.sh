@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: vue - 무한 스크롤 추가"
+git commit -m "fix: 개발일기 - 20_04 수정"
 git push origin master
 
 # build
