@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 개발일기 - 20_04 수정"
+git commit -m "feat: google search console 소유권 확인"
 git push origin master
 
 # build

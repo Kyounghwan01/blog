@@ -268,36 +268,3 @@ this.$cookies.get("keyName");
 //remove
 this.$cookies.remove("keyName");
 ```
-
-## 5/4
-
-- react native 설치
-
-```jsx
-//프로젝트 생성
-npx react-native init project-name
-
-//실행
-npx react-native run-ios
-
-//npm 다운로드시 해야하는 설정
-npm install react-native-webview
-//already link 확인
-react-native link react-native-webview
-
-//RNCWebview not found 같이 node_module을 못읽는 에러 발생시
-//ios/andriod에 연결을 안했기 때문이다
-cd ios
-pod install
-
-//위 명령어 실행 후 재시작하면 에러가 안뜬다
-npx react-native run-ios
-
-```
-
-## 5/7
-
-1. 수강권 업그레이드 시 전체, 잔여 횟수 표시
-2. 변경이력에 횟수정보
-3. 입력/수정할 수 있는 횟수는 최대 999회인데 업그레이드로인해 999회를 초과한 횟수가 표시됨
-4. 일정-> 수업 팝오버시 기간제 ㅍ수강권에 횟수정보 표시 – 표시안함으로 변경
