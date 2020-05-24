@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: google search console 소유권 확인"
+git commit -m "feat: npm, webpack 추가"
 git push origin master
 
 # build

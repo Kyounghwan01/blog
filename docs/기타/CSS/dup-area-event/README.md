@@ -7,7 +7,7 @@ meta:
   - property: og:description
     content: z-index로 인한 겹쳐진영역 이벤트 처리
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/기타/prettierrc/
+    content: https://kyounghwan01.github.io/blog/기타/CSS/dup-area-event/
 ---
 
 # 겹친 영역 이벤터
