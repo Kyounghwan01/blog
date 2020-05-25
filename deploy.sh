@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: npm, webpack 추가"
+git commit -m "feat: 5월 개발일기 추가"
 git push origin master
 
 # build
