@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: es6 module, webpack 기초 추기"
+git commit -m "fix: js index.js 수정"
 git push origin master
 
 # build
