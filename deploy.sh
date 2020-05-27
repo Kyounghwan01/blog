@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: js index.js 수정"
+git commit -m "fix: 웹팩 기본 수정"
 git push origin master
 
 # build

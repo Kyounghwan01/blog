@@ -258,3 +258,106 @@ export.defaul = parallel(html, css, js)
 
 - 웹팩은 진입점 하나만 주어지면 (module import, export)만 주어지면 나머지는 알아서 해줄께
 - gulp 위처럼 다 개발자가 해줘
+
+## 웹팩 4가지 속성
+
+### entry
+
+- 웹 자원을 변환하기 위해 최초 진입점, js 경로
+
+```js
+// webpack.config.js
+
+module.exports = {
+  entry: {
+    login: "./src/login.js"
+    index: "./src/index.js"
+  },
+};
+```
+
+- entry에 지정된 js 파일에는 웹 앱의 전반적인 구조가 포함되어야 한다. (진입점)
+- entry는 1개 또는 여러개 될 수 있다.
+
+### output
+
+- 웹팩으로 변환하고 난 파일 경로, 파일 이름 정의 (결과물)
+
+```js
+// webpack.config.js
+var path = require("path");
+
+module.exports = {
+  output: {
+    // 웹팩으로 빌드한 파일의 이름
+    filename: "bundle.js",
+
+    // 웹팩의 각 모듈 내용을 기준으로 생생된 해시 값을 붙이는 옵션
+    // filename: '[chunkhash].bundle.js'
+
+    // 해당 파일의 경로 (output: './dist/bundle.js')
+    path: path.resolve(__dirname, "./dist"),
+  },
+};
+```
+
+### loader
+
+- 웹팩이 웹 자원을 변환하도록 도와주는 속성
+
+```js
+// webpack.config.js
+module.exports = {
+  module: {
+    rules: [],
+  },
+};
+```
+
+### plugin
+
+- 웹팩의 동작에 추가적인 기능을 제공하는 속성
+- 로더는(module)은 파일을 해석하고 변환한다면, 플러그인은 결과물의 형태를 바꾸는 역할
+
+```js
+// webpack.config.js
+module.exports = {
+  plugins: [],
+};
+```
+
+## soursemap
+
+- 웹 콘솔에 찍힌 콘솔 결과물을 클릭하면 빌드 되기 전 js 파일로 이동된다
+- 웹을 볼 수 있다는 것은 우리가 작성한 코드가 웹팩에 의해 빌드 되어 하나의 파일로 뭉쳐졌는데, 빌드되기 전 js 파일로 이동한다는 것이 말이 안된다.
+- 이것을 가능하게 하는 옵션이 soursemap 옵션이다.
+- soursemap: 개발자 당신이 빌드를 했더라도, 콘솔을 찍었을 때는 원본 파일을 보여줄께 (빌드 결과물과, 빌드 되기 전 결과물을 연결하는 툴)
+
+> `팁!` 콘솔을 클릭하면 Sources 탭으로 이동하는데, 가장 하단에 line값, column값, (sourse mapped from app.js) 값으로 콘솔을 찍은 원본 파일의 위치를 쉽게 알 수 있다.
+
+## 웹팩 결과 로그 분석
+
+1. npm run build 실행시 webpack이 실행된다
+2. 특정 빌드마다 고유 Hash 가 생성되고, 웹팩 버전, 빌드 시간이 나온다
+3. 빌드 된 결과 파일과 파일 사이즈가 나온다
+4. `중요!` - Entrypoint가 웹팩 빌드 순서가 된다 (모듈 해석 순서)
+   4.1 - entry에 index.js로 기술이 됬다면 제 1번은 index.js가 된다
+   4.2 - index.js안에 import 된 파일 순으로 웹팩 빌드가 된다
+
+## vue에서의 webpack
+
+- vue로 생성된 프로젝트는 `webpack.config.js`가 없고, `vue.config.js`에서 웹팩을 설정합니다.
+- 프로젝트 루트레벨에 `vue.config.js`을 만드시면 되고, configureWebpack 옵션을 추가하면 됩니다.
+
+```js
+module.exports = {
+  configureWebpack: {
+    devtool: "source-map",
+    name: appConfig.title,
+    // Set up all the aliases.
+    resolve: {
+      alias: require("./aliases.config").webpack,
+    },
+  },
+};
+```
