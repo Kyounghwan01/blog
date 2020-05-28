@@ -53,10 +53,10 @@ const getNum = () => console.log(num);
 
 ```js
 var app = {
-  num: 10,
+  num: 10
 };
 var main = {
-  num: 20,
+  num: 20
 };
 ```
 
@@ -152,6 +152,9 @@ import _ from 'lodash'
 - `package.json`의 `script`중 `build` 가 위 처럼 한줄로 길게 만들어진다.
 - 이러한 상황을 관리하기 좋게 하기 위해 `webpack.config.js`를 사용한다.
 - 프로젝트 루트 레벨에 `webpack.config.js` 생성
+- 웹팩의 module의 rules use는 오른쪽에서 왼쪽으로 읽으며 각각 순서에 따라 에러를 뿜을 수 있다.
+
+- 플러그인: 빌드된 결과물을 바꾸는데 사용됨
 
 ```js
 // webpack.config.js
@@ -165,6 +168,23 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+  module: {
+    rules: {
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader, sass-loader']
+      // 오른쪽에서 왼쪽 순서로 적용됨
+      // sass를 css로 바꾸고 css를 웹팩안으로 넣고, 웹팩안에 있는 css를 인라인으로 바꾸어 작동하도록 한다.
+      // 순서 바뀌면 빌드 안됨
+      use: [
+        {loader: MiniCssExtractPlugin.loader},
+        "css-loader"
+      ]
+    }
+  },
+  plugins: [
+    // 플러그인은 새로운 객체를 만듬으로 사용
+    new MiniCssExtractPlugin()
+  ]
 };
 ```
 
@@ -184,8 +204,8 @@ module.exports = {
   // 빌드 된 파일이 저장될 파일
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-  },
+    path: path.resolve(__dirname, "dist")
+  }
 };
 ```
 
@@ -205,7 +225,7 @@ module.exports = {
 - 숫자로 파일을 관리하는 함수는 IIFE (즉시 실행 함수)로 관리 됨
 
 ```js
-(function() {
+(function () {
   /* 0 */
   // 0번파일 : index.js
   /* 1 */
@@ -296,8 +316,8 @@ module.exports = {
     // filename: '[chunkhash].bundle.js'
 
     // 해당 파일의 경로 (output: './dist/bundle.js')
-    path: path.resolve(__dirname, "./dist"),
-  },
+    path: path.resolve(__dirname, "./dist")
+  }
 };
 ```
 
@@ -309,8 +329,8 @@ module.exports = {
 // webpack.config.js
 module.exports = {
   module: {
-    rules: [],
-  },
+    rules: []
+  }
 };
 ```
 
@@ -322,7 +342,7 @@ module.exports = {
 ```js
 // webpack.config.js
 module.exports = {
-  plugins: [],
+  plugins: []
 };
 ```
 
@@ -356,8 +376,8 @@ module.exports = {
     name: appConfig.title,
     // Set up all the aliases.
     resolve: {
-      alias: require("./aliases.config").webpack,
-    },
-  },
+      alias: require("./aliases.config").webpack
+    }
+  }
 };
 ```
