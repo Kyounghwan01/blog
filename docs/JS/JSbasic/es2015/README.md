@@ -16,6 +16,7 @@ meta:
 ## var / let / const
 
 ### var
+
 - scope : functional
 - Var 속성은 하단에서 정의해도 호이스팅에 의해 정의는 되나 undefined
 - 중복으로 정의하면 이후에 나온 변수로 overload된다.
@@ -100,14 +101,14 @@ for (let i = 1; i < 11; i++) {
     kill: function(target) {
       //var target = operator;
       target = null;
-    }
+    },
   };
 
   let operator = {
     codename: "onion",
     answer: function() {
       alert("run away!");
-    }
+    },
   };
   //객체이므로 위치값을 주는 것 reference;
   //값 자체가 바뀌지 않는다.
@@ -165,7 +166,7 @@ foo = 3; // 못바꾼다
 
 // Example #2
 const obj = {
-  arr: [1, 2, 3]
+  arr: [1, 2, 3],
 };
 
 obj = []; // error
@@ -178,7 +179,7 @@ obj.arr = null; //null
   const bagooni = {
     items: ["gold", "silver", "bronze"],
     owner: "ken huh",
-    address: 11101
+    address: 11101,
   };
 
   const dodook = {
@@ -189,7 +190,7 @@ obj.arr = null; //null
       this.storage[target.owner] = target.items;
       this.careerLevel++;
       target.items = null;
-    }
+    },
   };
 
   dodook.steal(bagooni);
@@ -198,7 +199,7 @@ obj.arr = null; //null
     catchDodook: function() {
       dodook.criminalRecord = dodook.criminalRecord || 1;
       dodook = null;
-    }
+    },
   };
 
   police.catchDodook();
@@ -209,11 +210,11 @@ const prison = {
   addPrisoner: function(name) {
     const prisoner = {
       name: name,
-      attitude: 0
+      attitude: 0,
     };
 
     this.cells.push(prisoner);
-  }
+  },
 };
 
 const saminjo = ["kjm", "kks", "by"];
@@ -321,7 +322,7 @@ foo(...[1, 2, 3]); // 6
 
 const codingInstitutes = [
   { name: "FF", grade: -10 },
-  { name: "VC", grade: 10 }
+  { name: "VC", grade: 10 },
 ];
 
 const mommy = {
@@ -342,7 +343,7 @@ const mommy = {
     } else {
       return null;
     }
-  }
+  },
 };
 
 const studentA = {
@@ -351,7 +352,7 @@ const studentA = {
   decide: function(...institutes) {
     const final = this.mommy.decide(...institutes);
     return final;
-  }
+  },
 };
 
 let result = studentA.decide(...codingInstitutes);
@@ -363,12 +364,12 @@ result = null; // ?
 // Hmm..
 var agentA = {
   codeName: "oi",
-  powerLevel: -999
+  powerLevel: -999,
 };
 
 var agentAA = {
   ...agentA,
-  category: "chaeso"
+  category: "chaeso",
 };
 
 console.log(agentAA);
@@ -391,7 +392,7 @@ console.log(agentAA);
 var address = {
   city: "new york",
   state: "NY",
-  zipcode: "10003"
+  zipcode: "10003",
 };
 
 var { city, state } = address;
@@ -403,7 +404,7 @@ console.log(city + ", " + state);
 var address = {
   city: "new york",
   state: "NY",
-  zipcode: "10003"
+  zipcode: "10003",
 };
 var city = "seoul";
 var { city: c, state: s } = address;
@@ -414,7 +415,7 @@ console.log(c + ", " + city + ", " + s);
 var address = {
   city: "new york",
   state: "NY",
-  zipcode: "10003"
+  zipcode: "10003",
 };
 //매개변수를 비구조화
 function logAddress({ city, state }) {
@@ -574,7 +575,7 @@ console.log(`my name is ${s}`);
 // => fat arrow
 // 표현식으로만 쓴다 : 할당이 되어야만 사용한다.
 
-const fn = a => {
+const fn = (a) => {
   console.log(a);
 };
 
@@ -582,7 +583,7 @@ fn();
 
 //인자가 하나일 경우 소괄호 안써도 된다.
 
-const fn = a => {
+const fn = (a) => {
   console.log(a);
 };
 
@@ -604,10 +605,57 @@ const obj = {
   logName: () => {
     console.log(this.name);
     console.log(arguments);
-  }
+  },
 };
 
 obj.logName(1, 2, 3);
 
 // Arrow functions do not have its own`this`, `arguments`.
+```
+
+## 객체에 동적으로 키 저장
+
+- 객체에 동적으로 키를 저장하는 방법은 이전에 [포스팅](https://kyounghwan01.github.io/blog/JS/JSbasic/jsonDynamicAllocation/) 한적이 있으나, 지금 기술하는 방법이 더 효율적입니다
+
+```js
+const name = "who";
+const obj = { [name]: "nkh" };
+```
+
+- 위 처럼 객체의 키를 대괄호로 감싸 주면 변수의 값이 키에 할당 됩니다
+- 이때, 주의해야 할 점은 객체에 키가 할당된 이후에는 `name`값이 바뀌어도 `obj`의 키 값은 바뀌지 않는다는 점입니다.
+
+```js
+let name = "who";
+const obj = { [name]: "nkh" };
+name = "isChange";
+console.log(obj); // { who: 'nkh' }
+```
+
+- 키애 할당될 값 연산이 끝난 이후에, 객체에 할당하면 되겠습니다.
+
+## 함수 default 값 설정
+
+- es6 자바스크립트에서 함수에 인자가 다 오지 않으면 default 값을 넣는 방법은 아래와 같았습니다.
+
+```js
+function useDefault(_a, _b, _c) {
+  const a = typeof _a === "undefined" ? 1 : _a;
+  const b = typeof _b === "undefined" ? 1 : _b;
+  const c = typeof _c === "undefined" ? 1 : _c;
+  console.log([a, b, c]);
+}
+useDefault(1, 2, 3); // [1, 2, 3]
+useDefault(1, 2); // [1, 2, 1]
+```
+
+- 그러나 es6에서는 함수 인자에 값을 할당하여, 함수 호출시 인자가 할당되지 않으면, 선언시 default로 정한 값이 들어가게 됩니다.
+
+```js
+function defaultParams(a = 1, b = 2, c = 3) {
+  console.log([a, b, c]);
+}
+defaultParams(1, 2, 3); // [1, 2, 3]
+defaultParams(1, 2); // [1, 2, 3]
+defaultParams(1, undefined, 4); // [1, 2, 4]
 ```
