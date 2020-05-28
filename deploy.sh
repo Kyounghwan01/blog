@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: lazy-loading 추가"
+git commit -m "fix: 웹팩 내용 정리 수정"
 git push origin master
 
 # build

@@ -1,16 +1,16 @@
 ---
 meta:
   - name: description
-    content: webpack 기초
+    content: webpack 내용 정리
   - property: og:title
-    content: webpack 기초
+    content: webpack 내용 정리
   - property: og:description
-    content: webpack 기초
+    content: webpack 내용 정리
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/webpack/webpack/
 ---
 
-# webpack 기초 (작업 중)
+# webpack 내용 정리
 
 ## 웹팩이란?
 
@@ -53,10 +53,10 @@ const getNum = () => console.log(num);
 
 ```js
 var app = {
-  num: 10
+  num: 10,
 };
 var main = {
-  num: 20
+  num: 20,
 };
 ```
 
@@ -204,8 +204,8 @@ module.exports = {
   // 빌드 된 파일이 저장될 파일
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist")
-  }
+    path: path.resolve(__dirname, "dist"),
+  },
 };
 ```
 
@@ -225,7 +225,7 @@ module.exports = {
 - 숫자로 파일을 관리하는 함수는 IIFE (즉시 실행 함수)로 관리 됨
 
 ```js
-(function () {
+(function() {
   /* 0 */
   // 0번파일 : index.js
   /* 1 */
@@ -316,21 +316,35 @@ module.exports = {
     // filename: '[chunkhash].bundle.js'
 
     // 해당 파일의 경로 (output: './dist/bundle.js')
-    path: path.resolve(__dirname, "./dist")
-  }
+    path: path.resolve(__dirname, "./dist"),
+  },
 };
 ```
 
 ### loader
 
 - 웹팩이 웹 자원을 변환하도록 도와주는 속성
+- scss -> css, vue -> js, ts -> js 등 읽기 쉬운 언어로 바꿔준다
+- 자바스크립트 최신 문법을 자바스크립트 옛날 문법으로 바꾸어 최신 문법이 호환되지 않는 브라우저도 최신 문법을 사용하도록 설정한다 (ex - bable-loader)
 
 ```js
 // webpack.config.js
 module.exports = {
   module: {
-    rules: []
-  }
+    rules: [
+      {
+        test: /\.js$/,
+        include: path.join(__dirname),
+        exclude: /(node_modules)|(dist)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["env"],
+          },
+        },
+      },
+    ],
+  },
 };
 ```
 
@@ -342,7 +356,7 @@ module.exports = {
 ```js
 // webpack.config.js
 module.exports = {
-  plugins: []
+  plugins: [],
 };
 ```
 
@@ -361,10 +375,10 @@ module.exports = {
 2. 특정 빌드마다 고유 Hash 가 생성되고, 웹팩 버전, 빌드 시간이 나온다
 3. 빌드 된 결과 파일과 파일 사이즈가 나온다
 4. `중요!` - Entrypoint가 웹팩 빌드 순서가 된다 (모듈 해석 순서)
-   4.1 - entry에 index.js로 기술이 됬다면 제 1번은 index.js가 된다
+   4.1 - entry에 index.js로 기술이 됬다면 제 1번 번들링은 index.js가 된다
    4.2 - index.js안에 import 된 파일 순으로 웹팩 빌드가 된다
 
-## vue에서의 webpack
+## vue에서의 웹팩
 
 - vue로 생성된 프로젝트는 `webpack.config.js`가 없고, `vue.config.js`에서 웹팩을 설정합니다.
 - 프로젝트 루트레벨에 `vue.config.js`을 만드시면 되고, configureWebpack 옵션을 추가하면 됩니다.
@@ -376,8 +390,21 @@ module.exports = {
     name: appConfig.title,
     // Set up all the aliases.
     resolve: {
-      alias: require("./aliases.config").webpack
-    }
-  }
+      alias: require("./aliases.config").webpack,
+    },
+  },
 };
 ```
+
+## 웹팩을 통한 번들링 최적화 (lazy-loading)
+
+- 웹팩의 `webpackChunkName`기능을 통해 spa의 단점인 웹 진입시 초기에 모든 리소스를 받는 것을 방지합니다.
+- 개발자가 의도하여 리소스를 나누고, 사용자가 해당 컴포넌트 또는 라우터에 진입시 리소스를 다운받습니다.
+- 자세한 내용은 [lazy-loading](https://kyounghwan01.github.io/blog/Vue/vue/lazy-loading/) 여기를 참조해주세요.
+
+## 정리
+
+- `entry`는 웹 자원을 변환하기 위한 최초 진입점으로, 이 진입점은 모든 자원을 포함해야 합니다 (vue - main.js, react- App.js)
+- `loader`는 `entry`에서 받은 파일들을 기반으로 웹팩이 웹 자원을 하나의 파일로 변환하는 속성입니다. 이때 최신 문법, 라이브러리, css 프로세서가 모든 웹에서 사용가능하도록 최저 사양으로 변환됩니다.
+- `output` 위 2가지 과정을 거치고 난 후, 나온 결과값이 저장되는 파일 경로입니다.
+- `plugin`은 `output`의 결과물을 변환하는데 쓰이는 속성입니다.
