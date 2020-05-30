@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 웹팩 내용 정리 수정"
+git commit -m "feat: 터미널 alias 추가"
 git push origin master
 
 # build

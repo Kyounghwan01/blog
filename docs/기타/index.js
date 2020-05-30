@@ -13,6 +13,7 @@ module.exports = {
     },
     "/기타/prettierrc/",
     "/기타/react-native-webview/",
-    "/기타/git-stash/"
+    "/기타/git-stash/",
+    "/기타/terminal-alias/"
   ]
 };
