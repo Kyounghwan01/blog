@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 터미널 alias 추가"
+git commit -m "feat: react webpack 설정 추가"
 git push origin master
 
 # build
