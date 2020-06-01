@@ -3,10 +3,18 @@
 ## 5월 이슈 요약
 
 - [토이 프로젝트](https://sales-statistics.netlify.com/) 종료
-- 파이썬 크롤링 공부 시작
+- 파이썬 크롤링 공부 시작 (bs4, requests, pandas)
 - SMS 2차 완료
 - 공지사항 구현
-- 매출 차트 요소 (체험권, 미수금) 추가
+- 매출 차트 요소 (체험권, 잔여 미수금) 추가
+- 미수금 결제 일시 추가
+- 웹뷰 프로젝트 초기 React Application Architecture 설계
+  - 새로운 프로젝트 개발 환경 및 구조를 담당하여 연구하고 설계
+  - 웹뷰 파트 리드로 CR 프로세스, QA 프로세스, 일정, 커뮤니케이션 포인트 정리
+  - ### 왜 context api를 선택했는가?
+    - 기존 앱를 웹뷰로 만드는 프로젝트에서 state값을 예측할 수 있었고, 그 결과 redux처럼 완전 글로벌한 상태가 많이 필요 없었다
+    - redux의 강점인 미들웨어 지원 사항 중 비동기 요소가 많지 않다고 판단
+    - react를 처음 접하는 분이 redux까지 연구하기엔 개발 기간이 많지 않음
 
 ## 5/4
 
@@ -239,3 +247,190 @@ html.dartmode:root {
 
 - 미수금 결제일시 추가
 - 매출페이지 -> 미수금, 체험 차트 반영
+- 다크모드 만들기
+  - [https://codepen.io/zidell/pen/dEVaBP](https://codepen.io/zidell/pen/dEVaBP)
+  - 로컬스토리지에 인식
+
+```scss
+$bg-color: #fff;
+$box-colord: rgba(0, 0, 0, 0.05);
+
+:root {
+  --bg-color: #fff;
+  --box-colord: rgba(0, 0, 0, 0.05);
+}
+
+html.dartmode:root {
+  --bg-color: #000;
+  --box-colord: rgba(255, 255, 255, 0.15);
+}
+
+.box {
+  background-color: $box-colord;
+  background-color: var(--box-colord);
+}
+```
+
+## 5/26
+
+- keep-alive - 컴포넌트 상태 보존 [공부할 것](<[https://velog.io/@kyusung/VUE-keep-alive](https://velog.io/@kyusung/VUE-keep-alive)>)
+- lazy loading 성공
+
+  - eslinrc.js
+
+  ```jsx
+  module.exports = {
+    root: true,
+    env: {
+      node: true,
+    },
+    parserOptions: {
+      sourceType: "module",
+      parser: "babel-eslint",
+      ecmaVersion: 2017,
+      allowImportExportEverywhere: true,
+    },
+    extends: ["plugin:vue/essential", "eslint:recommended", "prettier"],
+    plugins: ["prettier"],
+    rules: {
+      "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+      "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+      "vue/no-use-v-if-with-v-for": "off",
+    },
+    globals: {
+      _: true,
+    },
+  };
+  ```
+
+  Parsing error: Unexpected token `import` #11189
+
+  - 코드스플리팅과 동일
+
+## 5/27
+
+- 웹팩 구성요소
+- 웹팩 soursemap 사용 방법
+
+### @decorator 기존 babel에서 사용하려면
+
+```jsx
+parserOptions: {
+    sourceType: 'module',
+    parser: 'babel-eslint',
+    ecmaVersion: 2017,
+    allowImportExportEverywhere: true,
+    ecmaFeatures: { legacyDecorators: true },
+  },
+```
+
+- 매출 무제한
+- 이전 무제한 최대 4달까지 선택가능
+
+### es6 동적 객체 키저장
+
+```jsx
+const obj = { [name]: "ahn" };
+```
+
+그러나 위처럼 할당 이후에 name값이 변경되어도 obj의 name 값은 변경되지 않는다
+
+- 함수 default 값 설정
+
+```jsx
+function useDefaultES6(a = 1, b = 2, c = 3) {
+  console.log([a, b, c]);
+}
+```
+
+### es6 이터레이터 프로토콜
+
+```jsx
+// 무한 스크롤에 쓰이면 좋을듯
+function makeIterator(array) {
+  var nextIndex = 0;
+  return {
+    next: function() {
+      return nextIndex < array.length
+        ? { value: array[nextIndex++], done: false }
+        : { done: true };
+    },
+  };
+}
+const iter = makeIterator([1, 2, 3]);
+iter.next(); // { value: 1, done: false }
+iter.next(); // { value: 2, done: false }
+iter.next(); // { value: 3, done: false }
+iter.next(); // { done: true }
+```
+
+## 5/27
+
+### 켄님 상담 결과
+
+- 토이프로젝트보다 회사코드 리빌딩, 단점찾아서 보완하는게 더 이력서에 남기 좋다
+- 알고리즘은 틈틈히
+- 일이 많은 것은 내능력이 좋은것, 그러나 일정관리 철저히 하고, 안될것은 말해서 쳐낼것
+- 코드리뷰는 철저히 마감기한안에 못하는 건 내잘못아님
+- 스택에 대한 부담은 없어도 된다.
+
+## 5/28
+
+- 매출 무제한 작업 완료 (이미 달단위로 잘라서 api 보내고 있어서 기간만 제거로 완료)
+- react 세팅 시작 (react로 할지 vue, decorat로 할지 이번주에 정합시다)
+
+## 5/30
+
+### react 프로젝트 세팅
+
+- yarn eject를 하면 cra로 만든 웹팩설정파일을 볼 수 있다. 그냥 cra에서 쓴 웹팩쓰는게 마음 편함
+- sourcemap - production에서는 소스맵을 제거하는게 메모리측면, 보안 측면에서 우월하다(보안 - 소스맵을 true로 하면 배포시 사이트에서 .map을 통해 코드 해석이 가능하다)
+- 어짜피 build라는 명령어는 .env.production 또는 .env 값만 읽어오므로, development , local 값에는 아래를 추가하지 않아도 된다
+
+```jsx
+GENERATE_SOURCEMAP = false;
+```
+
+추가 하고 build시 .map 파일이 없다
+
+- NODE_ENV 값은 개발자가 설정할 수 없는값
+- .env에서는 변수를 이용하려면 react 사용시 REACT_APP_API_BASE_URL 이런식으로 REACT_APP를 앞에 붙여야한다 물론 vue도 마찬가지로 VUE_APP을 붙여야함
+
+### alias 설정
+
+- 웹팩으로 설정, package.json설정, 바벨로 설정 등 많이 있지만 cra에서 eject를 해서 webpack.config.js를 만지는 방향이 매우 좋지 않다고 하여, eslint를 활용하기로 했다
+
+```jsx
+//.eslintrc.js
+module.exports = {
+	...
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
+  },
+};
+```
+
+- 위처럼 추가 해주면 되고
+- 추가로 .env를 만들어서 아래를 추가하면 된다
+
+```jsx
+NODE_PATH = src;
+```
+
+- 위 설정 반영 후, 만약 src/components/Test 라는 컴포넌트를 불러온다면 아래와 같은 방법으로 import가능
+
+```jsx
+import Test from "componrnts/Test";
+```
+
+- eslint, prettier세팅
+
+## 6/1
+
+- react context api 포스팅
+- 미수금 결제일시 로직 수정
+- 타입스크립트..
