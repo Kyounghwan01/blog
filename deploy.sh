@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 개발일기 5월 수정"
+git commit -m "feat: react hook"
 git push origin master
 
 # build

@@ -21,5 +21,6 @@ module.exports = {
     "/기타/terminal-alias/",
     "/기타/react-eslint-setting/",
     "/기타/react-context-api/",
+    "/기타/react-hook/",
   ],
 };
