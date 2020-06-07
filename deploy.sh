@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 웹 크롤링 추가"
+git commit -m "feat: 셀레니움 추가"
 git push origin master
 
 # build
