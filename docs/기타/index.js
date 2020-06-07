@@ -15,6 +15,11 @@ module.exports = {
         "/기타/webpack/react-webpack-setting/"
       ]
     },
+    {
+      collapsable: true,
+      title: "python",
+      children: ["/기타/python/basic-grammer/"]
+    },
     "/기타/prettierrc/",
     "/기타/git-stash/",
     "/기타/terminal-alias/"
