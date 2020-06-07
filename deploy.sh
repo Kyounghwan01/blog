@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: es2015 컨텐츠 추가"
+git commit -m "feat: header - react 추가"
 git push origin master
 
 # build

@@ -7,7 +7,7 @@ meta:
   - property: og:description
     content: react context api 개념 & 예시
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/기타/react-context-api/
+    content: https://kyounghwan01.github.io/blog/React/react-context-api/
 ---
 
 # react context api 개념 & 예시
@@ -91,9 +91,9 @@ export default class ClassComponentTest extends Component {
 
 ```js
 <ThemeContext.Consumer>
-  {(theme) => (
+  {theme => (
     <UserContext.Consumer>
-      {(user) => <ProfilePage user={user} theme={theme} />}
+      {user => <ProfilePage user={user} theme={theme} />}
     </UserContext.Consumer>
   )}
 </ThemeContext.Consumer>
@@ -137,18 +137,18 @@ export default class App extends Component {
       const { message } = this.state;
       if (message === "hello") {
         this.setState({
-          message: "by",
+          message: "by"
         });
       } else {
         this.setState({
-          message: "hello",
+          message: "hello"
         });
       }
     };
     this.state = {
       test: "testContext",
       message: "hello",
-      changeContext: this.changeMessage,
+      changeContext: this.changeMessage
     };
   }
 
@@ -179,9 +179,9 @@ export default class Test extends Component {
     const { test } = this.props;
     return (
       <div>
-        <Store.Consumer>{(store) => store.message}</Store.Consumer>
+        <Store.Consumer>{store => store.message}</Store.Consumer>
         <Store.Consumer>
-          {(store) => (
+          {store => (
             <button type="button" onClick={store.changeContext}>
               changeContext
             </button>
@@ -194,11 +194,11 @@ export default class Test extends Component {
 }
 
 Test.propTypes = {
-  test: PropTypes.string,
+  test: PropTypes.string
 };
 
 Test.defaultProps = {
-  test: "",
+  test: ""
 };
 ```
 
@@ -222,7 +222,7 @@ export default class Test2 extends Component {
     return (
       <>
         {/* store context 구독 */}
-        <Store.Consumer>{(store) => store.message}</Store.Consumer>
+        <Store.Consumer>{store => store.message}</Store.Consumer>
         <div>test2 </div>
       </>
     );

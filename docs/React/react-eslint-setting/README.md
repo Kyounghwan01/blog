@@ -7,7 +7,7 @@ meta:
   - property: og:description
     content: 리액트에 ESLint 넣기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/기타/react-project-setting/
+    content: https://kyounghwan01.github.io/blog/React/react-project-setting/
 ---
 
 # react eslint 세팅

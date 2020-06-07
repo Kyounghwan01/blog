@@ -1,5 +1,4 @@
-// const routes = ['Vue', '개발일기', 'Job', 'About'];
-const routes = ["Vue", "JS", "TS", "기타", "About", "개발일기"];
+const routes = ["Vue", "React" ,"JS", "TS", "기타", "About", "개발일기"];
 
 const createSidebar = () => {
   const sidebar = {};
@@ -16,6 +15,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "Vue", link: "/Vue/" },
+      { text: "React", link: "/React/" },
       { text: "JS", link: "/JS/" },
       { text: "TS", link: "/TS/" },
       { text: "기타", link: "/기타/" },

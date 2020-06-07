@@ -7,7 +7,7 @@ meta:
   - property: og:description
     content: react-native 웹뷰 세팅, rn내 npm 설치 법
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/기타/react-native-webview/
+    content: https://kyounghwan01.github.io/blog/React/react-native-webview/
 ---
 
 # react-native 웹뷰
@@ -35,14 +35,11 @@ npx react-native run-ios
 
 ```js
 //App.js
-import {WebView} from 'react-native-webview';
+import { WebView } from "react-native-webview";
 
 const App = () => (
   <>
-    <WebView
-      source={{uri: 'https://sales-statistics.netlify.app/'}}
-    />
+    <WebView source={{ uri: "https://sales-statistics.netlify.app/" }} />
   </>
 );
-
 ```
