@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: python 기초 문법 추가"
+git commit -m "feat: 웹 크롤링 추가"
 git push origin master
 
 # build

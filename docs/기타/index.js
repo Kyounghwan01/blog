@@ -18,7 +18,12 @@ module.exports = {
     {
       collapsable: true,
       title: "python",
-      children: ["/기타/python/basic-grammer/"]
+      children: [
+        "/기타/python/basic-grammer/",
+        "/기타/python/crawling-tutorial/",
+        "/기타/python/json-crawling/",
+        "/기타/python/html-crawling/"
+      ]
     },
     "/기타/prettierrc/",
     "/기타/git-stash/",
