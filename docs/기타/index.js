@@ -22,7 +22,8 @@ module.exports = {
         "/기타/python/basic-grammer/",
         "/기타/python/crawling-tutorial/",
         "/기타/python/json-crawling/",
-        "/기타/python/html-crawling/"
+        "/기타/python/html-crawling/",
+        "/기타/python/dom-modify-crawling/"
       ]
     },
     "/기타/prettierrc/",

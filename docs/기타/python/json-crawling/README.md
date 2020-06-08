@@ -14,50 +14,117 @@ meta:
 
 ## 중요!
 
-- [웹 크롤링 튜토리얼](https://kyounghwan01.github.io/blog/기타/python/crawling-tutorial/)
+- [웹 크롤링 튜토리얼](https://kyounghwan01.github.io/blog/기타/python/crawling-tutorial/)을 먼저 보고 오세요
 
-## 크롤링 하기 전에 선수 지식
+## TODO
 
-### 웹에서 데이터를 주고 받는 행위의 이해
+- upbit 사이트를 크롤링하여 코인 차트내역을 가져옵니다.
 
-> 웹은 사용자가 보고 있는 화면인 프론트(frontend)단, 사용자가 보고 있는 화면에 나오는 정보를 가지고 있는 서버(backend)로 나뉩니다.
+## 크롤링 전 확인해야 할 것
 
-### http 방식
+- 우리가 크롤링 할 사이트가 정해졌다면, 크롤링할 사이트로 들어가 F12를 누르고 network탭을 눌러, 우리가 가져오고자 하는 request url을 찾고, 그 **url을 메모**합니다.<br>
+  이후, 이 request url을 통해 받는 response값의 유형이 `json`타입 이어야 합니다.<br>
+  `html`타입은 [html타입 웹 크롤링](https://kyounghwan01.github.io/blog/기타/python/html-crawling/)을 보시면 됩니다.
 
-> 사용자가 프론트단에서 블로그 글을 클릭했다고 가정해보고 데이터의 흐름에 대해 알아보겠습니다.
+## 환경설정
 
-1. 사용자가 블로그 글을 보기 위해 해당 글을 클릭한다
-2. 웹(front)은 글에 대한 정보가 없기 때문에 바로 사용자에게 보여줄 수 없고, 글에 대한 정보를 서버(backend)로 request를 요청한다
-3. 서버는 웹에서 요청한 정보를 DB(database)에서 읽어와 웹에서 사용하기 좋게 가공한 후, 웹으로 response(응답)을 보낸다.
-4. 응답(블로그 글)을 받은 웹은 사용자에게 블로그 글을 보여준다.
-5. 사용자가 글을 본다.
+- `python3`가 설치된 환경을 가정합니다.
 
-- 위와 같은 방법으로 데이터를 주보 받는 형식을 https 형식으로 부릅니다.
-- 위 형식의 특징은 웹에서 서버로 request를 요청하면, 그에 대한 response응 주고 http요청을 끊습니다 (일회성)
-- 즉, 웹이 서버에 먼저 요청하지 않는 이상, 서버가 웹에 먼저 정보를 주지 않습니다.
+## requests 라이브러리 다운
 
-#### http 방식 res 타입
+- [requests 공식 홈페이지](https://requests.readthedocs.io/en/master/)
 
-> 위에서 알아본 http방식에서는 웹이 서버로 request를 하면 response를 준다고 하였습니다.
->
-> 그 response도 두가지 타입으로 나뉘고, 그 방식에 따라 크롤링 방법도 달라집니다. 이 방식은 크롤러가 정하는 것이 아닌, 우리가 크롤링 할 사이트를 만든 개발자에 의해 정해집니다.
+```bash
+pip3 install requests
+```
 
-1. json 타입
+## 코드 작성
 
-- 특정 웹사이트에 들어가서 F12(개발자도구)를 켜면 network 탭에 웹이 서버로 request를 주고, 서버가 웹으로 reponse를 준 내역이 있습니다.
-- 이 내역에서 `Preview`를 보면 json형식으로 객체, 배열이 있는 경우가 json타입으로 데이터를 주고 받는 웹입니다.
+- `크롤링 전 확인해야 할 것` 목차에서 메모한 request url을 여기서 사용합니다.
+- 예시에서는 upbit에서 제공한 `https://crix-api-cdn.upbit.com/v1/crix/candles/minutes/30`을 사용합니다.
 
-2. html 타입
+### get
 
-- 다시 웹사이트에들어가 개발자도구를 켜고 network탭에 들어가 preview를 보면 json타입과는 다르게 response로 html 화면값을 주는 경우가 있습니다. 이 경우가 html을 서버가 만들어서 프론트에게 주는 방식입니다.
+```py
+import requests
 
-### socket 방식
+# 자바스크립트 axios와 동일하게, get, post 할 수 있다.
+params = {'code': 'CRIX.UPBIT.KRW-BTC', 'count': 2,
+          'to': '2020-06-08T10:07:11Z', 'timestamp': 1591610834813}
+r = requests.get('https://crix-api-cdn.upbit.com/v1/crix/candles/minutes/30', params=params)
 
-> 카카오톡을 켜고 친구와 대화한다고 가정해봅니다.
+ticket = r.json()
+print(ticket)
+# [{'code': 'CRIX.UPBIT.KRW-BTC', 'candleDateTime': '2020-06-08T10:00:00+00:00', 'candleDateTimeKst': '2020-06-08T19:00:00+09:00', 'openingPrice': 11673000.0, 'highPrice': 11680000.0, 'lowPrice': 11665000.0, 'tradePrice': 11678000.0, 'candleAccTradeVolume': 18.61184002, 'candleAccTradePrice': 217300580.88941, 'timestamp': 1591610882479, 'unit': 30}, {'code': 'CRIX.UPBIT.KRW-BTC', 'candleDateTime': '2020-06-08T09:30:00+00:00', 'candleDateTimeKst': '2020-06-08T18:30:00+09:00', 'openingPrice': 11655000.0, 'highPrice': 11699000.0, 'lowPrice': 11655000.0, 'tradePrice': 11676000.0, 'candleAccTradeVolume': 61.24624295, 'candleAccTradePrice': 715489513.68521, 'timestamp': 1591610397044, 'unit': 30}]
 
-1. 카톡을 켜고 상대방에게 대화를 건다
-2. 상대방은 대화를 받는다
+# 위와 같은 데이터를 가져올 수 있다.
+# 이제 목적에 맞게 for, while, if문을 통해 자료를 분리 시키면 됩니다
 
-- https 방식과 다른점이 2번에 있습니다.
-- 상대방의 입장에서는 내가 받은 대화를 서버로 요청하지 않았는데, 서버가 알아서 대화를 주었죠. 이것이 http와 socket방식입니다.
-- 즉, socket방식은 웹과 서버과 연결되면 일회성으로 끊기지 않고 계속해서 서버와 연결되있습니다. 그렇기 때문에 서버는 웹프론트단으로 계속해서 정보를 줄 수 있습니다.
+# 간단하게 찍힌 로그중 highPrice만 가져오는 것을 코딩하면 아래와 같습니다.
+for t in ticket:
+    print(t['highPrice'])
+    print()
+#11680000.0
+#11699000.0
+```
+
+### POST
+
+```py
+data = {'param1': 'value1', 'param2': 'value'}
+res = requests.post(URL, data=data)
+```
+
+## pandas를 이용하여 가져온 데이터 저장하기
+
+### pandas 설치
+
+#### pandas로 변환되는 과정
+
+- 리스트, 디셔너리를 데이터 프레임으로 덮어서 저장 -> 읽을땐 데이터프레임을 가져와서 [], {}로 변환
+
+```bash
+pip3 install pandas
+```
+
+### csv 저장 코드
+
+```py
+import requests
+import pandas
+
+r = requests.get('URL')
+
+
+# 아래 처럼 포맷을 잘 맞춰야 csv형식으로 나온다
+result = {
+    'tradePrice': [],
+    'openingPrice': [],
+}
+
+tr = r.json()
+
+for tricer in tr:
+    result['tradePrice'].append(tricer['tradePrice'])
+    result['openingPrice'].append(tricer['openingPrice'])
+
+print(result)
+
+df = pandas.DataFrame(result)
+
+# 파일 저장
+df.to_csv('dart.csv')
+df.to_excel('dart.xlsx')
+df.to_html('dart.html')
+
+```
+
+## 저장한 csv파일 읽어오기
+
+```py
+import pandas
+
+df = pandas.read_csv('test.csv')
+
+print(df[(df['나이'] > 21) | (df['이름'] == '철수')])
+```
