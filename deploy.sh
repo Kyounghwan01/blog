@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: json 크롤링 추가"
+git commit -m "feat: styled-component 추가"
 git push origin master
 
 # build
