@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 셀레니움 추가"
+git commit -m "fix: 셀레니움 수정"
 git push origin master
 
 # build

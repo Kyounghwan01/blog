@@ -14,6 +14,8 @@ meta:
 
 > 돔 조작을 하여 클릭, 스크롤, 키보드를 눌러 크롤링할 작업이 있을 때, 사용합니다.
 
+## 환경설정
+
 1. 웹 드라이버 확인
 
 - 크롬 -> 설정 -> 도움말 -> chrome 설정 -> 설치되있는 크롬 버전 확인
@@ -28,7 +30,7 @@ meta:
 pip3 install selenium
 ```
 
-4. 기본 코드 작성
+## 웹 띄우기
 
 ```py
 from selenium import webdriver
@@ -38,6 +40,11 @@ driver = webdriver.Chrome('./chromedriver')
 driver.get('https://www.naver.com/')
 
 
+```
+
+## 돔 조작 및 네이버 자동 로그인 예제
+
+```py
 # 웹 스크랩퍼 - 데이터 수집 툴
 
 # 클릭, 스크롤, 키보드 누를때 사용한다
@@ -49,7 +56,7 @@ from selenium import webdriver
 driver = webdriver.Chrome('./chromedriver')
 # url에 접근
 
-driver.get('https://www.naver.com/')
+driver.get('https://www.google.com/')
 
 # search-product
 
@@ -79,9 +86,10 @@ driver.execute_script("document.getElementsByName('pw')[0].value=" + password)
 driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
 
-# 문자열 포맷팅
-# 행동이 들어가면 셀레니움
-# 행동을 안하면 requests -
-# request, bs4만으로 쓰는지, 아니면 셀레니움을 쓰는데 꼭 쓰는 근거가 있어야함
-
 ```
+
+## 맺음말
+
+> 셀레니움을 쓸 때는 반드시 꼭 이것만을 써야하는 근거가 있어야 합니다. 왜냐하면 돔을 렌더링해야하기에 속도가 request나 bs4보다 월등히 느리기 때문이죠.
+> 셀레니움을 쓰는 이유인 클릭, 스크롤, 키보드를 눌러서 하는 행위 등 크롤링에 돔 조작이 꼭 필요하지 않는 이상은 쓰지 않도록 하세요.
+> 더 자세한 메소드는 [셀레니움](https://www.selenium.dev/documentation/en/)공식 사이트에서 참조하세요.
