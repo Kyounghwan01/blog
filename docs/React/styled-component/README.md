@@ -96,6 +96,24 @@ const FlexBox = div`
 `;
 ```
 
+## 다른 파일에서 컴포넌트 import
+
+- 해당 파일에서 정의한 css를 export하여 다른 파일에서 import 할 수 있습니다.
+
+```jsx
+// Login.jsx
+export const LoginContainer = styled.div`
+  background: red;
+`;
+
+// Other.jsx
+import { LoginContainer } from ".Login";
+
+const Other = () => {
+  return <LoginContainer>...</LoginContainer>;
+};
+```
+
 ## 반응형디자인
 
 - 위 예시를 응용하면 반응형을 쉽게 만들 수 있습니다.
