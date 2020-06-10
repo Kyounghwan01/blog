@@ -54,40 +54,60 @@ meta:
 pip3 install BeautifulSoup
 ```
 
-<!--
-## 코드 작성
+## 크롤링 방법
 
-- `크롤링 전 확인해야 할 것` 목차에서 메모한 request url을 여기서 사용합니다.
-- 예시에서는 upbit에서 제공한 `https://crix-api-cdn.upbit.com/v1/crix/candles/minutes/30`을 사용합니다.
+1. json 방식에서 사용하던 `requests`모듈을 이용하여 request를 보내고 response를 받는다
+2. 받은 response 값은 html값일 것이다.
+3. 그 html 값을 BeautifulSoup으로 실행하여 html을 크롤링하기 쉽도록 돔트리 객체로 바꾼다
+4. 돔 잡는 법에서 배운대로 원하는 돔을 잡아서 크롤링 진행한다.
 
-### get
+### 전자공시 사이트에서 회사명 + 대표이름 크롤링
 
 ```py
 import requests
+import bs4
+import pandas
+url = "http://dart.fss.or.kr/corp/searchCorpL.ax"
 
-# 자바스크립트 axios와 동일하게, get, post 할 수 있다.
-params = {'code': 'CRIX.UPBIT.KRW-BTC', 'count': 2,
-          'to': '2020-06-08T10:07:11Z', 'timestamp': 1591610834813}
-r = requests.get('https://crix-api-cdn.upbit.com/v1/crix/candles/minutes/30', params=params)
+result = {
+  'office_name': [],
+  's': []
+}
+searchIndex = 1
+while searchIndex < 16: # 초성선택
+  currentPage = 1
+  is_next_page = True
+  print('=====searchIndex value: ', searchIndex)
+  while is_next_page:
+    print('==currentPage value: ', currentPage)
+    res = requests.post(url, data={
+      "searchIndex": searchIndex,
+      "currentPage": currentPage
+    })
+    currentPage = currentPage + 1
 
-ticket = r.json()
-print(ticket)
-# [{'code': 'CRIX.UPBIT.KRW-BTC', 'candleDateTime': '2020-06-08T10:00:00+00:00', 'candleDateTimeKst': '2020-06-08T19:00:00+09:00', 'openingPrice': 11673000.0, 'highPrice': 11680000.0, 'lowPrice': 11665000.0, 'tradePrice': 11678000.0, 'candleAccTradeVolume': 18.61184002, 'candleAccTradePrice': 217300580.88941, 'timestamp': 1591610882479, 'unit': 30}, {'code': 'CRIX.UPBIT.KRW-BTC', 'candleDateTime': '2020-06-08T09:30:00+00:00', 'candleDateTimeKst': '2020-06-08T18:30:00+09:00', 'openingPrice': 11655000.0, 'highPrice': 11699000.0, 'lowPrice': 11655000.0, 'tradePrice': 11676000.0, 'candleAccTradeVolume': 61.24624295, 'candleAccTradePrice': 715489513.68521, 'timestamp': 1591610397044, 'unit': 30}]
+    dom = bs4.BeautifulSoup(res.content) # 문자열 html을 dom 형태(트리)의 객체로 변환
 
-# 위와 같은 데이터를 가져올 수 있다.
-# 이제 목적에 맞게 for, while, if문을 통해 자료를 분리 시키면 됩니다
+    rows = dom.select('div.table_scroll table tbody tr')
 
-# 간단하게 찍힌 로그중 highPrice만 가져오는 것을 코딩하면 아래와 같습니다.
-for t in ticket:
-    print(t['highPrice'])
-    print()
-#11680000.0
-#11699000.0
+    for row in rows:
+      columns = row.select('td')
+      office_info = {
+        "office_name": columns[0].text.replace('\n', '').replace('\t', '').replace('\r', ''),
+        "s": columns[1].text.replace('\n', '').replace('\t', '').replace('\r', '')
+      }
+      result["office_name"].append(office_info["office_name"])
+      result["s"].append(office_info["s"])
+      print(office_info["s"])
+
+    if len(rows) != 300:
+      is_next_page = False
+
+  searchIndex+= 1
+
+df = pandas.DataFrame(result)
+df.to_csv('dart.csv')
+df.to_html('dart.html')
+df.to_excel('dart.xlsx')
+
 ```
-
-### POST
-
-```py
-data = {'param1': 'value1', 'param2': 'value'}
-res = requests.post(URL, data=data)
-``` -->

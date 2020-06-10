@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: styled-component 수정"
+git commit -m "fix: html 크롤링 수정"
 git push origin master
 
 # build
