@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 리엑트 언마운트 에러 추가"
+git commit -m "fix: github README.md 수정"
 git push origin master
 
 # build
