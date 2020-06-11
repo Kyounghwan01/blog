@@ -1,14 +1,11 @@
 ---
 meta:
   - name: description
-    content: Can't perform a React state update on an unmounted component.
-This is a no-op, but it indicates a memory leak in your application.
+    content: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
   - property: og:title
-    content: Can't perform a React state update on an unmounted component.
-This is a no-op, but it indicates a memory leak in your application.
+    content: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
   - property: og:description
-    content: Can't perform a React state update on an unmounted component.
-This is a no-op, but it indicates a memory leak in your application.
+    content: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/cant-perform-a-React-state-update-on-an-unmounted-component/
 ---
