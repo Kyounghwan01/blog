@@ -57,7 +57,7 @@ const Button = styled.button`
 // Button 컴포넌트 상속
 const NewButton = styled.Button`
   // NewButton 컴포넌트에 color가는 props가 있으면 그 값 사용, 없으면 'red' 사용
-  color: ${(props) => props.color || "red"};
+  color: ${props => props.color || "red"};
 `;
 
 export default Example;
@@ -127,7 +127,7 @@ import styled, { css } from "styled-components";
 
 const sizes = {
   desktop: 1024,
-  tablet: 768,
+  tablet: 768
 };
 
 // sizes 객체에 따라 자동으로 media 쿼리 함수를 만들어줍니다.
@@ -143,7 +143,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const Box = styled.div`
   /* props 로 넣어준 값을 직접 전달해줄 수 있습니다. */
-  background: ${(props) => props.color || "blue"};
+  background: ${props => props.color || "blue"};
   padding: 1rem;
   display: flex;
   width: 1024px;
@@ -151,4 +151,98 @@ const Box = styled.div`
   ${media.desktop`width: 768px;`}
   ${media.tablet`width: 768px;`};
 `;
+```
+
+## global css
+
+- 프로젝트 전역으로 발동하는 css를 만들 수 있습니다.
+
+```jsx
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  body{padding:0; margin:0}
+`;
+```
+
+## attribute 추가
+
+```jsx
+const Input = styled.input.attrs({
+  required: true
+})`
+  border-radius: 5px;
+`;
+```
+
+## css 모듈 분리
+
+```jsx
+const addCssType = css`
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+`;
+
+const Input = styled.input.attrs({
+  required: true
+})`
+  border-radius: 5px;
+  ${addCssType}
+`;
+```
+
+## global Theme
+
+- 전역으로 css를 정의할 수 있습니다. (색, css 등)
+
+1. root 레벨에 공동으로 사용할 theme.js를 만든다
+
+```js
+// theme.js
+const theme = {
+  successColor: blue;
+  dangerColor: red;
+}
+export default theme
+```
+
+2. ThemePrivider를 프로젝트의 root dir에 import하고 아래와 같이 정의한다
+
+```jsx
+import React, { Component } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import theme from "./theme";
+
+class App extends Component {
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <Container>...</Container>
+      </ThemeProvider>
+    );
+  }
+}
+```
+
+3. 전역에서 호출하여 사용한다.
+
+```jsx
+// Container.jsx
+import React, { Component } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import theme from "./theme";
+
+const Container = () => {
+  return <Button>test</Button>;
+};
+
+// 아래와 같이 props.theme로 불러서 전역으로 사용한다.
+const Button = styled.button`
+  border-radius: 30px;
+  padding: 25px 15px;
+  background-color: ${props => props.theme.successColor};
+`;
+
+export default Container;
 ```
