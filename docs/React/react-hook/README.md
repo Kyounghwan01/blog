@@ -1,4 +1,5 @@
 ---
+title: react hook 정리
 meta:
   - name: description
     content: react hook 정리
@@ -8,6 +9,7 @@ meta:
     content: react hook 정리
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-hook/
+tags: ["react", "react-hook"]
 ---
 
 # react hook
