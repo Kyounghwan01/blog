@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: immer.js 추가"
+git commit -m "fix: immer.js 수정"
 git push origin master
 
 # build
