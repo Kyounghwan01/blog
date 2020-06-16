@@ -6,6 +6,8 @@ module.exports = {
     "/React/react-eslint-setting/",
     "/React/react-native-webview/",
     "/React/cant-perform-a-React-state-update-on-an-unmounted-component/",
-    "/React/immer-js/"
-  ]
+    "/React/immer-js/",
+    "/React/styled-component/",
+    "/React/a-tag-trap/",
+  ],
 };
