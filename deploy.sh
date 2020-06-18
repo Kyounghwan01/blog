@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: a 태그 함정 추가"
+git commit -m "feat: react 디자인 패턴 추가"
 git push origin master
 
 # build
