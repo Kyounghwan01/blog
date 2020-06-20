@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: react 디자인 패턴 추가"
+git commit -m "fix: useRef 수정"
 git push origin master
 
 # build
