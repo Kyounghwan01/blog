@@ -10,6 +10,7 @@ module.exports = {
     "/React/a-tag-trap/",
     "/React/react-eslint-setting/",
     "/React/react-native-webview/",
-    "/React/exhaustive-deps-warning/"
+    "/React/exhaustive-deps-warning/",
+    "/React/time-localization/"
   ]
 };

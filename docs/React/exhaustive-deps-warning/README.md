@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: React.js - exhaustive-deps-warning
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/container-presenter-dessign-pattern/
+    content: https://kyounghwan01.github.io/blog/React/exhaustive-deps-warning/
 tags: ["react"]
 ---
 
