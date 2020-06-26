@@ -1,6 +1,11 @@
 module.exports = {
   "/React/": [
     "",
+    {
+      collapsable: true,
+      title: "redux",
+      children: ["/React/redux/redux-basic/"]
+    },
     "/React/container-presenter-dessign-pattern/",
     "/React/react-hook/",
     "/React/styled-component/",
