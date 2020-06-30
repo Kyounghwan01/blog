@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: redux-saga 추가"
+git commit -m "feat: 6월 개발 일기 추가"
 git push origin master
 
 # build
