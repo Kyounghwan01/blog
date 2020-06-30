@@ -1,4 +1,5 @@
 ---
+title: router 이동시 메모리 lack 에러
 meta:
   - name: description
     content: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
@@ -8,6 +9,7 @@ meta:
     content: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/cant-perform-a-React-state-update-on-an-unmounted-component/
+tags: ["react"]
 ---
 
 # router 이동시 메모리 lack 에러
@@ -54,8 +56,8 @@ const signUp = async () => {
           title: "회원가입 완료",
           body:
             "스튜디오메이트 가입이 완료되었습니다 \n 프로필을 등록해주세요.",
-          loginData: { email: text.email, password: text.password },
-        },
+          loginData: { email: text.email, password: text.password }
+        }
       });
     }
   } catch (error) {
@@ -92,8 +94,8 @@ const signUp = async () => {
           title: "회원가입 완료",
           body:
             "스튜디오메이트 가입이 완료되었습니다 \n 프로필을 등록해주세요.",
-          loginData: { email: text.email, password: text.password },
-        },
+          loginData: { email: text.email, password: text.password }
+        }
       });
     }
   } catch (error) {

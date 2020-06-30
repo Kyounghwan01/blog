@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: tag 추가"
+git commit -m "fix: 게시글 tag 추가 작업 중"
 git push origin master
 
 # build

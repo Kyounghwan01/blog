@@ -9,7 +9,7 @@ meta:
     content: react-redux state 초기화와 a 태그의 함정
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/a-tag-trap/
-tags: ["react", "styled-component", "redux"]
+tags: ["react", "styled-component"]
 ---
 
 # a 태그의 함정
@@ -82,8 +82,8 @@ const ExChangePage = () => {
       pathname: "/success",
       state: {
         title: "비밀번호 찾기 완료",
-        body: "회원님의 비밀번호가 성공적으로 변경되었습니다.",
-      },
+        body: "회원님의 비밀번호가 성공적으로 변경되었습니다."
+      }
     });
   };
 };

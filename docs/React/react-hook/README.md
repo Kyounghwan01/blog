@@ -9,7 +9,7 @@ meta:
     content: react hook 정리
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-hook/
-tags: ["react", "react-hook"]
+tags: ["react"]
 ---
 
 # react hook

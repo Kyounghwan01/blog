@@ -1,4 +1,5 @@
 ---
+title: 리액트 styled component 개념 및 예시
 meta:
   - name: description
     content: 리액트 styled component 개념 및 예시
@@ -8,6 +9,7 @@ meta:
     content: 리액트 styled component 개념 및 예시
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/styled-component/
+tags: ["react", "styled-component"]
 ---
 
 # styled-component

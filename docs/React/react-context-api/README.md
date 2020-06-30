@@ -8,6 +8,7 @@ meta:
     content: react context api 개념 & 예시
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-context-api/
+tags: ["react"]
 ---
 
 # react context api 개념 & 예시
