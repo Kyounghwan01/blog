@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Get Started
-actionLink: /About/
+actionLink: /tag/
 features:
   - title: VUE
     details: vue.js 기본 및 이슈 해결 모음
