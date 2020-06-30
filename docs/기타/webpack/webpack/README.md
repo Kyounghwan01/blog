@@ -1,4 +1,5 @@
 ---
+title: webpack 내용 정리
 meta:
   - name: description
     content: webpack 내용 정리
@@ -8,6 +9,7 @@ meta:
     content: webpack 내용 정리
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/webpack/webpack/
+tags: ["webpack"]
 ---
 
 # webpack 내용 정리

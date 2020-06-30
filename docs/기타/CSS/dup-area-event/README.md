@@ -1,4 +1,5 @@
 ---
+title: z-index로 인한 겹쳐진영역 이벤트 처리
 meta:
   - name: description
     content: z-index로 인한 겹쳐진영역 이벤트 처리
@@ -8,6 +9,7 @@ meta:
     content: z-index로 인한 겹쳐진영역 이벤트 처리
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/CSS/dup-area-event/
+tags: ["css"]
 ---
 
 # 겹친 영역 이벤터

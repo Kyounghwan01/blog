@@ -1,4 +1,5 @@
 ---
+title: python 기초 문법
 meta:
   - name: description
     content: python 기초 문법
@@ -8,6 +9,7 @@ meta:
     content: python 기초 문법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/python/basic-grammer/
+tags: ["python"]
 ---
 
 # python 기초문법

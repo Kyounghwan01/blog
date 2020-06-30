@@ -1,4 +1,5 @@
 ---
+title: npm 기초 정리
 meta:
   - name: description
     content: npm 기초 정리
@@ -8,6 +9,7 @@ meta:
     content: npm 기초 정리
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/webpack/npm-tutoiral/
+tags: ["webpack"]
 ---
 
 # npm 기초 정리

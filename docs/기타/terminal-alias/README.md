@@ -1,4 +1,5 @@
 ---
+title: mac 터미널 alias (단축키) 설정하기
 meta:
   - name: description
     content: mac 터미널 alias (단축키) 설정하기
@@ -7,7 +8,8 @@ meta:
   - property: og:description
     content: mac 터미널 alias (단축키) 설정하기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/기타/terminalAlias/
+    content: https://kyounghwan01.github.io/blog/기타/terminal-alias/
+tags: ["settings"]
 ---
 
 # alias (단축키) 설정하기

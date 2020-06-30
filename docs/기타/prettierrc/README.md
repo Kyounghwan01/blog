@@ -1,4 +1,5 @@
 ---
+title: 프리티어 코드 formatting 설정하기
 meta:
   - name: description
     content: 프리티어 코드 formatting 설정하기
@@ -8,6 +9,7 @@ meta:
     content: 프리티어 코드 formatting 설정하기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/prettierrc/
+tags: ["settings"]
 ---
 
 # 프리티어 설정
@@ -23,6 +25,7 @@ meta:
 2. 개발하는 프로젝트의 **루트 디렉토리**에 `.prettierrc`를 생성합니다.
 
 3. 원하는 포맷 설정 작성
+
 - `json` 형식으로 작성합니다.
 
 ```json
@@ -53,4 +56,3 @@ meta:
 ```
 
 제가 중요하게 생각하는 설정만 넣었습니다. 이외에서 다른 설정 들이 많으니 찾아보시고 더 추가하기면 되겠습니다.
-

@@ -1,4 +1,5 @@
 ---
+title: 파이썬 웹 크롤링 튜토리얼
 meta:
   - name: description
     content: 파이썬 웹 크롤링 튜토리얼
@@ -8,6 +9,7 @@ meta:
     content: 파이썬 웹 크롤링 튜토리얼
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/python/crawling-tutorial/
+tags: ["python"]
 ---
 
 # 웹 크롤링 튜토리얼

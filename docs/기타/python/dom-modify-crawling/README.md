@@ -1,4 +1,5 @@
 ---
+title: 돔 조작 - selenium 사용법
 meta:
   - name: description
     content: 돔 조작 - selenium 사용법
@@ -8,6 +9,7 @@ meta:
     content: 돔 조작 - selenium 사용법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/python/dom-modify-crawling/
+tags: ["python"]
 ---
 
 # selenium 사용법

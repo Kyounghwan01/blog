@@ -1,4 +1,5 @@
 ---
+title: 파이썬 웹 크롤링 (html 타입)
 meta:
   - name: description
     content: 파이썬 웹 크롤링 (html 타입)
@@ -8,6 +9,7 @@ meta:
     content: 파이썬 웹 크롤링 (html 타입)
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/python/html-crawling/
+tags: ["python"]
 ---
 
 # html타입 웹 크롤링

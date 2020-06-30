@@ -1,4 +1,5 @@
 ---
+title: git stash, apply 활용법
 meta:
   - name: description
     content: git stash, apply 활용법
@@ -8,6 +9,7 @@ meta:
     content: git stash, apply 활용법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/기타/git-stash/
+tags: ["git"]
 ---
 
 # git stash, apply 활용법
