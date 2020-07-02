@@ -1,3 +1,17 @@
+---
+title: vue class 동적할당
+meta:
+  - name: description
+    content: vue class 동적할당
+  - property: og:title
+    content: vue class 동적할당
+  - property: og:description
+    content: vue class 동적할당
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/Vue/vue/dynamicAllocation/
+tags: ["vue"]
+---
+
 # class 동적할당
 
 안녕하세요! 오늘은 템플릿 내에 class를 값에 따라 동적으로 할당하여 다양한 css를 보여주는 방법에 대해서 알아보겠습니다.
@@ -62,6 +76,7 @@ export default {
 }
 </style>
 ```
+
 위 처럼 배열로 class 할당이 가능하고 버튼을 클릭하면 `isBorderChange`가 `true`로 바뀌면서 아래와 같이 html이 바뀌면서 `border`색이 붉은 색으로 변합니다.
 
 ```html

@@ -1,4 +1,5 @@
 ---
+title: computed와 watch
 meta:
   - name: description
     content: computed와 watch
@@ -8,6 +9,7 @@ meta:
     content: computed와 watch
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/computed/
+tags: ["vue"]
 ---
 
 # computed와 watch
@@ -107,11 +109,11 @@ export default {
   computed: {
     fullName: {
       // getter
-      get: function() {
+      get: function () {
         return this.firstName + " " + this.lastName;
       },
       // setter
-      set: function(newValue) {
+      set: function (newValue) {
         var names = newValue.split(" ");
         this.firstName = names[0];
         this.lastName = names[names.length - 1];
@@ -121,8 +123,8 @@ export default {
 };
 </script>
 ```
-위 처럼 fullName이 임의의 값으로 바뀌게 되면 set이 실행되고 firstName과 lastName이 동시에 바뀌게 됩니다.
 
+위 처럼 fullName이 임의의 값으로 바뀌게 되면 set이 실행되고 firstName과 lastName이 동시에 바뀌게 됩니다.
 
 ## watch 속성
 

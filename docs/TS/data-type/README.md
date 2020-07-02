@@ -1,3 +1,17 @@
+---
+title: 기본 자료형
+meta:
+  - name: description
+    content: 기본 자료형
+  - property: og:title
+    content: 기본 자료형
+  - property: og:description
+    content: 기본 자료형
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/TS/data-type/
+tags: ["TS"]
+---
+
 # 기본 자료형
 
 > 간단하게 TS내에서 원시값들이 어떻게 사용되는지 살펴보고, `vue.js`에서는 어떻게 사용하는지 알아봅니다.
@@ -239,7 +253,6 @@ const fetchEmployee = async (
   return data;
 };
 ```
-
 
 ### `vue.js` 종합 예시
 

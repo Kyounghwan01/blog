@@ -1,4 +1,5 @@
 ---
+title: vue + typescript + js 연동하기
 meta:
   - name: description
     content: vue + typescript + js 연동하기
@@ -8,6 +9,7 @@ meta:
     content: vue + typescript + js 연동하기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/allow-js/
+tags: ["TS"]
 ---
 
 # TS에서 JS 연동하기
@@ -15,7 +17,9 @@ meta:
 TS로 만든 프로젝트에서 JS 파일이 필요할 때, 사용하는 방법입니다.
 
 **1. tsconfig.json**
+
 - js 업로드 수용
+
 ```json
 {
   "compilerOptions": {
@@ -29,12 +33,13 @@ TS로 만든 프로젝트에서 JS 파일이 필요할 때, 사용하는 방법�
 ```
 
 혹시 이 방법을 사용하셨는데,<br>
-`Error "Cannot write file ... because it would overwrite input file."
-`<br>
+`Error "Cannot write file ... because it would overwrite input file."`<br>
 이런 에러가 뜨셨다면 다음 단계를 실행합니다.
 
 **2. tsconfig.json**
+
 - 출력 디렉토리 설정
+
 ```json
 {
   "compilerOptions": {

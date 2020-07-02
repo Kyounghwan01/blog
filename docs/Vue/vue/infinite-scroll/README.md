@@ -1,4 +1,5 @@
 ---
+title: vue 무한 스크롤
 meta:
   - name: description
     content: vue 무한 스크롤
@@ -8,6 +9,7 @@ meta:
     content: vue 무한 스크롤
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/infinite-scroll/
+tags: ["vue"]
 ---
 
 # 무한 스크롤
@@ -35,7 +37,7 @@ export default {
   computed: {
     notifications() {
       return this.$store.getters["notification/notifications"];
-    },
+    }
   },
 
   methods: {
@@ -52,7 +54,7 @@ export default {
       if (this.notifications.length < this.total) {
         const params = {
           limit: this.params.limit,
-          page: this.params.page + 1,
+          page: this.params.page + 1
         };
         this.$store.commit(
           "notification/SET_PARAMS",
@@ -76,8 +78,8 @@ export default {
     // 처음 렌더링시 이전 알림 불러오기 or reset=true시 새로고침, false시 이전 목록에 추가
     dispatchGetNotifications(reset) {
       this.$store.dispatch("notification/getNotifications", reset);
-    },
-  },
+    }
+  }
 };
 </script>
 <style>

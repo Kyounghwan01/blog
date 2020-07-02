@@ -1,12 +1,28 @@
-# vuePress
+---
+title: vuePress 사용법
+meta:
+  - name: description
+    content: vuePress 사용법
+  - property: og:title
+    content: vuePress 사용법
+  - property: og:description
+    content: vuePress 사용법
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/Vue/vuepress/
+tags: ["vuepress"]
+---
+
+# vuePress 사용법
 
 ## 시작하기
+
 오늘은 vue에서 만든 정적 웹사이트인 vuepress로 블로그를 만든 경험을 토대로 vuepress 사이트를 만드는 방법에 대해 알아보겠습니다.
 여기에 없는 세부정보는 [vuepress 공식사이트](https://vuepress.vuejs.org/guide/) 를 참고 해주세요.
 
-
 ## 설치
+
 1. vuepress blog를 만들 깃헙 리포지토리를 생성 후, 리포지토리를 클론합니다.
+
 ```sh
 $ git clone '리포지토리 클론 주소'
 
@@ -15,11 +31,14 @@ $ cd '리포지토리 클론 주소'
 ```
 
 2. vuepress 모듈을 설치 및 npm 초기 설정 합니다.
+
 ```sh
 $ npm init -y
 $ npm install -D vuepress
 ```
+
 3. `package.json` 의 `scripts` 부분을 아래와 같이 수정합니다.
+
 ```json
 {
   ...
@@ -30,12 +49,16 @@ $ npm install -D vuepress
   ...
 }
 ```
+
 4. package.json과 같은 뎁스에 `docs`라는 폴더를 만들어주고 <br>하위로 `README.md`를 만들어준후 아래 내용을 추가합니다.
+
 ```md
 # vuepress til
 ```
+
 5. package.json과 같은 뎁스에 `deploy.sh`를 만들고 아래 내용을 붙여넣습니다.<br>
-**맨 밑 깃헙 주소 넣는 부분은 꼭 본인의 주소와 레포 이름을 넣어주세요.**
+   **맨 밑 깃헙 주소 넣는 부분은 꼭 본인의 주소와 레포 이름을 넣어주세요.**
+
 ```sh
 #!/usr/bin/env sh
 
@@ -71,16 +94,15 @@ cd -
 6. 터미널에서 `docs`로 들어간 후 `yarn docs:dev` 또는 `npm docs:dev` 를 통해 만든 md 파일이 나오면 일단 페이지 렌더링은 성공입니다.
 
 7. 렌더링이 성공했다면 이번엔 깃헙에 올려봅시다.<br>
-위처럼 `yarn docs:dev`를 했다면 `docs` 하위로 `.vuepress`가 생성됩니다. <br>그안에 `config.js`를 만든 후 아래 내용을 붙여 넣어줍니다.<br>
-**코드 안에 중요 부분 유의해주세요**
+   위처럼 `yarn docs:dev`를 했다면 `docs` 하위로 `.vuepress`가 생성됩니다. <br>그안에 `config.js`를 만든 후 아래 내용을 붙여 넣어줍니다.<br>
+   **코드 안에 중요 부분 유의해주세요**
+
 ```js
 module.exports = {
   title: "title",
   description: "desc",
   themeConfig: {
-    nav: [
-      { text: "Github", link: "https://github.com/Kyounghwan01" },
-    ],
+    nav: [{ text: "Github", link: "https://github.com/Kyounghwan01" }],
     sidebar: getSidebarArr()
   },
   //가장 중요한 부분!
@@ -96,7 +118,7 @@ function getSidebarArr() {
   var sidebarArr = [];
   var HomeFilelist = [];
   var filelist = fs.readdirSync(docsPath);
-  filelist.forEach(function(file) {
+  filelist.forEach(function (file) {
     if (file === ".vuepress") return;
     var stat = fs.lstatSync(docsPath + "/" + file);
     if (stat.isDirectory()) {
@@ -119,7 +141,7 @@ function makeSidebarObject(folder, mdfileList) {
   mdfileList = aheadOfReadme(mdfileList);
   var tmpMdfileList = [];
   // remove .md, add Path
-  mdfileList.forEach(function(mdfile) {
+  mdfileList.forEach(function (mdfile) {
     if (mdfile.substr(-3) === ".md") {
       mdfile = mdfile.slice(0, -3) === "README" ? "" : mdfile.slice(0, -3);
       tmpMdfileList.push(path + mdfile);
@@ -148,9 +170,10 @@ function aheadOfReadme(arr) {
   }
   return arr;
 }
-
 ```
+
 8. 터미널에서 프로젝트 폴더 위치에서 `sh deploy.sh` 실행하여 깃헙에 배포합니다.<br> 대략 3~5분 안에 `https://<USERNAME>.github.io/<REPO>` 접속하시면 올리신 vuepress가 렌더됩니다.
 
 ## 페이지 구성
+
 --- 작업중

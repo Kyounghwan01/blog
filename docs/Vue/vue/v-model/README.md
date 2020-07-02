@@ -1,13 +1,15 @@
 ---
+title: vue v-model 개념
 meta:
   - name: description
-    content: v-model 개념
+    content: vue v-model 개념
   - property: og:title
-    content: v-model 개념
+    content: vue v-model 개념
   - property: og:description
-    content: v-model 개념
+    content: vue v-model 개념
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/v-model/
+tags: ["vue"]
 ---
 
 # v-model 개념
@@ -23,9 +25,9 @@ meta:
 export default {
   data() {
     return {
-      checkBox: false,
+      checkBox: false
     };
-  },
+  }
 };
 </script>
 ```
@@ -47,9 +49,9 @@ export default {
 export default {
   data() {
     return {
-      text: "",
+      text: ""
     };
-  },
+  }
 };
 </script>
 ```
@@ -64,13 +66,13 @@ export default {
 <script>
 export default {
   props: {
-    value: String,
+    value: String
   },
   data() {
     return {
-      text: "",
+      text: ""
     };
-  },
+  }
 };
 </script>
 ```

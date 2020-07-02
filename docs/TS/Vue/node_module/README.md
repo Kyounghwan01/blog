@@ -1,4 +1,5 @@
 ---
+title: vue + typescript 외부 모듈 넣기
 meta:
   - name: description
     content: vue + typescript 외부 모듈 넣기
@@ -7,7 +8,8 @@ meta:
   - property: og:description
     content: vue + typescript 외부 모듈 넣기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/Vue/decorator/
+    content: https://kyounghwan01.github.io/blog/TS/Vue/node_module/
+tags: ["vue", "TS"]
 ---
 
 # npm 모듈 typeScript 인식하기

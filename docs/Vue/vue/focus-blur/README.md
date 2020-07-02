@@ -1,4 +1,5 @@
 ---
+title: vue @focus, @blur 예제
 meta:
   - name: description
     content: vue @focus, @blur 예제
@@ -8,6 +9,7 @@ meta:
     content: vue @focus, @blur 예제
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/focus-blur/
+tags: ["vue"]
 ---
 
 # @focus, @blur 예제

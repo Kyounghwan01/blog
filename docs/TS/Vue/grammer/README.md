@@ -1,4 +1,5 @@
 ---
+title: vue-property-decorator 문법
 meta:
   - name: description
     content: vue-property-decorator 문법
@@ -7,7 +8,8 @@ meta:
   - property: og:description
     content: vue-property-decorator 문법
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/Vue/decorator/
+    content: https://kyounghwan01.github.io/blog/TS/Vue/grammer/
+tags: ["vue", "TS"]
 ---
 
 # vue-property-decorator 문법

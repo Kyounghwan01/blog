@@ -1,4 +1,5 @@
 ---
+title: vue 이벤트 수식어
 meta:
   - name: description
     content: vue 이벤트 수식어
@@ -8,6 +9,7 @@ meta:
     content: vue 이벤트 수식어
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/event-handler/
+tags: ["vue"]
 ---
 
 # 이벤트 수식어

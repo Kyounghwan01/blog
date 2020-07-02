@@ -1,6 +1,21 @@
+---
+title: vue props 전달 및 event 상속 (1)
+meta:
+  - name: description
+    content: vue props 전달 및 event 상속 (1)
+  - property: og:title
+    content: vue props 전달 및 event 상속 (1)
+  - property: og:description
+    content: vue props 전달 및 event 상속 (1)
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/Vue/vue/propsEvent/
+tags: ["vue"]
+---
+
 # props 전달 및 event 상속 <Badge text="KH" />
 
 ## 서론
+
 vuex를 사용하는 경우는 대부분 여러 컴포넌트에서 사용할 때 vuex를 세팅하고 정보를 store에 저장하죠.
 
 그렇지만 1, 2개 컴포넌트에서만 사용하는 정보는 굳이 store에 넣을 필요는 없고 해당 컴포넌트의 data에 정의하고 부모 자식간 props로 전달하는게 더 효율적일 것입니다.
@@ -16,14 +31,14 @@ vuex를 사용하는 경우는 대부분 여러 컴포넌트에서 사용할 때
 
 ```vue
 <template>
-    <Button @click="showModal = true"> 모달열기 </Button>
-		<!-- 아래와 같이 부모는 자식 컴포넌트에 v-bind 또는 : 를 통해 props를 넘길 수 있습니다. -->
-		<!-- 함수의 경우 @넘길함수이름="정의한 함수 이름" 을 통해 자식에게 부모 함수를 넘깁니다. -->
-    <Modal
-      :show="showModal"
-      :point="this.point"
-      @close="handlePointStorageClose"
-    />
+  <Button @click="showModal = true"> 모달열기 </Button>
+  <!-- 아래와 같이 부모는 자식 컴포넌트에 v-bind 또는 : 를 통해 props를 넘길 수 있습니다. -->
+  <!-- 함수의 경우 @넘길함수이름="정의한 함수 이름" 을 통해 자식에게 부모 함수를 넘깁니다. -->
+  <Modal
+    :show="showModal"
+    :point="this.point"
+    @close="handlePointStorageClose"
+  />
 </template>
 
 <script>
@@ -39,9 +54,7 @@ methods: {
     this.showShortageModal = close;
   }
 }
-
 </script>
-
 ```
 
 ## 자식 -> 부모 이벤트 발생
@@ -69,9 +82,7 @@ export default {
     show: Boolean,
     point: Number,
     close: Function
-  },
+  }
 };
 </script>
-
 ```
-

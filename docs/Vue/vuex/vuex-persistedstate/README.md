@@ -1,6 +1,21 @@
+---
+title: vuex 새로고침시 상태 초기화 방지
+meta:
+  - name: description
+    content: vuex 새로고침시 상태 초기화 방지
+  - property: og:title
+    content: vuex 새로고침시 상태 초기화 방지
+  - property: og:description
+    content: vuex 새로고침시 상태 초기화 방지
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/Vue/vux/vuex-persistedstate/
+tags: ["vue", "vuex"]
+---
+
 # vuex 새로고침시 상태 초기화 방지
 
 ## 서론 & 이슈
+
 vue를 쓰시면 vuex를 거의 대부분 쓰실 것입니다.
 
 그런데 이 vuex가 한가지 문제가 있습니다.
@@ -27,10 +42,11 @@ export default {
 </script>
 ```
 
-vuex의 값이 새로고침시 초기화 되는 이슈가 많아지면서 누군가 npm을 만들어 놓은 것이 있었고 저도 회사에서 무리 없이 사용하게 되었습니다. 
+vuex의 값이 새로고침시 초기화 되는 이슈가 많아지면서 누군가 npm을 만들어 놓은 것이 있었고 저도 회사에서 무리 없이 사용하게 되었습니다.
 
 ## 본론 & vuex-persistedstate
-`vuex-persistedstate` 라는 npm 이고 vuex에 저장되는 값들을 사용하는 웹브라우저의 localstorage에 저장하며, 새로고침시 그 값이 있다면 localstorage의 값을 가져와 사용한다는 원리입니다. 
+
+`vuex-persistedstate` 라는 npm 이고 vuex에 저장되는 값들을 사용하는 웹브라우저의 localstorage에 저장하며, 새로고침시 그 값이 있다면 localstorage의 값을 가져와 사용한다는 원리입니다.
 
 ```js
 //설치
@@ -77,34 +93,34 @@ const store = new Vuex.Store({
 ```js
 //src/store/moduleName.js
 const state = {
- id: 1
-}
+  id: 1
+};
 
 const getters = {
-  'get_id': state => state.id
-}
+  get_id: state => state.id
+};
 
 const mutations = {
   UPDATE_ID(state, ids) {
-    state.id = ids
+    state.id = ids;
   }
-}
+};
 
 const actions = {
-  update_id({commit, state}, data) {
-    commit('UPDATE_ID', data);
+  update_id({ commit, state }, data) {
+    commit("UPDATE_ID", data);
   }
-}
+};
 
 export default {
-  strict: process.env.NODE_ENV !== 'production',
+  strict: process.env.NODE_ENV !== "production",
   state: {
     ...state
   },
   getters,
   mutations,
   actions
-}
+};
 ```
 
 잠깐 vuex에 대한 개념은 짚고가자면 (vuex아시면 넘어가셔도 됩니다.)
@@ -121,9 +137,9 @@ export default {
   }
   ```
 
-- Mutations: state를 변경하기 위해 실행되는 것으로 비동기를 해야할 경우 (async await을 사용하며, db의 접근이 필요할 경우 많이 쓰임 ) action에서 실행하며, 그렇지 않을 경우 컴포넌트 내부 method에서 ` commit('변수')` 를 통해 실행 가능 합니다.
+- Mutations: state를 변경하기 위해 실행되는 것으로 비동기를 해야할 경우 (async await을 사용하며, db의 접근이 필요할 경우 많이 쓰임 ) action에서 실행하며, 그렇지 않을 경우 컴포넌트 내부 method에서 `commit('변수')` 를 통해 실행 가능 합니다.
 
-- action: state를 바꾸기 위해 사용되며 컴포넌트의 method에서 실행합니다. 
+- action: state를 바꾸기 위해 사용되며 컴포넌트의 method에서 실행합니다.
 
   - `this.$store.dispatch('action함수명', {..data})` 방식으로 실행합니다.
 

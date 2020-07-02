@@ -1,4 +1,5 @@
 ---
+title: vue computed getter, setter 예제
 meta:
   - name: description
     content: vue computed getter, setter 예제
@@ -8,6 +9,7 @@ meta:
     content: vue computed getter, setter 예제
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/getter-setter/
+tags: ["vue"]
 ---
 
 # getter와 setter 예제

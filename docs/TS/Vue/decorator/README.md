@@ -1,4 +1,5 @@
 ---
+title: vue-property-decorator 세팅
 meta:
   - name: description
     content: vue-property-decorator 세팅
@@ -8,6 +9,7 @@ meta:
     content: vue-property-decorator 세팅
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/Vue/decorator/
+tags: ["vue", "TS"]
 ---
 
 # vue-property-decorator 세팅

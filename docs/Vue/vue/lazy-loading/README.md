@@ -1,4 +1,5 @@
 ---
+title: vue lazy-loading 하는법
 meta:
   - name: description
     content: vue lazy-loading 하는법
@@ -8,6 +9,7 @@ meta:
     content: vue lazy-loading 하는법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/lazy-loading/
+tags: ["vue"]
 ---
 
 # lazy-loading

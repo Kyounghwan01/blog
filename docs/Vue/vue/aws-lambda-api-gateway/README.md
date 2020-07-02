@@ -1,4 +1,5 @@
 ---
+title: aws lambda + api gateway로 서버 없이 백엔드 구축하기
 meta:
   - name: description
     content: aws lambda + api gateway로 서버 없이 백엔드 구축하기
@@ -8,6 +9,7 @@ meta:
     content: aws lambda + api gateway로 서버 없이 백엔드 구축하기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/aws-lambda-api-gateway/
+tags: ["vue"]
 ---
 
 # Lambda + api-gateway
@@ -185,7 +187,7 @@ exports.handler = (event, context, callback) => {
           Board.find(query)
             .select("-password")
             .sort({ id: -1 })
-            .exec(function(error, boards) {
+            .exec(function (error, boards) {
               if (error) {
                 callback(null, {
                   headers: corsHeader,
@@ -208,7 +210,7 @@ exports.handler = (event, context, callback) => {
         connect().then(() =>
           Board.findOne({ id: proxy })
             .select("-password")
-            .exec(function(err, board) {
+            .exec(function (err, board) {
               if (err) {
                 callback(null, {
                   statusCode: 500,
@@ -240,7 +242,7 @@ exports.handler = (event, context, callback) => {
       connect().then(() =>
         Board.findOne({})
           .sort({ id: -1 })
-          .exec(function(err, board) {
+          .exec(function (err, board) {
             if (err) {
               callback(null, {
                 statusCode: 500,
@@ -267,7 +269,7 @@ exports.handler = (event, context, callback) => {
               });
               newBoard.id = lastId + 1;
               // 새로운 글을 등록합니다.
-              newBoard.save(function(err, board) {
+              newBoard.save(function (err, board) {
                 if (err) {
                   callback(null, {
                     statusCode: 500,
@@ -291,7 +293,7 @@ exports.handler = (event, context, callback) => {
       password = event.headers.password;
 
       connect().then(() =>
-        Board.findOne({ id: proxy }).exec(function(err, board) {
+        Board.findOne({ id: proxy }).exec(function (err, board) {
           if (err) {
             callback(null, { statusCode: 500, body: JSON.stringify(err) });
           } else if (!board) {
@@ -320,7 +322,7 @@ exports.handler = (event, context, callback) => {
               Board.findOneAndUpdate(
                 { id: proxy },
                 { name, content, password, address, registreDate, phone }
-              ).exec(function(err, board) {
+              ).exec(function (err, board) {
                 if (err) {
                   callback(null, {
                     statusCode: 500,
@@ -343,7 +345,7 @@ exports.handler = (event, context, callback) => {
       proxy = event.pathParameters.proxy;
       password = event.headers.password;
       connect().then(() =>
-        Board.findOne({ id: proxy }).exec(function(err, board) {
+        Board.findOne({ id: proxy }).exec(function (err, board) {
           if (err) {
             callback(null, { statusCode: 500, body: JSON.stringify(err) });
           } else if (!board) {
@@ -359,7 +361,7 @@ exports.handler = (event, context, callback) => {
               });
             } else {
               // 사용자가 입력한 번호에 해당하는 게시물을 삭제합니다.
-              Board.findOneAndRemove({ id: proxy }).exec(function(err, board) {
+              Board.findOneAndRemove({ id: proxy }).exec(function (err, board) {
                 if (err) {
                   callback(null, {
                     statusCode: 500,

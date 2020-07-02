@@ -1,3 +1,17 @@
+---
+title: vue 파일 전역으로 관리하기
+meta:
+  - name: description
+    content: vue 파일 전역으로 관리하기
+  - property: og:title
+    content: vue 파일 전역으로 관리하기
+  - property: og:description
+    content: vue 파일 전역으로 관리하기
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/Vue/vue/dir/
+tags: ["vue"]
+---
+
 # 파일 전역으로 관리하기
 
 대부분 모듈을 만들게 되면
@@ -32,9 +46,9 @@ module.exports = {
   configureWebpack: {
     // Set up all the aliases.
     resolve: {
-      alias: require('./aliases.config').webpack,
-    },
-  },
+      alias: require("./aliases.config").webpack
+    }
+  }
 };
 //참고 : https://webpack.js.org/configuration/resolve/
 ```
@@ -44,17 +58,17 @@ module.exports = {
 - 간단히 utils에 대한 단축키만 작성하겠습니다. (확장 가능하게 만들었습니다)
 
 ```js
-const path = require('path');
+const path = require("path");
 
 const aliases = {
-  '@': 'src',
-  '@utils': 'src/utils',
+  "@": "src",
+  "@utils": "src/utils"
   //'@api': 'src/api',
   //'@store': 'src/store', 확장 가능
 };
 
 module.exports = {
-  webpack: {},
+  webpack: {}
 };
 
 for (const alias in aliases) {
@@ -67,13 +81,12 @@ function resolveSrc(_path) {
   //path.resolve로 플랫폼 별 구분 기호를 구분 기호로 사용하여 지정된 모든 경로를 결합한 다음 결과 경로를 정규화합니다.
   return path.resolve(__dirname, _path);
 }
-
 ```
 
 - 이렇게 되면 src 내부에서 아래와 같이 alias에서 만든 단축어가 발동됩니다.
 
 ```js
-import utils from '@utils'
+import utils from "@utils";
 ```
 
 이제 정말 하려 했던 전역에 utils가 호출되게 해봅시다.
@@ -85,13 +98,13 @@ import utils from '@utils'
 import Vue from "vue";
 import App from "./App.vue";
 import utils from "@utils";
-	//원하시는대로 확장하세요
+//원하시는대로 확장하세요
 //import api from "@api";
 //import store from "@store";
 
 //아래의 코드로 Vue전역에 this.$utils로 호출이 가능하게 됩니다.
 Vue.prototype.$utils = utils;
-	//원하시는대로 확장하세요
+//원하시는대로 확장하세요
 //Vue.prototype.$api = api;
 //Vue.prototype.$store = store;
 
@@ -100,7 +113,7 @@ new Vue({
 }).$mount("#app");
 ```
 
-## 5. srs/utils/index.js ( utils 디렉토리를 만들어 줍니다. ) 
+## 5. srs/utils/index.js ( utils 디렉토리를 만들어 줍니다. )
 
 - 아래 코드는 utils에서 만들어지는 모든 코드를 불러오는 역할을 합니다.
 - 호출방법은 아래 기술합니다.
@@ -110,26 +123,25 @@ new Vue({
 const functions = {};
 
 const requireFunction = require.context(
-  '.', // 현재 폴더 검색
+  ".", // 현재 폴더 검색
   false, // 하위 폴더 확인 안함
-  /^((?!index).)*\.js$/, // index.js를 제외한 모든 js 파일
+  /^((?!index).)*\.js$/ // index.js를 제외한 모든 js 파일
 );
 
 requireFunction.keys().forEach(filename => {
   const functionDefinition = requireFunction(filename);
   const functionPath = filename
-    .replace(/^\.\//, '') // 시작부분 "./" 제거
-    .replace(/\.\w+$/, ''); // 확장자 제거
+    .replace(/^\.\//, "") // 시작부분 "./" 제거
+    .replace(/\.\w+$/, ""); // 확장자 제거
 
-  if (typeof functionDefinition.default === 'function') {
+  if (typeof functionDefinition.default === "function") {
     functions[functionPath] = functionDefinition.default;
-  } else if (typeof functionDefinition.default === 'object') {
+  } else if (typeof functionDefinition.default === "object") {
     functions[functionPath] = { ...functionDefinition.default };
   }
 });
 
 export default { ...functions };
-
 ```
 
 ## 6. utils의 test 함수를 만듭니다.
@@ -137,8 +149,8 @@ export default { ...functions };
 ```js
 //src/utils/contextTest.js
 export default () => {
-  return '전역 함수 리턴 됬습니다';
-}
+  return "전역 함수 리턴 됬습니다";
+};
 ```
 
 ## 7. 모든 세팅을 마쳤습니다. 이제 호출을 해봅시다
@@ -165,8 +177,6 @@ export default {
 }
 </script>
 ```
-
-
 
 ## 8. 마무리
 

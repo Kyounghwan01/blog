@@ -1,3 +1,17 @@
+---
+title: vue props 전달 및 event 상속 (2)
+meta:
+  - name: description
+    content: vue props 전달 및 event 상속 (2)
+  - property: og:title
+    content: vue props 전달 및 event 상속 (2)
+  - property: og:description
+    content: vue props 전달 및 event 상속 (2)
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/Vue/vue/propsEvent2/
+tags: ["vue"]
+---
+
 # 받은 props 활용하기 <Badge text="KH" />
 
 ## 서론
