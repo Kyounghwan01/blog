@@ -1,3 +1,17 @@
+---
+title: 이벤트 버블링/캡쳐/위임
+meta:
+  - name: description
+    content: 이벤트 버블링/캡쳐/위임
+  - property: og:title
+    content: 이벤트 버블링/캡쳐/위임
+  - property: og:description
+    content: 이벤트 버블링/캡쳐/위임
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/event-catch/
+tags: ["JS"]
+---
+
 # 이벤트 버블링/캡쳐/위임
 
 ## 이벤트 버블링
@@ -45,7 +59,7 @@ function logEvent(event) {
 var divs = document.querySelectorAll("div");
 divs.forEach(function(div) {
   div.addEventListener("click", logEvent, {
-    capture: true // default 값은 false입니다.
+    capture: true, // default 값은 false입니다.
   });
 });
 
@@ -74,7 +88,7 @@ function logEvent(event) {
 ```js
 divs.forEach(function(div) {
   div.addEventListener("click", logEvent, {
-    capture: true // default 값은 false입니다.
+    capture: true, // default 값은 false입니다.
   });
 });
 

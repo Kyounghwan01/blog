@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: querySelector(All) 사용법
+  - property: og:title
+    content: querySelector(All) 사용법
+  - property: og:description
+    content: querySelector(All) 사용법
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/queryselector/
+tags: ["JS"]
+---
+
 # querySelector(All) 사용법
 
 ### querySelector

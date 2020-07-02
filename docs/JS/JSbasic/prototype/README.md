@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: prototype
+  - property: og:title
+    content: prototype
+  - property: og:description
+    content: prototype
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/prototype/
+tags: ["JS"]
+---
+
 # prototype
 
 > 한국어로는 객체의 원형이라고 할 수 있다.

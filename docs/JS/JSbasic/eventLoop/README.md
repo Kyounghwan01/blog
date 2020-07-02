@@ -1,3 +1,17 @@
+---
+title: 자바스크립트와 이벤트 루프
+meta:
+  - name: description
+    content: 자바스크립트와 이벤트 루프
+  - property: og:title
+    content: 자바스크립트와 이벤트 루프
+  - property: og:description
+    content: 자바스크립트와 이벤트 루프
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/eventLoop/
+tags: ["JS"]
+---
+
 # 자바스크립트와 이벤트 루프
 
 js의 특징은 `single thread` 라는 점 이다<br>

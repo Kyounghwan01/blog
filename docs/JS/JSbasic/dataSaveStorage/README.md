@@ -1,3 +1,17 @@
+---
+title: local,session Storage 저장방법
+meta:
+  - name: description
+    content: local,session Storage 저장방법
+  - property: og:title
+    content: local,session Storage 저장방법
+  - property: og:description
+    content: local,session Storage 저장방법
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/dataSaveStorage/
+tags: ["JS"]
+---
+
 # local,session Storage 저장방법
 
 `localStorage`속성은 사용자 로컬의 [`Storage`](https://developer.mozilla.org/ko/docs/Web/API/Storage)객체에 접근하게 해줍니다.`localStorage`는`sessionStorage`와 비슷합니다. 유일한 차이점은 `localStorage`에 저장된 데이터는 만료 기간이 없지만, `sessionStorage`에 저장된 데이터는 세션이 끝나면(브라우저가 종료되면) 지워진다는 것입니다.

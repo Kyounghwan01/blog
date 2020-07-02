@@ -1,13 +1,14 @@
 ---
 meta:
   - name: description
-    content: es6 module 사용법 및 예시
+    content: es6 module
   - property: og:title
-    content: es6 module 사용법 및 예시
+    content: es6 module
   - property: og:description
-    content: es6 module 사용법 및 예시
+    content: es6 module
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/module/
+tags: ["JS"]
 ---
 
 # es6 module

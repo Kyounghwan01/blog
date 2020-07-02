@@ -1,3 +1,16 @@
+---
+title: Ajax 실행 단계
+meta:
+  - name: description
+    content: Ajax 실행 단계
+  - property: og:title
+    content: Ajax 실행 단계
+  - property: og:description
+    content: Ajax 실행 단계
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/Ajax/AjaxStep/
+tags: ["JS"]
+---
 
 # Ajax 실행 단계
 
@@ -22,42 +35,40 @@
 
 ```js
 window.onload = function() {
-    var xmlHttp = createXMLHTTPObject();
+  var xmlHttp = createXMLHTTPObject();
 };
 
 // 1. 브라우저에 따른 XMLHttpRequest 생성
 function createXMLHTTPObject() {
+  var xhr = null;
 
-    var xhr = null;
+  if (window.XMLHttpRequest) {
+    // IE7+, 크롬, 사파리, 파폭, 오페라는 XMLHttpRequest 객체를 제공합니다.
+    xhr = new XMLHttpRequest();
+  } else {
+    // IE5,6 버전
+    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+  }
 
-    if(window.XMLHttpRequest) {
-        // IE7+, 크롬, 사파리, 파폭, 오페라는 XMLHttpRequest 객체를 제공합니다.
-        xhr = new XMLHttpRequest();
-    } else {
-        // IE5,6 버전
-        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-
-    return xhr;
-
+  return xhr;
 }
 ```
 
-위 코드는 mdn에도 나와 있는 초기 객체 생성의 공식같은 내용입니다. 
+위 코드는 mdn에도 나와 있는 초기 객체 생성의 공식같은 내용입니다.
 
 ### 1.1 XMLHttpRequest의 주요 메서드
 
-1. `open(method , url , async)`:  return 없음
-   두번째 매개변수 url이 요청 대상 url 입니다. 
-   첫번째  매개변수는 get,post로 나뉘며 get의 경우 두번째 url으로 부터 정보를 받습니다. post는 두번째 매개변수 url로 정보를 보냅니다. 
-   세번째 매개변수는 요청에 대한 응답을 기다리는 방식으로 true : 비동기 (기본값), false 동기 입니다.                                                                                
+1. `open(method , url , async)`: return 없음
+   두번째 매개변수 url이 요청 대상 url 입니다.
+   첫번째 매개변수는 get,post로 나뉘며 get의 경우 두번째 url으로 부터 정보를 받습니다. post는 두번째 매개변수 url로 정보를 보냅니다.
+   세번째 매개변수는 요청에 대한 응답을 기다리는 방식으로 true : 비동기 (기본값), false 동기 입니다.
 2. `send(data)`: return 없음
    http 요청을 실제로 실행하는 메소드 (data : POST방식으로 보낼 데이터)
    이 메소드가 실행돼야 요청이 서버로 전달됩니다.
 
 ### 1.2 XMLHttpRequest의 주요 프로퍼티
 
-1. `readyState`: 
+1. `readyState`:
    요청 상태를 나타내며, 이 프로퍼티를 이용하면 클라이언트와 서버간 데이터 통신이 현재 어디까지 진행됬는지 확인 가능합니다.
    0 : 초기화 되지 않은 상태
    1 : 로드되지 않은 상태 (즉, send() 메소드가 호출되지 않은 상태)
@@ -66,7 +77,7 @@ function createXMLHTTPObject() {
    4 : 완료 상태
 2. `onreadystatechange` :
    요청 상태가 변경될 때 발생하는 이벤트 입니다.
-3. `responseText` : 
+3. `responseText` :
    서버 응답에 반환된 본문 콘텐츠 입니다
 4. `responseXML` :
    서버 응답이 xml이면 xml 본문 콘텐츠로 채워집니다.
@@ -74,10 +85,8 @@ function createXMLHTTPObject() {
    서버 응답상태
    200 = 성공
    404 = 페이지를 찾을 수 없음
-6. `statusText` : 
+6. `statusText` :
    응답으로 반환된 상태 메세지 입니다.
-
-
 
 ## 2. 처리 결과를 받을 이벤트 리스너 등록
 
@@ -95,30 +104,28 @@ xmlHttp.onreadystatechange = on_ReadyStateChange;
 ```js
 // 응답 처리
 function on_ReadyStateChange() {
-    /**
-     * 0 = 초기화 전
-     * 1 = 로딩 중
-     * 2 = 로딩 됨
-     * 3 = 대화 상태
-     * 4 = 데이터 전송완료
-     */
-    // 4 = 데이터 전송완료
-    if(xmlHttp.readyState == 4) {
-        // 200 = 통신 성공, 404 = 페이지가 존재하지 않음
-        if(xmlHttp.status == 200) {
-            /**
-             * ----------------------------------
-             * 이 영역에서 서버에서 보낸 데이터를
-             * 타입(XML, JSON, CSV) 에 따라 처리
-             * ----------------------------------
-             */
-        } else {
-            alert('error!.')
-        }
+  /**
+   * 0 = 초기화 전
+   * 1 = 로딩 중
+   * 2 = 로딩 됨
+   * 3 = 대화 상태
+   * 4 = 데이터 전송완료
+   */
+  // 4 = 데이터 전송완료
+  if (xmlHttp.readyState == 4) {
+    // 200 = 통신 성공, 404 = 페이지가 존재하지 않음
+    if (xmlHttp.status == 200) {
+      /**
+       * ----------------------------------
+       * 이 영역에서 서버에서 보낸 데이터를
+       * 타입(XML, JSON, CSV) 에 따라 처리
+       * ----------------------------------
+       */
+    } else {
+      alert("error!.");
     }
-
+  }
 }
-
 ```
 
 정상적으로 통신이 이루어졌다면 이때 서버에서 보내온 데이터가 담긴 responseText와 responseXML프로퍼티를 이용하면 됩니다.

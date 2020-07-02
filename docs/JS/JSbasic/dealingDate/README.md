@@ -1,3 +1,17 @@
+---
+title: 날짜 다루기
+meta:
+  - name: description
+    content: 날짜 다루기
+  - property: og:title
+    content: 날짜 다루기
+  - property: og:description
+    content: 날짜 다루기
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/dealingDate/
+tags: ["JS"]
+---
+
 # 날짜 다루기
 
 ### 날짜 정보 객체
@@ -91,4 +105,5 @@ document.write(result + "일 남았습니다.");
 ```
 
 ### 개발자로 취업해보니...
+
 - 현실은 moment.js를 사용해서 쉽게 다루는게 가장 보편화 되있는것 같습니다. 위와 같은 방법은 현업에서는 잘 사용하지 않아요. 그러니 JS 기초를 쌓을 때만 사용하세요.

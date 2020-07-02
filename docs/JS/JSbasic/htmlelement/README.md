@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: Html Element 노드다루기
+  - property: og:title
+    content: Html Element 노드다루기
+  - property: og:description
+    content: Html Element 노드다루기
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/htmlelement/
+tags: ["JS"]
+---
+
 # Html Element 노드다루기
 
 ## getElementsByTagName

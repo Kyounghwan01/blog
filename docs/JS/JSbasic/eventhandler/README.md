@@ -1,3 +1,17 @@
+---
+title: 이벤트 핸들러
+meta:
+  - name: description
+    content: 이벤트 핸들러
+  - property: og:title
+    content: 이벤트 핸들러
+  - property: og:description
+    content: 이벤트 핸들러
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/eventhandler/
+tags: ["JS"]
+---
+
 # 이벤트 핸들러
 
 주요 이벤트 동작

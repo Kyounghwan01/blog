@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: target vs currentTarget
+  - property: og:title
+    content: target vs currentTarget
+  - property: og:description
+    content: target vs currentTarget
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/target-currentTarget/
+tags: ["JS"]
+---
+
 # target vs currentTarget
 
 event 객체에 속해있는 target과 currentTarget의 차이점을 알아보겠습니다

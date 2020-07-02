@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: JSON 객체 Key값 동적 할당하기
+  - property: og:title
+    content: JSON 객체 Key값 동적 할당하기
+  - property: og:description
+    content: JSON 객체 Key값 동적 할당하기
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/jsonDynamicAllocation/
+tags: ["JS"]
+---
+
 # JSON 객체 Key값 동적 할당하기
 
 JSON 일반적으로 아래와 같이 사용합니다.
@@ -5,7 +18,7 @@ JSON 일반적으로 아래와 같이 사용합니다.
 ```js
 var example = {
   name: nkh,
-  age: 27
+  age: 27,
 };
 ```
 
@@ -16,7 +29,7 @@ var example = {
 ```js
 var new = age;
 var example = {
-  new: 27
+  new: 27,
 };
 ```
 

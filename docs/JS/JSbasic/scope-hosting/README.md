@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: scope / hoisting
+  - property: og:title
+    content: scope / hoisting
+  - property: og:description
+    content: scope / hoisting
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/scope-hosting/
+tags: ["JS"]
+---
+
 # scope / hoisting
 
 ## Scope

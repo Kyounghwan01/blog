@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: 함수에서 return 역할
+  - property: og:title
+    content: 함수에서 return 역할
+  - property: og:description
+    content: 함수에서 return 역할
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/returnRoleFunction/
+tags: ["JS"]
+---
+
 # 함수에서 return 역할
 
 > return 문은 함수에서 결괏값을 반환할 때 사용합니다.

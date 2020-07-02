@@ -1,3 +1,16 @@
+---
+meta:
+  - name: description
+    content: getElementbyId 사용법
+  - property: og:title
+    content: getElementbyId 사용법
+  - property: og:description
+    content: getElementbyId 사용법
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/JS/JSbasic/getElementById/
+tags: ["JS"]
+---
+
 # getElementbyId 사용법
 
 태그에 있는 id 속성을 사용하여 해당 태그에 접근하여 하고 싶은 작업을 할 때 쓰는 함수입니다!
