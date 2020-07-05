@@ -8,6 +8,7 @@ module.exports = {
     },
     "/React/container-presenter-dessign-pattern/",
     "/React/react-hook/",
+    "/React/custome-hook/",
     "/React/styled-component/",
     "/React/react-context-api/",
     "/React/cant-perform-a-React-state-update-on-an-unmounted-component/",
