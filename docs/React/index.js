@@ -17,6 +17,7 @@ module.exports = {
     "/React/react-eslint-setting/",
     "/React/react-native-webview/",
     "/React/exhaustive-deps-warning/",
-    "/React/time-localization/"
+    "/React/time-localization/",
+    "/React/antd-resize-bundle-size/"
   ]
 };
