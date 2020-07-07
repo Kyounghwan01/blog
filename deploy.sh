@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 번들 사이즈 줄이기 추가"
+git commit -m "feat: property-not-defined 추가"
 git push origin master
 
 # build
