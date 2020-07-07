@@ -26,6 +26,11 @@ module.exports = {
         "/기타/python/dom-modify-crawling/"
       ]
     },
+    {
+      collapsable: true,
+      title: "코딩테스트",
+      children: ["/기타/prevent-coding-test/beginner/"]
+    },
     "/기타/prettierrc/",
     "/기타/git-stash/",
     "/기타/terminal-alias/",

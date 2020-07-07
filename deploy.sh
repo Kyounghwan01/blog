@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 번들 사이즈 줄이기 추가"
+git commit -m "feat: 코딩테스트 대비 문제 추가"
 git push origin master
 
 # build
