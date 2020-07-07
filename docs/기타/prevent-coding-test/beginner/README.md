@@ -102,4 +102,4 @@ x.attack();
 - constructor의 내부에 init value를 세팅한다
 - class의 내부의 변수는 `this`로 접근 가능하다.
 - react의 class component와 비슷하게 메소드는 constructor의 바깥에 정의한다.
-- 만든 클래스 사용은 `new className`으로 사용한다.
+- 만든 클래스 사용은 `new className`으로 사용한다
