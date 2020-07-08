@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 클린코드 팁 추가"
+git commit -m "feat: 프레임워크 라이브러리 차이"
 git push origin master
 
 # build
