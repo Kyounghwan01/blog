@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 코딩테스트 대비 문제 추가"
+git commit -m "feat: 클린코드 팁 추가"
 git push origin master
 
 # build
