@@ -42,7 +42,7 @@ module.exports = {
   base: "/blog/",
   plugins: {
     sitemap: {
-      hostname: "https://kyounghwan01.github.io/blog/"
+      hostname: "https://kyounghwan01.github.io/"
     }
   }
   // markdown: {
