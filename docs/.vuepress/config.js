@@ -40,7 +40,11 @@ module.exports = {
     sidebar: createSidebar()
   },
   base: "/blog/",
-  plugins: ["@vuepress/back-to-top"]
+  plugins: {
+    sitemap: {
+      hostname: "https://kyounghwan01.github.io/blog/"
+    }
+  }
   // markdown: {
   //   lineNumbers: true
   // }
