@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: ga 추가"
+git commit -m "fix: sitemap test"
 git push origin master
 
 # build

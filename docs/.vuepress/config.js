@@ -47,7 +47,8 @@ module.exports = {
         ga: "UA-172169202-1" // UA-00000000-0
       }
     ],
-    ["@vuepress/back-to-top"]
+    ["@vuepress/back-to-top"],
+    ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }]
   ]
   // markdown: {
   //   lineNumbers: true

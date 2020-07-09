@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.2",
     "@vuepress/plugin-google-analytics": "^1.5.2",
-    "vuepress": "^1.5.2"
+    "vuepress": "^1.5.2",
+    "vuepress-plugin-sitemap": "^2.3.1"
   }
 }
