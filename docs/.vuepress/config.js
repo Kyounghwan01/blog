@@ -39,6 +39,7 @@ module.exports = {
     ],
     sidebar: createSidebar()
   },
+  ga: "UA-172169202-1",
   base: "/blog/",
   plugins: {
     sitemap: {
