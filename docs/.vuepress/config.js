@@ -39,13 +39,15 @@ module.exports = {
     ],
     sidebar: createSidebar()
   },
-  ga: "UA-172169202-1",
   base: "/blog/",
-  plugins: {
-    sitemap: {
-      hostname: "https://kyounghwan01.github.io/"
-    }
-  }
+  plugins: [
+    [
+      "@vuepress/google-analytics",
+      {
+        ga: "UA-172169202-1" // UA-00000000-0
+      }
+    ]
+  ]
   // markdown: {
   //   lineNumbers: true
   // }
