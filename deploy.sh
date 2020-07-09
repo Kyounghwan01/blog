@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: sitemap test"
+git commit -m "feat: vuepress 플러그인 추가"
 git push origin master
 
 # build
