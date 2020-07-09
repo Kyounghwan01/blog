@@ -46,7 +46,8 @@ module.exports = {
       {
         ga: "UA-172169202-1" // UA-00000000-0
       }
-    ]
+    ],
+    ["@vuepress/back-to-top"]
   ]
   // markdown: {
   //   lineNumbers: true

@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Kyounghwan01/blog#readme",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.5.2"
+    "@vuepress/plugin-back-to-top": "^1.5.2",
+    "@vuepress/plugin-google-analytics": "^1.5.2",
+    "vuepress": "^1.5.2"
   }
 }
