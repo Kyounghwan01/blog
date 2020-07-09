@@ -89,3 +89,5 @@ export default {
 
 위의 간단한 예제로 vue에서 class를 동적으로 할당하는 방법을 알아봤습니다.
 응용하면 여러가지 class를 배열로 추가하여 더 다양한 css를 만들 수 있을 것입니다.
+
+<Disqus />

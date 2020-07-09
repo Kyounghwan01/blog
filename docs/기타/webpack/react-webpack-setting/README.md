@@ -32,7 +32,7 @@ module.exports = {
   output: {
     // bundled compiled 파일
     path: path.join(__dirname, "/dist"), // __dirname : 현재 디렉토리, dist 폴더에 모든 컴파일된 하나의 번들파일을 넣을 예정
-    filename: "index_bundle.js",
+    filename: "index_bundle.js"
   },
   module: {
     // javascript 모듈을 생성할 규칙을 지정 (node_module을 제외한.js 파일을 babel-loader로 불러와 모듈을 생성
@@ -40,7 +40,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_module/, // node module 폴더는 babel 컴파일에서 제외
-        use: ["babel-loader", "eslint-loader"],
+        use: ["babel-loader", "eslint-loader"]
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -49,23 +49,23 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "style-loader",
           "css-loader",
-          "sass-loader?indentedSyntax",
-        ],
-      },
-    ],
+          "sass-loader?indentedSyntax"
+        ]
+      }
+    ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx", ".css", ".scss"],
+    extensions: ["*", ".js", ".jsx", ".css", ".scss"]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // 생성한 템플릿 파일
+      template: "./src/index.html" // 생성한 템플릿 파일
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css",
-    }),
-  ],
+      chunkFilename: "[id].css"
+    })
+  ]
 };
 ```
 
@@ -100,3 +100,5 @@ module.exports = {
 
 - eject하지 않고 cra 설정파일을 커스텀하는 방법 (eject처럼 완전 자유롭지 않음)
 - [Customize-CRA](https://github.com/arackaf/customize-cra) 참조
+
+<Disqus />

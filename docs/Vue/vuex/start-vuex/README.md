@@ -49,3 +49,5 @@ store.commit("increment");
 위의 결과로 `store.state.count`가 1로 증가합니다.
 
 앞으로 하나의 요소씩 기능 및 사용법에 대해 알아보겠습니다.
+
+<Disqus />

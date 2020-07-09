@@ -268,3 +268,5 @@ this.$cookies.get("keyName");
 //remove
 this.$cookies.remove("keyName");
 ```
+
+<Disqus />

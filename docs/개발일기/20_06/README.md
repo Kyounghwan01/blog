@@ -22,8 +22,8 @@ const changePassword = async () => {
   const params = {
     ...passwordData,
     user_account: {
-      password: text.confirmPassword,
-    },
+      password: text.confirmPassword
+    }
   };
   try {
     setLoading(true);
@@ -37,8 +37,8 @@ const changePassword = async () => {
         pathname: "/success",
         state: {
           title: "비밀번호 찾기 완료",
-          body: "회원님의 비밀번호가 성공적으로 변경되었습니다.",
-        },
+          body: "회원님의 비밀번호가 성공적으로 변경되었습니다."
+        }
       });
     }
   } catch (e) {
@@ -139,3 +139,5 @@ dispatch(thisIsFunction());
 
 - redux의 비동기를 위한 미들웨어
 - [정리](https://kyounghwan01.github.io/blog/React/redux/redux-saga/)
+
+<Disqus />

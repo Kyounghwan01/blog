@@ -84,3 +84,5 @@ for문을 통해 section클래스와 id를 가진 모든 요소에 border가 쳐
 Item 메소드를 씀으로 sections의 값들에 접근하고 그중에서 style 속성에 들어가 border를 만드는 과정입니다. Item에 관한 내용은 이후에 포스팅 하겠습니다.
 
 [참조](https://www.w3schools.com/jsref/met_nodelist_item.asp)
+
+<Disqus />

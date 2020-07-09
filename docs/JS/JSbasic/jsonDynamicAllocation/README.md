@@ -18,7 +18,7 @@ JSON 일반적으로 아래와 같이 사용합니다.
 ```js
 var example = {
   name: nkh,
-  age: 27,
+  age: 27
 };
 ```
 
@@ -29,7 +29,7 @@ var example = {
 ```js
 var new = age;
 var example = {
-  new: 27,
+  new: 27
 };
 ```
 
@@ -57,3 +57,5 @@ var something = {};
 something[keyname + postfix] = value;
 //console.log : {myAge : 27}
 ```
+
+<Disqus />

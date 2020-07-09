@@ -89,3 +89,5 @@ npm uninstall ... --global
 // 전역 설치 라이브러리 경로
 // /usr/local/lib/node_modules
 ```
+
+<Disqus />

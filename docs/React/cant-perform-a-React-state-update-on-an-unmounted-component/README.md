@@ -120,3 +120,5 @@ useEffect(() => {
 ```
 
 - 개인적으로 굳이 cleanup함수만을 위해 useEffect를 쓰는 건 좋아하지 않아, useEffect를 쓰지 않는 컴포넌트에서는 1번 방법을 이용합니다.
+
+<Disqus />

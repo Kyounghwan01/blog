@@ -178,3 +178,5 @@ path라는 옵션을 통해 배열안에 넣는 store만 localstorage에 저장�
 여기까지가 제가 `vuex-persistedstate`를 활용 해본 방법이고,
 
 `vuex-persistedstate` 에서는 `js-cookie, secure-ls`를 이용하여 localstorage말고, cookie에 저장하는 방식과 암호화된 방식으로 데이터를 저장하는 방법을 알려주고 있으니 관심이 있으시면 npm에 들러보시면 될 것 같습니다.
+
+<Disqus />

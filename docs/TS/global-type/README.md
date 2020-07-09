@@ -86,3 +86,5 @@ new Vue({
 - 위 작업까지 완료하고 컴파일 하시면 콘솔에 api에 대한 정보가 나오게 됩니다.
 - 동일하게 store, utils 등등 전역으로 많이 불릴 것들을 등록하시면 개발에 좀 더 속도가 붙을 것 같습니다.
 - 안되시는 부분이 있으면 [vue ts 공식문서](https://vuejs.org/v2/guide/typescript.html#Augmenting-Types-for-Use-with-Plugins)를 참조해보세요.
+
+<Disqus />

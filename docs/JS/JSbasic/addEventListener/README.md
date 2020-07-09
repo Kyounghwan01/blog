@@ -72,3 +72,5 @@ function click(e) {
 - **change** – 폼 필드의 상태가 변경되었을 때 발생한다. 라디오 버튼을 클릭하거나 셀렉트 박스에서 값을 선택하는 경우를 예로 들수 있다.
 
 다음 포스팅은 querySelectorAll와 querySelector 함수에 대해 알아보겠습니다.
+
+<Disqus />

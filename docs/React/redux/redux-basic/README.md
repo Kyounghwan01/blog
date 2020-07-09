@@ -195,3 +195,5 @@ dispatch(setCount);
 // action이 함수면 아래처럼
 dispatch(setCount(data));
 ```
+
+<Disqus />

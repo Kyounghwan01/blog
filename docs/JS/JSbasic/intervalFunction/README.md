@@ -33,7 +33,7 @@ setInterval(test, 3000);
 function test(string) {
   console.log(string);
 }
-setInterval(function() {
+setInterval(function () {
   test("Hello!");
 }, 3000);
 ```
@@ -49,7 +49,7 @@ function test2(string) {
   console.log("test2 : " + string);
 }
 
-setInterval(function() {
+setInterval(function () {
   test1("Hello!");
   test2("World!");
 }, 3000);
@@ -65,7 +65,7 @@ test1 : Hello! test2 : World! test1 : Hello! test2 : World!
 **clearInterval()** 함수는 현재 진행되고 있는 함수의 진행을 **멈추는데** 쓰입니다.
 
 ```js
-var interval = setInterval(function() {
+var interval = setInterval(function () {
   console.log("Interval");
 }, 1000);
 
@@ -74,7 +74,7 @@ clearInterval(interval);
 ```
 
 ```js
-var interval = setInterval(function() {
+var interval = setInterval(function () {
   count++;
   if (count === 10) {
     clearInterval(interval);
@@ -90,7 +90,7 @@ var interval = setInterval(function() {
 
 ```js
 //5초 후에 oneTime이라는 string를 콘솔에 1번 찍고 종료합니다.
-setTimeout(function() {
+setTimeout(function () {
   console.log("oneTime");
 }, 5000);
 
@@ -98,8 +98,10 @@ self.scrollState = false;
 if (!self.scrollState) {
   self.mainElem.classList.add("running");
 }
-self.scrollState = setTimeout(function() {
+self.scrollState = setTimeout(function () {
   self.mainElem.classList.remove("running");
 }, 500);
 //setTimeout이 실행되면 상수를 리턴 함으로 true로 바뀐다.
 ```
+
+<Disqus />

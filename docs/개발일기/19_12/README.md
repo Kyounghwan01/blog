@@ -1,10 +1,11 @@
 # 2019.12월
 
 ## 12.16
+
 - 스튜디오메이트 입사
 
 - 새로운 컴퓨터 수령 및 초기 세팅 및 회사 권한 획득 (github, postman, tablePlus, aws)
-  - vscode 
+  - vscode
   - tablePlus
   - postman
   - zepline
@@ -13,11 +14,12 @@
 
 ## 12.17
 
-- 매주 화요일 23:00에 staging에 올라간 작업들을 production에 배포한다 
+- 매주 화요일 23:00에 staging에 올라간 작업들을 production에 배포한다
 - git 활용
+
   - jira에 등록된 이슈번호를 기준으로 branch를 만든다 (ex - git checkout -b sm-1820)
   - 이때 꼭 master 브랜치에서 위 커멘드를 실행한다. 아니면 confilct 날 가능성이 매우 높다
-  - 작업 이후 해당 branch를 qa에 merge 한다 
+  - 작업 이후 해당 branch를 qa에 merge 한다
     - 이슈 등록된 jira에 관련된 사람들 태그하고 검수 요청한다
     - 이후 qa완료되면 해당 이슈를 staging에 pr올린다 (merge 아님)
 
@@ -46,17 +48,18 @@
 - aws route/53
   - Route 53 사용하여 도메인 등록, dns 라우팅, 올려 놓은 서버의 상태 확인을 실행 할 수 있다.
 - Lodash : 자바스크립트 유틸리티 라이브러리
-  - 배열, date, number, object등 여러 데이터를 다루게 도와준다 
-  - 배열안의 객체 값들을 핸들링 할 때 사용 (여기서는 get을 주로 쓰고 undefiend의 경우 원래는 에러를 도출하지만 _를 사용하면 지정한 값을 리턴한다)
-  - _ : omit :	빼라
-  - _.get(obj, ‘name’, ‘nkh’) : undified라면 ’nkh’를 가져온다
-  - _.sortBy(arr, [‘created_at’,’name’])
-  - _.pick(obj, ‘name’, ‘age’) - obj에서 name값만 가져온다.
-  - _.omit(obj, ‘name’,’age’) - obj에서 name, age 빼고 가져온다
+  - 배열, date, number, object등 여러 데이터를 다루게 도와준다
+  - 배열안의 객체 값들을 핸들링 할 때 사용 (여기서는 get을 주로 쓰고 undefiend의 경우 원래는 에러를 도출하지만 \_를 사용하면 지정한 값을 리턴한다)
+  - \_ : omit : 빼라
+  - \_.get(obj, ‘name’, ‘nkh’) : undified라면 ’nkh’를 가져온다
+  - \_.sortBy(arr, [‘created_at’,’name’])
+  - \_.pick(obj, ‘name’, ‘age’) - obj에서 name값만 가져온다.
+  - \_.omit(obj, ‘name’,’age’) - obj에서 name, age 빼고 가져온다
 
 ## 12.23 - 24
 
 - 코드 이해하는 시간
+
   - slot
     - <slot name="suffix"/> 이라고 정의 한곳에 <span slot="suffix">qwe</span> 가 들어간다 컴포넌트 사이에 어떤 텍스트를 넣어야 할 때 유용하게 사용한다.
 
@@ -68,13 +71,12 @@
   - 내 컴퓨터에 있는 branch와 origin의 branch가 어떻게 다른지 한번에 볼수 있는게 가장 편했음
   - confilct가 발생한 경우로 소스트리에서 머지가 실패하면 바로 vscode로 뭐가 달라서 confilct가 났다고 직관적으로 보여주어 충돌 해결이 쉬웠다.
 
-
-
 ## 12.26-27
 
 - 기간제 수강권 취소 가능 횟수 설정 및 잔여 횟수 보이기 / 안보이기 설정
   - 수강권 추가 / 수정 / 상세보기 창 모두 cancelCount flag 및 변수를 넣어야함
 - oh my zsh alias 설정
+
 ```sh
 vim ~/.zshrc
 
@@ -92,13 +94,12 @@ alias vd="vuepress dev"
 
 //원하시는 shortcut 커멘드 입력
 ```
+
 `:wq` 로 저장 후 터미널로 나간 후 아래 커멘드로 변경사항 저장
+
 ```sh
 source ~/.zshrc
 ```
-
-
-
 
 ## 12.30 ~ 1.2
 
@@ -113,3 +114,5 @@ source ~/.zshrc
     - 수업 보여지는 화면
     - 수업 일괄수정하는 화면 작업 요구 (룰 타입 바뀌면 안됨, 타입은 고정되고 시간만 바뀌도록)
   - 각 화면별 css layout 변경 디자인 요구
+
+<Disqus />

@@ -55,10 +55,10 @@ const getNum = () => console.log(num);
 
 ```js
 var app = {
-  num: 10,
+  num: 10
 };
 var main = {
-  num: 20,
+  num: 20
 };
 ```
 
@@ -206,8 +206,8 @@ module.exports = {
   // 빌드 된 파일이 저장될 파일
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-  },
+    path: path.resolve(__dirname, "dist")
+  }
 };
 ```
 
@@ -227,7 +227,7 @@ module.exports = {
 - 숫자로 파일을 관리하는 함수는 IIFE (즉시 실행 함수)로 관리 됨
 
 ```js
-(function() {
+(function () {
   /* 0 */
   // 0번파일 : index.js
   /* 1 */
@@ -318,8 +318,8 @@ module.exports = {
     // filename: '[chunkhash].bundle.js'
 
     // 해당 파일의 경로 (output: './dist/bundle.js')
-    path: path.resolve(__dirname, "./dist"),
-  },
+    path: path.resolve(__dirname, "./dist")
+  }
 };
 ```
 
@@ -341,12 +341,12 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"],
-          },
-        },
-      },
-    ],
-  },
+            presets: ["env"]
+          }
+        }
+      }
+    ]
+  }
 };
 ```
 
@@ -358,7 +358,7 @@ module.exports = {
 ```js
 // webpack.config.js
 module.exports = {
-  plugins: [],
+  plugins: []
 };
 ```
 
@@ -392,9 +392,9 @@ module.exports = {
     name: appConfig.title,
     // Set up all the aliases.
     resolve: {
-      alias: require("./aliases.config").webpack,
-    },
-  },
+      alias: require("./aliases.config").webpack
+    }
+  }
 };
 ```
 
@@ -410,3 +410,5 @@ module.exports = {
 - `loader`는 `entry`에서 받은 파일들을 기반으로 웹팩이 웹 자원을 하나의 파일로 변환하는 속성입니다. 이때 최신 문법, 라이브러리, css 프로세서가 모든 웹에서 사용가능하도록 최저 사양으로 변환됩니다.
 - `output` 위 2가지 과정을 거치고 난 후, 나온 결과값이 저장되는 파일 경로입니다.
 - `plugin`은 `output`의 결과물을 변환하는데 쓰이는 속성입니다.
+
+<Disqus />

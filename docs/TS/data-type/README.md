@@ -372,3 +372,5 @@ export default Vue.extend({
 });
 </script>
 ```
+
+<Disqus />

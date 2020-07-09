@@ -66,3 +66,5 @@ function fun() {
 }
 fun();
 ```
+
+<Disqus />

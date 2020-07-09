@@ -150,3 +150,5 @@ export default {
 :::warning 주의!
 `slot`, `slot-scope`는 이후 업데이트 될 Vue 3에서는 공식적으로 삭제된다고 하니 Vue에서 공식적으로 지원 할 `v-slot`만 사용하도록 합니다.
 :::
+
+<Disqus />

@@ -283,24 +283,24 @@ html.dartmode:root {
   module.exports = {
     root: true,
     env: {
-      node: true,
+      node: true
     },
     parserOptions: {
       sourceType: "module",
       parser: "babel-eslint",
       ecmaVersion: 2017,
-      allowImportExportEverywhere: true,
+      allowImportExportEverywhere: true
     },
     extends: ["plugin:vue/essential", "eslint:recommended", "prettier"],
     plugins: ["prettier"],
     rules: {
       "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-      "vue/no-use-v-if-with-v-for": "off",
+      "vue/no-use-v-if-with-v-for": "off"
     },
     globals: {
-      _: true,
-    },
+      _: true
+    }
   };
   ```
 
@@ -351,11 +351,11 @@ function useDefaultES6(a = 1, b = 2, c = 3) {
 function makeIterator(array) {
   var nextIndex = 0;
   return {
-    next: function() {
+    next: function () {
       return nextIndex < array.length
         ? { value: array[nextIndex++], done: false }
         : { done: true };
-    },
+    }
   };
 }
 const iter = makeIterator([1, 2, 3]);
@@ -435,3 +435,5 @@ import Test from "componrnts/Test";
 - react context api 포스팅
 - 미수금 결제일시 로직 수정
 - 타입스크립트..
+
+<Disqus />

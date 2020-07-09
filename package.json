@@ -16,11 +16,5 @@
   "bugs": {
     "url": "https://github.com/Kyounghwan01/blog/issues"
   },
-  "homepage": "https://github.com/Kyounghwan01/blog#readme",
-  "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1"
-  },
-  "dependencies": {
-    "vuepress-plugin-sitemap": "^2.3.1"
-  }
+  "homepage": "https://github.com/Kyounghwan01/blog#readme"
 }

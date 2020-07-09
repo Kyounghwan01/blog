@@ -391,3 +391,5 @@ const onDecrease = () => {
 - useState는 컴포넌트 내부에 정의하고 state 변동이 이루어 졌다.
 - 다른 방법으로 state를 변경할 수 있는데, useReducer이다.
 - 이 훅은, 컴포넌트 바깥에서 작성이 가능하고, 다른파일에 작성후 불러와서 사용할 수있다
+
+<Disqus />

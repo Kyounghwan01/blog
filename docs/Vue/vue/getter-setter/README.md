@@ -52,3 +52,5 @@ export default {
 ```
 
 위 처럼 날짜 전체 값이 들어오지만 핸들링 할 값은 시, 분 만 가질때, `computed`로 시, 분만 가져오고, setter로 바뀐 시, 분을 `computed`에 쓰인 데이터로 바꾸어주면 된다.
+
+<Disqus />

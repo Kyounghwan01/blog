@@ -108,3 +108,5 @@ function Success({ location }) {
 ## 결론
 
 > a 태그 쓰지말고 Link 쓰자!
+
+<Disqus />

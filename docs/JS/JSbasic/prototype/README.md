@@ -175,3 +175,5 @@ obj.__proto__ === Object.prototype; //true;
 obj.__proto__.hoho = 123;
 Object.prototype.hoho; //123;
 ```
+
+<Disqus />

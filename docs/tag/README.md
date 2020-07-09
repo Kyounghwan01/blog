@@ -1,3 +1,4 @@
 # Tag
 
 <TagLinks />
+<Disqus />

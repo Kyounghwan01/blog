@@ -63,9 +63,9 @@ console.log(a); //1 외부에있는 a는 함수 내부에 있는 a=1을 찾을 �
 2. 즉시실행함수 : 외부(다른 함수, 사용자, 파일)에서 함수 및 변수를 못 바꾸도록 보호한다.
 
    ```js
-   (function() {})(); //함수 선언 및 실행 (function(){}) : 함수 () : 실행
+   (function () {})(); //함수 선언 및 실행 (function(){}) : 함수 () : 실행
 
-   (function() {
+   (function () {
      var a = 1;
      function foo() {
        var b = 2;
@@ -126,14 +126,14 @@ console.log(a); //1 외부에있는 a는 함수 내부에 있는 a=1을 찾을 �
    <script>
      var a = aa;
      console.log("we are" + a);
-     setTimeout(function() {
+     setTimeout(function () {
        console.log("we are" + a);
      }, 1000);
    </script>
    <script>
      var a = aaaaa;
      console.log("we are" + a);
-     setTimeout(function() {
+     setTimeout(function () {
        console.log("we are" + a);
      }, 1000);
    </script>
@@ -200,7 +200,7 @@ Event Loop 공부할 것!
 ```js
 //본인이 속한 스코프 내의 최상단으로 호이스팅된다.
 console.log(a); //error
-(function() {
+(function () {
   console.log(a); //undefined - 전처리 과정의 예
   var a = 1;
   console.log(a); //1
@@ -229,7 +229,7 @@ function foo() {
 //d 값은 undefined임으로
 d(); //error
 
-var d = function() {
+var d = function () {
   console.log("awdawd");
 };
 
@@ -250,3 +250,5 @@ d(); //awdawd
       //둘중 하나만 쓰세요
       ```
 ````
+
+<Disqus />

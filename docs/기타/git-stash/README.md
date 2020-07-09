@@ -38,3 +38,5 @@ git stash drop stash@{n}
 // stash 모두 지우기
 git stash clear
 ```
+
+<Disqus />

@@ -89,10 +89,10 @@ foo 함수 실행을 마치고 호출 스택이 비워지면 현재 실행중인
 setTimeout 뿐만 아니라 브라우저의 다른 비동기 함수들(addEventListener, XMLHttpRequest)이나 node.js들 모든 비동기 방식의 api들은 이벤트 루프를 통해 콜백 함수를 실행한다
 
 ```js
-$(".btn").click(function() {
+$(".btn").click(function () {
   // (A)
   try {
-    $.getJSON("/api/members", function(res) {
+    $.getJSON("/api/members", function (res) {
       // (B)
       // 에러 발생 코드
     });
@@ -106,9 +106,9 @@ $(".btn").click(function() {
 이를 해결해기 위해 콜백 B의 내부에서 try-catch를 따로 실행한다.
 
 ```js
-$("btn").click(function() {
+$("btn").click(function () {
   //(A)
-  $.getJSON("/api/members", function(res) {
+  $.getJSON("/api/members", function (res) {
     try {
       //에러 발생 코드
     } catch (e) {
@@ -121,7 +121,7 @@ $("btn").click(function() {
 ## setTimeout(fn,0)
 
 ```js
-setTimeout(function() {
+setTimeout(function () {
   console.log("A");
 }, 0);
 console.log("B"); // B -> A
@@ -132,7 +132,7 @@ console.log("B"); // B -> A
 클릭이벤트 같은 랜더링 엔진의 태스크는 대부분 브라우저에서 js 엔진과 동일한 단일 태스크 큐를 통해 관리된다 그로 인해 가끔 문제가 발생하는 데 다음 코드를 보자
 
 ```js
-$(".btn").click(function() {
+$(".btn").click(function () {
   showWaitingMessage();
   longTakingProcess();
   hideWaitingMessage();
@@ -145,9 +145,9 @@ $(".btn").click(function() {
 이를 해결하기 위해 setTimeout함수를 응용한다.
 
 ```js
-$(".btn").click(function() {
+$(".btn").click(function () {
   showWaitingMessage();
-  setTimeout(function() {
+  setTimeout(function () {
     longTakingProcess();
     hideWaitingMessage();
     showResult();
@@ -162,16 +162,16 @@ $(".btn").click(function() {
 ## 프라미스와 이벤트 루프
 
 ```js
-setTimeout(function() {
+setTimeout(function () {
   // (A)
   console.log("A");
 }, 0);
 Promise.resolve()
-  .then(function() {
+  .then(function () {
     // (B)
     console.log("B");
   })
-  .then(function() {
+  .then(function () {
     // (C)
     console.log("C");
   });
@@ -183,3 +183,5 @@ Promise.resolve()
 마이크로 태스크<br>
 말그대로 일반 태스크보다 더 높은 우선순위를 갖는 태스크라고 할 수 있다. 즉, 태스크 큐에 대기중인 태스크 가 있더라도 마이크로 태스크가 먼저 실행된다.<br> 위 예제를 좀더 살펴보면,<br>
 `setTimeout()` 함수는 콜백 A를 태스크 큐에 추가하고 프라미스의 `.then()`메소드는 콜백 B를 마이크로 태스크 큐에 추가한다. 위 코드의 실행이 끝나 태스크 이벤트 루프는 태스크 큐보다 마이크로 태스크 큐를 확인하고 B를 콜스택으로 가져온다. 그 이후 과정을 위와 동일 하다.
+
+<Disqus />

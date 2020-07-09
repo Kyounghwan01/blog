@@ -62,8 +62,8 @@ class CommentListContainer extends React.Component {
 
   componentDidMount() {
     fetch("/my-comments.json")
-      .then((res) => res.json())
-      .then((comments) => this.setState({ comments }));
+      .then(res => res.json())
+      .then(comments => this.setState({ comments }));
   }
 
   render() {
@@ -78,7 +78,7 @@ class CommentListContainer extends React.Component {
 // CommentListPresenter.js
 import React from "react";
 
-const Commentlist = (comments) => (
+const Commentlist = comments => (
   <ul>
     {comments.map(({ body, author }) => (
       <li>
@@ -88,3 +88,5 @@ const Commentlist = (comments) => (
   </ul>
 );
 ```
+
+<Disqus />

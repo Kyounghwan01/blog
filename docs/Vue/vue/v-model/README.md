@@ -80,3 +80,5 @@ export default {
 위 예시를 보면 이러한 결론이 나옵니다.
 
 #### v-model = :value + @input
+
+<Disqus />
