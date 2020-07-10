@@ -1066,7 +1066,7 @@
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-google-analytics/-/plugin-google-analytics-1.5.2.tgz#45486a44125a9bba0a5f38ab6e59134bd83c870a"
   integrity sha512-MrM/Zs0VbOclL0xKXS/Gi017Kl42oiWHUDr2Uz5VCQjqGB1FyAsQdGLtloE1Y6rtTuDXektsss9Bx9uX0f1amw==
 
-"@vuepress/plugin-last-updated@1.5.2":
+"@vuepress/plugin-last-updated@1.5.2", "@vuepress/plugin-last-updated@^1.5.2":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.5.2.tgz#daa2250edb40700e1fa0942561057b6aa00e4103"
   integrity sha512-wTq1reNSpGTSPJcnUHFfg+qpZBg88yXv3fZNWnEGSdiuUnbF4bFMTUr9tSaWHzMgtajvzY2B8VnTmrhy2ABfsA==

@@ -28,28 +28,29 @@ module.exports = {
           { text: "It's my seat - web", link: "https://www.knowgari.com/" },
           {
             text: "마타드림 앱 깃헙 주소",
-            link: "https://github.com/Kyounghwan01/mata-dream-app"
+            link: "https://github.com/Kyounghwan01/mata-dream-app",
           },
           {
             text: "매출분석 - web(vue + aws-lambda)",
-            link: "https://sales-statistics.netlify.com/"
-          }
-        ]
-      }
+            link: "https://sales-statistics.netlify.com/",
+          },
+        ],
+      },
     ],
-    sidebar: createSidebar()
+    sidebar: createSidebar(),
   },
   base: "/blog/",
   plugins: [
     [
       "@vuepress/google-analytics",
       {
-        ga: "UA-172169202-1" // UA-00000000-0
-      }
+        ga: "UA-172169202-1", // UA-00000000-0
+      },
     ],
     ["@vuepress/back-to-top"],
-    ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }]
-  ]
+    ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }],
+    ["@vuepress/last-updated"],
+  ],
   // markdown: {
   //   lineNumbers: true
   // }
