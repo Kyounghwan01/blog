@@ -46,7 +46,7 @@ devDependencies에 vuepress가 설치되어 있는 지 꼭 확인합니다.<br>
 ```js
 // .vuepress/config.js
 module.export = {
-  plugins: ["@vuepress/back-to-top"],
+  plugins: ["@vuepress/back-to-top"]
 };
 ```
 
@@ -109,5 +109,34 @@ plugins: [
 
 - hostname에 블로그 사이트 url을 넣어주시면 됩니다.
 - 배포 이후, 구글 서치 콘솔 가셔서 sitemap을 `https://kyounghwan01.github.io/blog/sitemap.xml`로 등록하시면 됩니다.
+
+## last-updated
+
+추가시 게시글의 맨 밑에 게시글의 마지막 수정일이 기재됩니다.
+
+1. 설치
+
+- yarn add -D @vuepress/plugin-last-updated
+
+2. 사용
+
+```js
+// .vuepress/config.js
+module.export = {
+plugins: [
+    [
+      "@vuepress/google-analytics",
+      {
+        ga: // UA-00000000-0
+      }
+    ],
+    ["@vuepress/back-to-top"],
+    ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }],
+    ["@vuepress/last-updated"],
+  ]
+}
+```
+
+<TagLinks />
 
 <Disqus />

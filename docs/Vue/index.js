@@ -20,8 +20,8 @@ module.exports = {
         "/Vue/vue/v-model/",
         "/Vue/vue/focus-blur/",
         "/Vue/vue/infinite-scroll/",
-        "/Vue/vue/lazy-loading/",
-      ],
+        "/Vue/vue/lazy-loading/"
+      ]
     },
     {
       collapsable: true,
@@ -29,21 +29,22 @@ module.exports = {
       children: [
         "/Vue/vuex/what-is-vuex/",
         "/Vue/vuex/start-vuex/",
-        "/Vue/vuex/vuex-persistedstate/",
-      ],
+        "/Vue/vuex/vuex-persistedstate/"
+      ]
     },
     {
       collapsable: true,
       title: "vue-router",
-      children: ["/Vue/vue-router/testFile/"],
+      children: ["/Vue/vue-router/testFile/"]
     },
     {
       collapsable: true,
       title: "vue-pwa",
-      children: ["/Vue/vue-pwa/pwa개념/"],
+      children: ["/Vue/vue-pwa/pwa개념/"]
     },
     "vuepress/",
     "vuepress-plugin/",
     "vuepress-public/",
-  ],
+    "vuepress-content/"
+  ]
 };

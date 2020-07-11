@@ -1,4 +1,4 @@
 # Tag
 
-<TagLinks />
+<TagList />
 <Disqus />

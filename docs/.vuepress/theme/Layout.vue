@@ -1,6 +1,5 @@
 <template>
   <ParentLayout>
-    test {{ this.$frontmatter }}
     <Disqus slot="page-bottom" class="content" />
   </ParentLayout>
 </template>

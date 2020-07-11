@@ -28,3 +28,5 @@ vuepress내부에 아무리 html또는 img를 첨부해도 vuepress build 명령
 mkdir .vuepress/public
 // 이미지를 이동합니다
 ```
+
+<Disqus />

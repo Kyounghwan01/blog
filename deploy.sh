@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: Disqus 댓글 css 수정"
+git commit -m "feat: taglisks, vuepress 댓글 추가"
 git push origin master
 
 # build
