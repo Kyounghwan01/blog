@@ -88,7 +88,7 @@ class Wizard {
     this.mana = mana;
     this.armor = armor;
   }
-  attack = function () {
+  attack = function() {
     console.log("파이어볼");
   };
 }
@@ -103,5 +103,74 @@ x.attack();
 - class의 내부의 변수는 `this`로 접근 가능하다.
 - react의 class component와 비슷하게 메소드는 constructor의 바깥에 정의한다.
 - 만든 클래스 사용은 `new className`으로 사용한다
+
+## set 사용법
+
+- set: 중복되지 않는 데이터를 저장하는 데이터 구조
+- set 객체안의 데이터는 중복을 허용하지 않는다. (객체, 배열은 주소값)
+
+```js
+const list = [1, 2, 2, 3, 4, 5, 6, 6, 6, 6];
+
+// Set 생성
+let setVal = new Set(list);
+
+setVal.add({ id: 1 });
+
+setVal.delete(7);
+
+console.log(setVal.has(8));
+```
+
+## 시간복잡도
+
+- 문제 해결 시간이 일정할 때 o(1) - array의 개수가 커져도 메소드의 작동시간이 일정하면 o(1)
+- arr[i] -> arr의 개수가 아무리 커도 index에 접근방법은 1개이므로 o(1)
+- arr.push(5) -> 배열의 가장 끝에 푸시의 매개변수를 넣는 것이므로, 그던, 작던 끝에만 추가하는 행동만 함으로 o(1)
+- arr.slice() -> slice의 매개변수만큼 잘라서 새로운 배열을 만드는 메소드 -> 시간복잡도는 가장 최악을 대상으로 함으로 o(n)
+- arr.pop() -> 배열의 가장 끝 원소를 제거 o(1)
+- arr.includes(5) -> 배열의 매개변수 값을 찾아서 true,false -> 배열의 원소만큼 찾아서 매개변수를 비교함으로 o(n)
+
+## Factory 함수
+
+- 함수가 함수를 리턴하는 함수를 Factory 함수라 부른다
+
+```js
+function one(n) {
+  function two(x) {
+    console.log(x);
+    return Math.pow(x, n);
+  }
+  return two;
+}
+
+const a = function(x) {
+  return Math.pow(x, 2);
+};
+const b = one(3);
+const c = one(4);
+
+console.log(a(10));
+```
+
+## 중복되는 요소 카운팅 후 가장 많은 요소 찾기
+
+```js
+function test(str) {
+  let newStr = str.split(" ");
+  let result = {};
+  for (let i = 0; i < newStr.length; i++) {
+    let val = newStr[i];
+    result[val] = result[val] === undefined ? 1 : result[val] + 1;
+  }
+  const key = Object.keys(result).reduce(function(a, b) {
+    return result[a] > result[b] ? a : b;
+  });
+
+  return `${key} ${result[key]}`;
+}
+
+console.log(test("원범 원범 혜원 혜원 혜원 혜원 유진 유진 유진 유진 유진"));
+```
 
 <Disqus />
