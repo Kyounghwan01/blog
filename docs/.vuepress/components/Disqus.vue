@@ -7,11 +7,11 @@ export default {
   mounted() {
     console.log("Hello!");
     try {
-      let disqus_config = function () {
+      let disqus_config = function() {
         this.page.url = location.origin;
         this.page.identifier = location.pathname;
       };
-      (function () {
+      (function() {
         let d = document,
           s = d.createElement("script");
         s.src = "https://https-kyounghwan01-github-io-blog.disqus.com/embed.js";

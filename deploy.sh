@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 코테 준비 수정"
+git commit -m "fix: Disqus 댓글 css 수정"
 git push origin master
 
 # build
