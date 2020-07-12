@@ -104,3 +104,7 @@ module.exports = {
 
 - 위와 같이 추가하면 `<Disqus />` 가 없는 README.md에도 자동으로 댓글기능이 활성화됩니다.
 - 단, READMD.md에 `<Disqus />`가 있으면, README에 있는 `<Disqus />` 컴포넌트가 우선 활성화 됩니다.
+
+<TagLinks />
+
+<Disqus />

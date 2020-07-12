@@ -39,12 +39,13 @@ module.exports = {
     },
     {
       collapsable: true,
-      title: "vue-pwa",
-      children: ["/Vue/vue-pwa/pwa개념/"]
-    },
-    "vuepress/",
-    "vuepress-plugin/",
-    "vuepress-public/",
-    "vuepress-content/"
+      title: "vuepress",
+      children: [
+        "/Vue/vuepress/vuepress-start/",
+        "/Vue/vuepress/vuepress-plugin/",
+        "/Vue/vuepress/vuepress-public/",
+        "/Vue/vuepress/vuepress-content/"
+      ]
+    }
   ]
 };

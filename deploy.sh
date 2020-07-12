@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: taglisks, vuepress 댓글 추가"
+git commit -m "fix: vuepress 폴더 구조 수정"
 git push origin master
 
 # build

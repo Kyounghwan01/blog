@@ -118,7 +118,7 @@ function getSidebarArr() {
   var sidebarArr = [];
   var HomeFilelist = [];
   var filelist = fs.readdirSync(docsPath);
-  filelist.forEach(function (file) {
+  filelist.forEach(function(file) {
     if (file === ".vuepress") return;
     var stat = fs.lstatSync(docsPath + "/" + file);
     if (stat.isDirectory()) {
@@ -141,7 +141,7 @@ function makeSidebarObject(folder, mdfileList) {
   mdfileList = aheadOfReadme(mdfileList);
   var tmpMdfileList = [];
   // remove .md, add Path
-  mdfileList.forEach(function (mdfile) {
+  mdfileList.forEach(function(mdfile) {
     if (mdfile.substr(-3) === ".md") {
       mdfile = mdfile.slice(0, -3) === "README" ? "" : mdfile.slice(0, -3);
       tmpMdfileList.push(path + mdfile);
@@ -177,5 +177,7 @@ function aheadOfReadme(arr) {
 ## 페이지 구성
 
 --- 작업중
+
+<TagLinks />
 
 <Disqus />

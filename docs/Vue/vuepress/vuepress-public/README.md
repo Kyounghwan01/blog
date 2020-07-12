@@ -29,4 +29,8 @@ mkdir .vuepress/public
 // 이미지를 이동합니다
 ```
 
+- 이후 `vuepress build`를 시키면 `.vuepress/public`에 올린 이미지 `/logo.png`가 위치한 것을 보실 수 있습니다.
+
+<TagLinks />
+
 <Disqus />
