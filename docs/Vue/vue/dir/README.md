@@ -46,9 +46,9 @@ module.exports = {
   configureWebpack: {
     // Set up all the aliases.
     resolve: {
-      alias: require("./aliases.config").webpack
-    }
-  }
+      alias: require("./aliases.config").webpack,
+    },
+  },
 };
 //참고 : https://webpack.js.org/configuration/resolve/
 ```
@@ -62,13 +62,13 @@ const path = require("path");
 
 const aliases = {
   "@": "src",
-  "@utils": "src/utils"
+  "@utils": "src/utils",
   //'@api': 'src/api',
   //'@store': 'src/store', 확장 가능
 };
 
 module.exports = {
-  webpack: {}
+  webpack: {},
 };
 
 for (const alias in aliases) {
@@ -109,7 +109,7 @@ Vue.prototype.$utils = utils;
 //Vue.prototype.$store = store;
 
 new Vue({
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
 ```
 
@@ -128,7 +128,7 @@ const requireFunction = require.context(
   /^((?!index).)*\.js$/ // index.js를 제외한 모든 js 파일
 );
 
-requireFunction.keys().forEach(filename => {
+requireFunction.keys().forEach((filename) => {
   const functionDefinition = requireFunction(filename);
   const functionPath = filename
     .replace(/^\.\//, "") // 시작부분 "./" 제거
@@ -182,5 +182,7 @@ export default {
 
 - 위 코드들을 따라 하시면 api, store 등등 여러 곳에서 자주 쓰이는 모듈들을 손쉽게 불러올 수 있습니다.
 - 웹팩에 대해 좀 더 알아보는 시간이 되었던것 같습니다.
+
+<TagLinks />
 
 <Disqus />

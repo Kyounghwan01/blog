@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: vuepress tag list, links 추가"
+git commit -m "feat: 전체 글 tagLinks 추가"
 git push origin master
 
 # build

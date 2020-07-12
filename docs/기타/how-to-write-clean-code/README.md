@@ -13,7 +13,7 @@
 ```js
 const ONE_DAY_TIME = 1000 * 60 * 60 * 24;
 
-setTimeout(function () {
+setTimeout(function() {
   alert("Hello");
 }, ONE_DAY_TIME);
 ```
@@ -51,5 +51,7 @@ buyProduct(params, 1, "껌");
 ## 짧은 변수명이나 축약어는 피해라
 
 - `u`, `i` 같은 나만 알아보는 변수명은 쓰지마라
+
+<TagLinks />
 
 <Disqus />

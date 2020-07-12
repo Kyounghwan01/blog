@@ -132,4 +132,6 @@ for i in level:
       print(i, "*", j, "=", i*j)
 ```
 
+<TagLinks />
+
 <Disqus />

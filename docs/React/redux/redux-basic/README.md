@@ -73,7 +73,7 @@ import counter from "./counter";
 // 여러 reducer를 사용하는 경우 reducer를 하나로 묶어주는 메소드입니다.
 // store에 저장되는 리듀서는 오직 1개입니다.
 const rootReducer = combineReducers({
-  counter
+  counter,
 });
 
 export default rootReducer;
@@ -88,10 +88,10 @@ export default rootReducer;
 // 액션이름 앞에 파일 이름을 넣습니다.
 export const INCRESE = "COUNT/INCRESE";
 
-export const increseCount = count => ({ type: INCRESE, count });
+export const increseCount = (count) => ({ type: INCRESE, count });
 
 const initalState = {
-  count: 0
+  count: 0,
 };
 
 const counter = (state = initalState, action) => {
@@ -99,7 +99,7 @@ const counter = (state = initalState, action) => {
     case INCRESE:
       return {
         ...state,
-        count: action.count
+        count: action.count,
       };
 
     // default를 쓰지 않으면 맨처음 state에 count값이 undefined가 나옵니다 꼭! default문을 넣으세요
@@ -151,7 +151,7 @@ import { increseCount } from "reducers/count";
 const dispatch = useDispatch();
 
 // store에 접근하여 state 가져오기
-const { count } = useSelector(state => state.counter);
+const { count } = useSelector((state) => state.counter);
 
 const increse = () => {
   // store에 있는 state 바꾸는 함수 실행
@@ -195,5 +195,7 @@ dispatch(setCount);
 // action이 함수면 아래처럼
 dispatch(setCount(data));
 ```
+
+<TagLinks />
 
 <Disqus />

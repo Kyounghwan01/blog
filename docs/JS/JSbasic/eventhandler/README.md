@@ -33,7 +33,7 @@ function register(node, event, handler) {
     node.attachEvent("on" + event, handler);
   }
 }
-register(button, "click", function () {
+register(button, "click", function() {
   print("클릭(2)");
 });
 ```
@@ -41,7 +41,7 @@ register(button, "click", function () {
 ## 이벤트 객체
 
 ```js
-register(document.body, "click", function (event) {
+register(document.body, "click", function(event) {
   event = event || window.event;
   console.log(event.clientX + "," + event.clientY);
 });
@@ -57,7 +57,7 @@ register(document.body, "click", function (event) {
 - 마우스가 어느 노드로 갔다 : mouseout
 
 ```js
-reg(myParagraph, "mouseover", function (event) {
+reg(myParagraph, "mouseover", function(event) {
   event = event || window.event;
   if (event.target === myParagraph) {
     console.log("단락에 들어감");
@@ -72,7 +72,7 @@ reg(myParagraph, "mouseover", function (event) {
 - 입력된 문자 : keypress
 
 ```js
-reg(document.body, "keypress", function (event) {
+reg(document.body, "keypress", function(event) {
   event = event || window.event;
   var charCode = event.charCode || event.keyCode;
   if (charCode) {
@@ -89,5 +89,7 @@ reg(document.body, "keypress", function (event) {
    1. 이벤트 버블링 : stopPropagation 메소드로 중지
 2. 브라우저가 이벤트와 관련된 표준 동작을 수행하지 못하게 한다.
    1. 기본 동작 저지 : preventDefault
+
+<TagLinks />
 
 <Disqus />

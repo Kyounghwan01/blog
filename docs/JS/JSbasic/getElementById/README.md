@@ -33,7 +33,7 @@ js
 
 ```js
 const mode = document.getElementById("jsmode");
-mode.addEventListener("click", function () {
+mode.addEventListener("click", function() {
   if (mode.innerText == "바껴라") {
     mode.innerText = "??";
   } else {
@@ -82,17 +82,17 @@ js
 
 ```javascript
 wbtn = document.getElementById("white_btn");
-wbtn.addEventListener("click", function () {
+wbtn.addEventListener("click", function() {
   document.getElementById("target").className = "white";
 });
 
 bbtn = document.getElementById("black_btn");
-bbtn.addEventListener("click", function () {
+bbtn.addEventListener("click", function() {
   document.getElementById("target").className = "black";
 });
 
 borderbtn = document.getElementById("border_btn");
-borderbtn.addEventListener("click", function () {
+borderbtn.addEventListener("click", function() {
   document.getElementById("target").classList.add("border");
 });
 ```
@@ -106,5 +106,7 @@ bbtn도 위와 동일합니다.
 마지막 border는 클래스를 추가할 경우 사용하는 방법입니다.
 
 id를 가져와서 바디에 적용하는 방식은 동일하고, 추가된 className를 바꾸지 않고 한번더 추가 할 경우<br> **classList.add("클래스 이름");** 으로 추가 할 수 있습니다.
+
+<TagLinks />
 
 <Disqus />

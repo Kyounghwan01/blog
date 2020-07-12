@@ -5,7 +5,7 @@
 ```js
 var num = [100, 200, 300, 400, 500];
 // 400, 500 삭제하기
-const newNum = num.filter(el => el !== 500 && el !== 400);
+const newNum = num.filter((el) => el !== 500 && el !== 400);
 ```
 
 ## splice 사용법
@@ -37,7 +37,7 @@ arr.splice(target, 0, 10000);
 ```js
 var d = {
   test: 120,
-  test: 1000
+  test: 1000,
 };
 
 // 점 접근
@@ -172,5 +172,7 @@ function test(str) {
 
 console.log(test("원범 원범 혜원 혜원 혜원 혜원 유진 유진 유진 유진 유진"));
 ```
+
+<TagLinks />
 
 <Disqus />

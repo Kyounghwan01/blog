@@ -66,4 +66,6 @@ const routes = [
 
 - [Vue-router](https://router.vuejs.org/guide/advanced/lazy-loading.html)
 
+<TagLinks />
+
 <Disqus />

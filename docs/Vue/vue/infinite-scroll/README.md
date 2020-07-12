@@ -37,7 +37,7 @@ export default {
   computed: {
     notifications() {
       return this.$store.getters["notification/notifications"];
-    }
+    },
   },
 
   methods: {
@@ -54,7 +54,7 @@ export default {
       if (this.notifications.length < this.total) {
         const params = {
           limit: this.params.limit,
-          page: this.params.page + 1
+          page: this.params.page + 1,
         };
         this.$store.commit(
           "notification/SET_PARAMS",
@@ -78,8 +78,8 @@ export default {
     // 처음 렌더링시 이전 알림 불러오기 or reset=true시 새로고침, false시 이전 목록에 추가
     dispatchGetNotifications(reset) {
       this.$store.dispatch("notification/getNotifications", reset);
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
@@ -94,5 +94,7 @@ export default {
 - 추가 api 호출할 지점을 `isAtTheBottom`로 잡고 스크롤이 내려오면 api를 새로 호출해 이전에 있던 배열에 추가합니다.
 - 새로고침 클릭시 ref 잡았던 지점의 top으로 스크롤을 옮깁니다.
 - store 부분은 api 호출받아서 데이터 넣고 삭제하는 기본적인 부분이라 첨부하지 않았습니다.
+
+<TagLinks />
 
 <Disqus />

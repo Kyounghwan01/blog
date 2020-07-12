@@ -176,4 +176,6 @@ obj.__proto__.hoho = 123;
 Object.prototype.hoho; //123;
 ```
 
+<TagLinks />
+
 <Disqus />

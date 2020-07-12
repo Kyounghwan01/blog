@@ -25,9 +25,9 @@ tags: ["vue"]
 export default {
   data() {
     return {
-      checkBox: false
+      checkBox: false,
     };
-  }
+  },
 };
 </script>
 ```
@@ -49,9 +49,9 @@ export default {
 export default {
   data() {
     return {
-      text: ""
+      text: "",
     };
-  }
+  },
 };
 </script>
 ```
@@ -66,13 +66,13 @@ export default {
 <script>
 export default {
   props: {
-    value: String
+    value: String,
   },
   data() {
     return {
-      text: ""
+      text: "",
     };
-  }
+  },
 };
 </script>
 ```
@@ -80,5 +80,7 @@ export default {
 위 예시를 보면 이러한 결론이 나옵니다.
 
 #### v-model = :value + @input
+
+<TagLinks />
 
 <Disqus />

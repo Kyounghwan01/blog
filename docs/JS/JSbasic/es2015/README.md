@@ -90,7 +90,7 @@ console.log(i); // i is not defined
 // Example #4
 
 for (let i = 1; i < 11; i++) {
-  setTimeout(function () {
+  setTimeout(function() {
     console.log(i);
   }, i * 1000);
 }
@@ -99,17 +99,17 @@ for (let i = 1; i < 11; i++) {
 {
   let jason = {
     codename: "blackbriar",
-    kill: function (target) {
+    kill: function(target) {
       //var target = operator;
       target = null;
-    }
+    },
   };
 
   let operator = {
     codename: "onion",
-    answer: function () {
+    answer: function() {
       alert("run away!");
-    }
+    },
   };
   //객체이므로 위치값을 주는 것 reference;
   //값 자체가 바뀌지 않는다.
@@ -167,7 +167,7 @@ foo = 3; // 못바꾼다
 
 // Example #2
 const obj = {
-  arr: [1, 2, 3]
+  arr: [1, 2, 3],
 };
 
 obj = []; // error
@@ -180,27 +180,27 @@ obj.arr = null; //null
   const bagooni = {
     items: ["gold", "silver", "bronze"],
     owner: "ken huh",
-    address: 11101
+    address: 11101,
   };
 
   const dodook = {
     criminalRecord: null,
     careerLevel: 12,
     storage: {},
-    steal: function (target) {
+    steal: function(target) {
       this.storage[target.owner] = target.items;
       this.careerLevel++;
       target.items = null;
-    }
+    },
   };
 
   dodook.steal(bagooni);
 
   const police = {
-    catchDodook: function () {
+    catchDodook: function() {
       dodook.criminalRecord = dodook.criminalRecord || 1;
       dodook = null;
-    }
+    },
   };
 
   police.catchDodook();
@@ -208,14 +208,14 @@ obj.arr = null; //null
 
 const prison = {
   cells: [],
-  addPrisoner: function (name) {
+  addPrisoner: function(name) {
     const prisoner = {
       name: name,
-      attitude: 0
+      attitude: 0,
     };
 
     this.cells.push(prisoner);
-  }
+  },
 };
 
 const saminjo = ["kjm", "kks", "by"];
@@ -323,16 +323,16 @@ foo(...[1, 2, 3]); // 6
 
 const codingInstitutes = [
   { name: "FF", grade: -10 },
-  { name: "VC", grade: 10 }
+  { name: "VC", grade: 10 },
 ];
 
 const mommy = {
   money: 100,
-  decide: function (...choices) {
+  decide: function(...choices) {
     if (this.money > 100) {
       const decision = null;
 
-      choices.forEach(function (choice) {
+      choices.forEach(function(choice) {
         if (decision && decision.grade < choice.grade) {
           decision = choice;
         } else if (!decision) {
@@ -344,16 +344,16 @@ const mommy = {
     } else {
       return null;
     }
-  }
+  },
 };
 
 const studentA = {
   name: "kyuljungjangae",
   mommy: mommy,
-  decide: function (...institutes) {
+  decide: function(...institutes) {
     const final = this.mommy.decide(...institutes);
     return final;
-  }
+  },
 };
 
 let result = studentA.decide(...codingInstitutes);
@@ -365,12 +365,12 @@ result = null; // ?
 // Hmm..
 var agentA = {
   codeName: "oi",
-  powerLevel: -999
+  powerLevel: -999,
 };
 
 var agentAA = {
   ...agentA,
-  category: "chaeso"
+  category: "chaeso",
 };
 
 console.log(agentAA);
@@ -393,7 +393,7 @@ console.log(agentAA);
 var address = {
   city: "new york",
   state: "NY",
-  zipcode: "10003"
+  zipcode: "10003",
 };
 
 var { city, state } = address;
@@ -405,7 +405,7 @@ console.log(city + ", " + state);
 var address = {
   city: "new york",
   state: "NY",
-  zipcode: "10003"
+  zipcode: "10003",
 };
 var city = "seoul";
 var { city: c, state: s } = address;
@@ -416,7 +416,7 @@ console.log(c + ", " + city + ", " + s);
 var address = {
   city: "new york",
   state: "NY",
-  zipcode: "10003"
+  zipcode: "10003",
 };
 //매개변수를 비구조화
 function logAddress({ city, state }) {
@@ -430,11 +430,11 @@ const person = {
   name: "Lee",
   address: {
     zipCode: "03068",
-    city: "Seoul"
-  }
+    city: "Seoul",
+  },
 };
 const {
-  address: { city }
+  address: { city },
 } = person;
 console.log(city); // 'Seoul'
 
@@ -589,7 +589,7 @@ console.log(`my name is ${s}`);
 // => fat arrow
 // 표현식으로만 쓴다 : 할당이 되어야만 사용한다.
 
-const fn = a => {
+const fn = (a) => {
   console.log(a);
 };
 
@@ -597,7 +597,7 @@ fn();
 
 //인자가 하나일 경우 소괄호 안써도 된다.
 
-const fn = a => {
+const fn = (a) => {
   console.log(a);
 };
 
@@ -619,7 +619,7 @@ const obj = {
   logName: () => {
     console.log(this.name);
     console.log(arguments);
-  }
+  },
 };
 
 obj.logName(1, 2, 3);
@@ -673,5 +673,7 @@ defaultParams(1, 2, 3); // [1, 2, 3]
 defaultParams(1, 2); // [1, 2, 3]
 defaultParams(1, undefined, 4); // [1, 2, 4]
 ```
+
+<TagLinks />
 
 <Disqus />

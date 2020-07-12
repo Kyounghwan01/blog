@@ -24,23 +24,23 @@ import React, { useState } from "react";
 function InputSample() {
   const [inputs, setInputs] = useState({
     name: "",
-    nickname: ""
+    nickname: "",
   });
 
   const { name, nickname } = inputs; // 비구조화 할당을 통해 값 추출
 
-  const onChange = e => {
+  const onChange = (e) => {
     const { value, name } = e.target; // 우선 e.target 에서 name 과 value 를 추출
     setInputs({
       ...inputs, // 기존의 input 객체를 복사한 뒤
-      [name]: value // name 키를 가진 값을 value 로 설정
+      [name]: value, // name 키를 가진 값을 value 로 설정
     });
   };
 
   const onReset = () => {
     setInputs({
       name: "",
-      nickname: ""
+      nickname: "",
     });
   };
 
@@ -132,13 +132,13 @@ function UserList() {
     {
       id: 2,
       username: "tester",
-      email: "tester@example.com"
+      email: "tester@example.com",
     },
     {
       id: 3,
       username: "liz",
-      email: "liz@example.com"
-    }
+      email: "liz@example.com",
+    },
   ];
 
   return (
@@ -181,9 +181,9 @@ setUsers(state.array.concat(user));
 - 불변성을 지키면서, 특정 원하는 배열 요소를 제거하기에는 `filter` 가 가장 편하다
 
 ```jsx
-const onRemove = id => {
+const onRemove = (id) => {
   // user.id 가 id 인 것을 제거
-  setUsers(users.filter(user => user.id !== id));
+  setUsers(users.filter((user) => user.id !== id));
 };
 ```
 
@@ -193,9 +193,9 @@ const onRemove = id => {
 - 전체 값을 돌면서 원하는 값이 나오면 바꾸고 지나가는 형식
 
 ```jsx
-const onToggle = id => {
+const onToggle = (id) => {
   setUsers(
-    users.map(user =>
+    users.map((user) =>
       user.id === id ? { ...user, active: !user.active } : user
     )
   );
@@ -214,7 +214,7 @@ const onToggle = id => {
 function UserList({ users, onRemove, onToggle }) {
   return (
     <div>
-      {users.map(user => (
+      {users.map((user) => (
         <User
           user={user}
           key={user.id}
@@ -235,10 +235,9 @@ function User({ user, onRemove, onToggle }) {
       <b
         style={{
           cursor: "pointer",
-          color: user.active ? "green" : "black"
+          color: user.active ? "green" : "black",
         }}
-        onClick={() => onToggle(user.id)}
-      >
+        onClick={() => onToggle(user.id)}>
         {user.username}
       </b>
       &nbsp;
@@ -308,15 +307,15 @@ const result = useMemo(() => sum(stringList), [stringList, sum]);
 - 한번 만든 함수를 필요할때만 새로만들고 재사용하는 것 중요함
 
 ```jsx
-const onRemove = id => {
-  setUsers(users.filter(user => user.id !== id));
+const onRemove = (id) => {
+  setUsers(users.filter((user) => user.id !== id));
 };
 
 // 위에서 아래처럼사용
 
 const onRemove = useCallback(
-  id => {
-    setUsers(users.filter(user => user.id !== id));
+  (id) => {
+    setUsers(users.filter((user) => user.id !== id));
   },
   [users]
 );
@@ -332,7 +331,7 @@ const UseCallbackExample = () => {
   const [string, setString] = useState("");
   const [stringList, setStringList] = useState([]);
 
-  const change = useCallback(e => {
+  const change = useCallback((e) => {
     setString(e.target.value);
   }, []);
 
@@ -342,7 +341,7 @@ const UseCallbackExample = () => {
     setStringList(newList);
   }, [string, stringList]);
 
-  const sum = useCallback(list => {
+  const sum = useCallback((list) => {
     console.log("문자들을 합치는 중입니다...");
     let stringSum = "";
     for (let value of list) {
@@ -375,7 +374,7 @@ const onDecrease = () => {
 };
 
 const onDecrease = () => {
-  setNumber(prevNumber => prevNumber - 1);
+  setNumber((prevNumber) => prevNumber - 1);
 };
 ```
 
@@ -391,5 +390,7 @@ const onDecrease = () => {
 - useState는 컴포넌트 내부에 정의하고 state 변동이 이루어 졌다.
 - 다른 방법으로 state를 변경할 수 있는데, useReducer이다.
 - 이 훅은, 컴포넌트 바깥에서 작성이 가능하고, 다른파일에 작성후 불러와서 사용할 수있다
+
+<TagLinks />
 
 <Disqus />

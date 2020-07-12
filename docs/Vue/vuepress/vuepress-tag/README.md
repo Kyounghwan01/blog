@@ -139,8 +139,8 @@ tags: ["VuePress", "Tags", "vue"]
           }
         }
         return tags;
-      }
-    }
+      },
+    },
   };
 </script>
 ```

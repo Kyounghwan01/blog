@@ -32,12 +32,12 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed() {
     this.list = this.list.reverse();
-  }
+  },
 };
 </script>
 ```
@@ -55,15 +55,15 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     deleteList(index) {
       //배열의 중간 요소 제거
       this.list.splice(index, 1);
-    }
-  }
+    },
+  },
 };
 </script>
 ```
@@ -112,14 +112,14 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     reversedList() {
       return this.list.reverse();
-    }
-  }
+    },
+  },
 };
 </script>
 ```
@@ -135,15 +135,15 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       //중복 이름 사용 금지
-      list: JSON.parse(this.list)
+      list: JSON.parse(this.list),
     };
-  }
+  },
 };
 </script>
 ```
@@ -152,5 +152,7 @@ export default {
 
 자식단에서 props를 활용하는 방법에 대해 알아보았습니다.<br><br>
 유념하실 부분은 **작업량이 많아지고, 많은 컴포넌트**에서 사용할 기미가 보이면 지금껏 작업한것 중지하시고 바로 **store** 작업 들어가시는 것이 마음 편할 것입니다. <br><br>그렇지 않고 몇 줄 안되는 작업이라면 **event 버스활용**하여 handler 함수를 상속받거나, 자식단에서 받은 props를 **값 복사**하여 그 값을 활용하시면 됩니다.
+
+<TagLinks />
 
 <Disqus />

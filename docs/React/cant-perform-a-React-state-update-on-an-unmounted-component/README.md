@@ -56,8 +56,8 @@ const signUp = async () => {
           title: "회원가입 완료",
           body:
             "스튜디오메이트 가입이 완료되었습니다 \n 프로필을 등록해주세요.",
-          loginData: { email: text.email, password: text.password }
-        }
+          loginData: { email: text.email, password: text.password },
+        },
       });
     }
   } catch (error) {
@@ -94,8 +94,8 @@ const signUp = async () => {
           title: "회원가입 완료",
           body:
             "스튜디오메이트 가입이 완료되었습니다 \n 프로필을 등록해주세요.",
-          loginData: { email: text.email, password: text.password }
-        }
+          loginData: { email: text.email, password: text.password },
+        },
       });
     }
   } catch (error) {
@@ -120,5 +120,7 @@ useEffect(() => {
 ```
 
 - 개인적으로 굳이 cleanup함수만을 위해 useEffect를 쓰는 건 좋아하지 않아, useEffect를 쓰지 않는 컴포넌트에서는 1번 방법을 이용합니다.
+
+<TagLinks />
 
 <Disqus />

@@ -97,4 +97,6 @@ driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 > 셀레니움을 쓰는 이유인 클릭, 스크롤, 키보드를 눌러서 하는 행위 등 크롤링에 돔 조작이 꼭 필요하지 않는 이상 쓰지 않도록 하세요.<br>
 > 더 자세한 메소드는 [셀레니움](https://www.selenium.dev/documentation/en/)공식 사이트에서 참조하세요.
 
+<TagLinks />
+
 <Disqus />

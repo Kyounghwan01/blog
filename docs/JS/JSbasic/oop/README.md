@@ -22,12 +22,12 @@ tags: ["JS"]
 ```js
 var lamp = {
   brightness: 0,
-  turnOn: function () {
+  turnOn: function() {
     return (this.brightness = 100);
   },
-  turnOff: function () {
+  turnOff: function() {
     return (this.brightness = 0);
-  }
+  },
 };
 
 console.log(lamp.turnOn());
@@ -43,18 +43,18 @@ console.log(lamp.turnOff());
 
 ```js
 //클로저를 만들어 스코프를 감싼 방법
-var lamp = (function () {
+var lamp = (function() {
   //캡슐화
   //외부 접근 불가
   var brightness = 0;
 
   return {
-    turnOn: function () {
+    turnOn: function() {
       brightness = 100;
     },
-    turnOff: function () {
+    turnOff: function() {
       brightness = 0;
-    }
+    },
   };
 })();
 //lamp는 객체가 담김
@@ -72,24 +72,24 @@ brightness에 대한 0, 100인것은 사용자가 굳이 알 필요다 없어, �
 
 ```js
 //클로저를 만들어 스코프를 감싼 방법
-var lamp = (function () {
+var lamp = (function() {
   //캡슐화
   //외부 접근 불가
   var brightness = 0;
 
   return {
-    turnOn: function () {
+    turnOn: function() {
       brightness = 100;
     },
-    turnOff: function () {
+    turnOff: function() {
       brightness = 0;
     },
-    autoOnAndOff: function () {
+    autoOnAndOff: function() {
       brightness = 100;
-      setTimeout(function () {
+      setTimeout(function() {
         brightness = 0;
       }, 5000);
-    }
+    },
   };
 })();
 //lamp는 객체가 담김
@@ -107,16 +107,16 @@ lamp.autoOnAndOff(); //사용자는 이 함수만 실행하면 되도록
 function Lamp() {
   this.brightness = 0;
 }
-Lamp.prototype.turnOn = function () {
+Lamp.prototype.turnOn = function() {
   this.brightness = 100;
 };
-Lamp.prototype.turnOff = function () {
+Lamp.prototype.turnOff = function() {
   this.brightness = 0;
 };
-Lamp.prototype.autoOnAndOff = function () {
+Lamp.prototype.autoOnAndOff = function() {
   var that = this;
   that.brightness = 100;
-  setTimeout(function () {
+  setTimeout(function() {
     that.brightness = 0;
   }, 5000);
 };
@@ -132,18 +132,18 @@ console.log(lamp1);
 
 ```js
 var lampPrototype = {
-  turnOn: function () {
+  turnOn: function() {
     this.brightness = 100;
   },
-  turnOff: function () {
+  turnOff: function() {
     this.brightness = 0;
   },
-  autoOnAndOff: function () {
+  autoOnAndOff: function() {
     this.brightness = 100;
     setTimeout(() => {
       this.brightness = 0;
     }, 5000);
-  }
+  },
 };
 //factory function
 function createLamp() {
@@ -169,7 +169,7 @@ constructor
 function Car(owner) {
   this.owner = owner;
 }
-Car.prototype.soldTo = function (owner) {
+Car.prototype.soldTo = function(owner) {
   this.owner = owner;
 };
 var car = new Car("nkh");
@@ -195,9 +195,9 @@ ElectricCar.prototype = Object.create(Car.prototype);
 //위 상황까지만 보면 ElectricCar.prototype은 Car를 가리키므로 아래와 같이 정의함으로
 //1:1 대응 시켜준다.
 ElectricCar.prototype.constructor = ElectricCar;
-ElectricCar.prototype.recharge = function (time) {
+ElectricCar.prototype.recharge = function(time) {
   var that = this; // ec reference
-  setTimeout(function () {
+  setTimeout(function() {
     that.power = Math.min(time / 100, 100);
   }, time);
 };
@@ -217,7 +217,7 @@ function VW(owner) {
 VW.prototype = Object.create(Car.prototype);
 VW.prototype.constructor = VW;
 
-VW.prototype.manipulate = function () {
+VW.prototype.manipulate = function() {
   this.condition = "GOOD";
 };
 
@@ -293,12 +293,14 @@ class ElectricCar extends Car {
   recharge(time) {
     var that = this;
 
-    setTimeout(function () {
+    setTimeout(function() {
       that.power = Math.min(time / 100, 100);
     }, time);
   }
 }
 var ec = new ElectricCar("ki");
 ```
+
+<TagLinks />
 
 <Disqus />

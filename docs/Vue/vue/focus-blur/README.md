@@ -57,4 +57,6 @@ date() {
 </script>
 ```
 
+<TagLinks />
+
 <Disqus />

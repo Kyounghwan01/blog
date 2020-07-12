@@ -67,4 +67,6 @@ function fun() {
 fun();
 ```
 
+<TagLinks />
+
 <Disqus />

@@ -59,7 +59,7 @@ const Button = styled.button`
 // Button 컴포넌트 상속
 const NewButton = styled.Button`
   // NewButton 컴포넌트에 color가는 props가 있으면 그 값 사용, 없으면 'red' 사용
-  color: ${props => props.color || "red"};
+  color: ${(props) => props.color || "red"};
 `;
 
 export default Example;
@@ -129,7 +129,7 @@ import styled, { css } from "styled-components";
 
 const sizes = {
   desktop: 1024,
-  tablet: 768
+  tablet: 768,
 };
 
 // sizes 객체에 따라 자동으로 media 쿼리 함수를 만들어줍니다.
@@ -145,7 +145,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const Box = styled.div`
   /* props 로 넣어준 값을 직접 전달해줄 수 있습니다. */
-  background: ${props => props.color || "blue"};
+  background: ${(props) => props.color || "blue"};
   padding: 1rem;
   display: flex;
   width: 1024px;
@@ -171,7 +171,7 @@ export const GlobalStyle = createGlobalStyle`
 
 ```jsx
 const Input = styled.input.attrs({
-  required: true
+  required: true,
 })`
   border-radius: 5px;
 `;
@@ -187,7 +187,7 @@ const addCssType = css`
 `;
 
 const Input = styled.input.attrs({
-  required: true
+  required: true,
 })`
   border-radius: 5px;
   ${addCssType}
@@ -243,10 +243,12 @@ const Container = () => {
 const Button = styled.button`
   border-radius: 30px;
   padding: 25px 15px;
-  background-color: ${props => props.theme.successColor};
+  background-color: ${(props) => props.theme.successColor};
 `;
 
 export default Container;
 ```
+
+<TagLinks />
 
 <Disqus />

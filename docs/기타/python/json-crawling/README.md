@@ -131,4 +131,6 @@ df = pandas.read_csv('test.csv')
 print(df[(df['나이'] > 21) | (df['이름'] == '철수')])
 ```
 
+<TagLinks />
+
 <Disqus />

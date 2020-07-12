@@ -47,10 +47,10 @@ const getNum = () => console.log(num);
 
 ```js
 var app = {
-  num: 10
+  num: 10,
 };
 var main = {
-  num: 20
+  num: 20,
 };
 ```
 
@@ -67,7 +67,7 @@ export var pi = 3.141593;
 ```js
 export * from "lib/math";
 export var e = 2.71828182846;
-export default function (x) {
+export default function(x) {
   return Math.exp(x);
 }
 ```
@@ -79,5 +79,7 @@ console.log("e^π = " + exp(pi));
 ```
 
 - 위 처럼 모듈(`import`, `export`)을 사용하여 하나의 함수 또는 변수를 모듈로 관리함으로 다른 파일에서도 모듈을 합치거나, 활용할 수 있습니다.
+
+<TagLinks />
 
 <Disqus />

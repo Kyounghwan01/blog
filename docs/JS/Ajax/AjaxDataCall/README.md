@@ -26,7 +26,7 @@ ourRequest.open(
   "GET",
   `https://learnwebcode.github.io/json-example/animals-${count}.json`
 );
-ourRequest.onload = function () {
+ourRequest.onload = function() {
   var ourData = JSON.parse(ourRequest.responseText);
   console.log(ourData);
 };
@@ -85,13 +85,13 @@ ourRequest.send();
       var btn = document.querySelector("#btn");
       var count = 1;
 
-      btn.addEventListener("click", function () {
+      btn.addEventListener("click", function() {
         var ourRequest = new XMLHttpRequest();
         ourRequest.open(
           "GET",
           `https://learnwebcode.github.io/json-example/animals-${count}.json`
         );
-        ourRequest.onload = function () {
+        ourRequest.onload = function() {
           var ourData = JSON.parse(ourRequest.responseText);
           renderHTML(ourData);
         };
@@ -127,5 +127,7 @@ ourRequest.send();
   </body>
 </html>
 ```
+
+<TagLinks />
 
 <Disqus />

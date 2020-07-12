@@ -31,12 +31,12 @@ import React, { useState, useCallback } from "react";
 // state
 const [text, setText] = useState({
   email: "",
-  password: ""
+  password: "",
 });
 
 // func
 const onChange = useCallback(
-  e => {
+  (e) => {
     const { value, name } = e.target;
     setText({ ...text, [name]: value });
   },
@@ -70,11 +70,11 @@ export default (initalValue = null) => {
 
   // 함수 정의
   const handler = useCallback(
-    e => {
+    (e) => {
       const { value, name } = e.target;
       setData({
         ...data,
-        [name]: value
+        [name]: value,
       });
     },
     [data]
@@ -95,7 +95,7 @@ import useInput from "useInput";
 // state
 const [text, setText] = useInput({
   email: "",
-  password: ""
+  password: "",
 });
 
 return (
@@ -109,5 +109,7 @@ return (
 - `useInput`훅 안에 useState, useCallback에 있는 함수를 미리 정의 했기 때문에, 컴포넌트에서는 훅을 사용하기만 하면 됩니다.
 
 - 보시다시피, useState, onChange 함수가 없어져서 코드양도 적어지고, 저 커스텀 훅을 다른 컴포넌트에서도 재활용 가능하기 때문에 동일한 로직을 수행하는 컴포넌트가 많을 경우 `커스텀 훅`을 더욱 유용히 사용할 수 있습니다!
+
+<TagLinks />
 
 <Disqus />

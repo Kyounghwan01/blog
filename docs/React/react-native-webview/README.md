@@ -44,4 +44,6 @@ const App = () => (
 );
 ```
 
+<TagLinks />
+
 <Disqus />

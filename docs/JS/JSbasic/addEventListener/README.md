@@ -73,4 +73,6 @@ function click(e) {
 
 다음 포스팅은 querySelectorAll와 querySelector 함수에 대해 알아보겠습니다.
 
+<TagLinks />
+
 <Disqus />

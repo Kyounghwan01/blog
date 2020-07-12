@@ -177,4 +177,6 @@ o1.name = "lee"; // {name : 'kim'}
 // freeze : 속성에 대한 값 자체를 변경 못하게 함
 ```
 
+<TagLinks />
+
 <Disqus />

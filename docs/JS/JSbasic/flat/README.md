@@ -68,11 +68,13 @@ const flat2 = exampleArray.flat(2);
 ```js
 let arr1 = [1, 2, 3, 4];
 
-arr1.map(x => [x * 2]);
+arr1.map((x) => [x * 2]);
 // [[2], [4], [6], [8]]
 
-arr1.flatMap(x => [x * 2]);
+arr1.flatMap((x) => [x * 2]);
 // [2, 4, 6, 8]
 ```
+
+<TagLinks />
 
 <Disqus />

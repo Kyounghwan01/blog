@@ -58,4 +58,6 @@ export default class Home extend Vue {}
 //class 선언 이후 vue를 상속받고 클래스를 컴포넌트로 사용하기위해 데코레이터 선언
 ```
 
+<TagLinks />
+
 <Disqus />

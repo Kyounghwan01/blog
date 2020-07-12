@@ -41,13 +41,15 @@ export default {
         var audio = new Audio(sound);
         audio.play();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 ```
 
 - 위처럼 오디오 객체를 가져와서 `play()` 메소드로 실행합니다.
 - 이외 일시 정지 `pause()` 메소드도 있습니다.
+
+<TagLinks />
 
 <Disqus />

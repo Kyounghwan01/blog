@@ -56,4 +56,6 @@ const getServerTime = async () => {
 
 위 방법대로 사용시 어느 지역에서 이용하든 동일한 시간대를 유지할 수 있습니다.
 
+<TagLinks />
+
 <Disqus />

@@ -59,4 +59,6 @@ event 객체에 속해있는 target과 currentTarget의 차이점을 알아보�
 
 사실 target 요소는 이벤트 버블링에 의해 노란색 div는 녹색 div의 이벤트를 위임받기에 이벤트를 사용할수 있는 것이고, 그에 따라 노란색 div 정보를 녹색 박스에 걸린 `addEventListener`에 전달 하게 된 것입니다. 이해가 안가시면 [이벤트 버블링](https://kyounghwan01.github.io/blog/JS/JSbasic/event-catch/)을 알아보시면 되겠습니다.
 
+<TagLinks />
+
 <Disqus />

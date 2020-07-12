@@ -34,7 +34,7 @@ tags: ["JS"]
 아래는 XMLHttpRequest 객체를 생성하는 코드입니다.
 
 ```js
-window.onload = function () {
+window.onload = function() {
   var xmlHttp = createXMLHTTPObject();
 };
 
@@ -129,5 +129,7 @@ function on_ReadyStateChange() {
 ```
 
 정상적으로 통신이 이루어졌다면 이때 서버에서 보내온 데이터가 담긴 responseText와 responseXML프로퍼티를 이용하면 됩니다.
+
+<TagLinks />
 
 <Disqus />

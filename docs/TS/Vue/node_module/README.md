@@ -92,4 +92,6 @@ declare module "lodash" {
 
 다른 라이브러리도 마찬가지로, input 타입과 output타입을 타입스크립트 문법에 맞게 정의해주면 모든 컴포넌트에서 이상 없이 사용 가능합니다.
 
+<TagLinks />
+
 <Disqus />

@@ -158,4 +158,6 @@ sessionStorage.clear();
 //localStorage와 사용 방법 동일합니다.
 ```
 
+<TagLinks />
+
 <Disqus />

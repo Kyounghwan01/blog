@@ -43,8 +43,8 @@ export default {
     },
     func3() {
       alert("div3");
-    }
-  }
+    },
+  },
 };
 </script>
 ```
@@ -130,5 +130,7 @@ div3를 클릭할 경우 원래대로라면 func3가 먼저 발동되어야 하�
 **self**는 무조건 자기 자신을 클릭해야만 click 함수가 발동됩니다.
 위의 예제로 볼때, div3을 클릭하면 func3가 발동되고, 원래대로면 func2가 발동되야하지만, `self` 처리되어 발동되지 않고 func1가 발동됩니다.<br>
 만약 div2를 클릭하면 `self`에 의해 func2가 발동되고 버블링에 의해 func1가 발동됩니다.
+
+<TagLinks />
 
 <Disqus />

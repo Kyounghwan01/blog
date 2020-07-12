@@ -34,7 +34,7 @@ div -> 상위 div -> body
 
 ```js
 var divs = document.querySelectorAll("div");
-divs.forEach(function (div) {
+divs.forEach(function(div) {
   div.addEventListener("click", logEvent);
 });
 
@@ -57,9 +57,9 @@ function logEvent(event) {
 
 ```js
 var divs = document.querySelectorAll("div");
-divs.forEach(function (div) {
+divs.forEach(function(div) {
   div.addEventListener("click", logEvent, {
-    capture: true // default 값은 false입니다.
+    capture: true, // default 값은 false입니다.
   });
 });
 
@@ -86,9 +86,9 @@ function logEvent(event) {
 위 api는 이벤트가 전파되는 것을 막는다. 따라서 버블링은 해당 이벤트만 발생, 상위요소 전파 방해
 
 ```js
-divs.forEach(function (div) {
+divs.forEach(function(div) {
   div.addEventListener("click", logEvent, {
-    capture: true // default 값은 false입니다.
+    capture: true, // default 값은 false입니다.
   });
 });
 
@@ -128,7 +128,7 @@ inputs.forEach(function(input) {
 
 // 상위 ul tag에 이벤트 부여 , 이벤트 버블링 효과에 따라 아래 li에 요소가 추가되도 이벤트 실행 가능
 var itemList = document.querySelector(".itemList");
-itemList.addEventListener("click", function (event) {
+itemList.addEventListener("click", function(event) {
   alert("clicked");
 });
 
@@ -148,5 +148,7 @@ li.appendChild(input);
 li.appendChild(label);
 itemList.appendChild(li);
 ```
+
+<TagLinks />
 
 <Disqus />
