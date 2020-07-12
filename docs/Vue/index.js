@@ -44,7 +44,8 @@ module.exports = {
         "/Vue/vuepress/vuepress-start/",
         "/Vue/vuepress/vuepress-plugin/",
         "/Vue/vuepress/vuepress-public/",
-        "/Vue/vuepress/vuepress-content/"
+        "/Vue/vuepress/vuepress-content/",
+        "/Vue/vuepress/vuepress-tag/"
       ]
     }
   ]
