@@ -5,7 +5,7 @@
 ```js
 var num = [100, 200, 300, 400, 500];
 // 400, 500 삭제하기
-const newNum = num.filter((el) => el !== 500 && el !== 400);
+const newNum = num.filter(el => el !== 500 && el !== 400);
 ```
 
 ## splice 사용법
@@ -37,7 +37,7 @@ arr.splice(target, 0, 10000);
 ```js
 var d = {
   test: 120,
-  test: 1000,
+  test: 1000
 };
 
 // 점 접근
@@ -120,6 +120,24 @@ setVal.add({ id: 1 });
 setVal.delete(7);
 
 console.log(setVal.has(8));
+
+
+// set 자료형 응용
+unction test47(members) {
+  return new Set(Object.keys(members)).size;
+}
+
+console.log(
+  test47({
+    이호준: "01050442903",
+    이호상: "01051442904",
+    이준호: "01050342904",
+    이호준: "01050442903",
+    이준: "01050412904",
+    이호: "01050443904",
+    이호준: "01050442903"
+  })
+);
 ```
 
 ## 시간복잡도
@@ -171,6 +189,137 @@ function test(str) {
 }
 
 console.log(test("원범 원범 혜원 혜원 혜원 혜원 유진 유진 유진 유진 유진"));
+```
+
+## 배열 줄세우기
+
+- 줄 세우는 알고리즘은 먼저 소팅을 한다.
+
+```js
+function test(member) {
+  let memberList = member.split(" ");
+  let count = 3;
+
+  memberList = memberList.sort((a, b) => b - a);
+  for (let i = 0; i < memberList.length; i++) {
+    if (memberList[i] !== memberList[i + 1]) {
+      count--;
+    }
+    if (!count) return i + 1;
+  }
+}
+
+console.log(test("97 86 75 66 55 97 85 97 97 95"));
+```
+
+## 문자 찾아서 바꾸기
+
+```js
+function test39(str) {
+  // split, join으로 바꾸기
+  return str.split("q").join("e");
+  // 정규식으로 바꾸기
+  return str.replace(/q/gi, "e");
+}
+
+console.log(test39("hqllo my namq is hyqwon"));
+```
+
+## 소수 판별
+
+- 본인과 1을 제외한 숫자로 나누어떨어지지 않는 것
+
+```js
+function test41(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+    if (n === 1) {
+      return false;
+    }
+    return true;
+  }
+}
+```
+
+## #년#월#일 요일 찾기
+
+- Date 생성자 활용
+
+```js
+function test42(a, b, c) {
+  const day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  const x = new Date(`${a}-${b}-${c}`);
+
+  return day[x.getDay()];
+}
+```
+
+## 10진수를 2진수로
+
+```js
+function test43(num) {
+  let answer = [];
+  while (num) {
+    const count = num % 2;
+    answer.push(count);
+    num = Math.floor(num / 2);
+  }
+  return answer.reverse().join("");
+
+  // 또는
+  return num.toString(10);
+}
+```
+
+## 배열내 요소 더하기, 비교
+
+- 배열내 더하기, 비교하는 것은 reduce로 해결
+
+```js
+function test46() {
+  let nums = "";
+  for (let i = 1; i < 21; i++) {
+    nums += i;
+  }
+  return nums.split("").reduce((prev, next) => prev + Number(next), 0);
+}
+
+console.log(test46());
+
+// 최댓값 반환
+function test49(str) {
+  return str
+    .split(" ")
+    .reduce(
+      (prev, next) => (prev <= next ? (prev = Number(next)) : (prev = prev)),
+      0
+    );
+}
+
+console.log(test49("10 9 8 7 6 5 4 3 2 1"));
+```
+
+## 버블정렬
+
+```js
+function test50() {
+  let arr = [10, 8, 9, 2, 3, 5];
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j]; // 두 수를 서로 바꿔준다
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(test50());
 ```
 
 <TagLinks />
