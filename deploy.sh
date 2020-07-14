@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 코딩테스트 준비 수정"
+git commit -m "feat: 이미지 업로드 추가"
 git push origin master
 
 # build
