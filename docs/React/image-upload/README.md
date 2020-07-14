@@ -15,8 +15,11 @@ tags: ["react"]
 # 이미지 업로드 & 압축
 
 어느 웹에서나 모두 쓰이는 이미지 없로드에 대해 알아보겠습니다!<br>
-저희는 바이너리파일을 formData에 넣어서 보내는데 회사의 서버가 이미지값을 어떻게 받아주냐에 따라 로직의 차이가 있습니다.<br>
-또한 저희 서버는 이미지의 용량을 최대 2014kb인가 밖에 안받아줘서 2MB로 이미지 압축하는 작업을 하였습니다.
+
+## 목표
+
+첫번째, 이미지 보낼 때는 데이터 손상을 박기 위해 바이너리파일을 formData에 넣어서 보냅니다 <br>
+두번째, 저희 서버에서는 이미지의 용량을 최대 2014kb로 제한 하기 때문에, 프론트에서 2MB로 이미지 압축하는 작업을 하였습니다.
 
 ## 이미지 가져오기
 
@@ -48,6 +51,7 @@ yarn add browser-image-compression
 
 ```jsx
 import React, { useState } from 'react';
+import ImagePicker from 'antd-mobile/lib/image-picker';
 import imageCompression from "browser-image-compression";
 
 const ChangeNameAvatar = () => {
@@ -75,16 +79,15 @@ const ChangeNameAvatar = () => {
       useWebWorker: true,
     };
     try {
-      const compressedFile = await imageCompression(fileSrc, options);
-
       // 압축 결과
+      const compressedFile = await imageCompression(fileSrc, options);
 
       // const reader = new FileReader();
       // reader.readAsDataURL(compressedFile);
       // reader.onloadend = () => {
       //   const base64data = reader.result;
       //   imageHandling(base64data);
-      };
+      // };
     } catch (error) {
       console.log(error);
     }
@@ -93,10 +96,8 @@ const ChangeNameAvatar = () => {
   return (
     <ImagePicker
       files={data.avatar}
-      onAddImageClick={requestImage}
       onChange={onClickImageUpload}
       onImageClick={(index, fs) => console.log(index, fs)}
-      selectable={data.avatar.length < 1}
       accept="image/gif,image/jpeg,image/jpg,image/png"
     />
     <PlainButton type="ghost" onClick={onSubmit}>
@@ -127,9 +128,15 @@ Blob {
 - 이미지 압축을 하였으니, 바이너리 파일를 text로 변환해봅시다.
 - 위에 있는 코드의 `actionImgCompress` 함수에서 실행합니다.
 
-### Base64로 인코딩 하는 이유
+### Base64로 변환 하는 이유
 
-- ASCII는 시스템간 데이터를 전달하기에 안전하지가 않습니다. 특수문자를 제외한 64개의 안전한 출력 문자로 서버로 전송 및 디비 저장을 위해 base64로 변환합니다. (이미지 깨짐, 동영상 짤림 방지 위해 하는 것입니다)
+- ASCII는 데이터를 전달하기에 안전하지가 않습니다. 특수문자를 제외한 64개의 안전한 출력 문자로 서버로 전송 및 디비 저장을 위해 base64로 변환합니다.
+
+  - 즉, 이미지 깨짐, 동영상 짤림 방지하기 위해 안전한 문자로 바꿔서 서버로 보내기 위해 변환 합니다.
+
+- 변환 과정도 매우 쉽습니다.
+- `FileReader`라는 객체를 가져와서 위에서 만든 `Blob` 객체를 이용해 파일의 내용을 읽고 FileReader내부의 `readAsDataUrl`를 이용해 base64로 변환합니다.
+- [FileReader](https://developer.mozilla.org/ko/docs/Web/API/FileReader), [readAsDataUrl](https://developer.mozilla.org/ko/docs/Web/API/FileReader/readAsDataURL) 여기 링크에 자세한 내용이 있습니다. 참고해주세요.
 
 ```js
 const actionImgCompress = async (fileSrc) => {
@@ -150,7 +157,7 @@ const actionImgCompress = async (fileSrc) => {
       // 변환 완료!
       const base64data = reader.result;
 
-      // 다음 챕터 시작
+      // formData 만드는 함수
       handlingDataForm(base64data);
     };
   } catch (error) {
@@ -162,18 +169,19 @@ const actionImgCompress = async (fileSrc) => {
 ## formData 핸들링
 
 - 변환을 완료했으면, 이제 서버 전송전에 formData를 만들어 이미지 및 다른 정보를 보낼 준비를 합니다.
-- 여기서 위에서 본 Blob를 핸들링 해야합니다.
+- 여기서 Blob를 핸들링 해야합니다.
 
 ### Blob
 
 - JavaScript에서 Blob(Binary Large Object, 블랍)은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용할 수 있습니다.
 - 대개 데이터의 크기(Byte) 및 MIME 타입을 알아내거나, 데이터를 송수신을 위한 작은 Blob 객체로 나누는 등의 작업에 사용합니다.
+- [Blob 사용하기](https://developer.mozilla.org/ko/docs/Web/API/Blob) 추가로 더 공부하고 싶은 분들은 여기를 참고해주세요.
 
-- 다시 formData를 만들어봅시다
+### 다시 formData를 만들어봅시다
 
 ```js
 const handlingDataForm = async (dataURI) => {
-  // dataURL 값이 data:image/jpeg:base64,~~~~~~~ 이므로 ','를 기점으로 잘라서 다시한번 인코딩
+  // dataURL 값이 data:image/jpeg:base64,~~~~~~~ 이므로 ','를 기점으로 잘라서 ~~~~~인 부분만 다시 인코딩
   const byteString = atob(dataURI.split(",")[1]);
 
   // Blob를 구성하기 위한 준비, 이 내용은 저도 잘 이해가 안가서 기술하지 않았습니다.
