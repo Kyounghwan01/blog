@@ -4,7 +4,7 @@ module.exports = {
     {
       collapsable: true,
       title: "redux",
-      children: ["/React/redux/redux-basic/", "/React/redux/redux-saga/"]
+      children: ["/React/redux/redux-basic/", "/React/redux/redux-saga/"],
     },
     "/React/container-presenter-dessign-pattern/",
     "/React/react-hook/",
@@ -18,6 +18,7 @@ module.exports = {
     "/React/react-native-webview/",
     "/React/exhaustive-deps-warning/",
     "/React/time-localization/",
-    "/React/antd-resize-bundle-size/"
-  ]
+    "/React/antd-resize-bundle-size/",
+    "/React/image-upload/",
+  ],
 };

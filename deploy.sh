@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 이미지 업로드 추가"
+git commit -m "fix: react index.js 수정"
 git push origin master
 
 # build
