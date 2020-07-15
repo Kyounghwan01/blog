@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: image upload 수정"
+git commit -m "feat: mailto 추가"
 git push origin master
 
 # build
