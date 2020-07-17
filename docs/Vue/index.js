@@ -20,7 +20,8 @@ module.exports = {
         "/Vue/vue/v-model/",
         "/Vue/vue/focus-blur/",
         "/Vue/vue/infinite-scroll/",
-        "/Vue/vue/lazy-loading/"
+        "/Vue/vue/lazy-loading/",
+        "/Vue/vue/property-not-defined/"
       ]
     },
     {

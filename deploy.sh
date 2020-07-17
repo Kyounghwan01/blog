@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: mailto 추가"
+git commit -m "feat: 개발일기 7월 추가"
 git push origin master
 
 # build

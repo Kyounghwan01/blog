@@ -3,6 +3,11 @@ module.exports = {
     "",
     {
       collapsable: true,
+      title: "HTML",
+      children: ["/기타/html/mailto/"]
+    },
+    {
+      collapsable: true,
       title: "CSS",
       children: ["/기타/CSS/dup-area-event/"]
     },
