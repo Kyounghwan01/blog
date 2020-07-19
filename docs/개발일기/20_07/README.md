@@ -28,6 +28,41 @@ You are using a whole package of antd-mobile, please use https://www.npmjs.com/p
 - 전체 번들 import 하지 말고, 필요한 컴포넌트만 써라
 - [정리](https://kyounghwan01.github.io/blog/React/antd-resize-bundle-size/)
 
+### 3. ref 정보를 props으로 내릴때
+
+- ref 정보를 props으로 내릴때 property 값을 ref으로 내리면 에러가 뜬다. 아래와 같은 상황에 에러가 발생한다
+
+```jsx
+import React, { useRef } from "react";
+
+const RefPropsExample = () => {
+  const testRef = useRef();
+  // 이렇게 prop으로 내릴 때 ref라는 property를 쓰면 PropRefComponent 컴포넌트에서는 ref props을 인식하지 못합니다.
+  return <PropRefComponent ref={testRef} />;
+};
+
+const PropRefComponent = ({ref}) => {
+  // 에러!
+  return <input ref={ref}>
+}
+```
+
+- 그래서, ref라는 이름을 쓰지 않고 다른 이름을 사용하여 prop 내립니다.
+
+```jsx
+import React, { useRef } from 'react';
+
+const RefPropsExample = () => {
+  const testRef = useRef();
+  return <PropRefComponent refs={testRef} />
+}
+
+const PropRefComponent = ({refs}) => {
+  return <input ref={refs}>
+}
+
+```
+
 ## 배운점
 
 ### 1. vuepress - blog 댓글 만들기
@@ -55,5 +90,9 @@ You are using a whole package of antd-mobile, please use https://www.npmjs.com/p
 ### 7. html - email 보내기
 
 - [정리](https://kyounghwan01.github.io/blog/기타/html/mailto/)
+
+### 8. redux-persist - 새로고침해도 redux store state 유지하기
+
+- [정리](https://kyounghwan01.github.io/blog/React/redux/redux-persist/)
 
 <Disqus />

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: redux-persist 추가"
+git commit -m "fix: 7월 개발일기 수정"
 git push origin master
 
 # build
