@@ -4,7 +4,11 @@ module.exports = {
     {
       collapsable: true,
       title: "redux",
-      children: ["/React/redux/redux-basic/", "/React/redux/redux-saga/"]
+      children: [
+        "/React/redux/redux-basic/",
+        "/React/redux/redux-saga/",
+        "/React/redux/redux-persist/"
+      ]
     },
     "/React/container-presenter-dessign-pattern/",
     "/React/react-hook/",
