@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 배열내 객체 중복 제거 추가"
+git commit -m "fix: 배열내 객체 중복 제거 에러코드 수정"
 git push origin master
 
 # build
