@@ -35,6 +35,7 @@ module.exports = {
         "/JS/JSbasic/addEventListener/",
         "/JS/JSbasic/flat/",
         "/JS/JSbasic/module/",
+        "/JS/JSbasic/dupulication-property-remove/",
       ],
     },
   ],
