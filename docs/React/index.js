@@ -24,6 +24,7 @@ module.exports = {
     "/React/time-localization/",
     "/React/antd-resize-bundle-size/",
     "/React/image-upload/",
-    "/React/focus-blur/"
+    "/React/focus-blur/",
+    "/React/event-scroll-bottom/"
   ]
 };

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 배열내 객체 중복 제거 에러코드 수정"
+git commit -m "feat: 이벤트 발생시 스크롤 맨 밑으로 내리기 추가"
 git push origin master
 
 # build
