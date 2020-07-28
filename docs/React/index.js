@@ -25,6 +25,7 @@ module.exports = {
     "/React/antd-resize-bundle-size/",
     "/React/image-upload/",
     "/React/focus-blur/",
-    "/React/event-scroll-bottom/"
+    "/React/event-scroll-bottom/",
+    "/React/absoulte-import/"
   ]
 };

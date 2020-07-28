@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 7월 개발일기 수정"
+git commit -m "feat: 절대경로 추가"
 git push origin master
 
 # build
