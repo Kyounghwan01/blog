@@ -5,7 +5,7 @@
 ```js
 var num = [100, 200, 300, 400, 500];
 // 400, 500 삭제하기
-const newNum = num.filter(el => el !== 500 && el !== 400);
+const newNum = num.filter((el) => el !== 500 && el !== 400);
 ```
 
 ## splice 사용법
@@ -37,7 +37,7 @@ arr.splice(target, 0, 10000);
 ```js
 var d = {
   test: 120,
-  test: 1000
+  test: 1000,
 };
 
 // 점 접근
@@ -320,6 +320,76 @@ function test50() {
 }
 
 console.log(test50());
+```
+
+## comma
+
+```js
+const nums = 1000000000;
+console.log(nums.toLocaleString()); // "1,000,000,000"
+```
+
+## 연속된 문자 숫자로 표현하기
+
+```js
+// aaaabbcccddd -> a4b2c3d3
+
+function continusNum() {
+  const problem = "aaaabbcccddd";
+  let count = 1;
+  let answer = "";
+  let store = problem[0];
+  for (let i of problem) {
+    if (i === store) {
+      count++;
+    } else {
+      answer += store;
+      answer += count;
+      count = 1;
+      store = i;
+    }
+  }
+  answer += store;
+  answer += count;
+
+  return answer;
+}
+```
+
+## 가장 적게 옮기는 횟수 출력
+
+```js
+let n = 24;
+let result = 0; -> 가장 적게올리는 횟수 (어떻게든 안되면 -1)
+while(true){
+	if (n%7 === 0) {
+		result += parseInt(n/7, 10);
+		console.log(result);
+		break;
+	}
+	n -= 3
+	result += 1;
+	if (n < 0){
+		console.log(-1);
+		break;
+	}
+}
+```
+
+## map응용
+
+```js
+a = [1, 2, 3, 4];
+b = ["a", "b", "c", "d"];
+// 위문자를 응용해 [[1,a],[b,2],[3,c],[d,4]] 출력하라
+
+const c = a.map((el, index) => {
+  if (index % 2 === 0) {
+    return [el, b[index]];
+  } else {
+    return [b[index], el];
+  }
+});
 ```
 
 <TagLinks />

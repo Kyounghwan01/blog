@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 절대경로 추가"
+git commit -m "fix: 코테 준비 수정"
 git push origin master
 
 # build
