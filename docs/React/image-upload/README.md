@@ -14,7 +14,7 @@ tags: ["react"]
 
 # 이미지 업로드 & 압축
 
-어느 웹에서나 모두 쓰이는 이미지 없로드에 대해 알아보겠습니다!<br>
+어느 웹에서나 모두 쓰이는 이미지 업로드에 대해 알아보겠습니다!<br>
 
 ## 목표
 
@@ -139,13 +139,13 @@ Blob {
 - [FileReader](https://developer.mozilla.org/ko/docs/Web/API/FileReader), [readAsDataUrl](https://developer.mozilla.org/ko/docs/Web/API/FileReader/readAsDataURL) 여기 링크에 자세한 내용이 있습니다. 참고해주세요.
 
 ```js
-const actionImgCompress = async (fileSrc) => {
+const actionImgCompress = async fileSrc => {
   console.log("압축 시작");
 
   const options = {
     maxSizeMB: 0.2,
     maxWidthOrHeight: 1920,
-    useWebWorker: true,
+    useWebWorker: true
   };
   try {
     const compressedFile = await imageCompression(fileSrc, options);
@@ -180,7 +180,7 @@ const actionImgCompress = async (fileSrc) => {
 ### 다시 formData를 만들어봅시다
 
 ```js
-const handlingDataForm = async (dataURI) => {
+const handlingDataForm = async dataURI => {
   // dataURL 값이 data:image/jpeg:base64,~~~~~~~ 이므로 ','를 기점으로 잘라서 ~~~~~인 부분만 다시 인코딩
   const byteString = atob(dataURI.split(",")[1]);
 
@@ -191,7 +191,7 @@ const handlingDataForm = async (dataURI) => {
     ia[i] = byteString.charCodeAt(i);
   }
   const blob = new Blob([ia], {
-    type: "image/jpeg",
+    type: "image/jpeg"
   });
   const file = new File([blob], "image.jpg");
 
@@ -221,14 +221,14 @@ const handlingDataForm = async (dataURI) => {
 // 회원 정보 변경
 import axios from "../axios";
 export default {
-  changeUserAccount: (datas) => {
+  changeUserAccount: datas => {
     // request의 header부분에 아래와 같이 타입을 설정해줍니다.
     const headers = {
-      "Content-Type": "multipart/form-data",
+      "Content-Type": "multipart/form-data"
     };
 
     return axios.post(`/me`, datas, { headers });
-  },
+  }
 };
 ```
 
