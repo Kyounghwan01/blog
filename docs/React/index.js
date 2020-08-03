@@ -28,5 +28,6 @@ module.exports = {
     "/React/event-scroll-bottom/",
     "/React/absoulte-import/",
     "/React/handling-svg/",
+    "/React/img-onload/",
   ],
 };

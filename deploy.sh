@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 오타 수정"
+git commit -m "feat: 이미지 로딩 후 렌더링 추가"
 git push origin master
 
 # build
