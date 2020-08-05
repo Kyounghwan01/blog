@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: html - dataset 추가"
+git commit -m "fix: rsa 비밀번호 추가"
 git push origin master
 
 # build
