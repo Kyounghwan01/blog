@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: rsa 비밀번호 추가"
+git commit -m "feat: 공통 컴포넌트 추가"
 git push origin master
 
 # build
