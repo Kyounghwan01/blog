@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 공통 컴포넌트 추가"
+git commit -m "fix: 공통 컴포넌트 수정"
 git push origin master
 
 # build
