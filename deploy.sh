@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 공통 컴포넌트 수정"
+git commit -m "feat: 네이버 기사 크롤링 추가"
 git push origin master
 
 # build
