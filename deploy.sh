@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 7월 이슈 수정, 8월 이슈 추가"
+git commit -m "fix: img onload 내용 수정"
 git push origin master
 
 # build

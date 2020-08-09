@@ -7,8 +7,8 @@ module.exports = {
       children: [
         "/React/redux/redux-basic/",
         "/React/redux/redux-saga/",
-        "/React/redux/redux-persist/",
-      ],
+        "/React/redux/redux-persist/"
+      ]
     },
     "/React/container-presenter-dessign-pattern/",
     "/React/react-hook/",
@@ -28,7 +28,6 @@ module.exports = {
     "/React/event-scroll-bottom/",
     "/React/absoulte-import/",
     "/React/handling-svg/",
-    "/React/img-onload/",
-    "/React/common-component/",
-  ],
+    "/React/common-component/"
+  ]
 };

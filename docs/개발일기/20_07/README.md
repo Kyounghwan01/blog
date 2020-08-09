@@ -99,4 +99,12 @@ const PropRefComponent = ({refs}) => {
 
 - [정리](https://kyounghwan01.github.io/blog/React/redux/redux-persist/)
 
+### 8. redux-persist - 새로고침해도 redux store state 유지하기
+
+- [정리](https://kyounghwan01.github.io/blog/React/redux/redux-persist/)
+
+### 9. html - img - onLoad, onError
+
+- [정리](https://kyounghwan01.github.io/blog/기타/html/img-onload)
+
 <Disqus />

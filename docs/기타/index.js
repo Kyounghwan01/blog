@@ -4,7 +4,11 @@ module.exports = {
     {
       collapsable: true,
       title: "HTML",
-      children: ["/기타/html/mailto/", "/기타/html/dataset/"]
+      children: [
+        "/기타/html/mailto/",
+        "/기타/html/dataset/",
+        "/기타/html/img-onload/"
+      ]
     },
     {
       collapsable: true,
