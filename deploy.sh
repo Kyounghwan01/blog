@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 네이버 기사 크롤링 추가"
+git commit -m "feat: 7월 이슈 수정, 8월 이슈 추가"
 git push origin master
 
 # build
