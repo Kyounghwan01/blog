@@ -7,7 +7,51 @@
 
 ## 에러 해결 모음
 
-### 1. xxx
+### 1. Warning: Functions are not valid as a React child.
+
+```
+Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
+```
+
+- 함수인데 실행 안하고 render 부분에 코딩한 경우입니다.
+- 함수 코드를 render에 넣었으니 당연히 정상적인 실행이 안되겠죠
+
+```jsx
+const Example = () => {
+  const bookingStateTime = () => {
+    switch (booking.status) {
+      case "booking_confirmed":
+      case "booked":
+        return `예약 일시 : ${booking.created_at}`;
+      case "cancel":
+        return `취소 일시 : ${booking.lecture.course.updated_at}`;
+      default:
+        return `수정 일시 : ${booking.lecture.course.updated_at}`;
+    }
+  };
+  return <span>{bookingStateTime}</span>;
+};
+```
+
+- 위처럼 특정 함수를 만들고 render 부분에서 실행 안하고 함수만 호출시 위 같은 에러가 뜹니다.
+- 해결방법은 함수 실행해주면 됩니다.
+
+```jsx
+const Example = () => {
+  const bookingStateTime = () => {
+    switch (booking.status) {
+      case "booking_confirmed":
+      case "booked":
+        return `예약 일시 : ${booking.created_at}`;
+      case "cancel":
+        return `취소 일시 : ${booking.lecture.course.updated_at}`;
+      default:
+        return `수정 일시 : ${booking.lecture.course.updated_at}`;
+    }
+  };
+  return <span>{bookingStateTime()}</span>;
+};
+```
 
 ## 배운점
 

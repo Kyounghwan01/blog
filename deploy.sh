@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: img onload 내용 수정"
+git commit -m "feat: 에러 해결 추가"
 git push origin master
 
 # build
