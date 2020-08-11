@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 에러 해결 추가"
+git commit -m "fix: 불필요 파일 제거"
 git push origin master
 
 # build
