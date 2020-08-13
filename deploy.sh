@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 불필요 파일 제거"
+git commit -m "feat: npm에 코드 배포하기"
 git push origin master
 
 # build
