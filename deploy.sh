@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: npm에 코드 배포하기"
+git commit -m "feat: npm에 react component 배포하기"
 git push origin master
 
 # build
