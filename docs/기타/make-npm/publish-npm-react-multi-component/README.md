@@ -1,42 +1,27 @@
 ---
-title: npm - react 컴포넌트 npm에 배포하기
+title: npm - 여러 컴포넌트 npm에 배포하기
 meta:
   - name: description
-    content: npm - react 컴포넌트 npm에 배포하기
+    content: npm - 여러 react 컴포넌트 npm에 배포하기
   - property: og:title
-    content: npm - react 컴포넌트 npm에 배포하기
+    content: npm - 여러 react 컴포넌트 npm에 배포하기
   - property: og:description
-    content: npm - react 컴포넌트 npm에 배포하기
+    content: npm - 여러 react 컴포넌트 npm에 배포하기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/기타/npm/publish-npm-react-component/
+    content: https://kyounghwan01.github.io/blog/기타/npm/publish-npm-react-multi-component/
 tags: ["npm", "react"]
 ---
 
-# react 컴포넌트 npm에 배포하기
+# 여러 컴포넌트 npm에 배포하기
 
-이번 글은 만든 react component를 다른 프로젝트에서 재활용하도록 npm에 등록하고 새로운 프로젝트에서 npm으로 다운 받고, 불러오는 과정입니다.
+이전 글에 이어서 이번에는 여러 컴포넌트를 배포하는 글입니다.
+이전 글 [react 컴포넌트 배포하기](https://kyounghwan01.github.io/blog/기타/make-npm/publish-npm-react-component/)을 먼저 보고 와주시기 바랍니다.
 
-npm에 코드를 등록하는 방법은 [npm에 코드 배포하기](https://kyounghwan01.github.io/blog/기타/make-npm/publish-npm/) 이곳에 있으니, 이 글을 먼저 보고 본 글을 읽기 바랍니다.
+- 이전 포스팅에서 사용한 프로젝트를 이어서 사용하겠습니다.
 
-## 컴포넌트를 만들 프로젝트 생성
+## 컴포넌트 생성
 
-- npm에 배포할 프로젝트를 만들어줍니다.
-
-```sh
-create-react-app test-component
-```
-
-## 의존 모듈 설치
-
-- 생성한 프로젝트에서 의존모듈을 설치해줍니다.
-
-```sh
-yarn add -D @babel/cli @babel/preset-react
-```
-
-## 배포할 컴포넌트 생성
-
-- 배포용으로 간단한 text를 가진 컴포넌트를 생성합니다.
+- 배포용 컴포넌트를 2개 생성합니다.
 
 ```js
 // src/lib/TestComponent
@@ -49,44 +34,35 @@ const TestComponent = () => {
 export default TestComponent;
 ```
 
-- 이후 `index.js`에 TestComponent를 불러옵니다.
+```js
+// src/lib/Test2Component
+import React from "react";
+
+const Test2Component = () => {
+  return <span>배포용 두번째 컴포넌트</span>;
+};
+
+export default Test2Component;
+```
+
+- 이후 `index.js`에 두개의 컴포넌트를 불러옵니다. 컴포넌트가 여러개라면 여러개 모두 불러옵니다.
 
 ```js
-// src/index.js
-import React from "react";
-import ReactDOM from "react-dom";
-import TestComponent from "./lib/TestComponent";
-
-ReactDOM.render(<TestComponent />, document.getElementById("root"));
-```
-
-## 배포 제외할 파일 수정
-
-- `.gitignore`에서 배포 제외할 파일을 작성합니다.
-- 기존 있는 파일에서 아래 내용만 추가 해주세요
-
-```
-...
-src
-demo
-.babelrc
-webpack.config.js
-public
+// src/lib/index.js
+export { default as TestComponent } from "./TestComponent";
+export { default as Test2Component } from "./Test2Component";
 ```
 
 ## package.json 파일 수정
 
-- 배포 npm package 이름 확인
-- 배포 후 install시 시작 root 파일 설정
-- 배포 명령어 수정
-
 ```json
 {
   "name": "@kyounghwan/test-component",
-  "version": "0.0.1",
-  // 배포시 시작 root 파일 꼭 형식을 맞춰주세요
-  "module": "dist/TestComponent.js",
-  "main": "dist/TestComponent.js",
+  // 이전 포스팅과 이곳이 다릅니다
+  "version": "0.0.2",
+  // 이전 포스팅과 이곳이 다릅니다
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -139,11 +115,11 @@ npm publish
 
 ## 프로젝트 배포 확인
 
-### 1. 새로운 프로젝트 생성 및 npm 다운
+### npm 다운
+
+이전 포스팅에서 생성한 `consumer` 프로젝트로 들어간 후, 새로 배포한 버전을 다운 받습니다.
 
 ```
-create-react-app consumer
-cd consumer
 yarn add @kyounghwan/test-component
 ```
 
@@ -152,10 +128,15 @@ yarn add @kyounghwan/test-component
 ```js
 // src/App.js
 import React from "react";
-import Test from "@kyounghwan/test-component";
+import { TestComponent, Test2Component } from "@kyounghwan/test-component";
 
 const App = () => {
-  return <Test />;
+  return (
+    <>
+      <TestComponent />
+      <Test2Component />
+    </>
+  );
 };
 
 export default App;
@@ -167,10 +148,6 @@ export default App;
 
 1. 파일을 수정하고 재 배포하실때는 **무조건** `package.json`의 `version`값을 수정하셔야합니다. 수정하지 않으시면 다른 파일이라 인식하지 못하고 배포하지 않습니다.
 2. `package.json`에 `main`, `module` 값은 **꼭** build 후 root 컴포넌트 파일위치로 작성해주셔야합니다. 다르게 작성하시면 배포후 다른 프로젝트에서 설치시 import가 정상적으로 되지 않습니다.
-
-## 다음 글
-
-현재는 1개의 컴포넌트만 만들고 있습니다. 하지만 대부분 1개의 패키지를 받으면 여러개의 컴포넌트가 있고 그것을 moment.js만 보더라도 `import {Test, Test2} from 'TestComponent` 이렇게 사용하죠. 그래서 다음 글에서는 여러 컴포넌트를 만들고 배포하는 방법에 대해 알아보겠습니다.
 
 <TagLinks />
 
