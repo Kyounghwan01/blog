@@ -1,4 +1,4 @@
-const routes = ["Tag", "Vue", "React", "JS", "TS", "기타", "개발일기"];
+const routes = ["Tag", "Vue", "React", "JS", "TS", "etc", "dev-report"];
 
 const createSidebar = () => {
   const sidebar = {};
@@ -19,8 +19,8 @@ module.exports = {
       { text: "Vue", link: "/Vue/" },
       { text: "JS", link: "/JS/" },
       { text: "TS", link: "/TS/" },
-      { text: "기타", link: "/기타/" },
-      { text: "개발일기", link: "/개발일기/" },
+      { text: "기타", link: "/etc/" },
+      { text: "개발일기", link: "/dev-report/" },
       { text: "Github", link: "https://github.com/Kyounghwan01" },
       {
         text: "project",

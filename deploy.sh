@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 1개의 npm 패키지에 여러 컴포넌트 배포하기"
+git commit -m "fix: 개발일기, 기타 디렉토리 이름 변경"
 git push origin master
 
 # build
