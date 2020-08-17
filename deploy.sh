@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 개발일기, 기타 디렉토리 이름 변경"
+git commit -m "feat: createRef, useRef 차이, npm 배포 삭제 추가"
 git push origin master
 
 # build
