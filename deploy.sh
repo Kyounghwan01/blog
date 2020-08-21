@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: createRef, useRef 차이, npm 배포 삭제 추가"
+git commit -m "fix: npm 삭제 조건 추가"
 git push origin master
 
 # build
