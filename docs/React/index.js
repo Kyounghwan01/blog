@@ -28,6 +28,7 @@ module.exports = {
     "/React/event-scroll-bottom/",
     "/React/absoulte-import/",
     "/React/handling-svg/",
-    "/React/common-component/"
+    "/React/common-component/",
+    "/React/useRef-createRef/"
   ]
 };

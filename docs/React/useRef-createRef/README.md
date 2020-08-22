@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: react - React.createRef and React.useRef 차이
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/react-hook/
+    content: https://kyounghwan01.github.io/blog/React/useRef-createRef/
 tags: ["react"]
 ---
 
