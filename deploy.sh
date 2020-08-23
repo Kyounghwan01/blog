@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 8월 개발일기 추가"
+git commit -m "feat: convert react jsx to tsx"
 git push origin master
 
 # build
