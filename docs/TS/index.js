@@ -4,7 +4,7 @@ module.exports = {
     {
       collapsable: true,
       title: "React",
-      children: ["/TS/React/convert-js-to-ts/"]
+      children: ["/TS/React/convert-js-to-ts/", "/TS/React/redux-ts/"]
     },
     {
       collapsable: true,

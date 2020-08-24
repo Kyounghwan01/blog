@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: convert react jsx to tsx"
+git commit -m "feat: redux ts 사용법"
 git push origin master
 
 # build
