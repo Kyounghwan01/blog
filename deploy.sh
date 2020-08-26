@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: redux ts 사용법"
+git commit -m "feat: ts styled-component 추가"
 git push origin master
 
 # build
