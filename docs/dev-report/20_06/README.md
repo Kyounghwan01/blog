@@ -126,6 +126,8 @@ dispatch(thisIsFunction());
 
 ### 4. props-types
 
+- typescript로 변환하여 더이상 쓰지 않음 (20_08_27)
+
 ### 5. react project 구조
 
 - 컴포넌트 디자인 패턴 (container, presenter 구조)

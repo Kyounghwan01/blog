@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: ts styled-component 추가"
+git commit -m "feat: 8월 에러모음 추가"
 git push origin master
 
 # build
