@@ -62,6 +62,14 @@ type CounterAction =
 
 여기서 사용 된 ReturnType 은 함수에서 반환하는 타입을 가져올 수 있게 해주는 유틸 타입입니다.
 
+또는
+
+```tsx
+type CounterAction =
+  | ReturnType<typeof increase>
+  | { type: typeof decrease; data: {...} };
+```
+
 우리가 이전에 액션의 type 값들을 선언 할 때 as const 라는 키워드를 사용했었지요? 만약 이 작업을 처리하지 않으면 ReturnType을 사용하게 됐을 때 type 의 타입이 무조건 string 으로 처리되어버립니다. 그렇게 되면 나중에 리듀서를 제대로 구현 할 수가 없어요.
 
 ### 상태의 타입과 상태의 초기값 선언

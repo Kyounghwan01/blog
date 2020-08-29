@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 에러모음 분리"
+git commit -m "feat: redux saga typescript 추가"
 git push origin master
 
 # build
