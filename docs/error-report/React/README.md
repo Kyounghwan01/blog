@@ -262,6 +262,9 @@ function Login({ loginEmail, password, valid, loading, onChange, onSubmit }) {}
 ### 6. window 객체 접근
 
 - typescript는 window 객체에 대한 정의를 해주지 않으면 에러 발생
+
+#### 해결
+
 - tsconfig.json에 window 함수를 declear 한 파일을 넣어줘야한다
 
 ```ts
@@ -275,5 +278,45 @@ declare interface Window {
 {
   ...
   "include": ["src", "global.d.ts"]
+}
+```
+
+### 7. png 로드 에러
+
+- png를 가져올 때, webpack, ts에서 나오는 에러
+
+```
+Type 'typeof import("*.png")' is not assignable to type 'string | undefined'.
+```
+
+#### 해결
+
+1. require 문을 사용한다 (import 문 사용하지 않음)
+
+```ts
+const imageSrc = require("/assets/logo-large.png");
+```
+
+2. 1번 방법으로 해결이 안되거나, import를 사용할시 `~.d.ts`파일로 해결
+
+- `~.d.ts` 파일 생성
+
+```ts
+// src/types/image.d.ts
+declare module "*.png" {
+  const value: any;
+  export = value;
+}
+```
+
+- `tsconfig.json`에 `~.d.ts` 로드 추가
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+		...
+  },
+  "include": ["src", "types"]
 }
 ```
