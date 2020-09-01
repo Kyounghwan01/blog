@@ -236,6 +236,56 @@ const [checked, setCheckBox] = useState<{ [key: string]: boolean }>({
 });
 ```
 
+### 4-1 reduce에서 객체를 dynamic key, value로 접근하고, 일반적으로 dot notion으로도 접근해야 할 때,
+
+- 위와 같은 경우 4번 방법으로 해결되지 않습니다. 저는 `Record`를 이용해서 해결했습니다.
+
+```ts
+// types.ts
+type sortTypeProps = {
+  type: string;
+  value: string;
+  content: string;
+  current: boolean;
+};
+
+export type IUsageProps = {
+  // Record<key, value>
+  // key 값으로 무조건 string만 받는다. value는 지정한 타입만 받는다.
+  filters: Record<string, sortTypeProps[]>;
+};
+
+// reducer.ts
+export const initialState: IUsageProps = {
+  filters: {
+    sortedBy: [
+      { type: "s", value: "asc", content: "오름차순", current: true },
+      { type: "s", value: "desc", content: "내림차순", current: false }
+    ],
+    status: [
+      { type: "x", value: "b", content: "예약 (0)", current: true },
+      { type: "x", value: "bw", content: "예약대기 (0)", current: false }
+    ]
+  }
+};
+export const usage = (
+  state: IUsageProps = initialState,
+  action: ActionRequest
+) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case SET_BOOKING_FILTER:
+        draft.filters[action.payload.type].map(
+          (el: any) => (el.current = action.payload.value === el.value)
+        );
+        draft.filters.status[0].content = `예약 (11)`;
+        break;
+      default:
+        return state;
+    }
+  });
+```
+
 ### 5. props로 내린 값을 사용하지 않을 때, 나오는 에러
 
 ```
@@ -319,4 +369,30 @@ declare module "*.png" {
   },
   "include": ["src", "types"]
 }
+```
+
+### 8. useEffect cleanup 함수 에러
+
+```
+' ' is not assignable to parameter of type 'EffectCallback'.
+```
+
+#### 해결
+
+```tsx
+// error
+useEffect(() => {
+  dispatch(getBookingCount(currentStudioData.ticket.id));
+  // error
+  return () => dispatch(initalizeBooking());
+}, []);
+
+// fix
+useEffect(() => {
+  dispatch(getBookingCount(currentStudioData.ticket.id));
+  // fix
+  return () => {
+    dispatch(initalizeBooking());
+  };
+}, []);
 ```
