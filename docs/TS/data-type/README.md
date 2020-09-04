@@ -184,7 +184,7 @@ export default Vue.extend({
   data() {
     return {
       //위에 정의한 Todo 인터페이스 타입을 져온다.
-      toDos: [] as Array<Todo>,
+      toDos: [] as Array<Todo>
     };
   },
   methods: {
@@ -194,11 +194,11 @@ export default Vue.extend({
         id: 1,
         name: nkh,
         password: 1234,
-        wantToAdd: "add",
+        wantToAdd: "add"
       } as Todo);
       return data;
-    },
-  },
+    }
+  }
 });
 </script>
 ```
@@ -217,6 +217,25 @@ export interface SomeMember {
   address: string;
   tier: TSomeMemberTier;
 }
+```
+
+## type의 특정 property만 제외
+
+```ts
+type XYZ = {
+  x: number;
+  y: number;
+  z: number;
+};
+// y, z 속성을 제외하여 아래처럼 만들고 싶다
+type X = { x: number };
+```
+
+- ts 버전 3.5이상에서는 `Omit`을 사용하면 됩니다.
+
+```ts
+type X = Omit<XYZ, "x" | "y">;
+// type X = { x: number };
 ```
 
 ## async / await
@@ -300,7 +319,7 @@ export default Vue.extend({
       toDos: [] as Array<Todo>,
 
       union: "asdasd" as string | number,
-      fetchData: [] as Array<unknown>,
+      fetchData: [] as Array<unknown>
     };
   },
   computed: {
@@ -325,7 +344,7 @@ export default Vue.extend({
         return this.union.length;
       }
       return this.union;
-    },
+    }
   },
 
   methods: {
@@ -344,7 +363,7 @@ export default Vue.extend({
       this.createSquare({
         colour: "red",
         width: 100,
-        test: "changeString",
+        test: "changeString"
       } as SquareConfig);
       return labelObj;
     },
@@ -353,7 +372,7 @@ export default Vue.extend({
       this.union = 123;
       const objectDec: { name: string | boolean; age: number } = {
         name: "name",
-        age: 123,
+        age: 123
       };
       console.log(objectDec);
 
@@ -367,8 +386,8 @@ export default Vue.extend({
       const res = await axios.get(api);
       this.fetchData = res.data.data;
       return res.data.data;
-    },
-  },
+    }
+  }
 });
 </script>
 ```

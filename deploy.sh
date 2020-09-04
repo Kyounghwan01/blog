@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: vue 한글 입력 방지 추가"
+git commit -m "feat: ts 기본 omit 추가"
 git push origin master
 
 # build
