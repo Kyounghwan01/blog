@@ -129,3 +129,23 @@ let iterator = iterable[Symbol.iterator]();
 이터러블은 이터레이터를 가지고 있습니다. (이터레이터를 가지고있지만 실행은 안했기에 `next`메소드 사용 불가능)
 
 이터레이터는 `next`메소드를 가지고 있고 `{done, value}`객체를 가지고 있습니다.
+
+## 전개연산자
+
+전개연산자도 이터레이터를 이용하여 작동합니다.
+
+```js
+let a = [1, 2, 3];
+a[Symbol.iterator] = null;
+console.log([...a]); // error Uncaught TypeError: a is not iterable
+
+// 즉, 이터레이터를 사용한다는 의미입니다.
+```
+
+### 전개 연산자 예시
+
+```js
+const a = [1, 2, 3];
+const c = [4, 5, 6];
+console.log([...b, ...c]); // [1,2,3,4,5,6]
+```

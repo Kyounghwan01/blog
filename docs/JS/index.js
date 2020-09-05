@@ -4,7 +4,11 @@ module.exports = {
     {
       collapsable: true,
       title: "함수형프로그래밍",
-      children: ["/JS/functional-programming/iterator/"]
+      children: [
+        "/JS/functional-programming/iterator/",
+        "/JS/functional-programming/generator_iterator/",
+        "/JS/functional-programming/map-filter-reduce/"
+      ]
     },
     {
       collapsable: true,
