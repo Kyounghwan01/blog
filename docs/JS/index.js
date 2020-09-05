@@ -3,12 +3,17 @@ module.exports = {
     "",
     {
       collapsable: true,
+      title: "함수형프로그래밍",
+      children: ["/JS/functional-programming/iterator/"]
+    },
+    {
+      collapsable: true,
       title: "Ajax",
       children: [
         "/JS/Ajax/Promise_Ajax/",
         "/JS/Ajax/AjaxStep/",
-        "/JS/Ajax/AjaxDataCall/",
-      ],
+        "/JS/Ajax/AjaxDataCall/"
+      ]
     },
     {
       collapsable: true,
@@ -35,8 +40,8 @@ module.exports = {
         "/JS/JSbasic/addEventListener/",
         "/JS/JSbasic/flat/",
         "/JS/JSbasic/module/",
-        "/JS/JSbasic/dupulication-property-remove/",
-      ],
-    },
-  ],
+        "/JS/JSbasic/dupulication-property-remove/"
+      ]
+    }
+  ]
 };
