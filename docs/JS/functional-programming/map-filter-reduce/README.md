@@ -248,11 +248,7 @@ go(
   log
 );
 
-const f = pipe(
-  (a, b) => a + b,
-  a => a + 10,
-  a => a + 100
-);
+const f = ((a, b) => a + b, a => a + 10, a => a + 100);
 
 log(f(0, 1));
 ```
@@ -407,3 +403,132 @@ go(
 ```
 
 함수형 프로그래밍은 고차함수를 잘게 나누면서 중복 제거하고, 많은 방법으로 조합할 수 있습니다.
+
+## 종합 예제
+
+```js
+const products = [
+  { name: "반팔티", price: 15000, quantity: 1, is_selected: true },
+  { name: "긴팔티", price: 20000, quantity: 2, is_selected: false },
+  { name: "핸드폰케이스", price: 15000, quantity: 3, is_selected: true },
+  { name: "후드티", price: 30000, quantity: 4, is_selected: false },
+  { name: "바지", price: 25000, quantity: 5, is_selected: false }
+];
+
+const totalQuantity = products =>
+  go(
+    products,
+    map(products => products.quantity),
+    reduce(add)
+  );
+
+const total = products =>
+  go(
+    products,
+    map(products => products.quantity * products.price),
+    reduce(add)
+  );
+
+console.log(totalQuantity(products)); // 15
+console.log(total(products)); // 345000
+
+// products를 바로 go에 넣어 products를 사용한다는 것은 아래와 같다.
+const totalQuantityPipe = pipe(
+  map(products => products.quantity),
+  reduce(add)
+);
+
+const totalPipe = pipe(
+  map(products => products.quantity * products.price),
+  reduce(add)
+);
+
+// 위에서 map, reduce가 중복되니 좀더 추상화 시키면
+const sum = (fn, iter) => go(iter, map(fn), reduce(add));
+
+let totalSum = sum(p => p.quantity * p.price, products);
+// typeof totalSum === number;
+console.log(totalSum);
+
+// totalSum 함수가 products를 받아서 그대로 쓰므로 위에서 쓴 curry를 이용하면 더 개선할 수 있다.
+totalSum = curry(sum(p => p.quantity * p.price));
+// typeof totalSum === Function;
+console.log(totalSum(products));
+```
+
+위처럼 추상화를 시키면 다른 예시로도 사용가능합니다.
+
+```js
+log(
+  sum(p => p.usage, [
+    { id: 1, usage: 100 },
+    { id: 3, usage: 11 }
+  ])
+);
+// 111
+```
+
+## dom html로 함수형 프로그래밍 만들기
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML 출력해보기 - 장바구니</title>
+    <script src="../lib/fx.js"></script>
+  </head>
+  <body>
+    <div id="cart"></div>
+
+    <script>
+      const products = [
+        { name: "반팔티", price: 15000, quantity: 1, is_selected: true },
+        { name: "긴팔티", price: 20000, quantity: 2, is_selected: false },
+        { name: "핸드폰케이스", price: 15000, quantity: 3, is_selected: true },
+        { name: "후드티", price: 30000, quantity: 4, is_selected: false },
+        { name: "바지", price: 25000, quantity: 5, is_selected: false }
+      ];
+
+      const add = (a, b) => a + b;
+
+      const sum = curry((f, iter) => go(iter, map(f), reduce(add)));
+
+      const total_quantity = sum(p => p.quantity);
+
+      const total_price = sum(p => p.price * p.quantity);
+
+      document.querySelector("#cart").innerHTML = `
+    <table>
+      <tr>
+        <th></th>
+        <th>상품 이름</th>
+        <th>가격</th>
+        <th>수량</th>
+        <th>총 가격</th>
+      </tr>
+      ${go(
+        products,
+        sum(
+          p => `
+          <tr>
+            <td><input type="checkbox" ${p.is_selected ? "checked" : ""}></td>
+            <td>${p.name}</td>
+            <td>${p.price}</td>
+            <td><input type="number" value="${p.quantity}"></td>
+            <td>${p.price * p.quantity}</td>
+          </tr>
+      `
+        )
+      )}
+      <tr>
+        <td colspan="3">합계</td>
+        <td>${total_quantity(filter(p => p.is_selected, products))}</td>
+        <td>${total_price(filter(p => p.is_selected, products))}</td>
+      </tr>
+    </table>
+  `;
+    </script>
+  </body>
+</html>
+```

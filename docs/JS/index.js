@@ -7,7 +7,8 @@ module.exports = {
       children: [
         "/JS/functional-programming/iterator/",
         "/JS/functional-programming/generator_iterator/",
-        "/JS/functional-programming/map-filter-reduce/"
+        "/JS/functional-programming/map-filter-reduce/",
+        "/JS/functional-programming/lazy-iterable/"
       ]
     },
     {
