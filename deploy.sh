@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: L.map, L.filter 추가"
+git commit -m "feat: L.flatten, flatMap 추가"
 git push origin master
 
 # build
