@@ -8,7 +8,8 @@ module.exports = {
         "/JS/functional-programming/iterator/",
         "/JS/functional-programming/generator_iterator/",
         "/JS/functional-programming/map-filter-reduce/",
-        "/JS/functional-programming/lazy-iterable/"
+        "/JS/functional-programming/lazy-iterable/",
+        "/JS/functional-programming/async-control/"
       ]
     },
     {

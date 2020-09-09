@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: react 에러 추가"
+git commit -m "feat: 비동기 go, map, take 추가"
 git push origin master
 
 # build
