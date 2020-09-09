@@ -161,6 +161,44 @@ const PropRefComponent = ({refs}) => {
 
 ```
 
+### 10. redux-reducer에서 다른 store 값 참조
+
+reducer내에서 다른 reducer state를 참조하고 싶을 때 사용합니다.
+
+#### createStore export
+
+redux를 사용했다면 분명 `createStore`를 사용했을 것입니다. 그 값을 받은 변수를 export 시킵니다.
+
+```js
+export const store = createStore(rootReducer, enhancer);
+```
+
+#### 사용을 원하는 reducer에서 Import store
+
+import 후, getState()함수를 이용하여 접근합니다.
+
+```js
+import { store } from "index";
+console.log(store.getState().studio.currentStudioData);
+```
+
+#### 에러
+
+```
+Error: You may not call store.getState() while the reducer is executing.
+```
+
+실행을 하면 reducer내에서 getState를 사용할 수 없다는 에러가 나올 수 있습니다.
+
+#### fix
+
+1. 크롬 확장 프로그램인 `redux-devtools`를 삭제하면 된다는 말도 있고,
+2. `redux-devtools-extension`를 사용하는 경우 `composeWithDevTools`사용을 중지하면 된다는 경우도 있습니다.
+
+저의 경우 두가지 다 되지 않고, 해결방법을 찾지 못해서 굳이 reducer에서 다른 state를 참조하는 것이 맞는가 부터 다시 생각하게 되었습니다.
+
+그래서 저는 결론적으로는 reducer에서만 `getState`가 실행되지 않는 것으로 보이니, saga에서 해당 action을 가진 함수가 실행될때 param으로 같이 태워보내는 방향으로 진행하였습니다.
+
 ## TypeScript
 
 ### 1. Expected 0 type arguments, but got 1.
