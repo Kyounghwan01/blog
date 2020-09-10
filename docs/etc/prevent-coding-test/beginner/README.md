@@ -5,7 +5,7 @@
 ```js
 var num = [100, 200, 300, 400, 500];
 // 400, 500 삭제하기
-const newNum = num.filter((el) => el !== 500 && el !== 400);
+const newNum = num.filter(el => el !== 500 && el !== 400);
 ```
 
 ## splice 사용법
@@ -37,7 +37,7 @@ arr.splice(target, 0, 10000);
 ```js
 var d = {
   test: 120,
-  test: 1000,
+  test: 1000
 };
 
 // 점 접근
@@ -395,3 +395,27 @@ const c = a.map((el, index) => {
 <TagLinks />
 
 <Disqus />
+
+## 지정된 문자열의 모든 경우의 수
+
+```js
+// 'ABCDEF'가 있으면 가능한 모든 문자 조합 구하기, 두번째문자열과 중복 가장 많이된 length 찾기
+function sol(string) {
+  let result = [];
+  for (let i = 1; i < string.length + 1; i++) {
+    for (let j = 0; j < i; j++) {
+      result.push(string.slice(j, j + string.length + 1 - i));
+    }
+  }
+  return result;
+}
+let inputOne = "ABCDEF";
+let inputTwo = "BCDFH";
+
+const ArrayOne = sol(inputOne);
+// [ 'ABCDEF', 'ABCDE', 'BCDEF', 'ABCD', 'BCDE', 'CDEF', 'ABC'..'F']
+const ArrayTwo = sol(inputTwo);
+
+const c = ArrayOne.filter(x => ArrayTwo.includes(x)).map(el => el.length); // [3,2,1,1,1..]
+console.log(Math.max(...c)); // 3
+```
