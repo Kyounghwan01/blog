@@ -53,6 +53,88 @@ console.log(total_average);
 console.log(total_average.reduce((a, b) => a + b) / 7);
 ```
 
+## 선입선출 알고리즘
+
+메모리의 크기가 i로 주어지고 들어올 페이지들이 n으로 주어졌을 때, 전체 실행시간을 구해주세요.
+
+만약 스택 안에 같은 스케줄이 있다면 **hit** 이라고 하며 실행시간은 **1초** 입니다. 스택 안에 스케줄이 없다면 **miss** 라고 하며 실행시간은 **6초** 입니다.
+
+BCBAEBCE
+
+- 예제 1번을 보면 페이지 프레임의 개수는 3개이고 스케줄은 'BCBAEBCE' 입니다. 6번의 miss를 기록하므로 **6번 \* 6초 = 36초**가 되고 2번의 hit을 기록하므로 **2번 \* 1초 = 2초**입니다. 2개를 합한 값이 실행시간이므로, 38초가 됩니다.
+
+페이지 = [B] (B, 6초) 페이지 = [B, C] 6s페이지 = [B, C] 1s 페이지 = [B, C, A] 6c 페이지 = [C, A, E] 6s 페이지 = [A, E, B] 6s 페이지 = [E, B, C] 6s 페이지 [E, B, C] 1s
+
+```js
+function fnfo() {
+  const frame = 4;
+  const page = "ABCDABEABCDE".split("");
+  let runTime = 0;
+  let temp = [];
+
+  if (frame === 0) return page.length * 6;
+
+  for (let i of page) {
+    if (temp.length > frame - 1) {
+      if (temp.includes(i)) {
+        runTime += 1;
+      } else {
+        runTime += 6;
+        temp.push(i);
+        temp.shift();
+      }
+    } else {
+      if (temp.includes(i)) {
+        runTime += 1;
+      } else {
+        runTime += 6;
+        temp.push(i);
+      }
+    }
+  }
+}
+
+fnfo();
+```
+
+## LRU (가장 사용되지 않은 순 버려)
+
+```js
+function lru() {
+  const frame = 3;
+  const page = "BCBAEBCE".split("");
+  let runTime = 0;
+  let temp = [];
+
+  if (frame === 0) return page.length * 6;
+
+  for (let i of page) {
+    if (temp.length > frame - 1) {
+      if (temp.includes(i)) {
+        runTime += 1;
+        let t1 = temp.splice(temp.indexOf(i), 1);
+        temp.push(t1[0]);
+      } else {
+        runTime += 6;
+        temp.push(i);
+        temp.shift();
+      }
+    } else {
+      if (temp.includes(i)) {
+        runTime += 1;
+        let t1 = temp.splice(temp.indexOf(i), 1);
+        temp.push(t1[0]);
+      } else {
+        runTime += 6;
+        temp.push(i);
+      }
+    }
+  }
+}
+
+lru();
+```
+
 ## 특정 문자 못쓸때 치환
 
 숫자 3, 4, 6이 도통 눌리지 않습니다.
