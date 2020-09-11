@@ -571,3 +571,78 @@ console.log(차.indexOf(Math.min.apply(null, 차)));
 let 차의인덱스 = 차.indexOf(Math.min.apply(null, 차));
 console.log(골드바흐파티션[차의인덱스]);
 ```
+
+## 탑쌓기
+
+탑을 쌓기 위해 각 크기별로 준비된 블럭들을 정해진 순서에 맞게 쌓아야 합니다.
+순서에 맞게 쌓지 않으면 무너질 수 있습니다.
+
+예를 들면 정해진 순서가 BAC 라면 A 다음 C가 쌓아져야 합니다.
+선행으로 쌓아야 하는 블럭이 만족된 경우라면 탑이 무너지지 않습니다.
+
+- B를 쌓지 않아도 A와 C를 쌓을 수 있습니다.
+- B 다음 블럭이 C가 될 수 있습니다.
+
+쌓아져 있는 블럭 탑이 순서에 맞게 쌓아져 있는지 확인하세요.
+
+1. 블럭은 알파벳 대문자로 표기합니다.
+2. 규칙에 없는 블럭이 사용될 수 있습니다.
+3. 중복된 블럭은 존재하지 않습니다.
+
+```jsx
+**입력**
+탑 = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"]
+규칙 = "ABD"
+**출력**
+["가능", "불가능", "가능", "가능", "가능"]
+```
+
+```js
+function block() {
+  const top = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
+  const rule = "ABD";
+  const answer = [];
+
+  function test(target, rule) {
+    const targets = target.split("");
+    let result = [];
+    for (let i = 0; i < rule.length; i++) {
+      const index = targets.indexOf(rule[i]);
+      if (index >= 0) {
+        result.push(index);
+      }
+    }
+    const t = JSON.parse(JSON.stringify(result));
+    t.sort().join() === result.join()
+      ? answer.push("가능")
+      : answer.push("불가능");
+  }
+  for (let i of top) {
+    test(i, rule);
+  }
+  return answer;
+}
+log(block());
+
+function block() {
+  const top = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
+  const rule = "ABD";
+  const answer = [];
+
+  function test(target, rule) {
+    const targets = target.split("");
+    let temp = targets.indexOf(rule[0]);
+    for (let i of targets) {
+      const result = targets.indexOf(i);
+      if (temp > result) return "불가능";
+      temp = result;
+    }
+    return "가능";
+  }
+  for (let i of top) {
+    answer.push(test(i, rule));
+  }
+  return answer;
+}
+log(block());
+```
