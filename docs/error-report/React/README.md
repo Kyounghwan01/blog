@@ -435,7 +435,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### 9. new Date 값을 비교할 때 나요는 에러
+#### 9. new Date 값을 비교할 때 나오는 에러
 
 ```
 The left -hand and right hand side of an arithmetic operation must be of type 'any', 'number' or an enum type

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 코딩테스트 준비"
+git commit -m "fix: 9월 dev-report 수정"
 git push origin master
 
 # build
