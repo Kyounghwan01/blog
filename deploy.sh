@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 9월 dev-report 수정"
+git commit -m "fix: vuepress http 크롤링 주소 변경"
 git push origin master
 
 # build

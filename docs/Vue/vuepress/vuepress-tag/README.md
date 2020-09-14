@@ -1,5 +1,5 @@
 ---
-title: vuePress tag 만들기
+title: vuePress - tag 만들기
 meta:
   - name: description
     content: vuePress tag 만들기
@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: vuePress tag 만들기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vuepress/
+    content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-tag/
 tags: ["vuepress"]
 ---
 
@@ -139,8 +139,8 @@ tags: ["VuePress", "Tags", "vue"]
           }
         }
         return tags;
-      },
-    },
+      }
+    }
   };
 </script>
 ```

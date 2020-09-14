@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: vuePress public 폴더 관리
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vuepress-public/
+    content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-public/
 tags: ["vuepress"]
 ---
 

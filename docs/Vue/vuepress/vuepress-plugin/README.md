@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: vuePress plugin 사용법
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vuepress-plugin/
+    content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-plugin/
 tags: ["vuepress"]
 ---
 
@@ -46,7 +46,7 @@ devDependencies에 vuepress가 설치되어 있는 지 꼭 확인합니다.<br>
 ```js
 // .vuepress/config.js
 module.export = {
-  plugins: ["@vuepress/back-to-top"],
+  plugins: ["@vuepress/back-to-top"]
 };
 ```
 

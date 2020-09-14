@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: vuePress 댓글 기능 추가하기, Disqus
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vuepress-content/
+    content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-content/
 tags: ["vuepress"]
 ---
 
@@ -48,7 +48,7 @@ tags: ["vuepress"]
       } catch (e) {
         // some error
       }
-    },
+    }
   };
 </script>
 ```
@@ -71,7 +71,7 @@ tags: ["vuepress"]
 ```js
 // .vuepress/theme/index.ks
 module.exports = {
-  extend: "@vuepress/theme-default",
+  extend: "@vuepress/theme-default"
 };
 ```
 
@@ -96,8 +96,8 @@ module.exports = {
   export default {
     components: {
       ParentLayout,
-      Disqus,
-    },
+      Disqus
+    }
   };
 </script>
 ```
