@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: vuepress http 크롤링 주소 변경"
+git commit -m "feat: redux-toolkit 추가"
 git push origin master
 
 # build
