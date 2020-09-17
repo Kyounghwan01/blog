@@ -199,6 +199,44 @@ Error: You may not call store.getState() while the reducer is executing.
 
 그래서 저는 결론적으로는 reducer에서만 `getState`가 실행되지 않는 것으로 보이니, saga에서 해당 action을 가진 함수가 실행될때 param으로 같이 태워보내는 방향으로 진행하였습니다.
 
+### 11. router로 이동할때, 스크롤이 맨위에 있지 않고 이전 페이지 스크롤에 고정된 경우
+
+#### fix
+
+페이지가 이동할때, cleanup 함수를 발동시켜 다음 페이지에서는 스크롤의 위치를 0,0으로 만든다.
+모든 페이지에 적용하기 위해 router의 최상단에 컴포넌트를 위치시킨다.
+
+```tsx
+// components/ScrollToTop.tsx
+import { useEffect } from "react";
+import { withRouter, useHistory } from "react-router-dom";
+
+function ScrollToTop() {
+  const history = useHistory();
+
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+    return () => {
+      unlisten();
+    };
+  }, []);
+
+  return null;
+}
+
+export default withRouter(ScrollToTop);
+
+// routes.tsx
+<Router>
+  <ScrollToTop />
+  <Switch>
+    <Route path="/" exact component={Home} />
+  </Switch>
+</Router>;
+```
+
 ## TypeScript
 
 ### 1. Expected 0 type arguments, but got 1.
@@ -435,7 +473,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### 9. new Date 값을 비교할 때 나오는 에러
+### 9. new Date 값을 비교할 때 나오는 에러
 
 ```
 The left -hand and right hand side of an arithmetic operation must be of type 'any', 'number' or an enum type
@@ -448,4 +486,57 @@ const res = action.data.data.sort(
   (a: { start_on: string }, b: { start_on: string }) =>
     (new Date(a.start_on) as any) - (new Date(b.start_on) as any)
 );
+```
+
+### 10. saga 제네릭 함수에서 takeLatest내부에 오는 type 값 에러
+
+```
+No overload matches this call.
+The last overload gave the following error.
+Argument of type 'string' is not assignable to parameter of type 'TakeableChannel<unknown>'.
+```
+
+```ts
+function* postGroupBookingSaga(action: {
+  userTicketId: number;
+  lectureId: number;
+}) {
+  try {
+    const result = yield call(() =>
+      booking.patchBooking(action.userTicketId, action.lectureId)
+    );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function* watchPostGroupBooking() {
+  // 에러
+  yield takeLatest(POST_GROUP_BOOKIG_R, postGroupBookingSaga);
+}
+```
+
+#### fix
+
+내부적으로 action type이 string으로 내려주니까 type 정의할때 type: string을 넣어줘야한다.
+
+```ts
+type test = {
+  userTicketId: number;
+  lectureId: number;
+  type: string;
+};
+function* postGroupBookingSaga(action: test) {
+  try {
+    const result = yield call(() =>
+      booking.patchBooking(action.userTicketId, action.lectureId)
+    );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function* watchPostGroupBooking() {
+  yield takeLatest(POST_GROUP_BOOKIG_R, postGroupBookingSaga);
+}
 ```

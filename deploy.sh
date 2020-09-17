@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: redux-toolkit 추가"
+git commit -m "feat: 에러모음 추가"
 git push origin master
 
 # build

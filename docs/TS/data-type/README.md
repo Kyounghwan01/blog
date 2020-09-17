@@ -392,6 +392,15 @@ export default Vue.extend({
 </script>
 ```
 
+## 날짜 비교
+
+날짜를 비교할때 `new Date`객체를 이용하여 빼기 연산을 하는데, 이때 date 타입이 number가 아니기 때문에 타입스크립트에서는 에러를 낸다.
+그래서 +를 이용하여 날짜객체를 숫자로 바꾸면 연산이 된다.
+
+```ts
+(res: bookingType[]) => [...res].sort((a, b) => +new Date(a.start_on) - +new Date(b.start_on)),
+```
+
 <TagLinks />
 
 <Disqus />
