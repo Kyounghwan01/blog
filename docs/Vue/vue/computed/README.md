@@ -34,7 +34,7 @@ tags: ["vue"]
 export default {
   data() {
     return {
-      score: 1,
+      score: 1
     };
   },
   computed: {
@@ -45,8 +45,8 @@ export default {
     ticketList() {
       return this.$store.getters["ticket/ticket"];
       // ticket.js라는 store에 접근해 ticket state를 가져온 후 템플릿에 보입니다.
-    },
-  },
+    }
+  }
 };
 </script>
 ```
@@ -68,14 +68,14 @@ export default {
 export default {
   data() {
     return {
-      score: 1,
+      score: 1
     };
   },
   methods: {
     increse() {
       return this.score++;
-    },
-  },
+    }
+  }
 };
 </script>
 ```
@@ -93,7 +93,7 @@ getter는 위에서 이미 보았습니다.
 export default {
   computed() {
     return this.$store.getters["ticket/ticket"];
-  },
+  }
 };
 </script>
 ```
@@ -117,9 +117,9 @@ export default {
         var names = newValue.split(" ");
         this.firstName = names[0];
         this.lastName = names[names.length - 1];
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 ```
@@ -139,9 +139,9 @@ export default {
       handler() {
         this.changeData();
       },
-      immediate: true,
-    },
-  },
+      immediate: true
+    }
+  }
 };
 </script>
 ```
@@ -181,7 +181,7 @@ export default {
 
 그러면 어떨 때 `computed`를 어떨 때 `watch`를 쓰냐??
 
-`computed`는 템플릿 내의 값이 data와 종속되었을 경우 사용하는게 유리합니다.왜냐하면 같은 경우에 `watch`를 사용하면 중복 호출하거나, 코드가 복잡해주기 때문입니다.
+`computed`는 템플릿 내의 값이 data와 종속되었을 경우 사용하는게 유리합니다.왜냐하면 같은 경우에 `watch`를 사용하면 중복 호출하거나, 코드가 복잡해주기 때문입니다. 또한 computed의 값은 캐싱되기 때문에, 리렌더링 됬을 때, 같은 값이 들어왔다면 연산하지 않습니다. 그에 반해 watch는 같은 값이여도 연산을 다시 합니다. 컴포넌트가 리렌더링이 많이 되나, 값이 바뀔일이 없다면 computed를 필히 써야합니다.
 
 `watch`는 지정한 값이 변경된 시점에서 내가 원하는 액션(`api call`, `route.push()`)을 하기 원할 때 사용합니다.
 
