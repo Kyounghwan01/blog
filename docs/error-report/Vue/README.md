@@ -105,3 +105,15 @@ declare module "vue-fragment" {
   export = _;
 }
 ```
+
+### 3. Type boolean trivially inferred from a boolean literal, remove type annotation.
+
+- 원인 : 처음에 정의되는 값에 의해 어짜피 타입이 뭔지 아니까 굳이 타입을 정의하지 말라는 뜻
+
+```ts
+public loading: boolean = false;
+// 어짜피 boolean인거 아니까 쓰지말라는 의미입니다.
+
+// fix
+public loading = false;
+```

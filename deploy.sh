@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: vue - 메모리 누수 방지"
+git commit -m "feat: interview"
 git push origin master
 
 # build
