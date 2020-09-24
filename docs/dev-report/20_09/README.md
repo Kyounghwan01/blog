@@ -37,4 +37,26 @@ Error: You may not call store.getState() while the reducer is executing.
 
 - [정리](https://kyounghwan01.github.io/blog/Vue/vue/prevent-hangle/)
 
+### 5. 글로벌 변수 수정
+
+#### 라이브러리 글로벌 import
+
+- 라이브러리의 alert를 기본 alert로 대체하고 싶은 상황
+- 라이브러리의 alert를 부르기 위해서는 계속 import 라이브러리를 해야하는 상황
+- 글로벌 alert를 라이브러리 alert로 바꿈으로 해결
+
+### fix
+
+```tsx
+import * as mobiscroll from "@mobiscroll/react";
+window.mobiscrollAlert = mobiscroll.alert;
+window.mobiscrollConfirm = mobiscroll.confirm;
+
+/**
+ tsconfig.json의 include내에
+ global-d-ts에
+ mobiscrollConfirm, mobiscrollAlert를 사용한다고 정의해야함
+*/
+```
+
 <Disqus />

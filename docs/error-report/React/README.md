@@ -237,6 +237,15 @@ export default withRouter(ScrollToTop);
 </Router>;
 ```
 
+### 12. 날짜 객체 비교
+
+- new Date를 비교하려면 `-` 연산을 이용해 크고 작음을 비교하는데, Date 타입은 빼기가 안되니 nunmber로 바꾼다.
+
+```tsx
+// new Date 비교
+(res: bookingType[]) => [...res].sort((a, b) => +new Date(a.start_on) - +new Date(b.start_on)),
+```
+
 ## TypeScript
 
 ### 1. Expected 0 type arguments, but got 1.
@@ -527,6 +536,61 @@ type test = {
   type: string;
 };
 function* postGroupBookingSaga(action: test) {
+  try {
+    const result = yield call(() =>
+      booking.patchBooking(action.userTicketId, action.lectureId)
+    );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function* watchPostGroupBooking() {
+  yield takeLatest(POST_GROUP_BOOKIG_R, postGroupBookingSaga);
+}
+```
+
+## 11. saga action.type typs 정의 에러
+
+```
+No overload matches this call.
+The last overload gave the following error.
+Argument of type 'string' is not assignable to parameter of type 'TakeableChannel<unknown>'.
+```
+
+- saga 제네릭 함수에서 takeLatest내부에 오는 type 값 에러 - 내부적으로 action type이 string으로 내려주니까 type 정의할때 type: string을 넣어줘야한다.
+
+```tsx
+function* postGroupBookingSaga(action: {
+  userTicketId: number;
+  lectureId: number;
+}) {
+  console.log(action);
+  try {
+    const result = yield call(() =>
+      booking.patchBooking(action.userTicketId, action.lectureId)
+    );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function* watchPostGroupBooking() {
+  // 에러
+  yield takeLatest(POST_GROUP_BOOKIG_R, postGroupBookingSaga);
+}
+```
+
+### fix: type을 string으로 추가 정의
+
+```tsx
+type test = {
+  userTicketId: number;
+  lectureId: number;
+  type: string;
+};
+function* postGroupBookingSaga(action: test) {
+  console.log(action);
   try {
     const result = yield call(() =>
       booking.patchBooking(action.userTicketId, action.lectureId)
