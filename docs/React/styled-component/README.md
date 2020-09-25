@@ -59,7 +59,7 @@ const Button = styled.button`
 // Button 컴포넌트 상속
 const NewButton = styled.Button`
   // NewButton 컴포넌트에 color가는 props가 있으면 그 값 사용, 없으면 'red' 사용
-  color: ${(props) => props.color || "red"};
+  color: ${props => props.color || "red"};
 `;
 
 export default Example;
@@ -98,6 +98,55 @@ const FlexBox = div`
 `;
 ```
 
+### 글로벌 css에 minxin 기능을 넣고 어느 컴포넌트에서나 사용하게 할 수 있습니다.
+
+#### global-styled.ts에 mixin을 정의합니다.
+
+```ts
+// global-styled.ts
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  @mixin flex($direction: 'row', $align: 'center', $justify: 'center') {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+  }
+`;
+export default GlobalStyle;
+```
+
+#### global-styled를 웹의 가장 상단 index.js에 import 합니다
+
+```js
+// src/index.js
+import GlobalStyle from "assets/styles/global-styles.ts";
+
+ReactDOM.render(
+  <Provider store={store}>
+    <GlobalStyle />
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
+```
+
+#### 이후 아무 컴포넌트에서나 글로벌에서 정의한 mixin기능을 사용할 수 있습니다.
+
+```tsx
+function Test() {
+  return (
+    <CenterContainer>
+      <p>가운데 정렬 엘리먼트</p>
+    </CenterContainer>
+  );
+}
+const CenterContainer = styled.div`
+  @include flex(row, center, center);
+`;
+```
+
 ## 다른 파일에서 컴포넌트 import
 
 - 해당 파일에서 정의한 css를 export하여 다른 파일에서 import 할 수 있습니다.
@@ -129,7 +178,7 @@ import styled, { css } from "styled-components";
 
 const sizes = {
   desktop: 1024,
-  tablet: 768,
+  tablet: 768
 };
 
 // sizes 객체에 따라 자동으로 media 쿼리 함수를 만들어줍니다.
@@ -145,7 +194,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const Box = styled.div`
   /* props 로 넣어준 값을 직접 전달해줄 수 있습니다. */
-  background: ${(props) => props.color || "blue"};
+  background: ${props => props.color || "blue"};
   padding: 1rem;
   display: flex;
   width: 1024px;
@@ -171,7 +220,7 @@ export const GlobalStyle = createGlobalStyle`
 
 ```jsx
 const Input = styled.input.attrs({
-  required: true,
+  required: true
 })`
   border-radius: 5px;
 `;
@@ -187,7 +236,7 @@ const addCssType = css`
 `;
 
 const Input = styled.input.attrs({
-  required: true,
+  required: true
 })`
   border-radius: 5px;
   ${addCssType}
@@ -243,7 +292,7 @@ const Container = () => {
 const Button = styled.button`
   border-radius: 30px;
   padding: 25px 15px;
-  background-color: ${(props) => props.theme.successColor};
+  background-color: ${props => props.theme.successColor};
 `;
 
 export default Container;
