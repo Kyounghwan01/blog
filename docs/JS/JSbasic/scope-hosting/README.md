@@ -1,17 +1,18 @@
 ---
+title: JavaScript - scope / hoisting 알아보기
 meta:
   - name: description
-    content: scope / hoisting
+    content: JavaScript - scope / hoisting 알아보기
   - property: og:title
-    content: scope / hoisting
+    content: JavaScript - scope / hoisting 알아보기
   - property: og:description
-    content: scope / hoisting
+    content: JavaScript - scope / hoisting 알아보기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/scope-hosting/
 tags: ["JS"]
 ---
 
-# scope / hoisting
+# scope / hoisting 알아보기
 
 ## Scope
 

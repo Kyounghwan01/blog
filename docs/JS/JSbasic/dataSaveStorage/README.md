@@ -1,12 +1,12 @@
 ---
-title: local,session Storage 저장방법
+title: JavaScript - local,session Storage 저장방법
 meta:
   - name: description
-    content: local,session Storage 저장방법
+    content: JavaScript - local,session Storage 저장방법
   - property: og:title
-    content: local,session Storage 저장방법
+    content: JavaScript - local,session Storage 저장방법
   - property: og:description
-    content: local,session Storage 저장방법
+    content: JavaScript - local,session Storage 저장방법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/dataSaveStorage/
 tags: ["JS"]

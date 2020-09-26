@@ -1,11 +1,12 @@
 ---
+title: JavaScript - 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
 meta:
   - name: description
-    content: ES2019 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
+    content: JavaScript - 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
   - property: og:title
-    content: ES2019 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
+    content: JavaScript - 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
   - property: og:description
-    content: ES2019 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
+    content: JavaScript - 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/flat/
 tags: ["JS"]
@@ -68,10 +69,10 @@ const flat2 = exampleArray.flat(2);
 ```js
 let arr1 = [1, 2, 3, 4];
 
-arr1.map((x) => [x * 2]);
+arr1.map(x => [x * 2]);
 // [[2], [4], [6], [8]]
 
-arr1.flatMap((x) => [x * 2]);
+arr1.flatMap(x => [x * 2]);
 // [2, 4, 6, 8]
 ```
 

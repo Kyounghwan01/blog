@@ -1,12 +1,12 @@
 ---
-title: 자바스크립트와 이벤트 루프
+title: JavaScript - 동작원리 및 이벤트 루프 상세히 알아보기
 meta:
   - name: description
-    content: 자바스크립트와 이벤트 루프
+    content: JavaScript - 동작원리 및 이벤트 루프 상세히 알아보기
   - property: og:title
-    content: 자바스크립트와 이벤트 루프
+    content: JavaScript - 동작원리 및 이벤트 루프 상세히 알아보기
   - property: og:description
-    content: 자바스크립트와 이벤트 루프
+    content: JavaScript - 동작원리 및 이벤트 루프 상세히 알아보기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/eventLoop/
 tags: ["JS"]

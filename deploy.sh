@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 스타일드 컴포넌트 - 글로벌 mixin 추가"
+git commit -m "fix: 게시글 - seo title, des 수정"
 git push origin master
 
 # build

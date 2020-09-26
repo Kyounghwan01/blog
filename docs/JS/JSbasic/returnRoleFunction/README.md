@@ -1,11 +1,12 @@
 ---
+title: JavaScript - 함수에서 return 역할
 meta:
   - name: description
-    content: 함수에서 return 역할
+    content: JavaScript - 함수에서 return 역할
   - property: og:title
-    content: 함수에서 return 역할
+    content: JavaScript - 함수에서 return 역할
   - property: og:description
-    content: 함수에서 return 역할
+    content: JavaScript - 함수에서 return 역할
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/returnRoleFunction/
 tags: ["JS"]

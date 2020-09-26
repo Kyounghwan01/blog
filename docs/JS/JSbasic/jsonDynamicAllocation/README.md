@@ -1,11 +1,12 @@
 ---
+title: JavaScript - JSON 객체 Key값 동적 할당하기
 meta:
   - name: description
-    content: JSON 객체 Key값 동적 할당하기
+    content: JavaScript - JSON 객체 Key값 동적 할당하기
   - property: og:title
-    content: JSON 객체 Key값 동적 할당하기
+    content: JavaScript - JSON 객체 Key값 동적 할당하기
   - property: og:description
-    content: JSON 객체 Key값 동적 할당하기
+    content: JavaScript - JSON 객체 Key값 동적 할당하기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/jsonDynamicAllocation/
 tags: ["JS"]
@@ -18,7 +19,7 @@ JSON 일반적으로 아래와 같이 사용합니다.
 ```js
 var example = {
   name: nkh,
-  age: 27,
+  age: 27
 };
 ```
 
@@ -29,7 +30,7 @@ var example = {
 ```js
 var new = age;
 var example = {
-  new: 27,
+  new: 27
 };
 ```
 
@@ -56,6 +57,15 @@ var value = 27;
 var something = {};
 something[keyname + postfix] = value;
 //console.log : {myAge : 27}
+```
+
+### 추가 방법
+
+추가로 es2019에 의하면 아주 간단하게 동적으로 키를 할당 가능합니다
+
+```js
+const name = "who";
+const person = { [name]: "nkh" }; // {who: 'nkh'}
 ```
 
 <TagLinks />

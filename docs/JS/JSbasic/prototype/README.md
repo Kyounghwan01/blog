@@ -1,11 +1,12 @@
 ---
+title: JavaScript - prototype, 프로토타입 원리 이해하기
 meta:
   - name: description
-    content: prototype
+    content: JavaScript - prototype, 프로토타입 원리 이해하기
   - property: og:title
-    content: prototype
+    content: JavaScript - prototype, 프로토타입 원리 이해하기
   - property: og:description
-    content: prototype
+    content: JavaScript - prototype, 프로토타입 원리 이해하기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/prototype/
 tags: ["JS"]

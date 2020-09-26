@@ -98,55 +98,6 @@ const FlexBox = div`
 `;
 ```
 
-### 글로벌 css에 minxin 기능을 넣고 어느 컴포넌트에서나 사용하게 할 수 있습니다.
-
-#### global-styled.ts에 mixin을 정의합니다.
-
-```ts
-// global-styled.ts
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  @mixin flex($direction: 'row', $align: 'center', $justify: 'center') {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-  }
-`;
-export default GlobalStyle;
-```
-
-#### global-styled를 웹의 가장 상단 index.js에 import 합니다
-
-```js
-// src/index.js
-import GlobalStyle from "assets/styles/global-styles.ts";
-
-ReactDOM.render(
-  <Provider store={store}>
-    <GlobalStyle />
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
-```
-
-#### 이후 아무 컴포넌트에서나 글로벌에서 정의한 mixin기능을 사용할 수 있습니다.
-
-```tsx
-function Test() {
-  return (
-    <CenterContainer>
-      <p>가운데 정렬 엘리먼트</p>
-    </CenterContainer>
-  );
-}
-const CenterContainer = styled.div`
-  @include flex(row, center, center);
-`;
-```
-
 ## 다른 파일에서 컴포넌트 import
 
 - 해당 파일에서 정의한 css를 export하여 다른 파일에서 import 할 수 있습니다.
@@ -296,6 +247,55 @@ const Button = styled.button`
 `;
 
 export default Container;
+```
+
+### 글로벌 css에 minxin 기능을 넣고 어느 컴포넌트에서나 사용하게 할 수 있습니다.
+
+#### global-styled.ts에 mixin을 정의합니다.
+
+```ts
+// global-styled.ts
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  @mixin flex($direction: 'row', $align: 'center', $justify: 'center') {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+  }
+`;
+export default GlobalStyle;
+```
+
+#### global-styled를 웹의 가장 상단 index.js에 import 합니다
+
+```js
+// src/index.js
+import GlobalStyle from "assets/styles/global-styles.ts";
+
+ReactDOM.render(
+  <Provider store={store}>
+    <GlobalStyle />
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
+```
+
+#### 이후 아무 컴포넌트에서나 글로벌에서 정의한 mixin기능을 사용할 수 있습니다.
+
+```tsx
+function Test() {
+  return (
+    <CenterContainer>
+      <p>가운데 정렬 엘리먼트</p>
+    </CenterContainer>
+  );
+}
+const CenterContainer = styled.div`
+  @include flex(row, center, center);
+`;
 ```
 
 <TagLinks />

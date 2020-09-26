@@ -1,12 +1,12 @@
 ---
-title: addEventListener 사용법
+title: JavaScript - addEventListener 사용법
 meta:
   - name: description
-    content: addEventListener 사용법
+    content: JavaScript - addEventListener 사용법
   - property: og:title
-    content: addEventListener 사용법
+    content: JavaScript - addEventListener 사용법
   - property: og:description
-    content: addEventListener 사용법
+    content: JavaScript - addEventListener 사용법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/addEventListener/
 tags: ["JS"]

@@ -1,12 +1,12 @@
 ---
-title: 날짜 다루기
+title: JavaScript - new Date 날짜 다루기
 meta:
   - name: description
-    content: 날짜 다루기
+    content: JavaScript - new Date 날짜 다루기
   - property: og:title
-    content: 날짜 다루기
+    content: JavaScript - new Date 날짜 다루기
   - property: og:description
-    content: 날짜 다루기
+    content: JavaScript - new Date 날짜 다루기
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/dealingDate/
 tags: ["JS"]

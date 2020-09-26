@@ -1,21 +1,22 @@
 ---
+title: JavaScript - es6의 module 패턴 알아보기 (import, export)
 meta:
   - name: description
-    content: es6 module
+    content: JavaScript - es6의 module 패턴 알아보기 (import, export)
   - property: og:title
-    content: es6 module
+    content: JavaScript - es6의 module 패턴 알아보기 (import, export)
   - property: og:description
-    content: es6 module
+    content: JavaScript - es6의 module 패턴 알아보기 (import, export)
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/module/
 tags: ["JS"]
 ---
 
-# es6 module
+# es6의 module 패턴 알아보기
 
 - 자바스크립트의 경우 변수 선언이 매우 자유로워 글로벌 스코프로 변수를 정의 할 경우 변수 오염되기 쉽습니다.
 - 그래서 기존에는 name-space 방식 또는 requrejs 같은 라이브러리로 해결 했었습니다.
-- 그러나 es6에서 module를 채택하므로 함수, 변수를 관리하기 쉽게 되었습니다.
+- 그러나 `es6에서 module를 채택하므로 함수, 변수를 관리하기 쉽게 되었습니다.`
 
 ## 변수 오염되는 예시
 
@@ -47,10 +48,10 @@ const getNum = () => console.log(num);
 
 ```js
 var app = {
-  num: 10,
+  num: 10
 };
 var main = {
-  num: 20,
+  num: 20
 };
 ```
 

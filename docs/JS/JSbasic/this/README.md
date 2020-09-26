@@ -1,4 +1,5 @@
 ---
+title: 자바스크립트에서 this의 규칙
 meta:
   - name: description
     content: 자바스크립트에서 this의 규칙
@@ -75,7 +76,7 @@ var ken = {
   age: 35,
   foo: function foo() {
     console.log(this.age);
-  },
+  }
 };
 
 ken.foo(); // 점 앞의 값(ken)이 this값에 할당된다.
@@ -95,11 +96,11 @@ function foo() {
 var age = 100;
 var ken = {
   age: 36,
-  foo: foo,
+  foo: foo
 };
 var wan = {
   age: 32,
-  foo: foo,
+  foo: foo
 };
 var fn = ken.foo;
 
@@ -124,7 +125,7 @@ function foo() {
 
 var ken = {
   age: 36,
-  log: foo,
+  log: foo
 };
 
 foo(); // 100
@@ -163,7 +164,7 @@ function foo() {
 
 var ken = {
   age: 36,
-  log: foo,
+  log: foo
 };
 
 foo(); // 100
@@ -205,7 +206,7 @@ function foo() {
 }
 var ken = {
   age: 35,
-  log: foo,
+  log: foo
 };
 // 새로운 함수를 반환
 var bar = foo.bind(ken);
@@ -226,7 +227,7 @@ function foo() {
   console.log(arguments);
 }
 var ken = {
-  age: 34,
+  age: 34
 };
 var bar = foo.bind(ken, 1, 2, 3);
 bar(1, 2, 3, 4, 5);
@@ -297,7 +298,7 @@ const something = {
   speak: function() {
     console.log(this.age);
     // 이 this.age가 호출되었습니다. 이제 어느 함수에서 불렸는지 알아야 합니다.
-  },
+  }
 };
 
 const butler = {
@@ -305,7 +306,7 @@ const butler = {
   serve: function(cb) {
     cb(); // this.age는 여기에서 호출되었습니다.
     // 이 함수는 1번 유형인 일반호출이기 때문에 글로벌 age를 가져와서 결과는 100
-  },
+  }
 };
 
 butler.serve(something.speak); // 100

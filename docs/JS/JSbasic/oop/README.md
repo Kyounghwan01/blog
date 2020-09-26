@@ -1,17 +1,18 @@
 ---
+title: JavaScript - 예시로 배우는 객체지향프로그래밍 (oop)
 meta:
   - name: description
-    content: 예시로 배우는 oop
+    content: JavaScript - 예시로 배우는 객체지향프로그래밍 (oop), prototype, constructor
   - property: og:title
-    content: 예시로 배우는 oop
+    content: JavaScript - 예시로 배우는 객체지향프로그래밍 (oop)
   - property: og:description
-    content: 예시로 배우는 oop
+    content: JavaScript - 예시로 배우는 객체지향프로그래밍 (oop)
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/oop/
 tags: ["JS"]
 ---
 
-# 예시로 배우는 oop
+# JavaScript - 예시로 배우는 객체지향프로그래밍
 
 - 객체를 위주로 코드를 정리한다
 
@@ -27,7 +28,7 @@ var lamp = {
   },
   turnOff: function() {
     return (this.brightness = 0);
-  },
+  }
 };
 
 console.log(lamp.turnOn());
@@ -54,7 +55,7 @@ var lamp = (function() {
     },
     turnOff: function() {
       brightness = 0;
-    },
+    }
   };
 })();
 //lamp는 객체가 담김
@@ -89,7 +90,7 @@ var lamp = (function() {
       setTimeout(function() {
         brightness = 0;
       }, 5000);
-    },
+    }
   };
 })();
 //lamp는 객체가 담김
@@ -143,7 +144,7 @@ var lampPrototype = {
     setTimeout(() => {
       this.brightness = 0;
     }, 5000);
-  },
+  }
 };
 //factory function
 function createLamp() {

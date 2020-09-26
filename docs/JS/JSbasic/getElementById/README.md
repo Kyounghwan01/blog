@@ -1,11 +1,12 @@
 ---
+title: JavaScript - getElementbyId 사용법
 meta:
   - name: description
-    content: getElementbyId 사용법
+    content: JavaScript - getElementbyId 사용법
   - property: og:title
-    content: getElementbyId 사용법
+    content: JavaScript - getElementbyId 사용법
   - property: og:description
-    content: getElementbyId 사용법
+    content: JavaScript - getElementbyId 사용법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/getElementById/
 tags: ["JS"]

@@ -1,17 +1,18 @@
 ---
+title: JavaScript - 이벤트에서 target과 currentTarget의 차이
 meta:
   - name: description
-    content: target vs currentTarget
+    content: JavaScript - 이벤트에서 target과 currentTarget의 차이
   - property: og:title
-    content: target vs currentTarget
+    content: JavaScript - 이벤트에서 target과 currentTarget의 차이
   - property: og:description
-    content: target vs currentTarget
+    content: JavaScript - 이벤트에서 target과 currentTarget의 차이
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/target-currentTarget/
 tags: ["JS"]
 ---
 
-# target vs currentTarget
+# 이벤트에서 target과 currentTarget의 차이
 
 event 객체에 속해있는 target과 currentTarget의 차이점을 알아보겠습니다
 

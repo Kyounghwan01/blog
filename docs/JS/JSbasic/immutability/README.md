@@ -1,17 +1,18 @@
 ---
+title: JavaScript - 불변성, Immutability 패턴
 meta:
   - name: description
-    content: js Immutability
+    content: JavaScript - 불변성, Immutability 패턴
   - property: og:title
-    content: js Immutability
+    content: JavaScript - 불변성, Immutability 패턴
   - property: og:description
-    content: js Immutability
+    content: JavaScript - 불변성, Immutability 패턴
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/Immutability/
 tags: ["JS"]
 ---
 
-# js Immutability
+# 불변성, Immutability 패턴
 
 > Immutability는 객체가 생성된 후 그 속성을 변경할 수 없는 패턴을 말합니다.
 > 즉, 쉽게 말해 데이터의 원본이 훼손 되는 것을 막는 것입니다.

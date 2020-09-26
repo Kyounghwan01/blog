@@ -1,12 +1,12 @@
 ---
-title: 배열 내 객체 중복 id 값 제거
+title: JavaScript - 배열 내 객체 중복 id 값 제거
 meta:
   - name: description
-    content: 배열 내 객체 중복 id 값 제거
+    content: JavaScript - 배열 내 객체 중복 id 값 제거
   - property: og:title
-    content: 배열 내 객체 중복 id 값 제거
+    content: JavaScript - 배열 내 객체 중복 id 값 제거
   - property: og:description
-    content: 배열 내 객체 중복 id 값 제거
+    content: JavaScript - 배열 내 객체 중복 id 값 제거
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/dealingDate/
 tags: ["JS"]
@@ -66,7 +66,7 @@ example.filter((item, i) => {
 
 ```js
 example.filter(
-  (arr, index, callback) => index === callback.findIndex((t) => t.id === arr.id)
+  (arr, index, callback) => index === callback.findIndex(t => t.id === arr.id)
 );
 ```
 
@@ -84,7 +84,7 @@ example.filter(
   const example2 = [
     { id: 123, name: "nkh" },
     { id: 123, name: "ddd" },
-    { id: 5456, name: "zxc" },
+    { id: 5456, name: "zxc" }
   ];
   console.log([...new Set(example2.map(JSON.stringify))].map(JSON.parse));
   // [{id: 123,  name: 'nkh'}, {id: 123, name: 'ddd'}, {id: 5456, name: 'zxc'}]
