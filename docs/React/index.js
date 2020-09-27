@@ -20,7 +20,7 @@ function getFiles(dir) {
       } else if (dir.split("/").length === 5) {
         let check = false;
         nesting.map(el => {
-          if (el.title === dir.split("/")[dir.split("/").length - 3]) {
+          if (el.title === dir.split("/")[dir.split("/").length - 2]) {
             check = true;
             el.children.push(`${dir.slice(6)}/`);
           }
@@ -28,7 +28,7 @@ function getFiles(dir) {
         if (!check) {
           nesting.push({
             collapsable: true,
-            title: dir.split("/")[dir.split("/").length - 3],
+            title: dir.split("/")[dir.split("/").length - 2],
             children: [`${dir.slice(6)}/`]
           });
         }
