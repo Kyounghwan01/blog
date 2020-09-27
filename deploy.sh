@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 게시글 - seo title, des 수정"
+git commit -m "feat: 게시글 module 등록 자동화"
 git push origin master
 
 # build

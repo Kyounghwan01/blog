@@ -1,14 +1,15 @@
+const fs = require("fs");
+const dirName = "dev-report";
+
+const lists = [""];
+fs.readdir(`./${dirName}`, function(error, fileList) {
+  for (let list of fileList) {
+    if (list.indexOf(".") === -1) {
+      lists.push(`${list}/`);
+    }
+  }
+});
+
 module.exports = {
-  "/dev-report/": [
-    "",
-    "19_12/",
-    "20_01/",
-    "20_02/",
-    "20_03/",
-    "20_04/",
-    "20_05/",
-    "20_06/",
-    "20_07/",
-    "20_08/"
-  ]
+  [`/${dirName}/`]: lists
 };
