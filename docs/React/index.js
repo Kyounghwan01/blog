@@ -1,35 +1,43 @@
+const fs = require("fs");
+const dirName = "React";
+
+const listsNesting = [""];
+const nesting = [];
+const once = [];
+
+function getFiles(dir) {
+  const all = fs.readdirSync(dir);
+  const filtersDir = all.filter(
+    file => file.indexOf(".") === -1 || file.indexOf(".md") !== -1
+  );
+
+  return filtersDir.map(file => {
+    if (fs.statSync(`${dir}/${file}`).isDirectory()) {
+      return getFiles(`${dir}/${file}`);
+    } else {
+      if (dir.split("/").length === 3) {
+        once.push(`${dir.slice(1)}/`);
+      } else if (dir.split("/").length === 4) {
+        let check = false;
+        nesting.map(el => {
+          if (el.title === dir.split("/")[dir.split("/").length - 2]) {
+            check = true;
+            el.children.push(`${dir.slice(1)}/`);
+          }
+        });
+        if (!check) {
+          nesting.push({
+            collapsable: true,
+            title: dir.split("/")[dir.split("/").length - 2],
+            children: [`${dir.slice(1)}/`]
+          });
+        }
+      }
+    }
+  });
+}
+getFiles(`./${dirName}`);
+const res = listsNesting.concat(nesting).concat(once);
 module.exports = {
-  "/React/": [
-    "",
-    {
-      collapsable: true,
-      title: "redux",
-      children: [
-        "/React/redux/redux-basic/",
-        "/React/redux/redux-saga/",
-        "/React/redux/redux-persist/",
-        "/React/redux/redux-toolkit/",
-      ],
-    },
-    "/React/container-presenter-dessign-pattern/",
-    "/React/react-hook/",
-    "/React/custome-hook/",
-    "/React/styled-component/",
-    "/React/react-context-api/",
-    "/React/cant-perform-a-React-state-update-on-an-unmounted-component/",
-    "/React/immer-js/",
-    "/React/a-tag-trap/",
-    "/React/react-eslint-setting/",
-    "/React/react-native-webview/",
-    "/React/exhaustive-deps-warning/",
-    "/React/time-localization/",
-    "/React/antd-resize-bundle-size/",
-    "/React/image-upload/",
-    "/React/focus-blur/",
-    "/React/event-scroll-bottom/",
-    "/React/absoulte-import/",
-    "/React/handling-svg/",
-    "/React/common-component/",
-    "/React/useRef-createRef/",
-  ],
+  [`/${dirName}/`]: res
 };

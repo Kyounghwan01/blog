@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 게시글 module 등록 자동화"
+git commit -m "feat: 아코디언 형식 게시글 등록 자동화"
 git push origin master
 
 # build

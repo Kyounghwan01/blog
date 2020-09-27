@@ -1,55 +1,43 @@
-module.exports = {
-  "/Vue/": [
-    "",
-    {
-      collapsable: true,
-      title: "vue",
-      children: [
-        "/Vue/vue/computed/",
-        "/Vue/vue/getter-setter/",
-        "/Vue/vue/dir/",
-        "/Vue/vue/propsEvent/",
-        "/Vue/vue/propsEvent2/",
-        "/Vue/vue/dynamicAllocation/",
-        "/Vue/vue/filter/",
-        "/Vue/vue/event-handler/",
-        "/Vue/vue/slot/",
-        "/Vue/vue/audio/",
-        "/Vue/vue/aws-lambda-api-gateway/",
-        "/Vue/vue/vue-cookies/",
-        "/Vue/vue/v-model/",
-        "/Vue/vue/focus-blur/",
-        "/Vue/vue/infinite-scroll/",
-        "/Vue/vue/lazy-loading/",
-        "/Vue/vue/property-not-defined/",
-        "/Vue/vue/prevent-hangle/",
-        "/Vue/vue/prevent-memory-lack/"
-      ]
-    },
-    {
-      collapsable: true,
-      title: "vuex",
-      children: [
-        "/Vue/vuex/what-is-vuex/",
-        "/Vue/vuex/start-vuex/",
-        "/Vue/vuex/vuex-persistedstate/"
-      ]
-    },
-    {
-      collapsable: true,
-      title: "vue-router",
-      children: ["/Vue/vue-router/testFile/"]
-    },
-    {
-      collapsable: true,
-      title: "vuepress",
-      children: [
-        "/Vue/vuepress/vuepress-start/",
-        "/Vue/vuepress/vuepress-plugin/",
-        "/Vue/vuepress/vuepress-public/",
-        "/Vue/vuepress/vuepress-content/",
-        "/Vue/vuepress/vuepress-tag/"
-      ]
+const fs = require("fs");
+const dirName = "Vue";
+
+const listsNesting = [""];
+const nesting = [];
+const once = [];
+
+function getFiles(dir) {
+  const all = fs.readdirSync(dir);
+  const filtersDir = all.filter(
+    file => file.indexOf(".") === -1 || file.indexOf(".md") !== -1
+  );
+
+  return filtersDir.map(file => {
+    if (fs.statSync(`${dir}/${file}`).isDirectory()) {
+      return getFiles(`${dir}/${file}`);
+    } else {
+      if (dir.split("/").length === 3) {
+        once.push(`${dir.slice(1)}/`);
+      } else if (dir.split("/").length === 4) {
+        let check = false;
+        nesting.map(el => {
+          if (el.title === dir.split("/")[dir.split("/").length - 2]) {
+            check = true;
+            el.children.push(`${dir.slice(1)}/`);
+          }
+        });
+        if (!check) {
+          nesting.push({
+            collapsable: true,
+            title: dir.split("/")[dir.split("/").length - 2],
+            children: [`${dir.slice(1)}/`]
+          });
+        }
+      }
     }
-  ]
+  });
+}
+getFiles(`./${dirName}`);
+const res = listsNesting.concat(nesting).concat(once);
+module.exports = {
+  [`/${dirName}/`]: res
 };
