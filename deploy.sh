@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 아코디언 형식 게시글 등록 자동화 버그 수정"
+git commit -m "feat: global 커멘드 안먹힐때 해결법"
 git push origin master
 
 # build
