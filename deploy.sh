@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: global 커멘드 안먹힐때 해결법"
+git commit -m "feat: mapGetters 추가 (수정 중)"
 git push origin master
 
 # build
