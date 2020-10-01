@@ -3,6 +3,7 @@
 ## 9월 이슈 요약
 
 - 함수형 프로그래밍 공부 시작
+- redux-toolkit으로 상태 관리
 
 ## 에러 해결 모음
 
@@ -58,5 +59,10 @@ window.mobiscrollConfirm = mobiscroll.confirm;
  mobiscrollConfirm, mobiscrollAlert를 사용한다고 정의해야함
 */
 ```
+
+### 6. redux-toolkit
+
+- redux의 액션 및 reselect, immer, thunk 등 라이브러리를 붙여야 할 기능을 redux-toolkit에서 모두 지원한다.
+- [정리](https://kyounghwan01.github.io/blog/React/redux/redux-toolkit/)
 
 <Disqus />
