@@ -44,6 +44,65 @@ const App = () => (
 );
 ```
 
+## FCM
+
+```jsx
+// index.js 가장 먼 저들어오는 곳에 정의 해야함
+const NotificationHandler = async message => {
+  console.warn("RNFirebaseBackgroundMessage: ", message);
+  return Promise.resolve();
+};
+
+const AppService = () => {
+  const noticeInitFunc = () => {
+    messaging().setBackgroundMessageHandler(remoteMessage => {
+      // 앱 켜져있고 다른직
+      console.log("Message handled in the background!", remoteMessage);
+    });
+
+    messaging().onNotificationOpenedApp(remoteMessage => {
+      console.log(
+        // 앱 켜져있고 다른직
+        // 앱 킨 이후 알림 누르면 나오는 콘솔
+        // 앱 꺼져있고 콘솔
+        "Notification caused app to open from background state:",
+        remoteMessage.notification
+      );
+    });
+
+    messaging()
+      .getInitialNotification()
+      .then(remoteMessage => {
+        console.log(1);
+        if (remoteMessage) {
+          console.log("close", remoteMessage.notification);
+        }
+      });
+  };
+
+  useEffect(() => {
+    noticeInitFunc();
+  }, []);
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
+
+AppRegistry.registerHeadlessTask(
+  "RNFirebaseBackgroundMessage",
+  () => NotificationHandler
+);
+AppRegistry.registerComponent(appName, () => AppService);
+```
+
+## ios webview console 띄우기
+
+사파리 → 환경설정 → 고급 → 메뉴 막대에서 개발자용 메뉴보기
+
+앱실행하고 시뮬레이트 띄운 다음 → 탑 메뉴에서 → 개발자용 → 시뮬레이터에서 현재 띄운 앱 이름 클릭 → 웹과 동일하게 디버깅 가능
+
 <TagLinks />
 
 <Disqus />

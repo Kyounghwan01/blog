@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: fx - 비동기 map, filter, take 추가"
+git commit -m "feat: react-native ios console, fcm 사용법 추가"
 git push origin master
 
 # build
