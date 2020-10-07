@@ -246,6 +246,31 @@ export default withRouter(ScrollToTop);
 (res: bookingType[]) => [...res].sort((a, b) => +new Date(a.start_on) - +new Date(b.start_on)),
 ```
 
+### 13. styled-component createGlobalStyle 내 css 반영 안되는 버그
+
+dev 환경에서는
+
+```tsx
+onst GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap');
+  ${normalize}
+`;
+
+export default GlobalStyle;
+```
+
+위와 같이 커스텀 css를 import 할 수 있으나, styled-component v5 버전 이후 `createGlobalStyle`의 `@import` 문제로 위와 같은 코드가 `production`에 배포시 하위 css가 반영되지 않음
+
+### fix
+
+index.html에 style 태그로 직접 import 시킨다
+
+```html
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap");
+</style>
+```
+
 ## TypeScript
 
 ### 1. Expected 0 type arguments, but got 1.
@@ -550,7 +575,7 @@ function* watchPostGroupBooking() {
 }
 ```
 
-## 11. saga action.type typs 정의 에러
+### 11. saga action.type typs 정의 에러
 
 ```
 No overload matches this call.
@@ -603,4 +628,15 @@ function* postGroupBookingSaga(action: test) {
 function* watchPostGroupBooking() {
   yield takeLatest(POST_GROUP_BOOKIG_R, postGroupBookingSaga);
 }
+```
+
+### useSelector - Property '' does not exist on type 'DefaultRootState'
+
+타입스크립트에서 useSelector을 쓸때는 state type을 정의해야한다. store에 RootState를 정의했을 것이니 그것을 가져오면 된다.
+
+```tsx
+import RootState from "store";
+const isDialogOpen = useSelector(
+  (state: RootState) => state.tsReducer.isDialogOpen
+);
 ```
