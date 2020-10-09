@@ -8,6 +8,7 @@ meta:
     content: react-native 웹뷰 세팅, rn내 npm 설치 법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-native-webview/
+tags: ["react-native", "react"]
 ---
 
 # react-native 웹뷰
