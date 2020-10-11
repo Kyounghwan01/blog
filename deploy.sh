@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: webview new tab 추가"
+git commit -m "feat: react - 성능 최적화 추가"
 git push origin master
 
 # build
