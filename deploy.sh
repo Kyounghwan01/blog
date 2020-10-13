@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: react - 성능 최적화 code-splitting, lazy-loading 추가"
+git commit -m "feat: react - 성능 최적화 cra-bundle-analyzer 추가"
 git push origin master
 
 # build

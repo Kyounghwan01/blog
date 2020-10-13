@@ -20,7 +20,9 @@ tags: ["react", "optimize-performance"]
 
 ## 사전 알아야할 지식
 
-먼저 `webpack-bundle-analyer`를 이용하여 현재 리소스를 초기 로딩할 때, 어떤 패키지가 로딩 시간을 많이 잡아먹는지 우선 파악하여야 합니다. 이 과정에 대해서는 이후에 자세히 업로드 하겠습니다.
+먼저 `webpack-bundle-analyer`를 이용하여 현재 리소스를 초기 로딩할 때, 어떤 패키지가 로딩 시간을 많이 잡아먹는지 우선 파악하여야 합니다.
+
+[cra-bundle-analyzer로 초기 chunk.js 구성 알아보기](https://kyounghwan01.github.io/blog/React/optimize-performance/bundle-analyzer/) 이 포스팅을 먼저 보고 와주세요!
 
 ## 왜 code-splitting을 하는가?
 

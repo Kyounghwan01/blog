@@ -114,7 +114,7 @@ import { all, fork, put, call, takeLatest } from "redux-saga/effects";
 import {
   GET_USER_TICKET_REQUEST,
   GET_USER_TICKET_SUCCESS,
-  GET_USER_TICKET_FAILURE,
+  GET_USER_TICKET_FAILURE
 } from "constants/actionTypes";
 
 function getUserTicketApi(params) {
@@ -157,26 +157,26 @@ import produce from "immer";
 import {
   GET_USER_TICKET_REQUEST,
   GET_USER_TICKET_SUCCESS,
-  GET_USER_TICKET_FAILURE,
+  GET_USER_TICKET_FAILURE
 } from "constants/actionTypes";
 
-export const getUserTicket = (params) => ({
+export const getUserTicket = params => ({
   type: GET_USER_TICKET_REQUEST,
   /** 중요! - 이 params은 saga의
   const result = yield call(getUserTicketApi, action.params);
   여기의 params로 들어갑니다. */
-  params,
+  params
 });
 
-export const setTicket = (ticket) => ({ type: SET_TICKET, ticket });
+export const setTicket = ticket => ({ type: SET_TICKET, ticket });
 
 const initalState = {
   userTicket: [],
-  loading: false,
+  loading: false
 };
 
 const userTicket = (state = initalState, action) =>
-  produce(state, (draft) => {
+  produce(state, draft => {
     switch (action.type) {
       case GET_USER_TICKET_REQUEST:
         draft.loading = true;
@@ -249,7 +249,7 @@ case GET_USER_TICKET_SUCCESS:
 ## 정리
 
 - saga와 reducer, view단에서 일어나는 로직의 흐름 및 데이터가 어느 진행방향에 맞추어 변해가는지 데이트 흐름을 파악하는 것이 정말 중요합니다.
-- 그것을 도와주는 것이 이전 포스팅에서도 보여드린 `redux-logger`가 정말 유용하게 쓰입니다. 로그에 찍히는 순서대로 내가 설계한 흐름으로 데이터가 바뀌는지 하나하나 확인하시고 코딩 진행하시면 쉽게 익숙해지실 것입니다.`redux-devtools-extension`도 같이 쓰이면 유용하게 디버깅이 가능하니 꼭! 숙지하시길 바라겠습니다.
+- 그것을 도와주는 것이 [이전 포스팅](https://kyounghwan01.github.io/blog/React/redux/redux-basic/#react에서-redux-사용하기)에서도 보여드린 `redux-logger`가 정말 유용하게 쓰입니다. 로그에 찍히는 순서대로 내가 설계한 흐름으로 데이터가 바뀌는지 하나하나 확인하시고 코딩 진행하시면 쉽게 익숙해지실 것입니다.`redux-devtools-extension`도 같이 쓰이면 유용하게 디버깅이 가능하니 꼭! 숙지하시길 바라겠습니다.
 
 <TagLinks />
 
