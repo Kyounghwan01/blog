@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 10월 개발일기 추가"
+git commit -m "feat: lighthouse performance bottlenect 추가"
 git push origin master
 
 # build
