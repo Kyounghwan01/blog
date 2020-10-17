@@ -42,5 +42,8 @@ react의 경우 `Timings` 탭을 클릭하면 어떤 컴포넌트의 렌더링�
 
 오래 걸리는 특정 함수를 발견했다면 리펙토링 후, 처음으로 돌아가 다시 Performance의 새로고침 버튼을 클릭하고 해당 함수를 다시 찾아가 로딩 시간이 개선 되었는지 재확인합니다.
 
+dev와 produce환경과 웹팩, minify를 하기에 성능에 차이가 있습니다.
+production 빌드는 `npm run build`를 통해 나온 파일을 실행하여, 성능 측정합니다.
+
 <TagLinks />
 <Disqus />

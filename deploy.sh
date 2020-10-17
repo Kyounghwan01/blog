@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: lighthouse performance bottlenect 추가"
+git commit -m "feat: github 이슈 관리"
 git push origin master
 
 # build

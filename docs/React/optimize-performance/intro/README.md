@@ -50,6 +50,11 @@ tags: ["react", "optimize-performance"]
 - Efficiently encode images → 효과적인 이미지 포맷을 써라
 - Minify JavaScript → js 사이즈 줄여라
 - Preconnect to required origins → preconnect를 사용하라
+- Enable text compression → 서버에서 텍스트 압축을 받아서 api 통신을 하라
+  - network 탭의 api의 Headers의 Content-Encoding 값이 gzip이면 압축한 값으로 요청한다는 의미
+  - axios을 쓴다면, header에 `{Content-Encoding : gzip}`을 넣어서 압축된 값을 달라고 요청해야합니다.
+  - 압축은 서버에서 해서 주는 것이기 때문에 요청해도 gzip으로 안온다면 서버 문제
+  - 모든 파일을 인코딩하면 성능이 오히려 떨어진다고 합니다. (2kB이상이면 인코딩을 하는것이 유리, 그 이하면 그냥 보내는게 성능상 좋습니다. - 왜냐하면 서버에서 인코딩하면 프론트에서 디코딩해야하는 시간을 고려 했을때 용량이 극히 작다면 압축하고, 압축 푸는 시간이 더 오래 걸리기 때문 )
 
 ### Diagnostics
 
