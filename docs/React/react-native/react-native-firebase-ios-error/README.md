@@ -7,7 +7,7 @@ meta:
   - property: og:description
     content: react-native firebase colud messaging (fcm) ios - NotRegistered
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/react-native-firebase-ios-error/
+    content: https://kyounghwan01.github.io/blog/React/react-native/react-native-firebase-ios-error/
 tags: ["react-native", "react"]
 ---
 

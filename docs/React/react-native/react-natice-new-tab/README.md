@@ -7,7 +7,7 @@ meta:
   - property: og:description
     content: react-native-webView 웹뷰 내 a 태그 클릭시 새로운 탭 띄우기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/react-natice-new-tab/
+    content: https://kyounghwan01.github.io/blog/React/react-native/react-natice-new-tab/
 tags: ["react-native", "react"]
 ---
 

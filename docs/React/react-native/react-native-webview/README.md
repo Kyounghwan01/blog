@@ -1,37 +1,42 @@
 ---
 meta:
   - name: description
-    content: react-native 웹뷰 세팅, rn내 npm 설치 법
+    content: react-native webview 세팅, rn내 npm 설치 법
   - property: og:title
-    content: react-native 웹뷰 세팅, rn내 npm 설치 법
+    content: react-native webview 세팅, rn내 npm 설치 법
   - property: og:description
-    content: react-native 웹뷰 세팅, rn내 npm 설치 법
+    content: react-native webview 세팅, rn내 npm 설치 법
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/react-native-webview/
+    content: https://kyounghwan01.github.io/blog/React/react-native/react-native-webview/
 tags: ["react-native", "react"]
 ---
 
-# react-native 웹뷰
+# react-native webview
 
 ```sh
-//프로젝트 생성
+// 프로젝트 생성
 npx react-native init project-name
 
-//실행
+// 실행
 npx react-native run-ios
 
-//npm 다운로드시 해야하는 설정
+// npm 다운로드시 해야하는 설정
 npm install react-native-webview
-//already link 확인
+
+// already link 확인
 react-native link react-native-webview
 
-//RNCWebview not found 같이 node_module을 못읽는 에러 발생시
-//ios/andriod에 연결을 안했기 때문이다
+// RNCWebview not found 같이 node_module을 못읽는 에러 발생시 ios node_module 설치 안했기 때문
 cd ios
 pod install
 
 //위 명령어 실행 후 재시작하면 에러가 안뜬다
 npx react-native run-ios
+
+// pod not found 에러시
+sudo gem cocopod
+
+pod install
 ```
 
 ```js
@@ -48,7 +53,7 @@ const App = () => (
 ## FCM
 
 ```jsx
-// index.js 가장 먼 저들어오는 곳에 정의 해야함
+// index.js 가장 먼저 들어오는 곳에 정의 해야함
 const NotificationHandler = async message => {
   console.warn("RNFirebaseBackgroundMessage: ", message);
   return Promise.resolve();
@@ -57,13 +62,13 @@ const NotificationHandler = async message => {
 const AppService = () => {
   const noticeInitFunc = () => {
     messaging().setBackgroundMessageHandler(remoteMessage => {
-      // 앱 켜져있고 다른직
+      // 앱 켜져있고 다른 앱 보는 중
       console.log("Message handled in the background!", remoteMessage);
     });
 
     messaging().onNotificationOpenedApp(remoteMessage => {
       console.log(
-        // 앱 켜져있고 다른직
+        // 앱 켜져있고 다른 앱 보는 중
         // 앱 킨 이후 알림 누르면 나오는 콘솔
         // 앱 꺼져있고 콘솔
         "Notification caused app to open from background state:",
