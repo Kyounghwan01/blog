@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#2] feat: react-native fcm ios 수신 에러 추가"
+git commit -m "[#5] fix: react-native 관련 포스팅 분할"
 git push origin master
 
 # build
