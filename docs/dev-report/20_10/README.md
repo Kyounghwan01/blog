@@ -5,6 +5,7 @@
 - 함수형 프로그래밍, react 최적화 공부
 - aws: route 배포 및 ci/cd 성공
 - docker 설치 - 백엔드 코드 로컬 실행
+- react-native-fcm
 
 ## 에러 해결 모음
 
@@ -139,6 +140,10 @@ Watchman은 문제없이 임의의 많은 파일을 볼 수 있도록 특별히 
 brew update
 brew install watchman
 ```
+
+## react-native-fcm ios 수신 에러
+
+- [정리](https://kyounghwan01.github.io/blog/React/react-native-firebase-ios-error/)
 
 ## 배운점
 

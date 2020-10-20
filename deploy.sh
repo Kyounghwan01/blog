@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: github 이슈 관리"
+git commit -m "[#2] feat: react-native fcm ios 수신 에러 추가"
 git push origin master
 
 # build
