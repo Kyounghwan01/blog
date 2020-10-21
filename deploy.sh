@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#5] fix: react-native 관련 포스팅 분할"
+git commit -m "[#4] fix: react-native webview 포스팅 수정"
 git push origin master
 
 # build
