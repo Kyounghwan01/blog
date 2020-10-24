@@ -640,3 +640,50 @@ const isDialogOpen = useSelector(
   (state: RootState) => state.tsReducer.isDialogOpen
 );
 ```
+
+## react-native
+
+### 안드로이드 fastlane 배포 에러
+
+#### bundler update 에러
+
+- `cd android` -> 번들러 업데이트 명령어 실행
+
+#### firebase_cli_path: missing path to firebase cli tool. Please install firebase in \$PATH or specify path
+
+- Fastfile path를 제대로 지정해주지 않음
+- firebase_cli_path: "/Users/kyounghwan/.yarn/bin/firebase"
+
+#### Could not initialize class org.codehaus.groovy.runtime.InvokerHelper
+
+- `./andriod/gradle-wrapper.properties` 파일에 `distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-all.zip` 추가
+
+#### 빌드 완료 후, 웹뷰 URL 호출시 에러 ERR_CLEARTEXT_NOT_PERMITTED
+
+- 외부 url에 접속하는 권한 문제
+- `AndroidManifest.xml` application 태그에 `android:usesCleartextTraffic="true"` 추가
+
+### Error: EMFILE: too many open files, watch at FSEvent.FSWatcher.\_handle.onchange (internal/fs/watchers.js:123:28)
+
+- 프로젝트가 너무 많이 열리면 나오는 에러
+- watchman 설치
+  Watchman은 문제없이 임의의 많은 파일을 볼 수 있도록 특별히 설계되었으며, 사람들은 일반적으로 Jest가 iirc 어딘가의 문서에서 권장하기 때문에 응용 프로그램이 그렇게 커질 때마다 설치합니다.
+
+```
+brew update
+brew install watchman
+```
+
+### ios beta 배포
+
+```
+fastline 추가
+sudo gem install fastlane -NV -- 처음 비번 (릴리즈 처음 만든 ㄴ사람이 설정한 비번), 로그인은 회사 구글 계정으로 로그인
+fastlane match development --readonly
+
+yarn global add firebase-tools
+firebase login:ci 로그인은 회사 구글 계정으로 로그인
+which firebase로 나온 값 Fastfile의 firebase_app_distribution.firebase_cli_path에 복붙
+yarn beta:ios
+
+```

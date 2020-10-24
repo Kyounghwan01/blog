@@ -6,7 +6,7 @@ meta:
   - property: og:title
     content: vuePress 사용법
   - property: og:description
-    content: vuePress 사용법
+    content: vuePress 사용법, 이미지 추가, 빌드, 깃헙 배포, 코드 강조
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-start/
 tags: ["vuepress"]
@@ -174,9 +174,45 @@ function aheadOfReadme(arr) {
 
 8. 터미널에서 프로젝트 폴더 위치에서 `sh deploy.sh` 실행하여 깃헙에 배포합니다.<br> 대략 3~5분 안에 `https://<USERNAME>.github.io/<REPO>` 접속하시면 올리신 vuepress가 렌더됩니다.
 
-## 페이지 구성
+## 코드 하이라이트
 
---- 작업중
+포스팅 작업 중, 코드를 쓰고, 특정 코드를 강조하고 싶은 일이 있습니다.
+이럴때, `js {이부분}` 에 코드 강조할 **줄**을 넣어줍니다.
+만약 여러줄을 강조할 경우 `js {3,16-19,24-26}` 이렇게 작성합니다.
+
+```js {2,4,10-11}
+function highlightTest() {
+  console.log("나를 강조해!");
+}
+highlightTest();
+
+const users = [
+  { name: "nkh", age: 28 },
+  { name: "kkk", age: 33 }
+];
+const onlyName = users.map(({ name }) => name);
+const onlyAge = users.map(({ age }) => age);
+```
+
+## 포스팅 내 이미지 추가
+
+포스팅내 외부 링크를 추가할 때는 `[네이버](https://naver.com)` 이런식으로 가져옵니다.
+이미지 추가 문법은 링크 추가와 비슷합니다. 다른점은 맨앞에 **!**를 넣어주는 것입니다.
+
+`![CSS 로딩 에러](../.vuepress/public/images/css-loading-error.png)`
+
+vuepress에서 배포를 위해 `build`명령을 실행하면, docs에 있는 파일들은 웹팩에 의해 빌드 파일로 전환됩니다.
+그래서 포스팅을 쓰는 md파일에 이미지를 넣어봤자, 이미지는 보이지 않습니다.
+그러나 docs중 유일하게 번들링 되지 않는 곳은 `.vuepress/public/` 이 파일 부분입니다.
+그래서 ga의 ga-xxxx.html 파일도 이곳에 넣어주면 아무런 영향을 받지 않고 정상 작동할 수 있었죠.
+이미지도 마찬가지입니다.
+구분을 위해 `.vuepress/public/images` 폴더를 만들고 그 안에 이미지를 넣어줍니다.
+
+`![recruit-type](https://user-images.githubusercontent.com/44187477/97069109-b78db900-1608-11eb-812f-4f2eb11aac56.jpg)`
+
+위처럼 작성하면 아래와 같은 이미지가 삽입됩니다!
+
+![recruit-type](https://user-images.githubusercontent.com/44187477/97069109-b78db900-1608-11eb-812f-4f2eb11aac56.jpg)
 
 <TagLinks />
 

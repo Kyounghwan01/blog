@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#4] fix: react-native webview 포스팅 수정"
+git commit -m "[#7] feat: vuepress 사용법 - 코드 하이라이트, 이미지 추가"
 git push origin master
 
 # build
