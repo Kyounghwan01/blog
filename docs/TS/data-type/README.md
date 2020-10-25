@@ -1,18 +1,18 @@
 ---
-title: 기본 자료형
+title: ts 기본 문법
 meta:
   - name: description
-    content: 기본 자료형
+    content: ts 기본 문법
   - property: og:title
-    content: 기본 자료형
+    content: ts 기본 문법
   - property: og:description
-    content: 기본 자료형
+    content: ts 기본 문법, typeScript, ts, ts 기본 문법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/data-type/
 tags: ["TS"]
 ---
 
-# 기본 자료형
+# ts 기본 문법
 
 > 간단하게 TS내에서 원시값들이 어떻게 사용되는지 살펴보고, `vue.js`에서는 어떻게 사용하는지 알아봅니다.
 
@@ -152,6 +152,40 @@ value = "bar"; //ok
 value = true; //error
 ```
 
+### union 인터셉션
+
+- `|`는 또는 이라면 `&`는 and 입니다.
+
+```ts
+interface Test {
+  name: string;
+  skill: string;
+}
+interface Test2 {
+  name: string;
+  age: string;
+}
+
+function ask(someone: Test | Test2) {
+  console.log(someone.name); // interface의 공통 속성으로 접근 가능
+  // someone.skill, age는 공통속성이 아니므로 접근 불가능
+
+  // 접근하고 싶다면 타입 가드로, 하나의 타입만 필터링 한 경우만 활용 가능
+}
+
+// &를 이용하면 3개의 속성 활용 가능 (인터섹션)
+function ask(someone: Test & Test2) {
+  // Test와 Test2 두개의 interface를 포함하게 타입 정의
+  console.log(someone.name);
+  console.log(someone.skill);
+  console.log(someone.age);
+}
+```
+
+- |를 쓰면 함수 호출시 두개의 인터페이스 중 1개만 보장해주면 되나, &를 쓰면 함수 호출시 두개의 인터페이스 타입을 다 보장해줘야하므로 |를 좀 더 많이 쓴다.
+
+### union 타입 가드
+
 - 여러 타입을 사용하면 해당 값의 타입에 따라 분기 처리할 때가 있습니다. 이럴 경우 각 타입에 따라 조건문을 만들어 주시면 됩니다.
 
 ```ts
@@ -237,6 +271,64 @@ type X = { x: number };
 type X = Omit<XYZ, "x" | "y">;
 // type X = { x: number };
 ```
+
+## class에서 ts 사용 예제
+
+```tsx
+class Person {
+  // 이 클래스안에서만 사용한다면 private
+  private name: string;
+  public age: number;
+  // 값 읽기만 가능, set 불가
+  readonly log: string;
+
+  constructor(name: string, age: numnber) {
+    this.name = name;
+    this.age = age;
+  }
+}
+```
+
+## 제네릭
+
+- 한가지 타입보다 여러 타입에서 동작하는 컴포넌트를 생성하는데 사용
+- 함수의 파라미터로 받아 내부로직을 돌리는 것
+
+```tsx
+// 1. 어떤 타입을 받을 건지 먼저 정의 (logText<T>)
+// 2. params 타입으로 정의 (text: T)
+function logText<T>(text: T): T {
+  console.log(text);
+  return text;
+}
+// 3. 함수를 호출할때 타입 정의
+const str = logText<string>("a");
+str.split(""); // string으로 정의했기때문에 split 가능
+
+const login = logText<boolean>(true); // type: boolean
+```
+
+### 제네릭과 유니온의 공통점
+
+제네릭과 유니온 타입이 둘다 여러 타입을 동시에 다룬다는 점에서 공통점이 있다
+
+### 유니온의 단점
+
+유니온 타입의 경우 두 타입의 공통된 메소드만 타입 추적을 해준다는 단점이 있고, 받은 값을 그대로 리턴시, 리턴 받은 값고 하나의 타입이 아닌 유니온 타입으로 지점되는 문제가 있다
+
+```tsx
+function logText(text: string | number) {
+  // string과 number의 공통된 메소드만 사용 가능
+  return text;
+}
+
+// a의 타입은 string | number 이다. 그렇기 때문에 split 이용 불가
+const a = logText("a");
+// error: split does not exist on type string | number
+a.split("");
+```
+
+위 처럼 유니온은 타입 가드를 한다 해도 return되는 값이 명확하지 않으므로 제네릭을 쓰는 것이 더 좋다
 
 ## async / await
 

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#7] feat: vuepress 사용법 - 코드 하이라이트, 이미지 추가"
+git commit -m "[#8] fix: ts 기본 - 유니온, 제네릭"
 git push origin master
 
 # build
