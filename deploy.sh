@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#8] fix: ts 기본 - 유니온, 제네릭"
+git commit -m "[#9] feat: aws 웹 호스팅, cloudfront redirect 추가"
 git push origin master
 
 # build

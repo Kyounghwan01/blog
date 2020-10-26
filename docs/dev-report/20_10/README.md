@@ -1,11 +1,13 @@
 # 2020.10월
 
-## 9월 이슈 요약
+## 10월 이슈 요약
 
 - 함수형 프로그래밍, react 최적화 공부
-- aws: route 배포 및 ci/cd 성공
+- aws: route 배포 및 ci/cd 성공 (qa, staging, production) [정리](https://kyounghwan01.github.io/blog/etc/aws-web-hosting/)
+- aws: cloudfront 이용하여 http redirect https [정리](https://kyounghwan01.github.io/blog/etc/http-redirect-https/)
 - docker 설치 - 백엔드 코드 로컬 실행
-- react-native-fcm
+- react-native-fcm 완료
+- typescript 강의 수강
 
 ## 에러 해결 모음
 
@@ -193,5 +195,8 @@ docker-compose run --rm composer install
 4. route 53 dns 추가 - 지정한 사이트가 제대로 동작은 안하지만, 열리는지 확인
 5. codeBuild - orign path 나왔는지 확인하고, 깃헙 연결 및 깃헙 프로젝트 등록하고 어떤 브랜치 사용할지 정함
 6. code pipeline - cd 설정
+   위 aws 웹서비스에 대한 [정리](https://kyounghwan01.github.io/blog/etc/aws-web-hosting/)
+
+### 3. typescript 원리 및 응용
 
 <Disqus />
