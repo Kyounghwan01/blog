@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#9] feat: aws 웹 호스팅, cloudfront redirect 추가"
+git commit -m "[#8] feat: 제네릭 예제, 타입 제한 추가"
 git push origin master
 
 # build

@@ -330,6 +330,94 @@ a.split("");
 
 위 처럼 유니온은 타입 가드를 한다 해도 return되는 값이 명확하지 않으므로 제네릭을 쓰는 것이 더 좋다
 
+### 제네릭 타입 제한
+
+- 제네릭으로 들어온 타입에 임의로 지정한 inteface를 확장한다
+
+```ts
+interface LengthType {
+  length: number;
+}
+
+// 제네릭으로 받은 타입 T는 lengthType의 하위 타입이다. 즉, length: number는 무조건 포함됨
+function logTextLength2<T extends LengthType>(text: T): T {
+  text.length;
+  return text;
+}
+logTextLength2("dd");
+logTextLength2({ length: 3, q: 22 });
+```
+
+- 제네릭으로 들어온 타입에 임의로 지정한 interface만 사용하도록 제한
+
+```ts
+interface ShoppingItem {
+  name: string;
+  price: number;
+  stock: number;
+}
+
+// ShoppingItem에 있는 키중 한가지가 T가 된다 -> 함수는 'name' | 'price' | 'stock'만 쓸 수 있다.
+function getShoppingItemOption<T extends keyof ShoppingItem>(item: T): T {
+  return item;
+}
+
+getShoppingItemOption("name");
+```
+
+### interface에 제네릭을 넣는 법
+
+```ts
+interface Dropdown<T, G> {
+  value: T;
+  selected: G;
+}
+
+const obj2: Dropdown<string, boolean> = { value: "abc", selected: false };
+```
+
+### interface 종합 예제
+
+```ts
+interface DropDownItem<T> {
+  value: T;
+  selected: boolean;
+}
+
+const emails: DropDownItem<string>[] = [
+  { value: "naver.com", selected: true },
+  { value: "gmail.com", selected: false },
+  { value: "hanmail.com", selected: false }
+];
+
+const numberOfProducts: DropDownItem<number>[] = [
+  { value: 1, selected: true },
+  { value: 2, selected: false },
+  { value: 3, selected: false }
+];
+
+// email과 number 둘다 받아야하는 상황
+function createDropdownItem<T extends { toString: Function }>(
+  item: DropDownItem<T>
+): HTMLOptionElement {
+  const option = document.createElement("option");
+  option.value = item.value.toString();
+  option.innerText = item.value.toString();
+  option.selected = item.selected;
+  return option;
+}
+
+emails.forEach(function(email) {
+  const item = createDropdownItem<string>(email);
+  const selectTag = document.querySelector("#email-dropdown");
+  selectTag?.appendChild(item);
+});
+
+numberOfProducts.forEach(function(products) {
+  const item = createDropdownItem<number>(products);
+});
+```
+
 ## async / await
 
 - 설명보다 예시 코드가 이해하기 편할 것 입니다.
