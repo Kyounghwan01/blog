@@ -15,28 +15,34 @@ function getFiles(dir) {
     if (fs.statSync(`${dir}/${file}`).isDirectory()) {
       return getFiles(`${dir}/${file}`);
     } else {
-      if (dir.split("/").length === 4) {
-        once.push(`${dir.slice(6)}/`);
-      } else if (dir.split("/").length === 5) {
+      if (dir.split("/").length === process.env.VUE_APP_18) {
+        once.push(`${dir.slice(process.env.VUE_APP_19)}/`);
+      } else if (dir.split("/").length === process.env.VUE_APP_20) {
         let check = false;
         nesting.map(el => {
           if (el.title === dir.split("/")[dir.split("/").length - 2]) {
             check = true;
-            el.children.push(`${dir.slice(6)}/`);
+            el.children.push(`${dir.slice(process.env.VUE_APP_25)}/`);
           }
         });
         if (!check) {
           nesting.push({
             collapsable: true,
             title: dir.split("/")[dir.split("/").length - 2],
-            children: [`${dir.slice(6)}/`]
+            children: [`${dir.slice(process.env.VUE_APP_25)}/`]
           });
         }
       }
     }
   });
 }
-getFiles(`./docs/${dirName}`);
+
+const filePath =
+  process.env.VUE_APP_VERSION === "production"
+    ? `./docs/${dirName}`
+    : `./${dirName}`;
+
+getFiles(filePath);
 const res = listsNesting.concat(nesting).concat(once);
 module.exports = {
   [`/${dirName}/`]: res
