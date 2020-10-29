@@ -9,7 +9,7 @@ git commit -m "[#11] feat: .env로 dev / build 환경 구분 자동화"
 git push origin master
 
 # build
-npm run build
+vuepress build
 # navigate into the build output directory
 cd .vuepress/dist
 
