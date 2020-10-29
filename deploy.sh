@@ -9,9 +9,9 @@ git commit -m "[#11] feat: .env로 dev / build 환경 구분 자동화"
 git push origin master
 
 # build
-npm run docs:build
+npm run build
 # navigate into the build output directory
-cd docs/.vuepress/dist
+cd .vuepress/dist
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
