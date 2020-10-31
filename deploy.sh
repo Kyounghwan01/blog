@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#11] feat: .env로 dev / build 환경 구분 자동화"
+git commit -m "[#12] feat: ts - 기본 타입 추가"
 git push origin master
 
 # build
