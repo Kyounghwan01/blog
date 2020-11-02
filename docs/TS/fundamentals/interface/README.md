@@ -193,6 +193,110 @@ brewedBeer.brand = "Pangyo Craft";
 brewedBeer.brew();
 ```
 
+## enum
+
+enum 타입을 쓸때 interface 사용법입니다.
+
+```tsx
+interface PhoneNumberDictionary {
+  [phone: string]: {
+    num: number;
+  };
+}
+
+interface Contact {
+  name: string;
+  address: string;
+  phones: PhoneNumberDictionary;
+}
+
+enum PhoneType {
+  Home = "home",
+  Office = "office",
+  Studio = "studio"
+}
+
+const contacts: Contact[] = [
+    {
+      name: "Tony",
+      address: "Malibu",
+      phones: {
+        home: {
+          num: 11122223333
+        },
+        office: {
+          num: 44455556666
+        }
+      }
+    }
+]
+
+// home, office, studio
+  // phoneType이 정해진 타입으로 들어올때 -> enum으로 타입 정의 -> string으로도 가능하지만 객체 key 값의 오타를 방지하기 위해 enum을 사용
+  findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
+    return this.contacts.filter(
+      contact => contact.phones[phoneType].num === phoneNumber
+    );
+  }
+
+findContactByPhone(1, PhoneType.Home);
+```
+
+## interface에 제네릭을 넣는 법
+
+인터페이스에 제네릭 타입 넣는 법입니다.
+
+```ts
+interface Dropdown<T, G> {
+  value: T;
+  selected: G;
+}
+
+const obj2: Dropdown<string, boolean> = { value: "abc", selected: false };
+```
+
+## interface 종합 예제
+
+```ts
+interface DropDownItem<T> {
+  value: T;
+  selected: boolean;
+}
+
+const emails: DropDownItem<string>[] = [
+  { value: "naver.com", selected: true },
+  { value: "gmail.com", selected: false },
+  { value: "hanmail.com", selected: false }
+];
+
+const numberOfProducts: DropDownItem<number>[] = [
+  { value: 1, selected: true },
+  { value: 2, selected: false },
+  { value: 3, selected: false }
+];
+
+// email과 number 둘다 받아야하는 상황
+function createDropdownItem<T extends { toString: Function }>(
+  item: DropDownItem<T>
+): HTMLOptionElement {
+  const option = document.createElement("option");
+  option.value = item.value.toString();
+  option.innerText = item.value.toString();
+  option.selected = item.selected;
+  return option;
+}
+
+emails.forEach(function(email) {
+  const item = createDropdownItem<string>(email);
+  const selectTag = document.querySelector("#email-dropdown");
+  selectTag?.appendChild(item);
+});
+
+numberOfProducts.forEach(function(products) {
+  const item = createDropdownItem<number>(products);
+});
+```
+
 <TagLinks />
 
 <Disqus />

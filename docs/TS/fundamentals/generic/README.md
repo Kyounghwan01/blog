@@ -230,6 +230,39 @@ function fetchItems(): Promise<string[]> {
 }
 ```
 
+## async / await
+
+```ts
+interface Employee {
+  id: number;
+  employee_name: string;
+  employee_salary: number;
+  employee_age: number;
+  profile_image: string;
+}
+const fetchEmployees = async (): Promise<Array<Employee> | string> => {
+  const api = "http://dummy.restapiexample.com/api/v1/employees";
+  try {
+    const response = await fetch(api);
+    const { data } = await response.json();
+    return data;
+  } catch (error) {
+    if (error) {
+      return error.message;
+    }
+  }
+};
+
+const fetchEmployee = async (
+  url: string,
+  id: number
+): Promise<Record<string, string>> => {
+  const response = await fetch(`${url}/${id}`);
+  const { data } = await response.json();
+  return data;
+};
+```
+
 <TagLinks />
 
 <Disqus />
