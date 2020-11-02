@@ -1,12 +1,12 @@
 ---
-title: 타입 별칭
+title: typescript - 타입 별칭 (type-aliases)
 meta:
   - name: description
-    content: 타입스크립트 - 타입 별칭, type, type-aliases
+    content: typescript - 타입 별칭 (type-aliases), 타입스크립트, ts
   - property: og:title
-    content: 타입스크립트 - 타입 별칭, type-aliases
+    content: typescript - 타입 별칭 (type-aliases)
   - property: og:description
-    content: 타입스크립트 - 타입 별칭, type-aliases, typeScript, ts
+    content: typescript - 타입 별칭 (type-aliases), 타입스크립트, ts
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/type-aliases/
 tags: ["TS"]
