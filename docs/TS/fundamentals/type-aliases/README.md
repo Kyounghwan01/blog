@@ -2,7 +2,7 @@
 title: 타입 별칭
 meta:
   - name: description
-    content: 타입스크립트 - 타입 별칭, type-aliases
+    content: 타입스크립트 - 타입 별칭, type, type-aliases
   - property: og:title
     content: 타입스크립트 - 타입 별칭, type-aliases
   - property: og:description

@@ -12,7 +12,7 @@ meta:
 tags: ["react"]
 ---
 
-# react 절대경로 설정
+# React 절대경로 설정
 
 ## “Absolute Imports”가 무엇인가?
 

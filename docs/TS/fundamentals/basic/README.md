@@ -1,12 +1,12 @@
 ---
-title: 기본 타입
+title: typescript - 기본 타입
 meta:
   - name: description
-    content: fundamentals
+    content: typescript - 기본 타입
   - property: og:title
-    content: fundamentals
+    content: typescript - 기본 타입
   - property: og:description
-    content: fundamentals, typeScript, ts, ts 기본 문법
+    content: typescript - 기본 타입, ts, ts 기본 문법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/basic/
 tags: ["TS"]

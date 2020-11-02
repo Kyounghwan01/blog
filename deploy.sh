@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#12] feat: ts - 인터페이스, 타입별칭 추가"
+git commit -m "[#12] feat: ts - 제네릭 추가"
 git push origin master
 
 # build

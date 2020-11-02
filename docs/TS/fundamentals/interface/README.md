@@ -1,5 +1,5 @@
 ---
-title: 인터페이스
+title: typescript - 인터페이스 (interface)
 meta:
   - name: description
     content: 타입스크립트 - 인터페이스, interface
