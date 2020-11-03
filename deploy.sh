@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#12] feat: ts - 타입 추론/단언/가드 추가"
+git commit -m "[#13] feat: mobx - 기본 추가"
 git push origin master
 
 # build
