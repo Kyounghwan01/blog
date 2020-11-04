@@ -2,11 +2,12 @@
 
 ## 10월 이슈 요약
 
-- 함수형 프로그래밍, react 최적화 공부
+- 함수형 프로그래밍 [정리](https://kyounghwan01.github.io/blog/JS/functional-programming/map-filter-reduce/)
+- react 최적화 공부 [정리](https://kyounghwan01.github.io/blog/React/optimize-performance/intro/)
 - aws: route 배포 및 ci/cd 성공 (qa, staging, production) [정리](https://kyounghwan01.github.io/blog/etc/aws-web-hosting/)
 - aws: cloudfront 이용하여 http redirect https [정리](https://kyounghwan01.github.io/blog/etc/http-redirect-https/)
 - docker 설치 - 백엔드 코드 로컬 실행
-- react-native-fcm 완료
+- react-native-fcm
 - typescript 강의 수강
 
 ## 에러 해결 모음
