@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#13] feat: mobx - 기본 추가"
+git commit -m "[#13] feat: mobx - api 정리 추가"
 git push origin master
 
 # build

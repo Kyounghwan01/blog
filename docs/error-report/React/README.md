@@ -271,6 +271,15 @@ index.html에 style 태그로 직접 import 시킨다
 </style>
 ```
 
+### 14. TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+
+### fix
+
+1. package.json의 "react-scripts" 버전 확인 "^3.4.0" 이상으로 수정
+2. rm -rf node_moduled
+3. yarn install
+4. yarn start
+
 ## TypeScript
 
 ### 1. Expected 0 type arguments, but got 1.
