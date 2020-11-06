@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#13] feat: mobx - 비동기 처리 추가"
+git commit -m "[#14] fix: 10월 이슈 정리 수정"
 git push origin master
 
 # build

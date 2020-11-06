@@ -3,7 +3,6 @@
 ## 11월 이슈 요약
 
 - mobx 공부 [정리](https://kyounghwan01.github.io/blog/React/mobx/basic/)
-- typescript 개념 정리 포스팅 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/basic/)
 
 ## 에러 해결 모음
 
@@ -15,5 +14,14 @@
 2. rm -rf node_moduled
 3. yarn install
 4. yarn start
+
+## 배운점
+
+## mobx
+
+- mobx 개념 [정리](https://kyounghwan01.github.io/blog/React/mobx/basic/)
+- mobx api [정리](https://kyounghwan01.github.io/blog/React/mobx/mobx-api/)
+- mobx 함수형 컴포넌트 [정리](https://kyounghwan01.github.io/blog/React/mobx/functional-todo/)
+- mobx 비동기 처리 [정리](https://kyounghwan01.github.io/blog/React/mobx/async/)
 
 <Disqus />

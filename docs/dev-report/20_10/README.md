@@ -150,7 +150,7 @@ brew install watchman
 
 ## 배운점
 
-### 1. docker 및 백엔드 로컬 실행
+## 1. docker 및 백엔드 로컬 실행
 
 1. 백엔드 프로젝트 clone
 2. docker파일 정의 된것 확인하고
@@ -163,7 +163,7 @@ docker-compose run --rm composer install
 // env 없으면 복사
 ```
 
-### 2. aws에 사이트 배포 및 ci/cd
+## 2. aws에 사이트 배포 및 ci/cd
 
 위 목적을 위해 사용할 기능
 `cloudfront, routes 53, s3, iam, codeBuild, code pipeline`
@@ -198,6 +198,13 @@ docker-compose run --rm composer install
 6. code pipeline - cd 설정
    위 aws 웹서비스에 대한 [정리](https://kyounghwan01.github.io/blog/etc/aws-web-hosting/)
 
-### 3. typescript 원리 및 응용
+## 3. typescript
+
+- 기본 타입 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/basic/)
+- 인터페이트 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/interface/)
+- 타입 별칭 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/type-aliases/)
+- 제네릭 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/generic/)
+- 타입 호환 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/type-compatiability/)
+- 타입 추론/단언/가드 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/assertion-guard-interface/)
 
 <Disqus />
