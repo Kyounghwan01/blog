@@ -240,6 +240,82 @@ export default () => {
 
 `pages/[값].tsx` 왼쪽 페이지 구조의 값은 `router.query.값`과 동일합니다.
 
+## prefetching
+
+백그라운드에서 페이지를 미리 가져옵니다. 기본값은 true. `<Link />`뷰포트에있는 모든 항목 (초기 또는 스크롤을 통해)이 미리로드됩니다. 정적 생성 을 사용하는 JSON페이지는 더 빠른 페이지 전환을 위해 데이터가 포함 된 파일을 미리로드 합니다.
+
+이건 Link 컴포넌트를 사용해서 이뤄지는건데요. 링크 컴포넌트를 렌더링할때 `<Link prefetch href="...">` 형식으로 prefetch 값을 전달해주면 데이터를 먼저 불러온다음에 라우팅을 시작합니다.
+
+프로덕션 레벨에서만 이루어집니다.
+
+## next/router 사용법
+
+react의 router.push와 동일합니다.
+
+link에 있는 preferch 기능도 사용 가능합니다.
+
+```tsx
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import posts from "../posts.json";
+
+export default () => {
+  const router = useRouter();
+
+  const post = posts[router.query.id as string];
+  if (!post) return <p>noting</p>;
+
+  useEffect(() => {
+    router.prefetch("/test");
+  }, []);
+
+  return (
+    <>
+      <h1>{post.title}</h1>
+      <h1>{post.content}</h1>
+      <button onClick={() => router.push("test")}>go to Test</button>
+    </>
+  );
+};
+```
+
+## getInitialProps()를 통해 컴포넌트에 데이터 보내기
+
+...
+
+## custom 태그로 head 태그 옮기기
+
+우리는 페이지의 header로 다음과 같은 정보를 추가할 수 있습니다.
+
+1. 페이지 제목을 커스텀하고 싶을때
+2. meta 태그를 변경하고 싶을때
+
+`next/head`로 부터 Head 컴포넌트를 받아 모든 컴포넌트에서 사용할 수 있습니다.
+
+```tsx
+import Head from "next/head";
+
+export default () => (
+  <div>
+    <Head>
+      <title>새로 만들어진 타이틀 입니다</title>
+    </Head>
+    <div>...</div>
+  </div>
+);
+```
+
+next.js가 해당 컴포넌트가 mount 할때, Head내 태그들을 페이지의 HTML의 Head에 포함 시킵니다. 마찬가지로 unMount 할때, 해당 태그를 제거합니다.
+
+## production 배포
+
+```
+npm run build
+npm run start
+```
+
+localhost:3000 으로 접속시 배포된 버전을 로컬로 확인 가능합니다.
+
 <TagLinks />
 
 <Disqus />
