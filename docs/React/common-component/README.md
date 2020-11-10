@@ -63,7 +63,7 @@ import Footer from "components/Footer";
 // 넘겨주는 컴포넌트에 header, footer 값이 있으면 header, footer를 렌더합니다.
 const MainLayout = ({ header, footer, children, loading }) => {
   useEffect(() => (loading ? Toast.loading("Loading", 50000) : Toast.hide()), [
-    loading,
+    loading
   ]);
 
   return (
@@ -104,3 +104,7 @@ const UseExampleComponent = () => {
 ```
 
 - 위 처럼 사용하면 매번 header, footer 등등 공통 컴포넌트를 import하지 않고 편리하게 원하는 컴포넌트만 가져다 쓸 수 있습니다.
+
+<TagLinks />
+
+<Disqus />

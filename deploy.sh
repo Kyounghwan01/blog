@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#15] feat: next getInitialProps 추가"
+git commit -m "[#17] fix: react 공통 컴포넌트 좋아요, 댓글 기능 추가, 버그 수정"
 git push origin master
 
 # build
