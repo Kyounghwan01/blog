@@ -30,17 +30,17 @@ nextjs는 React로 만드는 서버사이드 렌더링 프레인 워크입니다
 
 ## next.js가 제공하는 주요 기능
 
-## hot reloading
+### hot reloading
 
 개발 중 저장되는 코드는 자동으로 새로고침됩니다.
 
-## automatic routing
+### automatic routing
 
 pages 폴더에 있는 파일은 해당 파일 이름으로 라우팅됩니다. (pages/page1.tsx -> localhost:3000/page1)
 
 public 폴더도 pages의 폴더와 동일하게 라우팅 할수있습니다. 그러나 모든 사람이 페이지에 접근할 수 있으므로 지양하도록합니다.
 
-## single file components
+### single file components
 
 `style jsx`를 사용함으로 컴포넌트 내부에 해당 컴포넌트만 스코프를 가지는 css를 만들수 있습니다.
 
@@ -96,17 +96,17 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-## server landing
+### server landing
 
 서버렌더링을 합니다. 클라이언트 렌더링과 다르게 서버렌더링을 한 페이지의 페이지 소스보기를 클릭하면 내부에 소스가 있습니다.
 
-## code splitting
+### code splitting
 
 dynamic import를 이용하면 손쉽게 코드 스플리팅이 가능합니다.
 
 코드 스플리팅은 내가 원하는 페이지에서 원하는 자바스크립트와 라이브러리를 렌더링 하는 것입니다. 모든 번들(chunk.js)이 하나로 묶이지 않고, 각각 나뉘어 좀 더 효율적으로 자바스크립트 로딩 시간을 개선할 수 있습니다.
 
-## typescript
+### typescript
 
 타입스크립트 활용을 위해 웹팩을 만지거나 바벨을 만질 필요 없습니다. 타입스크립트를 설치하고 (`yarn add typescript @types/node @types/react`) 명령어 (`yarn run dev`)만 하면 자동으로 tsconfig, next-end.d.ts가 생성되어 타입스크립트로 코딩이 가능해집니다.
 
@@ -281,7 +281,19 @@ export default () => {
 
 ## getInitialProps()를 통해 컴포넌트에 데이터 보내기
 
-...
+- [정리](https://kyounghwan01.github.io/blog/React/next/getInitialProps/)
+
+## server side lifeCycle
+
+위 포스팅을 통해 `getInitialProps`를 파악 하였다면, lifeCycle이 이해할 수 있습니다.
+
+1. nextJs 서버가 `GET` 요청을 받는다.
+2. `GET` 요청에 맞는 `pages/Component`를 찾는다.
+3. `_app.tsx`의 `getInitialProps`가 있다면 실행한다.
+4. route에 맞는 페이지의 `Component`의 `getInitialProps`가 있다면 실행한다. `pageProps`들을 받아온다.
+5. `_document.tsx`의 `getInitialProps`가 있다면 실행한다. `pageProps`들을 받아온다.
+6. 모든 props들을 구성하고, `_app.tsx` -> `page Component` 순서로 렌더링
+7. 모든 Content를 구성하고 `_document.tsx`를 실행하여 html 형태로 출력한다.
 
 ## custom 태그로 head 태그 옮기기
 

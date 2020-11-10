@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#15] fix: next 기본 수정"
+git commit -m "[#15] feat: next getInitialProps 추가"
 git push origin master
 
 # build
