@@ -31,17 +31,21 @@ module.exports = {
       { text: "기타", link: "/etc/" },
       { text: "개발일기", link: "/dev-report/" },
       { text: "에러모음", link: "/error-report/" },
-      { text: "Github", link: "https://github.com/Kyounghwan01" },
       {
-        text: "project",
-        items: [
-          {
-            text: "매출분석 - web(vue + aws-lambda)",
-            link: "https://sales-statistics.netlify.com/"
-          },
-          { text: "It's my seat - web", link: "https://www.knowgari.com/" }
-        ]
-      }
+        text: "건의하기",
+        link: "https://github.com/Kyounghwan01/blog/issues/new"
+      },
+      { text: "Github", link: "https://github.com/Kyounghwan01" }
+      // {
+      //   text: "project",
+      //   items: [
+      //     {
+      //       text: "매출분석 - web(vue + aws-lambda)",
+      //       link: "https://sales-statistics.netlify.com/"
+      //     }
+      //     // { text: "It's my seat - web", link: "https://www.knowgari.com/" }
+      //   ]
+      // }
     ],
     sidebar: createSidebar()
   },
