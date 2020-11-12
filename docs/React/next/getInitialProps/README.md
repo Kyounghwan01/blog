@@ -16,7 +16,106 @@ tags: ["react", "next"]
 
 서버사이드 렌더링을 하는 nextJs에서 컴포넌트는 각 페이지마다 사전에 불러와야할 데이터가 있습니다.(이하 data fetching) react, vue같은 Client Side Rendering (CSR)의 경우는 `useEffect`, `created` 함수를 이용하여 data fetching을 합니다. 서버사이드에서 실행하는 next에서는 `getInitialProps`를 이용하여 data fetching 작업을 합니다.
 
-next v9 이상에서는 `getInitialProps` 대신 `getStaticProps`, `getStaticPaths`, `getServerSideProps`을 사용하도록 가이드 합니다. 컨셉 자체는 서버에서 연산하여 클라이언트로 넘겨주는 것으로 동일하기에 이번에는 `getInitialProps`로 포스팅을 하고 추후에 3가지 메소드에 대해 포스팅 하겠습니다.
+next v9 이상에서는 `getInitialProps` 대신 `getStaticProps`, `getStaticPaths`, `getServerSideProps`을 사용하도록 가이드 합니다.
+
+### getStaticProps
+
+```
+Fetch data at build time, pre-render for Static Generation
+getStaticPaths only runs at build time on server-side.
+```
+
+빌스시 고정되는 값, 빌드 이후 값 변경 불가
+
+```jsx
+function Blog({ posts }) {
+  return (
+    <ul>
+      {posts.map(post => (
+        <li>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://.../posts");
+  const posts = await res.json();
+
+  // By returning { props: posts }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts
+    }
+  };
+}
+
+export default Blog;
+```
+
+docs 예제에서는 fetch를 통해 게시물을 가져오고 그 게시물의 title을 보여줍니다.
+
+### getServerSideProps
+
+```
+Fetch data on each request. pre-render for Server-side Rendering
+```
+
+```jsx
+function Page({ data }) {
+  // Render data...
+}
+
+// This gets called on every request
+export const getServerSideProps: GetServerSideProps = async context => {
+  // Fetch data from external API
+  const res = await fetch(`https://.../data`);
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data } };
+};
+
+export default Page;
+```
+
+각 요청에 따라 서버로부터 데이터를 가져옵니다.
+
+### 언제 쓰는가?
+
+getServerSideProps는 데이터 요청시 인출해야 페이지를 미리 렌더링해야하는 경우에만. TTFB (Time to First byte)는 getStaticProps서버가 모든 요청에 ​​대해 결과를 계산해야하고 추가 구성 없이는 결과를 CDN에 의해 ​​캐시 할 수 없기 때문에 더 느립니다.
+
+데이터를 미리 렌더링 할 필요가없는 경우 클라이언트 측에서 데이터를 가져 오는 것을 고려해야합니다.
+
+### 클라이언트 측에서 데이터 가져오기
+
+페이지에 자주 업데이트되는 데이터가 포함되어 있고 데이터를 미리 렌더링 할 필요가없는 경우 클라이언트 측에서 데이터를 가져올 수 있습니다. 이에 대한 예는 사용자 별 데이터입니다. 작동 방식은 다음과 같습니다.
+
+- 먼저 데이터가 없는 페이지를 즉시 표시합니다. 페이지의 일부는 정적 생성을 사용하여 미리 렌더링 할 수 있습니다. 누락 된 데이터에 대한로드 상태를 표시 할 수 있습니다.
+- 그런 다음 클라이언트 측에서 데이터를 가져와 준비가 되면 표시합니다.
+
+예를 들어 이 접근 방식은 사용자 대시 보드 페이지에 적합합니다. 대시 보드는 비공개 사용자 별 페이지이기 때문에 SEO는 관련이 없으며 페이지를 미리 렌더링 할 필요가 없습니다. 데이터는 자주 업데이트되므로 요청 시간 데이터 가져 오기가 필요합니다.
+
+### SWR
+
+next에서 만든 SWR을 사용하여 client side에서 데이터 패치를 합니다.
+
+```js
+import useSWR from "swr";
+
+function Profile() {
+  const { data, error } = useSWR("/api/user", fetch);
+
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+  return <div>hello {data.name}!</div>;
+}
+```
+
+seo 필요한 페이지면 `getServerSideProps`를 쓰고 비공개 페이지일 경우는 클라이언트 측에서 가져온다 (getServerSideProps를 남발하면 서버가 모든 요청을 계산하고, 값 캐쉬가 힘들기에 비효율적입니다)
+
+현재 구현한 코드가 `getInitialProps`임으로 `getInitialProps`로 포스팅을 이어 가겠습니다.
 
 ## getInitialProps 이점
 

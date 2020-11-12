@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#18] feat: 깃헙 이슈 리디렉트 버튼 추가"
+git commit -m "[#15] feat: next getStaticProps, getServerSideProps 추가"
 git push origin master
 
 # build

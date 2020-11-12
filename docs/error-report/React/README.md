@@ -696,3 +696,28 @@ which firebase로 나온 값 Fastfile의 firebase_app_distribution.firebase_cli_
 yarn beta:ios
 
 ```
+
+## next
+
+### html 태그 사용시 에러
+
+```
+Your custom Document (pages/_document) did not render all the required subcomponent.
+Missing component: <Html />
+Read how to fix here: https://err.sh/next.js/missing-document-component
+```
+
+### fix
+
+`_document.tsx`에 `<Html>` 태그를 next에서 가져온다 (`<html>`태그 사용 금지)
+
+```tsx
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import React from "react";
+
+export default class MyDocument extends Document {
+  render() {
+    return <Html lang="en">...</Html>;
+  }
+}
+```
