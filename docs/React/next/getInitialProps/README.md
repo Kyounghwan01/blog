@@ -56,6 +56,31 @@ export default Blog;
 
 docs 예제에서는 fetch를 통해 게시물을 가져오고 그 게시물의 title을 보여줍니다.
 
+### getStaticPatch
+
+- 빌드 타임 때, 정적으로 렌더링할 경로 설정
+- 이곳에 정의하지 않은 하위 경로는 접근해도 페이지가 안뜸
+  - 동적라우팅 : 라우팅 되는 경우의 수 따져서 하위로 넣음
+
+`/pages/dyna/[dynamic].js`: /dyna/동적인값
+
+```jsx
+// This function gets called at build time
+export async function getStaticPaths() {
+  return {
+    //빌드 타임 때 아래 정의한  /dyna/1,  /dyna/2, ... /dyna/동적인값 경로만 pre렌더링.
+    paths: [
+      { params: { dynamic: 1 } },
+      { params: { dynmic: 2 } }
+      ......
+      { params: { dynmic: 동적인값 } }
+    ],
+    // 만들어지지 않은 것도 추후 요청이 들어오면 만들어 줄 지 여부.
+    fallback: true,
+  }
+}
+```
+
 ### getServerSideProps
 
 ```
@@ -279,6 +304,58 @@ export default MyApp;
 - req - HTTP request object (server only)
 - res - HTTP response object (server only)
 - err - Error object if any error is encountered during the rendering
+
+## shallow route와 getInitialProps과 관계
+
+아래 글들은 `getServerSideProps`, `getStaticProps`, `getInitialProps` 모두 동일하게 적용됩니다.
+
+shallow routing은 `getInitialProps`를 이용하여 데이터를 가지오지 않고도 url을 변경 할 수 있습니다.
+
+즉, 불필요한 서버 연산을 최소화 할 수 있고, 필요한 상태 값은 아래 예시코드 처럼 router 객체에 넣어서 전달합니다.
+
+```js
+router.push(
+  {
+    pathname: "/cars?model=bmw",
+    query: { ...values, page: 1 }
+  },
+  undefined,
+  { shallow: true }
+);
+```
+
+위의 예제로 보면 원래는 `/cars` 페이지에 있다가 어떤 이벤트를 통해 `"/cars?model=bmw"`로 바뀌었습니다.
+
+페이지는 교체되지 않고, url만 바뀌는 경우 입니다. url이 변경되는 것은 `componentDidUpdate`, `useEffect`를 통해 감지 할수 있습니다.
+
+```js
+componentDidUpdate(prevProps) {
+  const { pathname, query } = this.props.router
+  // verify props have changed to avoid an infinite loop
+  if (query.counter !== prevProps.router.query.counter) {
+    // fetch data based on the new query
+  }
+}
+```
+
+### 주의사항
+
+shallow routing은 동일 **페이지**의 url의 변경에서만 작동합니다. 즉, 다른 페이지로 이동시 새 페이지가 로드하고, `getInitialProps`는 실행됩니다. 예시로 보자면 현재 url은 `/cars`입니다.
+
+```js
+router.push(
+  {
+    pathname: "/users",
+    query: { ...values, page: 1 }
+  },
+  undefined,
+  { shallow: true }
+);
+```
+
+위처럼 `/users`로 url이 바뀌면 페이지가 바뀌었기 때문에 새로운 페이지가 로드되고 `getInitialProps`가 실행됨으로 data fetching을 하게됩니다. 즉, shallow routing이 의미가 없는 것이죠.
+
+같은 페이지에서 url이 바뀌는데 `getInitialProps`가 실행됨으로 굳이 같은 data fetching을 할 필요가 없을 때, shallow routing을 사용하면됩니다.
 
 <TagLinks />
 

@@ -210,6 +210,10 @@ const Index = () => (
     <Link href="/blog">
       <a>Blog</a>
     </Link>
+    // 동적 link시 [] 사용
+    <Link href="/blog/[address]">
+      <a>Blog</a>
+    </Link>
   </div>
 );
 ```
