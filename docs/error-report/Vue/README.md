@@ -14,9 +14,7 @@ tags: ["vue"]
 
 # 에러 해결 모음
 
-## Vue
-
-### 1. Property or method "" not defined
+## Property or method "" not defined
 
 ```
 [Vue warn]: Property or method "" is not defined on the instance but referenced during render.
@@ -28,14 +26,12 @@ See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.
 - property, method를 정의하지 않고 사용하는 경우
 - [정리](https://kyounghwan01.github.io/blog/Vue/vue/property-not-defined/)
 
-### 2. el-table에서 checkbox를 reactive하게 쓰기
+## el-table에서 checkbox를 reactive하게 쓰기
 
 - el-table에서 checkbox를 쓸때 checked, indeterminate를 실시간으로 변동하고 싶다면
   el-table 프로퍼티에 :key="`${isSelectedAll}${isIndeterminate}`" 를 꼭 넣어야한다.
 
-## TypeScript
-
-### 1. Object is possibly 'undefined'.Vetur(2532)
+## Object is possibly 'undefined'.Vetur(2532)
 
 ```tsx
 //Object is possibly 'undefined'.Vetur(2532) 에러뜨는
@@ -53,7 +49,7 @@ if (!this.$v || !this.$v.data) return;
 const dataCheck = this.$v.data[key.value] as any;
 ```
 
-### 2. module not found
+## module not found
 
 - 해당 모듈을 읽지 못하는 경우 typescript가 모듈을 가져오지 못하는 것이므로
 - tsconfig에서 include된 파일 중 `d.ts` 파일 내에 아래와 같이 선언한다.
@@ -63,7 +59,7 @@ const dataCheck = this.$v.data[key.value] as any;
   declare module "lodash" {}
   ```
 
-### 2-1. 위와 같이 모듈을 가져와서 lodash내 omit, cloneDeep 같이 모듈내 함수를 사용할 때,
+## 위와 같이 모듈을 가져와서 lodash내 omit, cloneDeep 같이 모듈내 함수를 사용할 때,
 
 ```tsx
 //Property 'cloneDeep' does not exist on type 'lodash'.Vetur(2339)
@@ -106,7 +102,7 @@ declare module "vue-fragment" {
 }
 ```
 
-### 3. Type boolean trivially inferred from a boolean literal, remove type annotation.
+## Type boolean trivially inferred from a boolean literal, remove type annotation.
 
 - 원인 : 처음에 정의되는 값에 의해 어짜피 타입이 뭔지 아니까 굳이 타입을 정의하지 말라는 뜻
 

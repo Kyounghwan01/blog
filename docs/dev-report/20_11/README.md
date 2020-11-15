@@ -3,6 +3,8 @@
 ## 11월 이슈 요약
 
 - mobx 공부 [정리](https://kyounghwan01.github.io/blog/React/mobx/basic/)
+- next 공부 [정리](https://kyounghwan01.github.io/blog/React/next/basic/)
+- 스튜디오메이트 퇴사 (11/13), 캐롯손해보험 입사 (웹 프론트 11/16)
 
 ## 에러 해결 모음
 
@@ -23,5 +25,10 @@
 - mobx api [정리](https://kyounghwan01.github.io/blog/React/mobx/mobx-api/)
 - mobx 함수형 컴포넌트 [정리](https://kyounghwan01.github.io/blog/React/mobx/functional-todo/)
 - mobx 비동기 처리 [정리](https://kyounghwan01.github.io/blog/React/mobx/async/)
+
+## next
+
+- next 개념 [정리](https://kyounghwan01.github.io/blog/React/next/basic/)
+- next getInitialProps [정리](https://kyounghwan01.github.io/blog/React/next/getInitialProps/)
 
 <Disqus />

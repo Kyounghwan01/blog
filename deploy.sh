@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#15] feat: next getStaticProps 수정"
+git commit -m "[#6] fix: 에러모음 검색 h2로 타이틀 수정"
 git push origin master
 
 # build
