@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: window - 글로벌 스크립트 보안 정책 해결법 수정"
+git commit -m "feat: html 선택자 요소 추가"
 git push origin master
 
 # build
