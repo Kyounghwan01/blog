@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: html 선택자 요소 추가"
+git commit -m "feat: html - z-index error "
 git push origin master
 
 # build
