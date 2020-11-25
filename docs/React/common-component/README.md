@@ -105,6 +105,14 @@ const UseExampleComponent = () => {
 
 - 위 처럼 사용하면 매번 header, footer 등등 공통 컴포넌트를 import하지 않고 편리하게 원하는 컴포넌트만 가져다 쓸 수 있습니다.
 
+## 공통 css
+
+app.jsx에 공통으로 사용할 css를 import합니다
+
+```jsx
+import "./App.css";
+```
+
 <TagLinks />
 
 <Disqus />

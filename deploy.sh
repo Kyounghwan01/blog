@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: html - z-index error "
+git commit -m "feat: 공통 css"
 git push origin master
 
 # build
