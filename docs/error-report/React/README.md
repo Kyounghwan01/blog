@@ -655,3 +655,38 @@ export const MaterialUiLink = React.forwardRef<
   <Component ... />
 ));
 ```
+
+## next - 'React' must be in scope when using JSXeslintreact/react-in-jsx-scope
+
+- 모든 로직 다 맞는데 위처럼 뜨면 아래가 없는 것이다
+
+```jsx
+import React from "react";
+```
+
+## Unexpected lexical declaration in case block.eslintno-case-declarations
+
+- switch case에서 위처럼 에러 뜰때는 case문 내부에 let, const를 선언한 경우 중괄호로 렉시컬 범위를 쳐주지 않으면 나오는 에러이다. 아래처럼 중괄호로 감싸주면 끝
+
+```js
+swicth (data){
+	case 1: {
+		let test = 1;
+		break;
+	}
+	default:
+		break;
+}
+```
+
+## warning: LF will be replaced by CRLF in my-app/.gitignore.
+
+- os 마다 문서 처리에 이상이 있어서 나오는 에러
+
+### fix
+
+- 터미널에서 아래 명령 실행
+
+```jsx
+git config --global core.autocrlf false
+```
