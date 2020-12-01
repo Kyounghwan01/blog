@@ -45,6 +45,44 @@ setInterval(() => {
 
 `observable`을 사용하면 하단의 함수에 의해 값이 바뀌면 해당 값을 사용하는 모든 view에서 리렌더링 됩니다.
 
+## toJS
+
+mobx의 observable 값중에 객체나 배열의 경우 콘솔로 찍으면 `{$mobx: ObservableObjectAdministration}` 이런 값으로 보이면서 직관적으로 보기 힘든 경우가 있습니다. 저렇게 나오는 이유는 시스템 성능을 위해 그렇다고 mobx가 설명합니다.
+
+우리는 당장 개발을 해야하니 저 이상한 값을 우리가 아는 `{}`나 `[]`로 바꿔야 합니다.
+
+그때 사용하는 api가 `toJS`입니다. 사용법은 아래와 같습니다.
+
+```js
+class TestStore {
+  @observable test = { a: 1, b: 2 };
+
+  @action
+  setToJS = () => {
+    Object.keys(this.test).map(el => (this.test[el] = 3333));
+    console.log(this.test); // {$mobx: ObservableObjectAdministration}
+    console.log(toJS(this.test)); // {a: 333, b: 333}
+  };
+}
+```
+
+## set
+
+이 api는 store값을 store에서 바꾸지 않고, component에서 바꾸고 싶을때 사용합니다.
+
+첫번째 파라미터로 바꿀 스토어, 두번째는 스토어 내부의 observer 대상, 세번째는 바꿀 값입니다. 사용법은 아래와 같습니다.
+
+```js
+const testStore = new TestStore();
+
+useEffect(() => {
+  console.log(testStore);
+  testStore.setToJS();
+  // 바뀔 스토어 대상, 바뀔 observer 대상, 바뀌는 값
+  set(testStore, "test", { a: 3, b: 55 });
+}, []);
+```
+
 ## computed
 
 `computed` 는 `observable` 값을 기반으로 계산한 값을 리턴합니다. `vue`의 `computed`와 동일한 역할을 합니다. `observable`된 값이 바뀌면 `computed` 값도 연산되어 그 값을 바라보고 있는 view도 리렌더링 됩니다.
@@ -131,6 +169,87 @@ class TodoStore {
     this.todos.push({ ...todo, id: uuidv4() });
   };
 }
+```
+
+## Inject
+
+컴포넌트에서 store 값에 접근하거나, store 값을 바꾸려고 하면 Inject를 이용해 컴포넌트에게 store를 주입해야합니다.
+
+store를 컴포넌트에 주입하지 않고, store 값을 `new`키워드로 생성하려고 하면 아래와 같은 에러를 보게됩니다.
+
+```
+Error: MobX injector: Store 'store' is not available! Make sure it is provided by some Provider
+```
+
+그래서 아래의 코드를 따라 컴포넌트에 store를 넣어주는 방법을 알아봅시다
+
+### 컴포넌트를 부르는 곳에서 provider로 감싸고 사용할 store를 주입한다.
+
+- 부모컴포넌트가 있고 그 하위에 자식 컴포넌트(TTT), 자식 컴포넌트 밑에 또 자식컴포넌트(TTT2)가 있다고 가정합니다.
+
+부모 컴포넌트는 자식 컴포넌트에 provider를 이용하여 자식이 사용할 store 값을 주입합니다.
+
+```jsx
+// parent component
+import { Provider, observer } from "mobx-react";
+import TTT from "../components/TTT";
+import TestStore from "../store/TestStore";
+
+const testStore = new TestStore();
+
+function Home() {
+  return (
+    <Provider store={testStore}>
+      <TTT />
+    </Provider>
+  );
+}
+
+export default observer(Home);
+```
+
+자식 컴포넌트에서는 부모로부터 받은 store 이름을 inject에 정의하고 observer로 다시 감싸줍니다.
+
+그렇게 되면 props에 받은 store값이 들어갑니다.
+
+```jsx {18}
+// children component
+import React, { useEffect } from "react";
+import { inject, observer } from "mobx-react";
+import TTT2 from "./TTT2";
+
+const TTT = props => {
+  useEffect(() => {
+    console.log(props); // store 값 받음
+  });
+  return (
+    <div>
+      test
+      <TTT2 />
+    </div>
+  );
+};
+
+export default inject("store")(observer(TTT));
+```
+
+그 밑에 또 자식 컴포넌트가 있습니다.
+
+자손 컴포넌트는 자동으로 부모로부터 받은 store를 사용할 수 있습니다. <br />즉, TTT2를 부르는 TTT 컴포넌트에서 Provider로 다시 감쌀 이유가 없다는 뜻입니다.
+
+```jsx
+// children children component
+import React, { useEffect } from "react";
+import { inject, observer } from "mobx-react";
+
+const TTT2 = props => {
+  useEffect(() => {
+    console.log(props); // store 값 받음
+  });
+  return <div>test2</div>;
+};
+
+export default inject("store")(observer(TTT2));
 ```
 
 <TagLinks />

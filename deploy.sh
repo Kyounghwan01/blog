@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 에러모음 추가"
+git commit -m "fix: mobx inject, set 추가"
 git push origin master
 
 # build
