@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: mobx inject, set 추가"
+git commit -m "feat: next, styled-components 스타일 전 렌더 해결 추가"
 git push origin master
 
 # build
