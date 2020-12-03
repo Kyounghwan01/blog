@@ -198,6 +198,148 @@ function unionIter(value: string | number): number {
 }
 ```
 
+### declear
+
+- 전역변수를 만들거나, `d.ts`를 만들 때 사용합니다.
+
+```ts
+declare function setupMap(config: MapConfig): void;
+interface MapConfig {
+  lng: number;
+  lat: number;
+  tileSize: 8 | 16 | 32;
+}
+
+// 이 함수는 어느 파일에서든지 사용할 수 있습니다.
+setupMap({ lng: -73.935242, lat: 40.73061, tileSize: 16 });
+```
+
+### class private 변수
+
+- private 변수 선언은 앞에 private를 붙이거나 앞에 #를 붙인다
+- private 변수는 class내부에서만 활용 가능하며 class 밖에서는 부르지 못한다.
+
+```ts
+class Animal {
+  #name: string;
+  constructor(theName: string) { this.#name = theName; }
+  bark() {
+    return this.#name
+  }
+}
+new Animal("Cat").#name // private 변수임으로 사용 불가
+const rt = new Animal("Cat");
+rt.bark();
+```
+
+### class protected 변수
+
+- protected로 선언된 멤버를 파생된 클래스 내에서 접근할 수 있다는 점만 제외하면 private지정자와 매우 유사하게 동작합니다.
+
+```ts
+// private와 protected 차이
+
+// 먼저 같은 코드를 private에서
+class WWW {
+  #name: string;
+  constructor(name: string) { this.#name = name; }
+  test() {return this.#name}
+}
+
+class Employee extends WWW {
+  private department: string;
+
+  constructor(name: string, department: string) {
+      super(name);
+      this.department = department;
+  }
+
+  public getElevatorPitch() {
+      // 오류 -> 파생된 class에서도 private는 접근 불가
+      return `Hello, my name is ${this.#name} and I work in ${this.department}.`;
+  }
+}
+
+let howard = new Employee("Howard", "Sales");
+console.log(howard.getElevatorPitch());
+howard.test();
+console.log(howard.#name); // 오류
+
+// protected
+class WWW {
+  protected name: string;
+  constructor(name: string) { this.name = name; }
+}
+
+class Employee extends WWW {
+  private department: string;
+
+  constructor(name: string, department: string) {
+      super(name);
+      this.department = department;
+  }
+
+  public getElevatorPitch() {
+      // 파생된 class에서는 사용가능
+      return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+  }
+}
+
+let howard = new Employee("Howard", "Sales");
+console.log(howard.getElevatorPitch());
+console.log(howard.name); // 오류
+```
+
+### class getter setter
+
+```ts
+const fullNameMaxLength = 10;
+
+class Employee {
+  private _fullName: string;
+
+  get fullName(): string {
+    return this._fullName;
+  }
+
+  set fullName(newName: string) {
+    if (newName && newName.length > fullNameMaxLength) {
+      throw new Error("fullName has a max length of " + fullNameMaxLength);
+    }
+
+    this._fullName = newName;
+  }
+}
+
+let employee = new Employee();
+employee.fullName = "Bob Smith";
+if (employee.fullName) {
+  console.log(employee.fullName);
+}
+```
+
+### class 전역 프로퍼티
+
+- 이 예제에서는 모든 grid의 일반적인 값이기 때문에 origin에 static을 사용합니다. 각 인스턴스는 클래스 이름을 앞에 붙여 이 값에 접근할 수 있습니다. 인스턴스 접근 앞에 this.를 붙이는 것과 비슷하게 여기선 전역 접근 앞에 Grid.를 붙입니다.
+
+```ts
+class Grid {
+  static origin = { x: 0, y: 0 };
+  calculateDistanceFromOrigin(point: { x: number; y: number }) {
+    let xDist = point.x - Grid.origin.x;
+    let yDist = point.y - Grid.origin.y;
+    return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
+  }
+  constructor(public scale: number) {}
+}
+
+let grid1 = new Grid(1.0); // 1x scale
+let grid2 = new Grid(5.0); // 5x scale
+
+console.log(grid1.calculateDistanceFromOrigin({ x: 10, y: 10 }));
+console.log(grid2.calculateDistanceFromOrigin({ x: 10, y: 10 }));
+```
+
 <TagLinks />
 
 <Disqus />

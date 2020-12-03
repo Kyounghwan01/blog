@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: next, styled-components 스타일 전 렌더 해결 추가"
+git commit -m "fix: [#8] ts 기본 class 형태 추가"
 git push origin master
 
 # build
