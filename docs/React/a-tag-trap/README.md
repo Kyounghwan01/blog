@@ -2,7 +2,7 @@
 title: react-redux state 초기화와 a 태그의 함정
 meta:
   - name: description
-    content: react-redux state 초기화와 a 태그의 함정
+    content: react-redux state 초기화와 a 태그의 함정, redux state initalize, 초기화됨
   - property: og:title
     content: react-redux state 초기화와 a 태그의 함정
   - property: og:description
@@ -82,8 +82,8 @@ const ExChangePage = () => {
       pathname: "/success",
       state: {
         title: "비밀번호 찾기 완료",
-        body: "회원님의 비밀번호가 성공적으로 변경되었습니다.",
-      },
+        body: "회원님의 비밀번호가 성공적으로 변경되었습니다."
+      }
     });
   };
 };

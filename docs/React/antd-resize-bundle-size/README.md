@@ -2,7 +2,7 @@
 title: antd 번들 사이즈 줄이기
 meta:
   - name: description
-    content: react - antd 번들 사이즈 줄이기
+    content: react - antd 번들 사이즈 줄이기, ant design, bundle size
   - property: og:title
     content: react - antd 번들 사이즈 줄이기
   - property: og:description

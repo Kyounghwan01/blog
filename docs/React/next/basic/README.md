@@ -2,7 +2,7 @@
 title: next.js 기본 개념 알아보기
 meta:
   - name: description
-    content: next.js 기본 개념 알아보기, react
+    content: next.js 기본 개념 알아보기, react, next, seo, ssr
   - property: og:title
     content: next.js 기본 개념 알아보기
   - property: og:description

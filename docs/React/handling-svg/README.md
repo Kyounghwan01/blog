@@ -2,7 +2,7 @@
 title: svg 다루기
 meta:
   - name: description
-    content: React.js - svg 다루기
+    content: React.js - svg 다루기 react svg
   - property: og:title
     content: React.js - svg 다루기
   - property: og:description

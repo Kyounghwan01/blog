@@ -2,7 +2,7 @@
 title: React.js - 커스텀 훅 만들기
 meta:
   - name: description
-    content: React.js - 커스텀 훅 만들기
+    content: React.js - 커스텀 훅 만들기, custom hook
   - property: og:title
     content: React.js - 커스텀 훅 만들기
   - property: og:description
@@ -31,12 +31,12 @@ import React, { useState, useCallback } from "react";
 // state
 const [text, setText] = useState({
   email: "",
-  password: "",
+  password: ""
 });
 
 // func
 const onChange = useCallback(
-  (e) => {
+  e => {
     const { value, name } = e.target;
     setText({ ...text, [name]: value });
   },
@@ -70,11 +70,11 @@ export default (initalValue = null) => {
 
   // 함수 정의
   const handler = useCallback(
-    (e) => {
+    e => {
       const { value, name } = e.target;
       setData({
         ...data,
-        [name]: value,
+        [name]: value
       });
     },
     [data]
@@ -95,7 +95,7 @@ import useInput from "useInput";
 // state
 const [text, setText] = useInput({
   email: "",
-  password: "",
+  password: ""
 });
 
 return (

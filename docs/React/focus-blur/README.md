@@ -2,7 +2,7 @@
 title: focus, blur 예제
 meta:
   - name: description
-    content: React.js - focus, blur 예제
+    content: React.js - focus, blur 예제, react event focus blue example
   - property: og:title
     content: React.js - focus, blur 예제
   - property: og:description

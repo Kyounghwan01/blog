@@ -2,7 +2,7 @@
 title: React.js - 절대경로 설정
 meta:
   - name: description
-    content: React.js - 절대경로 설정
+    content: React.js - 절대경로 설정 리엑트 절대 경로 설정하기
   - property: og:title
     content: React.js - 절대경로 설정
   - property: og:description
