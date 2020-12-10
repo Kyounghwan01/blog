@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: seo 키워드 수정"
+git commit -m "feat: crlf-lf conflict 해결법"
 git push origin master
 
 # build
