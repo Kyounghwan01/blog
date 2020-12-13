@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: crlf-lf conflict 해결법"
+git commit -m "[#23] feat: git squash 추가"
 git push origin master
 
 # build

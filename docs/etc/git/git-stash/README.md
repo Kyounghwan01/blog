@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: git stash, apply 활용법
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/git-stash/
+    content: https://kyounghwan01.github.io/blog/etc/git/git-stash/
 tags: ["git"]
 ---
 

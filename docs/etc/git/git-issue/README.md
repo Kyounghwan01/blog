@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: github - issue 관리하기, git, github, issue, projects, milestone
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/git-issue/
+    content: https://kyounghwan01.github.io/blog/etc/git/git-issue/
 tags: ["git"]
 ---
 
