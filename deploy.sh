@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#23] feat: git squash 추가"
+git commit -m "[#23] feat: git reset, revert 추가"
 git push origin master
 
 # build
