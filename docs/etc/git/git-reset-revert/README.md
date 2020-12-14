@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: git reset, revert로 이전 커밋으로 돌리기, git, github, issue, projects, milestone
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/git/git-issue/
+    content: https://kyounghwan01.github.io/blog/etc/git/git-reset-revert/
 tags: ["git"]
 ---
 

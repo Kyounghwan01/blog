@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#23] feat: git reset, revert 추가"
+git commit -m "[#21] feat: 11월 개발이슈 정리, 12월 추가"
 git push origin master
 
 # build

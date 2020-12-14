@@ -4,7 +4,8 @@
 
 - mobx 공부 [정리](https://kyounghwan01.github.io/blog/React/mobx/basic/)
 - next 공부 [정리](https://kyounghwan01.github.io/blog/React/next/basic/)
-- 스튜디오메이트 퇴사 (11/13), 캐롯손해보험 입사 (웹 프론트 11/16)
+- 스튜디오메이트 퇴사 (11/13), 캐롯손해보험 입사 (웹 프론트 인턴 11/16)
+- 사내 ts 스터디
 
 ## 에러 해결 모음
 
@@ -16,6 +17,10 @@
 2. rm -rf node_moduled
 3. yarn install
 4. yarn start
+
+### z-index 안될 때 해결법
+
+- [정리](https://kyounghwan01.github.io/blog/etc/html/zindex-error/)
 
 ## 배운점
 
@@ -30,5 +35,10 @@
 
 - next 개념 [정리](https://kyounghwan01.github.io/blog/React/next/basic/)
 - next getInitialProps [정리](https://kyounghwan01.github.io/blog/React/next/getInitialProps/)
+
+## react
+
+- react로 다크모드 만들기 [정리](https://kyounghwan01.github.io/blog/etc/CSS/dark-mode/)
+- 웹 싸인 [정리](https://kyounghwan01.github.io/blog/React/signature_pad/)
 
 <Disqus />
