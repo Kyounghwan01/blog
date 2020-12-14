@@ -1,18 +1,18 @@
 ---
-title: git cherry-pick : 다른 브랜치의 일부 커밋만 반영
+title: git cherry-pick으로 다른 브랜치의 일부 커밋만 반영
 meta:
   - name: description
-    content: git cherry-pick : 다른 브랜치의 일부 커밋만 반영
+    content: git cherry-pick으로 다른 브랜치의 일부 커밋만 반영
   - property: og:title
-    content: git cherry-pick : 다른 브랜치의 일부 커밋만 반영
+    content: git cherry-pick으로 다른 브랜치의 일부 커밋만 반영
   - property: og:description
-    content: git cherry-pick : 다른 브랜치의 일부 커밋만 반영, git, github, issue, projects, milestone
+    content: git cherry-pick으로 다른 브랜치의 일부 커밋만 반영, git, github, issue, projects, milestone
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/git/git-cherry-pick/
 tags: ["git"]
 ---
 
-# git cherry-pick : 다른 브랜치의 일부 커밋만 반영
+# git cherry-pick으로 다른 브랜치의 일부 커밋만 반영
 
 오늘은 git cherry-pick 명령어로 원하는 커밋만 브랜치에 반영하는 방법에 대해 알아보겠습니다!
 
