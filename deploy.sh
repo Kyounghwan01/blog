@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#23] feat: git cherry-pick 추가"
+git commit -m "[#13] feat: mobx - 다른 store 값 사용하기, mobx ts"
 git push origin master
 
 # build
