@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#13] feat: mobx - 다른 store 값 사용하기, mobx ts"
+git commit -m "[#15] feat: next - 같은 page에서 window.history 쌓기"
 git push origin master
 
 # build
