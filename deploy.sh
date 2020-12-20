@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#15] feat: next - 같은 page에서 window.history 쌓기"
+git commit -m "feat: netlify - 환경변수 설정하기"
 git push origin master
 
 # build
