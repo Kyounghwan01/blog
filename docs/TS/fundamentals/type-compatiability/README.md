@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: typescript - 타입 호환 (type-compatiability), 타입스크립트, ts
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/type-compatiability/
+    content: https://kyounghwan01.github.io/blog/TS/Fundamentals/type-compatiability/
 tags: ["TS"]
 ---
 

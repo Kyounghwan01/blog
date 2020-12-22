@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: typescript - 기본 타입, ts, ts 기본 문법
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/basic/
+    content: https://kyounghwan01.github.io/blog/TS/Fundamentals/basic/
 tags: ["TS"]
 ---
 

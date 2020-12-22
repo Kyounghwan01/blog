@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: typescript - 제네릭, ts, generic
   - property: og:url
-    content: https://kyounghwan0generic1.github.io/blog/TS/generic/
+    content: https://kyounghwan0generic1.github.io/blog/TS/Fundamentals/generic/
 tags: ["TS"]
 ---
 

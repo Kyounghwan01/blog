@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: netlify - 환경변수 설정하기"
+git commit -m "[#8] feat: ts - 유틸리티 타입 추가"
 git push origin master
 
 # build

@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: typescript - 타입 추론 / 단언 / 가드, interface, type guard, type assertion, &
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/assertion-guard-interface/
+    content: https://kyounghwan01.github.io/blog/TS/Fundamentals/assertion-guard-interface/
 tags: ["TS"]
 ---
 

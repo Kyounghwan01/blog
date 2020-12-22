@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: 타입스크립트 - 인터페이스, interface, typeScript, ts
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/interface/
+    content: https://kyounghwan01.github.io/blog/TS/Fundamentals/interface/
 tags: ["TS"]
 ---
 
