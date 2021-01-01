@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 개발일기 폴더 구조 변경, 20_12월 수정"
+git commit -m "fix: build 에러 수정"
 git push origin master
 
 # build
