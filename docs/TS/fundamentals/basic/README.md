@@ -340,6 +340,38 @@ console.log(grid1.calculateDistanceFromOrigin({ x: 10, y: 10 }));
 console.log(grid2.calculateDistanceFromOrigin({ x: 10, y: 10 }));
 ```
 
+## axios response call interface
+
+- 다음은 api를 받을때 response 값 타입을 정의하는 방법입니다.
+- api는 promise로 받으니 Promise로 감싸주고 그 안에 AxiosResponse를 사용합니다.
+- 그 안에 이미 정의한 interface를 가져와 완성합니다.
+
+```ts {13}
+import axios, { AxiosResponse } from "axios";
+interface CovidSummaryResponse {
+  Countries: any[];
+  // {Country: "Afghanistan", CountryCode: "AF", Slug: "afghanistan", NewConfirmed: 241}
+  Date: string;
+  Global: any;
+  Message: string;
+}
+
+// api axios response 정의
+function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
+  const url = "https://api.covid19api.com/summary";
+
+  return axios.get(url);
+}
+
+// 위 response interface 정의로 타입 추론
+fetchCovidSummary().then(res => res.data.Message);
+```
+
+## 외부 라이브러리 ts에서 사용하기
+
+- `axios`나 `chart.js` 같은 외부 라이브러리를 사용하는 경우 디펜던시를 설치해도 typescript가 인식하지 못하여 라이브러리를 읽을 수 없다는 에러가 뜨는 경우가 많습니다.
+- 이럴때 어떻게 하면 되는지 알아봅니다.
+
 <TagLinks />
 
 <Disqus />

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#8] feat: ts - 유틸리티 타입 추가"
+git commit -m "[#24] feat: ts - 외부 라이브러리 추가시 타입 정의"
 git push origin master
 
 # build
