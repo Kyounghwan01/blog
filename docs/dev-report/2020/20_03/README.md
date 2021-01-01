@@ -2,22 +2,11 @@
 
 ## 3월 이슈 요약
 
-- 락커 기능 릴리즈
-- SMS 회원 목록 (페이지네이션, 이전 페이지 선택 저장)
 - github 내에서 컨플릭 해결할시 base 브랜치 내용이 compare 브랜치내로 들어감
 - AWS lambda, api gateway로 토이프로젝트 백엔드 구축
 - scss mixin사용법
 - validate 사용법 (`this.$v`)
 - firebase cloud message , serviceWorker 구현
-
-## TODO
-
-- ~~SMS 페이지네이션 - SM(3.2)~~
-- ~~vue + typescript - TOY(3.3)~~
-- ~~락커 기능 추가 - SM(3.20 완)~~
-- ~~TOY lambda api 구축 - TOY(작업중)~~
-- ~~TOY 기입 디자인, 기능~~
-- ~~TOY 현황 디자인~~
 
 ## 3.2
 

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#23] feat: git - commit, branch ^, ~ 사용하여 옮기기"
+git commit -m "fix: 개발일기 폴더 구조 변경, 20_12월 수정"
 git push origin master
 
 # build
