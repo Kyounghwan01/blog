@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#24] feat: ts - 외부 라이브러리 추가시 타입 정의"
+git commit -m "[#23] feat: git - commit, branch ^, ~ 사용하여 옮기기"
 git push origin master
 
 # build

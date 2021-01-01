@@ -367,11 +367,6 @@ function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
 fetchCovidSummary().then(res => res.data.Message);
 ```
 
-## 외부 라이브러리 ts에서 사용하기
-
-- `axios`나 `chart.js` 같은 외부 라이브러리를 사용하는 경우 디펜던시를 설치해도 typescript가 인식하지 못하여 라이브러리를 읽을 수 없다는 에러가 뜨는 경우가 많습니다.
-- 이럴때 어떻게 하면 되는지 알아봅니다.
-
 <TagLinks />
 
 <Disqus />
