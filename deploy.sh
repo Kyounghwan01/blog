@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: build 에러 수정"
+git commit -m "[#27] feat: about 페이지 퍼블리싱, header 파일 구조 변경"
 git push origin master
 
 # build

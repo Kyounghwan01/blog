@@ -1,13 +1,4 @@
-const routes = [
-  "Tag",
-  "Vue",
-  "React",
-  "JS",
-  "TS",
-  "etc",
-  "dev-report",
-  "error-report"
-];
+const routes = ["Tag", "Vue", "React", "JS", "TS", "etc", "dev-report"];
 
 const createSidebar = () => {
   const sidebar = {};
@@ -30,22 +21,31 @@ module.exports = {
       { text: "TS", link: "/TS/" },
       { text: "기타", link: "/etc/" },
       { text: "개발일기", link: "/dev-report/" },
-      { text: "에러모음", link: "/error-report/" },
       {
-        text: "건의하기",
-        link: "https://github.com/Kyounghwan01/blog/issues/new"
-      },
-      { text: "Github", link: "https://github.com/Kyounghwan01" }
-      // {
-      //   text: "project",
-      //   items: [
-      //     {
-      //       text: "매출분석 - web(vue + aws-lambda)",
-      //       link: "https://sales-statistics.netlify.com/"
-      //     }
-      //     // { text: "It's my seat - web", link: "https://www.knowgari.com/" }
-      //   ]
-      // }
+        text: "Info",
+        items: [
+          { text: "About", link: "/about/" },
+          { text: "Github", link: "https://github.com/Kyounghwan01" },
+          {
+            text: "블로그 건의하기",
+            link: "https://github.com/Kyounghwan01/blog/issues/new"
+          },
+          {
+            text: "toy-project",
+            items: [
+              {
+                text: "매출분석 (vue + aws-lambda)",
+                link: "https://sales-statistics.netlify.com/"
+              },
+              {
+                text: "롤전적조회 (react 제작중)",
+                link: "https://khgg.netlify.app/"
+              }
+            ]
+          }
+          // { text: "It's my seat - web", link: "https://www.knowgari.com/" }
+        ]
+      }
     ],
     sidebar: createSidebar()
   },

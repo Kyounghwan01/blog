@@ -24,6 +24,11 @@ module.exports = {
       collapsable: true,
       title: "2019",
       children: ["2019/19_12/"]
+    },
+    {
+      collapsable: true,
+      title: "에러모음",
+      children: ["error-report/React/", "error-report/Vue/"]
     }
   ]
 };

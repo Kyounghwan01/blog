@@ -1,6 +1,6 @@
 <template>
   <ParentLayout>
-    <Disqus slot="page-bottom" class="content" />
+    <!-- <Disqus slot="page-bottom" class="content" /> -->
   </ParentLayout>
 </template>
 

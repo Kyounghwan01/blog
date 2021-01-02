@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Vue 에러 모음
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/error-report/vue/
+    content: https://kyounghwan01.github.io/blog/dev-report/error-report/Vue/
 tags: ["vue"]
 ---
 

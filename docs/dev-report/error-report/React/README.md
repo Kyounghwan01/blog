@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: react 에러 모음
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/error-report/React/
+    content: https://kyounghwan01.github.io/blog/dev-report/error-report/React/
 tags: ["react"]
 ---
 
