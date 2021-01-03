@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#27] fix: About 페이지 컴포넌트화, css 수정"
+git commit -m "fix: 빌드함수 모듈화"
 git push origin master
 
 # build
