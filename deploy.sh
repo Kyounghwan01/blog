@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 빌드함수 모듈화"
+git commit -m "[#8] feat: Object is possibly 'null'.ts(2531) 추가"
 git push origin master
 
 # build
