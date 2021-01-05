@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#8] feat: Object is possibly 'null'.ts(2531) 추가"
+git commit -m "feat: seo, sitemap, robots.txt 추가"
 git push origin master
 
 # build
