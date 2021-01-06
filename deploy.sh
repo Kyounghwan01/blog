@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: seo, sitemap, robots.txt 추가"
+git commit -m "feat: 2019, 2020 회고 추가"
 git push origin master
 
 # build
