@@ -2,11 +2,11 @@
 title: vue class 동적할당
 meta:
   - name: description
-    content: vue class 동적할당
+    content: vue class 동적할당, computed, watch
   - property: og:title
-    content: vue class 동적할당
+    content: vue class 동적할당, computed, watch
   - property: og:description
-    content: vue class 동적할당
+    content: vue class 동적할당, computed, watch
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/dynamicAllocation/
 tags: ["vue"]
@@ -31,9 +31,9 @@ form내 메세지를 전송할 때, 값이 없으면 보내는 것을 취소하�
 export default {
   data() {
     return {
-      isBorderChange: false,
+      isBorderChange: false
     };
-  },
+  }
 };
 </script>
 <style>
@@ -62,9 +62,9 @@ export default {
 export default {
   data() {
     return {
-      isBorderChange: false,
+      isBorderChange: false
     };
-  },
+  }
 };
 </script>
 <style>

@@ -2,11 +2,11 @@
 title: mobx functional todolist 만들기
 meta:
   - name: description
-    content: mobx functional todolist 만들기, react, mobx, state management
+    content: mobx functional todolist 만들기, react, mobx, state management, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:title
     content: mobx functional todolist 만들기
   - property: og:description
-    content: mobx functional todolist 만들기, react, mobx, state management
+    content: mobx functional todolist 만들기, react, mobx, state management, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/mobx/functional-todo/
 tags: ["react", "mobx"]

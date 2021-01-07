@@ -1,12 +1,12 @@
 ---
-title: 리액트 styled component 개념 및 예시
+title: react - styled component 개념 및 예시
 meta:
   - name: description
-    content: 리액트 styled component 개념 및 예시
+    content: react - styled component 개념 및 예시, react, redux
   - property: og:title
-    content: 리액트 styled component 개념 및 예시
+    content: react - styled component 개념 및 예시, react, redux
   - property: og:description
-    content: 리액트 styled component 개념 및 예시
+    content: react - styled component 개념 및 예시, react, redux
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/styled-component/
 tags: ["react", "styled-component"]

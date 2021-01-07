@@ -1,12 +1,12 @@
 ---
-title: 불변성과 immer.js
+title: React.js - 불변성과 immer.js
 meta:
   - name: description
-    content: 불변성과 immer.js
+    content: React.js - 불변성과 immer.js, react, setState
   - property: og:title
-    content: 불변성과 immer.js
+    content: React.js - 불변성과 immer.js
   - property: og:description
-    content: 불변성과 immer.js
+    content: React.js - 불변성과 immer.js
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/immer-js/
 tags: ["react"]
@@ -52,18 +52,18 @@ setUsers(state.array.concat(user));
 ### 배열에서 삭제
 
 ```jsx
-const onRemove = (id) => {
+const onRemove = id => {
   // user.id 가 id 인 것을 제거
-  setUsers(users.filter((user) => user.id !== id));
+  setUsers(users.filter(user => user.id !== id));
 };
 ```
 
 ### 배열에서 수정
 
 ```jsx
-const onToggle = (id) => {
+const onToggle = id => {
   setUsers(
-    users.map((user) =>
+    users.map(user =>
       user.id === id ? { ...user, active: !user.active } : user
     )
   );
@@ -98,15 +98,15 @@ import produce from "immer";
 const baseState = [
   {
     todo: "Learn typescript",
-    done: true,
+    done: true
   },
   {
     todo: "Try immer",
-    done: false,
-  },
+    done: false
+  }
 ];
 
-const nextState = produce(baseState, (draftState) => {
+const nextState = produce(baseState, draftState => {
   draftState.push({ todo: "Tweet about it" });
   draftState[1].done = true;
 });
@@ -129,8 +129,8 @@ export default function auth(state = initialState, action) {
         name: "kkkk",
         address: {
           ...state.address,
-          city: "kkkk",
-        },
+          city: "kkkk"
+        }
       };
     default:
       return state;
@@ -144,7 +144,7 @@ export default function auth(state = initialState, action) {
 const initialState = [{ name: "nkh", address: { city: "seoul" } }];
 
 export default function auth(state = initialState, action) {
-  produce(state, (draft) => {
+  produce(state, draft => {
     switch (action.type) {
       case SET_INFO:
         draft[0].name = action.data.name;
@@ -163,10 +163,10 @@ export default function auth(state = initialState, action) {
 
 ```js
 const byId = (state, action) =>
-  produce(state, (draft) => {
+  produce(state, draft => {
     switch (action.type) {
       case RECEIVE_PRODUCTS:
-        action.products.forEach((product) => {
+        action.products.forEach(product => {
           draft[product.id] = product;
         });
         break;
@@ -181,7 +181,7 @@ const byId = (state, action) => {
         ...action.products.reduce((obj, product) => {
           obj[product.id] = product;
           return obj;
-        }, {}),
+        }, {})
       };
     default:
       return state;

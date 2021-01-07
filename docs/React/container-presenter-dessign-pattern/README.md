@@ -2,11 +2,11 @@
 title: React.js - presentational & container 디자인 패턴
 meta:
   - name: description
-    content: React.js - presentational & container 디자인 패턴
+    content: React.js - presentational & container 디자인 패턴, react
   - property: og:title
     content: React.js - presentational & container 디자인 패턴
   - property: og:description
-    content: React.js - presentational & container 디자인 패턴
+    content: React.js - presentational & container 디자인 패턴, react
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/container-presenter-dessign-pattern/
 tags: ["react"]
@@ -62,8 +62,8 @@ class CommentListContainer extends React.Component {
 
   componentDidMount() {
     fetch("/my-comments.json")
-      .then((res) => res.json())
-      .then((comments) => this.setState({ comments }));
+      .then(res => res.json())
+      .then(comments => this.setState({ comments }));
   }
 
   render() {
@@ -78,7 +78,7 @@ class CommentListContainer extends React.Component {
 // CommentListPresenter.js
 import React from "react";
 
-const Commentlist = (comments) => (
+const Commentlist = comments => (
   <ul>
     {comments.map(({ body, author }) => (
       <li>

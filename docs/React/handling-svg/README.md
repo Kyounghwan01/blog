@@ -6,7 +6,7 @@ meta:
   - property: og:title
     content: React.js - svg 다루기
   - property: og:description
-    content: React.js - svg 다루기
+    content: React.js - svg 다루기, react, setState, component
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/handling-svg/
 tags: ["react"]

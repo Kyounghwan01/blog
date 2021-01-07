@@ -2,11 +2,11 @@
 title: react-native firebase colud messaging (fcm) ios - NotRegistered
 meta:
   - name: description
-    content: react-native firebase colud messaging (fcm) ios - NotRegistered
+    content: react-native firebase colud messaging (fcm) ios - NotRegistered, ios, android, react native, react, redux, apple, react16, google
   - property: og:title
     content: react-native firebase colud messaging (fcm) ios - NotRegistered
   - property: og:description
-    content: react-native firebase colud messaging (fcm) ios - NotRegistered
+    content: react-native firebase colud messaging (fcm) ios - NotRegistered, ios, android, react native, react, redux, apple, react16, google
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-native/react-native-firebase-ios-error/
 tags: ["react-native", "react"]

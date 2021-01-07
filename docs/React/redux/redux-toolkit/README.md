@@ -2,11 +2,11 @@
 title: Redux Toolkit을 사용하여 간단하게 상태 관리하기
 meta:
   - name: description
-    content: Redux Toolkit을 사용하여 간단하게 상태 관리하기
+    content: Redux Toolkit을 사용하여 간단하게 상태 관리하기, reselect, redux, react, immer, redux-action, FSA, react-redux 사용법, redux, react, react16, state management, flux, store, reducer, dispatch, action
   - property: og:title
-    content: Redux Toolkit을 사용하여 간단하게 상태 관리하기
+    content: Redux Toolkit을 사용하여 간단하게 상태 관리하기,reselect, redux, react, immer, redux-action, FSA, react-redux 사용법, redux, react, react16, state management, flux, store, reducer, dispatch, action
   - property: og:description
-    content: Redux Toolkit을 사용하여 간단하게 상태 관리하기, reselect, redux, react, immer, redux-action, FSA
+    content: Redux Toolkit을 사용하여 간단하게 상태 관리하기, reselect, redux, react, immer, redux-action, FSA, react-redux 사용법, redux, react, react16, state management, flux, store, reducer, dispatch, action
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/redux/redux-toolkit/
 tags: ["react", "redux", "redux-toolkit"]
@@ -55,7 +55,7 @@ function counter(state = 0, action) {
 }
 
 const store = configureStore({
-  reducer: counter,
+  reducer: counter
 });
 
 document.getElementById("increment").addEventListener("click", () => {
@@ -124,8 +124,8 @@ createSelector로 실행할 수 있습니다. vue에서 vuex의 getter와 동일
 
 ```tsx
 // reducer.js
-export const getCompletedTodos = (state) =>
-  state.todo.todos.filter.map((todo) => todo.isCompleted);
+export const getCompletedTodos = state =>
+  state.todo.todos.filter.map(todo => todo.isCompleted);
 ```
 
 그러나 이방법도 문제가 있다. store가 업데이트 될 때마다 getCompleteTodos는 매 번 계산을 하게된다.
@@ -138,7 +138,7 @@ selector로서 인자로 받는 state에서 우리가 필요한 부분을 가져
 ```tsx
 const listState = (state: RootState) => state.todoSlice.lists;
 
-export const getFilterLike = createSelector(listState, (lists) => {
+export const getFilterLike = createSelector(listState, lists => {
   return lists.filter(({ likes }: { likes: number }) => likes > 10);
 });
 ```
@@ -179,17 +179,17 @@ import {
   configureStore,
   ThunkAction,
   Action,
-  getDefaultMiddleware,
+  getDefaultMiddleware
 } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import todoSlice from "./example/exampleSlice";
 
 export const store = configureStore({
   reducer: {
-    todoSlice: todoSlice,
+    todoSlice: todoSlice
   },
   middleware: getDefaultMiddleware().concat(logger),
-  devTools: process.env.NODE_ENV !== "production",
+  devTools: process.env.NODE_ENV !== "production"
 });
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -207,7 +207,7 @@ import {
   createAsyncThunk,
   createSlice,
   PayloadAction,
-  createSelector,
+  createSelector
 } from "@reduxjs/toolkit";
 import { getSplashImage } from "api";
 import { RootState } from "../index";
@@ -236,7 +236,7 @@ const initialState: stateType = {
   title: { name: "ttttt", content: 0 },
   content: "",
   loading: false,
-  lists: [],
+  lists: []
 };
 
 export const todoSlice = createSlice({
@@ -248,7 +248,7 @@ export const todoSlice = createSlice({
       action: PayloadAction<{ name: string; content: number }>
     ) => {
       state.title.name = action.payload.name;
-    },
+    }
   },
   extraReducers: {
     [fetchTodo.pending.type]: (state, action) => {
@@ -268,13 +268,13 @@ export const todoSlice = createSlice({
       state.loading = true;
       state.title.name = action.payload.message;
       state.lists = [];
-    },
-  },
+    }
+  }
 });
 
 const listState = (state: RootState) => state.todoSlice.lists;
 
-export const getFilterLike = createSelector(listState, (lists) => {
+export const getFilterLike = createSelector(listState, lists => {
   return lists.filter(({ likes }: { likes: number }) => likes > 10);
 });
 export const { setTitle } = todoSlice.actions;
@@ -293,7 +293,7 @@ import {
   lists,
   titles,
   getFilterLike,
-  setTitle,
+  setTitle
 } from "store/example/exampleSlice";
 
 import { fetchTodo } from "store/example/exampleSlice";

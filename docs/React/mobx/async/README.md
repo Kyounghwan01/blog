@@ -2,7 +2,7 @@
 title: mobx 비동기 처리 예제로 알아보기
 meta:
   - name: description
-    content: mobx 비동기 처리 예제로 알아보기, mobx, react
+    content: mobx 비동기 처리 예제로 알아보기, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:title
     content: mobx 비동기 처리 예제로 알아보기
   - property: og:description

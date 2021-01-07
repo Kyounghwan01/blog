@@ -2,11 +2,11 @@
 title: vue lazy-loading 하는법
 meta:
   - name: description
-    content: vue lazy-loading 하는법
+    content: vue lazy-loading 하는법, 최적화, computed, watch, vue2
   - property: og:title
-    content: vue lazy-loading 하는법
+    content: vue lazy-loading 하는법, 최적화, computed, watch, vue2
   - property: og:description
-    content: vue lazy-loading 하는법
+    content: vue lazy-loading 하는법, 최적화, computed, watch, vue2
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/lazy-loading/
 tags: ["vue"]

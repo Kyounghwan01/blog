@@ -2,11 +2,11 @@
 title: computed와 watch
 meta:
   - name: description
-    content: computed와 watch
+    content: computed와 watch, vue, vuex
   - property: og:title
-    content: computed와 watch
+    content: computed와 watch, vue, vuex
   - property: og:description
-    content: computed와 watch
+    content: computed와 watch, vue, vuex
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/computed/
 tags: ["vue"]

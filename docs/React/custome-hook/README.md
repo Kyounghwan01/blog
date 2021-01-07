@@ -2,11 +2,11 @@
 title: React.js - 커스텀 훅 만들기
 meta:
   - name: description
-    content: React.js - 커스텀 훅 만들기, custom hook
+    content: React.js - 커스텀 훅 만들기, custom hook, react, hook, react16, setState
   - property: og:title
     content: React.js - 커스텀 훅 만들기
   - property: og:description
-    content: React.js - 커스텀 훅 만들기
+    content: React.js - 커스텀 훅 만들기, custom hook, react, hook, react16, setState
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/custome-hook/
 tags: ["react"]

@@ -2,11 +2,11 @@
 title: vue 이벤트 수식어
 meta:
   - name: description
-    content: vue 이벤트 수식어
+    content: vue 이벤트 수식어, computed, watch
   - property: og:title
-    content: vue 이벤트 수식어
+    content: vue 이벤트 수식어, computed, watch
   - property: og:description
-    content: vue 이벤트 수식어
+    content: vue 이벤트 수식어, computed, watch
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/event-handler/
 tags: ["vue"]
@@ -43,8 +43,8 @@ export default {
     },
     func3() {
       alert("div3");
-    },
-  },
+    }
+  }
 };
 </script>
 ```

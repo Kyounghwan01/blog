@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 2019, 2020 회고 오타 수정"
+git commit -m "feat: next dynamic meta 추가"
 git push origin master
 
 # build

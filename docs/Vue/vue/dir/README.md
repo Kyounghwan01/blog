@@ -2,11 +2,11 @@
 title: vue 파일 전역으로 관리하기
 meta:
   - name: description
-    content: vue 파일 전역으로 관리하기
+    content: vue 파일 전역으로 관리하기, computed, watch
   - property: og:title
-    content: vue 파일 전역으로 관리하기
+    content: vue 파일 전역으로 관리하기, computed, watch
   - property: og:description
-    content: vue 파일 전역으로 관리하기
+    content: vue 파일 전역으로 관리하기, computed, watch
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/dir/
 tags: ["vue"]
@@ -46,9 +46,9 @@ module.exports = {
   configureWebpack: {
     // Set up all the aliases.
     resolve: {
-      alias: require("./aliases.config").webpack,
-    },
-  },
+      alias: require("./aliases.config").webpack
+    }
+  }
 };
 //참고 : https://webpack.js.org/configuration/resolve/
 ```
@@ -62,13 +62,13 @@ const path = require("path");
 
 const aliases = {
   "@": "src",
-  "@utils": "src/utils",
+  "@utils": "src/utils"
   //'@api': 'src/api',
   //'@store': 'src/store', 확장 가능
 };
 
 module.exports = {
-  webpack: {},
+  webpack: {}
 };
 
 for (const alias in aliases) {
@@ -109,7 +109,7 @@ Vue.prototype.$utils = utils;
 //Vue.prototype.$store = store;
 
 new Vue({
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");
 ```
 
@@ -128,7 +128,7 @@ const requireFunction = require.context(
   /^((?!index).)*\.js$/ // index.js를 제외한 모든 js 파일
 );
 
-requireFunction.keys().forEach((filename) => {
+requireFunction.keys().forEach(filename => {
   const functionDefinition = requireFunction(filename);
   const functionPath = filename
     .replace(/^\.\//, "") // 시작부분 "./" 제거

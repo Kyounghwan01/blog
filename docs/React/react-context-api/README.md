@@ -2,11 +2,11 @@
 title: react context api 개념 & 예시
 meta:
   - name: description
-    content: react context api 개념 & 예시
+    content: react context api 개념 & 예시, react, react16, provider, store
   - property: og:title
     content: react context api 개념 & 예시
   - property: og:description
-    content: react context api 개념 & 예시
+    content: react context api 개념 & 예시, react, react16, provider, store
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-context-api/
 tags: ["react"]

@@ -2,11 +2,11 @@
 title: react-native webview 사용법, webview, rn 데이터 통신
 meta:
   - name: description
-    content: react-native webview 사용법, webview, rn 데이터 통신
+    content: react-native webview 사용법, webview, rn 데이터 통신, react, redux, ios, android, safari, chrome, google, apple
   - property: og:title
     content: react-native webview 사용법
   - property: og:description
-    content: react-native webview 사용법, webview, rn 데이터 통신, 하이브리드 웹앱
+    content: eact-native webview 사용법, webview, rn 데이터 통신, react, redux, ios, android, safari, chrome, google, apple
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-native/react-native-webview/
 tags: ["react-native", "react"]

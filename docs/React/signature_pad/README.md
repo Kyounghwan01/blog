@@ -1,11 +1,12 @@
 ---
+title: 웹에서 signature_pad를 이용해 서명(싸인) 받기
 meta:
   - name: description
-    content: 웹에서 signature_pad를 이용해 서명(싸인) 받기
+    content: 웹에서 signature_pad를 이용해 서명(싸인) 받기, react, redux, javascript, html
   - property: og:title
-    content: 웹에서 signature_pad를 이용해 서명(싸인) 받기
+    content: 웹에서 signature_pad를 이용해 서명(싸인) 받기, react, redux, javascript, html
   - property: og:description
-    content: 웹에서 signature_pad를 이용해 서명(싸인) 받기
+    content: 웹에서 signature_pad를 이용해 서명(싸인) 받기, react, redux, javascript, html
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/signature_pad/
 tags: ["react"]

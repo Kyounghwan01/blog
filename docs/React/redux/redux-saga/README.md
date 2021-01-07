@@ -2,11 +2,11 @@
 title: redux-saga 사용법
 meta:
   - name: description
-    content: redux-saga 사용법
+    content: redux-saga 사용법, react-redux 사용법, redux, react, react16, state management, flux, store, reducer, dispatch, action
   - property: og:title
-    content: redux-saga 사용법
+    content: redux-saga 사용법, react-redux 사용법, redux, react, react16, state management, flux, store, reducer, dispatch, action
   - property: og:description
-    content: redux-saga 사용법
+    content: redux-saga 사용법, react-redux 사용법, redux, react, react16, state management, flux, store, reducer, dispatch, action
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/redux/redux-saga/
 tags: ["react", "redux", "redux-saga"]

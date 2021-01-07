@@ -2,11 +2,11 @@
 title: mobx 다른 store 값 사용하기 (typescript)
 meta:
   - name: description
-    content: mobx 다른 store 값 사용하기, react, typescript
+    content: mobx 다른 store 값 사용하기, react, typescript, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:title
     content: mobx 다른 store 값 사용하기
   - property: og:description
-    content: mobx 다른 store 값 사용하기, react, store, typescript
+    content: mobx 다른 store 값 사용하기, react, store, typescript, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/mobx/use-other-store/
 tags: ["react", "mobx"]

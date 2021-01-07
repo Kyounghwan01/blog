@@ -2,7 +2,7 @@
 title: next.js styled-componsnts 스타일 적용 전에 렌더되는 에러 해결법
 meta:
   - name: description
-    content: next.js styled-componsnts 스타일 적용 전에 렌더되는 에러 해결법, react
+    content: next.js styled-componsnts 스타일 적용 전에 렌더되는 에러 해결법, react, seo, ssr, getStaticProps, getStaticPaths, getServerSideProps
   - property: og:title
     content: next.js styled-componsnts 스타일 적용 전에 렌더되는 에러 해결법
   - property: og:description

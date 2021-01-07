@@ -2,11 +2,11 @@
 title: next.js 같은 page에서 window.history 쌓기
 meta:
   - name: description
-    content: next.js 같은 page에서 window.history 쌓기, react, next-router
+    content: next.js 같은 page에서 window.history 쌓기, next-router, react, seo, ssr, getStaticProps, getStaticPaths,
   - property: og:title
     content: next.js 같은 page에서 window.history 쌓기
   - property: og:description
-    content: next.js 같은 page에서 window.history 쌓기, react, seo, ssr, getStaticProps, getStaticPaths, getServerSideProps
+    content: next.js 같은 page에서 window.history 쌓기, next-router, react, seo, ssr, getStaticProps, getStaticPaths, getServerSideProps
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/next/same-page-stack-history/
 tags: ["react", "next"]

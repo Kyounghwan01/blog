@@ -2,7 +2,7 @@
 title: next.js getInitialProps 사용법
 meta:
   - name: description
-    content: next.js getInitialProps 사용법, react
+    content: next.js getInitialProps 사용법, react, seo, ssr, getStaticProps, getStaticPaths, getServerSideProps
   - property: og:title
     content: next.js getInitialProps 사용법
   - property: og:description

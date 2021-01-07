@@ -2,11 +2,11 @@
 title: React.js - 이미지 업로드 & 압축
 meta:
   - name: description
-    content: React.js - 이미지 업로드, 압축 하는 법
+    content: React.js - 이미지 업로드, 압축 하는 법, image upload, compression, blob, FileReader, Uint8Array, FormData
   - property: og:title
     content: React.js - 이미지 업로드, 압축 하는 법
   - property: og:description
-    content: React.js - 이미지 업로드, 압축 하는 법
+    content: React.js - 이미지 업로드, 압축 하는 법, image upload, compression, blob, FileReader, Uint8Array, FormData
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/image-upload/
 tags: ["react"]

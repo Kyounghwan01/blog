@@ -6,7 +6,7 @@ meta:
   - property: og:title
     content: React.js - focus, blur 예제
   - property: og:description
-    content: React.js - focus, blur 예제
+    content: React.js - focus, blur 예제, react event focus blue example, useRef
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/focus-blur/
 tags: ["react"]

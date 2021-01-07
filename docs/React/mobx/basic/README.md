@@ -2,11 +2,11 @@
 title: mobx 알아보기
 meta:
   - name: description
-    content: mobx 알아보기, react, mobx, state management
+    content: mobx 알아보기, react, mobx, state management, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:title
     content: mobx 알아보기
   - property: og:description
-    content: mobx 알아보기, react, mobx, state management
+    content: mobx 알아보기, react, mobx, state management, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/mobx/basic/
 tags: ["react", "mobx"]

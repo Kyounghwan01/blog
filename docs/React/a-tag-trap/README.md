@@ -2,11 +2,11 @@
 title: react-redux state 초기화와 a 태그의 함정
 meta:
   - name: description
-    content: react-redux state 초기화와 a 태그의 함정, redux state initalize, 초기화됨
+    content: react-redux state 초기화와 a 태그의 함정, redux state initalize, 초기화됨, react, redux, setState
   - property: og:title
     content: react-redux state 초기화와 a 태그의 함정
   - property: og:description
-    content: react-redux state 초기화와 a 태그의 함정
+    content: react-redux state 초기화와 a 태그의 함정, redux state initalize, 초기화됨, react, redux, setState
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/a-tag-trap/
 tags: ["react", "styled-component"]

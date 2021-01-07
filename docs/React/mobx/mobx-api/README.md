@@ -2,11 +2,11 @@
 title: mobx api 예제로 알아보기
 meta:
   - name: description
-    content: mobx api 예제로 알아보기, mobx, react
+    content: mobx api 예제로 알아보기, mobx, react, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:title
     content: mobx api 예제로 알아보기
   - property: og:description
-    content: mobx api 예제로 알아보기, mobx, react, observable, computed, action, autorun
+    content: mobx api 예제로 알아보기, mobx, react, observable, computed, action, autorun, mobx, react, async, runInAction, observable, computed, action, autorun
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/mobx/mobx-api/
 tags: ["react", "mobx"]

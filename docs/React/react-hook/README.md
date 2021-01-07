@@ -2,11 +2,11 @@
 title: react hook 정리
 meta:
   - name: description
-    content: react hook 정리
+    content: react hook 정리, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback
   - property: og:title
     content: react hook 정리
   - property: og:description
-    content: react hook 정리
+    content: react hook 정리, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-hook/
 tags: ["react"]

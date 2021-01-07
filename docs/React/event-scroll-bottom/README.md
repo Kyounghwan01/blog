@@ -2,11 +2,11 @@
 title: React.js - 이벤트 발생시 스크롤 맨 밑으로 내리기
 meta:
   - name: description
-    content: React.js - 이벤트 발생시 스크롤 맨 밑으로 내리기
+    content: React.js - 이벤트 발생시 스크롤 맨 밑으로 내리기, react, setState, scroll, event, useRef
   - property: og:title
     content: React.js - 이벤트 발생시 스크롤 맨 밑으로 내리기
   - property: og:description
-    content: React.js - 이벤트 발생시 스크롤 맨 밑으로 내리기
+    content: React.js - 이벤트 발생시 스크롤 맨 밑으로 내리기, react, setState, scroll, event, useRef
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/event-scroll-bottom/
 tags: ["react"]
