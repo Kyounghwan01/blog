@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: clip board 추가, styled-components 태그 오타 수정, seo 변수 추가"
+git commit -m "feat: 객체 정렬 추가"
 git push origin master
 
 # build
