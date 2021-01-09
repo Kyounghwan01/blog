@@ -2,11 +2,11 @@
 title: z-index로 인한 겹쳐진영역 이벤트 처리
 meta:
   - name: description
-    content: z-index로 인한 겹쳐진영역 이벤트 처리
+    content: z-index로 인한 겹쳐진영역 이벤트 처리, css, javascript, html, z-index, pointer-event
   - property: og:title
-    content: z-index로 인한 겹쳐진영역 이벤트 처리
+    content: z-index로 인한 겹쳐진영역 이벤트 처리, css, javascript, html, z-index, pointer-event
   - property: og:description
-    content: z-index로 인한 겹쳐진영역 이벤트 처리
+    content: z-index로 인한 겹쳐진영역 이벤트 처리, css, javascript, html, z-index, pointer-event
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/CSS/dup-area-event/
 tags: ["css"]

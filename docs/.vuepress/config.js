@@ -28,7 +28,7 @@ module.exports = {
           { text: "Github", link: "https://github.com/Kyounghwan01" },
           {
             text: "블로그 건의하기",
-            link: "https://github.com/Kyounghwan01/blog/issues/new"
+            link: "https://github.com/Kyounghwan01/blog/issues/20"
           },
           {
             text: "toy-project",

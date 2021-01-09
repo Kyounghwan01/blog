@@ -2,11 +2,11 @@
 title: npm / yarn global 실행해도 command not found 해결 방법
 meta:
   - name: description
-    content: npm / yarn global 실행해도 command not found 해결 방법
+    content: npm / yarn global 실행해도 command not found 해결 방법, setting, yarn, npm , global
   - property: og:title
-    content: npm / yarn global 실행해도 command not found 해결 방법
+    content: npm / yarn global 실행해도 command not found 해결 방법, setting, yarn, npm , global
   - property: og:description
-    content: npm / yarn global 실행해도 command not found 해결 방법
+    content: npm / yarn global 실행해도 command not found 해결 방법, setting, yarn, npm , global
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/yarn-global/
 tags: ["settings"]

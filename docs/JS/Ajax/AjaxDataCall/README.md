@@ -2,11 +2,11 @@
 title: Ajax 이용 데이터 불러오기
 meta:
   - name: description
-    content: Ajax 이용 데이터 불러오기
+    content: Ajax 이용 데이터 불러오기, javascript, XMLHttpRequest, axios, promise, async await
   - property: og:title
-    content: Ajax 이용 데이터 불러오기
+    content: Ajax 이용 데이터 불러오기, javascript, XMLHttpRequest, axios, promise, async await
   - property: og:description
-    content: Ajax 이용 데이터 불러오기
+    content: Ajax 이용 데이터 불러오기, javascript, XMLHttpRequest, axios, promise, async await
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/Ajax/AjaxDataCall/
 tags: ["JS"]

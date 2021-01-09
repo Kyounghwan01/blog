@@ -2,11 +2,11 @@
 title: Ajax + Promise
 meta:
   - name: description
-    content: Ajax + Promise
+    content: Ajax + Promise, javascript, callback, async await, axios
   - property: og:title
-    content: Ajax + Promise
+    content: Ajax + Promise, javascript, callback, async await, axios
   - property: og:description
-    content: Ajax + Promise
+    content: Ajax + Promise, javascript, callback, async await, axios
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/Ajax/Promise_Ajax/
 tags: ["JS"]
@@ -44,7 +44,7 @@ Promise.request1 = () => {
   });
 };
 
-Promise.request1().then((data) => console.log(data));
+Promise.request1().then(data => console.log(data));
 ```
 
 ## 2. id를 통해 render될 자료를 비동기로 받아와서 console에 id에 해당하는 정보 가져오기
@@ -52,7 +52,7 @@ Promise.request1().then((data) => console.log(data));
 > 1번 과정에서 가져온 id를 requset2함수의 인자로 넣어서 해당 id에 맞게 자료를 가져와서 `newsData`에 넣습니다. 비동기적으로 이루어져야 하니 함수를 이용하여 스코프를 만들고 배열이 완성되기 전까지 `resolve` 가 되지 않도록 합니다.
 
 ```js
-Promise.request2 = (param) => {
+Promise.request2 = param => {
   return new Promise((resolve, reject) => {
     var i = 0;
 
@@ -88,12 +88,12 @@ Promise.request2 = (param) => {
 > 완성됬다면 promise pending 후에 `userData` 가 console에 찍히게 됩니다.
 
 ```js
-Promise.request1().then((data) => {
+Promise.request1().then(data => {
   Promise.request2(data)
     .then(function(userData) {
       console.log(userData);
     })
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 });
 ```
 

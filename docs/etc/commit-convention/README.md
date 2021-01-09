@@ -2,11 +2,11 @@
 title: 커밋컨벤션
 meta:
   - name: description
-    content: 커밋컨벤션
+    content: 커밋컨벤션, commit, commit convention
   - property: og:title
-    content: 커밋컨벤션
+    content: 커밋컨벤션, commit, commit convention
   - property: og:description
-    content: 커밋컨벤션
+    content: 커밋컨벤션, commit, commit convention
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/commit-convention/
 tags: ["settings"]

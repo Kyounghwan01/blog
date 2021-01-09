@@ -2,11 +2,11 @@
 title: Ajax 실행 단계
 meta:
   - name: description
-    content: Ajax 실행 단계
+    content: Ajax 실행 단계, callback, promise, XMLHttpRequest, async await
   - property: og:title
-    content: Ajax 실행 단계
+    content: Ajax 실행 단계, callback, promise, XMLHttpRequest, async await
   - property: og:description
-    content: Ajax 실행 단계
+    content: Ajax 실행 단계, callback, promise, XMLHttpRequest, async await
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/Ajax/AjaxStep/
 tags: ["JS"]

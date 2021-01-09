@@ -2,11 +2,11 @@
 title: 돔 조작 - selenium 사용법
 meta:
   - name: description
-    content: 돔 조작 - selenium 사용법
+    content: 돔 조작 - selenium 사용법, python, crawling, 데이터 분석, 자동화, naver, dom, html, javascript
   - property: og:title
-    content: 돔 조작 - selenium 사용법
+    content: 돔 조작 - selenium 사용법, python, crawling, 데이터 분석, 자동화, naver, dom, html, javascript
   - property: og:description
-    content: 돔 조작 - selenium 사용법
+    content: 돔 조작 - selenium 사용법, python, crawling, 데이터 분석, 자동화, naver, dom, html, javascript
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/python/dom-modify-crawling/
 tags: ["python"]

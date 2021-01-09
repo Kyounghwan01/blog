@@ -2,19 +2,19 @@
 title: react로 다크 모드(dark mode) 만드는 법
 meta:
   - name: description
-    content: react로 다크 모드(dark mode) 만드는 법
+    content: react로 다크 모드(dark mode) 만드는 법, styled-components, css, scss, theme
   - property: og:title
-    content: react로 다크 모드(dark mode) 만드는 법
+    content: react로 다크 모드(dark mode) 만드는 법, styled-components, css, scss, theme
   - property: og:description
-    content: react로 다크 모드(dark mode) 만드는 법
+    content: react로 다크 모드(dark mode) 만드는 법, styled-components, css, scss, theme
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/CSS/dark-mode/
-tags: ["react", "css"]
+tags: ["react", "css", "styled-components"]
 ---
 
 # react로 다크모드 만들기
 
-react, styled-component, scss를 이용하여 다크모드를 만들어봅시다.
+react, styled-components, scss를 이용하여 다크모드를 만들어봅시다.
 
 가장 root인 app.jsx에 root css를 Import 해줍니다.
 

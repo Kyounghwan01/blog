@@ -1,22 +1,22 @@
 ---
-title: react - styled component 개념 및 예시
+title: styled-components 개념 및 예시
 meta:
   - name: description
-    content: react - styled component 개념 및 예시, react, redux
+    content: styled-components 개념 및 예시, react, redux, 환경설정, global theme, 글로벌 스타일, props, mixins
   - property: og:title
-    content: react - styled component 개념 및 예시, react, redux
+    content: styled-components 개념 및 예시, react, redux
   - property: og:description
-    content: react - styled component 개념 및 예시, react, redux
+    content: styled-components 개념 및 예시, react, redux, 환경설정, global theme, 글로벌 스타일, props, mixins
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/styled-component/
-tags: ["react", "styled-component"]
+    content: https://kyounghwan01.github.io/blog/React/styled-components/
+tags: ["react", "styled-components"]
 ---
 
-# styled-component
+# styled-components
 
-## styled-component란
+## styled-components란
 
-- 기존 돔을 만드는 방식인 css, scss 파일을 밖에 두고, 태그나 id, class이름으로 가져와 쓰지 않고, 동일한 컴포넌트에서 컴포넌트 이름을 쓰듯 스타일을 지정하는 것을 styled-component라고 부릅니다. <br>css 파일을 밖에 두지 않고, 컴포넌트 내부에 넣기 때문에, css가 전역으로 중첩되지 않도록 만들어주는 장점이 있습니다.
+- 기존 돔을 만드는 방식인 css, scss 파일을 밖에 두고, 태그나 id, class이름으로 가져와 쓰지 않고, 동일한 컴포넌트에서 컴포넌트 이름을 쓰듯 스타일을 지정하는 것을 styled-components라고 부릅니다. <br>css 파일을 밖에 두지 않고, 컴포넌트 내부에 넣기 때문에, css가 전역으로 중첩되지 않도록 만들어주는 장점이 있습니다.
 
 ## 환경설정
 
@@ -65,7 +65,7 @@ const NewButton = styled.Button`
 export default Example;
 ```
 
-## styled component 만들기
+## styled components 만들기
 
 - `const 컴포넌트명 = styled.태그명`스타일 넣기`...`문법으로 만들어집니다.
 - 만들고자하는 컴포넌트의 render 함수 밖에서 만듭니다.
@@ -119,7 +119,7 @@ const Other = () => {
 ## 반응형디자인
 
 - 위 예시를 응용하면 반응형을 쉽게 만들 수 있습니다.
-- [styled-component-media](https://styled-components.com/docs/advanced#media-templates) 이 링크를 공부하시면 좋을 것 같습니다.
+- [styled-components-media](https://styled-components.com/docs/advanced#media-templates) 이 링크를 공부하시면 좋을 것 같습니다.
 
 ### 예시
 
@@ -296,6 +296,26 @@ function Test() {
 const CenterContainer = styled.div`
   @include flex(row, center, center);
 `;
+```
+
+## styled-components 만 사용하는 변수
+
+[Transient props](https://styled-components.com/docs/api#transient-props)를 사용합니다.
+
+위 api는 v5.1 이상에서 사용 가능합니다.
+
+스타일만을 위한 변수가 기본 React 노드로 전달되거나 DOM 요소로 렌더링되는 것을 방지하려면 변수 이름 앞에 `$` 기호를 붙일 수 있습니다
+
+```jsx
+import React from "react";
+
+export default function Trans() {
+  const Comp = styled.div`
+    color: ${props => props.$draggable || "black"};
+  `;
+
+  return <Comp $draggable="red">Drag me!</Comp>;
+}
 ```
 
 <TagLinks />

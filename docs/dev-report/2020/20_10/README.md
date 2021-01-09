@@ -12,7 +12,7 @@
 
 ## 에러 해결 모음
 
-## styled-component createGlobalStyle 버그
+## styled-components createGlobalStyle 버그
 
 dev에서는
 
@@ -25,7 +25,7 @@ onst GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 ```
 
-위와 같이 커스텀 css를 import 할 수 있으나, styled-component v5 버전 이후 createGlobalStyle의 @import 문제로 위와 같은 코드가 production에 배포시 하위 css가 반영되지 않음
+위와 같이 커스텀 css를 import 할 수 있으나, styled-components v5 버전 이후 createGlobalStyle의 @import 문제로 위와 같은 코드가 production에 배포시 하위 css가 반영되지 않음
 
 ### fix
 

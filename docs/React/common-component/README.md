@@ -2,11 +2,11 @@
 title: React.js - 중복으로 쓰이는 공통 컴포넌트 만들기
 meta:
   - name: description
-    content: React.js - 중복으로 쓰이는 공통 컴포넌트 만들기, 매번 불러오지 않기, common component, redux
+    content: React.js - 중복으로 쓰이는 공통 컴포넌트 만들기, 매번 불러오지 않기, common component, redux, javascript
   - property: og:title
     content: React.js - 중복으로 쓰이는 공통 컴포넌트 만들기
   - property: og:description
-    content: React.js - 중복으로 쓰이는 공통 컴포넌트 만들기
+    content: React.js - 중복으로 쓰이는 공통 컴포넌트 만들기, 매번 불러오지 않기, common component, redux, javascript
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/common-component/
 tags: ["react"]

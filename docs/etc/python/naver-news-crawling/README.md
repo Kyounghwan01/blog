@@ -2,11 +2,11 @@
 title: 네이버 뉴스 기사 크롤링
 meta:
   - name: description
-    content: 네이버 뉴스 기사 크롤링
+    content: 네이버 뉴스 기사 크롤링, naver, crawling, news, blog, python, 데이터 분석, 자동화
   - property: og:title
-    content: 네이버 뉴스 기사 크롤링
+    content: 네이버 뉴스 기사 크롤링, naver, crawling, news, blog, python, 데이터 분석, 자동화
   - property: og:description
-    content: 네이버 뉴스 기사 크롤링
+    content: 네이버 뉴스 기사 크롤링, naver, crawling, news, blog, python, 데이터 분석, 자동화
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/python/naver-news-crawling/
 tags: ["python"]

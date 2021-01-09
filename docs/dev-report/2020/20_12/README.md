@@ -8,7 +8,7 @@
 
 ## 에러 해결 모음
 
-- next에서 styled-components 안될때 [정리](https://kyounghwan01.github.io/blog/React/next/styled-component-render-error/)
+- next에서 styled-components 안될때 [정리](https://kyounghwan01.github.io/blog/React/next/styled-components-render-error/)
 
 ## 배운점
 

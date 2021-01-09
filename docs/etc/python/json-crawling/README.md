@@ -2,11 +2,11 @@
 title: 파이썬 웹 크롤링 (json 타입)
 meta:
   - name: description
-    content: 파이썬 웹 크롤링 (json 타입)
+    content: 파이썬 웹 크롤링 (json 타입), python, crawling, 데이터 분석, 자동화
   - property: og:title
-    content: 파이썬 웹 크롤링 (json 타입)
+    content: 파이썬 웹 크롤링 (json 타입), python, crawling, 데이터 분석, 자동화
   - property: og:description
-    content: 파이썬 웹 크롤링 (json 타입)
+    content: 파이썬 웹 크롤링 (json 타입), python, crawling, 데이터 분석, 자동화
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/python/json-crawling/
 tags: ["python"]

@@ -116,9 +116,9 @@ dispatch(thisIsFunction());
 
 - [정리](https://kyounghwan01.github.io/blog/React/react-hook/)
 
-### 2. styled-component
+### 2. styled-components
 
-- [정리](https://kyounghwan01.github.io/blog/React/styled-component/)
+- [정리](https://kyounghwan01.github.io/blog/React/styled-components/)
 
 ### 3. immer
 

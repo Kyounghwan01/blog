@@ -1,18 +1,18 @@
 ---
-title: styled-component typscript로 세팅하기
+title: styled-components typscript로 세팅하기
 meta:
   - name: description
-    content: styled-component typscript로 세팅하기
+    content: styled-components typscript로 세팅하기
   - property: og:title
-    content: styled-component typscript로 세팅하기
+    content: styled-components typscript로 세팅하기
   - property: og:description
-    content: styled-component typscript로 세팅하기, global css, reset css, theme setting
+    content: styled-components typscript로 세팅하기, global css, reset css, theme setting
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/React/styled-components-preset/
-tags: ["react", "TS", "styled-component"]
+tags: ["react", "TS", "styled-components"]
 ---
 
-# styled-component typscript로 세팅하기
+# styled-components typscript로 세팅하기
 
 ## package.json 설치
 
@@ -132,7 +132,7 @@ type activeType = {
 const App = () => {
   return (
     <CustomContainer active>
-      <span>styled-component css test</span>
+      <span>styled-components css test</span>
     </CustomContainer>
   );
 

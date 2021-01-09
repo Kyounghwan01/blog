@@ -238,7 +238,7 @@ export default withRouter(ScrollToTop);
 (res: bookingType[]) => [...res].sort((a, b) => +new Date(a.start_on) - +new Date(b.start_on)),
 ```
 
-## styled-component createGlobalStyle 내 css 반영 안되는 버그
+## styled-components createGlobalStyle 내 css 반영 안되는 버그
 
 dev 환경에서는
 
@@ -251,7 +251,7 @@ onst GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 ```
 
-위와 같이 커스텀 css를 import 할 수 있으나, styled-component v5 버전 이후 `createGlobalStyle`의 `@import` 문제로 위와 같은 코드가 `production`에 배포시 하위 css가 반영되지 않음
+위와 같이 커스텀 css를 import 할 수 있으나, styled-components v5 버전 이후 `createGlobalStyle`의 `@import` 문제로 위와 같은 코드가 `production`에 배포시 하위 css가 반영되지 않음
 
 ### fix
 
