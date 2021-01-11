@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 객체 정렬 추가"
+git commit -m "feat: blob url 사용하기 추가"
 git push origin master
 
 # build
