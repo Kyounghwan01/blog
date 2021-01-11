@@ -6,7 +6,7 @@ meta:
   - property: og:title
     content: image Blob 객체를 url로 바꾸어 img 띄우기, javascript, JavaScript, blob, createObjectUrl, revokeObjectUrl, react, vue, window, document
   - property: og:description
-  content: image Blob 객체를 url로 바꾸어 img 띄우기, javascript, JavaScript, blob, createObjectUrl, revokeObjectUrl, react, vue, window, document
+    content: image Blob 객체를 url로 바꾸어 img 띄우기, javascript, JavaScript, blob, createObjectUrl, revokeObjectUrl, react, vue, window, document
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/Blob-url/
 tags: ["JS"]
