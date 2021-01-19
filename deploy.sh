@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 2021_01 개발일기 추가"
+git commit -m "fix: 2021_01 파일 이름 수정"
 git push origin master
 
 # build
