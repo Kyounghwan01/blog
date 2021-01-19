@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: blob url 사용하기 추가"
+git commit -m "feat: 2021_01 개발일기 추가"
 git push origin master
 
 # build

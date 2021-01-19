@@ -1,12 +1,12 @@
 ---
-title: JavaScript - 객체 valu로 정렬하기
+title: JavaScript - 객체 value로 정렬하기
 meta:
   - name: description
-    content: JavaScript - 객체 valu로 정렬하기, object value sorting, js, JS, object, array, sort
+    content: JavaScript - 객체 value로 정렬하기, object value sorting, js, JS, object, array, sort
   - property: og:title
-    content: JavaScript - 객체 valu로 정렬하기, object value sorting, js, JS, object, array, sort
+    content: JavaScript - 객체 value로 정렬하기, object value sorting, js, JS, object, array, sort
   - property: og:description
-    content: JavaScript - 객체 valu로 정렬하기, object value sorting, js, JS, object, array, sort
+    content: JavaScript - 객체 value로 정렬하기, object value sorting, js, JS, object, array, sort
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/object-sort/
 tags: ["JS"]

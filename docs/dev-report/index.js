@@ -3,6 +3,11 @@ module.exports = {
     "",
     {
       collapsable: true,
+      title: "2021",
+      children: ["2021/20_01/"]
+    },
+    {
+      collapsable: true,
       title: "2020",
       children: [
         "2020/retrospect/",
