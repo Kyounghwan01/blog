@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 2021_01 파일 이름 수정"
+git commit -m "[#29] feat: express, sequelize 예시 추가"
 git push origin master
 
 # build

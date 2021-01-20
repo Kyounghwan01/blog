@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: netlify env 환경변수 설정하는 방법, netlify, env, .env
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/netlify-env/
+    content: https://kyounghwan01.github.io/blog/etc/netlify-env/
 ---
 
 # netlify env 환경변수 설정하는 방법
