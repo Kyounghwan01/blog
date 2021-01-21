@@ -690,3 +690,15 @@ swicth (data){
 ```jsx
 git config --global core.autocrlf false
 ```
+
+## mobx - Error: [mobx] missing option for computed: get
+
+```js
+@computed get info() { /** return 없음 **/ }
+```
+
+- computed를 쓰고 있는데 get 이후 함수가 없거나 return 값이 없는 경우
+
+### fix
+
+computed를 쓰지 않거나 computed 로직을 완성시킴

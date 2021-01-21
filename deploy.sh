@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#29] feat: express, sequelize 예시 추가"
+git commit -m "feat: mobx computed 에러 해결 추가"
 git push origin master
 
 # build
