@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: sequelize 페이지네이션 추가"
+git commit -m "feat: sequelize table join 추가"
 git push origin master
 
 # build
