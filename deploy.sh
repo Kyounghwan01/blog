@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: sequelize table join 추가"
+git commit -m "feat: sequelize 이미지 업로드"
 git push origin master
 
 # build

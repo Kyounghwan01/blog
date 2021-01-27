@@ -88,11 +88,6 @@ db.sequelize.sync();
 //   console.log("Drop and re-sync db.");
 // });
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "this is express server" });
-});
-
 require("./app/routes/turorial.routes")(app);
 
 const PORT = process.env.PORT || 8080;
