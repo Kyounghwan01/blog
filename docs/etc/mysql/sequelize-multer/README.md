@@ -19,22 +19,21 @@ meta:
 
 ## 프로젝트 구조
 
-| 프로젝트 구조                     |
-| :-------------------------------- |
-| **/src**                          |
-| **ㅣㅡ app**                      |
-| **ㅣㅡ /config**                  |
-| **ㅣㅡㅡ /db.config.js**          |
-| **ㅣㅡ /middleware**              |
-| **ㅣㅡㅡ /upload.js**             |
-| **ㅣㅡ /modules**                 |
-| **ㅣㅡㅡ /index.js**              |
-| **ㅣㅡㅡ /image.model.js**        |
-| **ㅣㅡ /routes**                  |
-| **ㅣㅡㅡ /image.routes.js**       |
-| **ㅣㅡ firebase-messaging-sw.js** |
-| **ㅣㅡ package.json**             |
-| **ㅣㅡ server.js**                |
+| 프로젝트 구조               |
+| :-------------------------- |
+| **/src**                    |
+| **ㅣㅡ app**                |
+| **ㅣㅡ /config**            |
+| **ㅣㅡㅡ /db.config.js**    |
+| **ㅣㅡ /middleware**        |
+| **ㅣㅡㅡ /upload.js**       |
+| **ㅣㅡ /modules**           |
+| **ㅣㅡㅡ /index.js**        |
+| **ㅣㅡㅡ /image.model.js**  |
+| **ㅣㅡ /routes**            |
+| **ㅣㅡㅡ /image.routes.js** |
+| **ㅣㅡ package.json**       |
+| **ㅣㅡ server.js**          |
 
 - `db.config.js`는 MYSQL 연결 및 Sequelize 구성을 위한 설정 파일입니다.
 - `server.js`는 CORS를 구성하고, Express를 초기화 및 Sequelize 연결, 서버 연결을 담당합니다.

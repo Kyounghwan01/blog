@@ -30,7 +30,6 @@ meta:
 | **ㅣㅡㅡ /tutorial.model.js**      |
 | **ㅣㅡ /routes**                   |
 | **ㅣㅡㅡ /tutorial.routes.js**     |
-| **ㅣㅡ firebase-messaging-sw.js**  |
 | **ㅣㅡ package.json**              |
 | **ㅣㅡ server.js**                 |
 

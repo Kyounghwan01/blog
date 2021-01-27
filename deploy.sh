@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: sequelize 이미지 업로드"
+git commit -m "fix: sequelize 포스팅 수정"
 git push origin master
 
 # build
