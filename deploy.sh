@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: sequelize 포스팅 수정"
+git commit -m "feat: async/await를 for loop에서 사용하기"
 git push origin master
 
 # build
