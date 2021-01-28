@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: async/await를 for loop에서 사용하기"
+git commit -m "fix: 1월 에러모음 수정"
 git push origin master
 
 # build

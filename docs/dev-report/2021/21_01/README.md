@@ -2,12 +2,18 @@
 
 ## 1월 이슈 요약
 
-- 블로그 방문자 월 3800명 달성 (GA 기준)
-- 토이프로젝트 진행중 (https://khgg.netlify.app/)
+- 블로그 방문자 월 4400명 달성 (GA 기준)
+- 토이 프로젝트 진행중 (https://khgg.netlify.app/)
 
 ## 에러 해결 모음
 
-- ''
+### `fs.readfilesync()` (서버에 있는 파일 찾는 로직)
+
+- 절대 경로만 사용가능, 상대 경로로 넣으면 파일 못찾음
+
+### Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+
+- 서버에서 클라이언트로 `res.send`가 2번 들어가는 상황
 
 ## 배운점
 
@@ -31,5 +37,12 @@
 ## ts
 
 - Object is possibly 'null'.ts(2531) [정리](https://kyounghwan01.github.io/blog/TS/object-null/)
+
+## mysql
+
+- sequelize join [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-join/)
+- sequelize multer 이용하여 이미지 업로드 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-multer/)
+- sequelize 페이지네이션 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-pagenation/)
+- express sequelize 예시 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequlize-basic-example/)
 
 <Disqus />

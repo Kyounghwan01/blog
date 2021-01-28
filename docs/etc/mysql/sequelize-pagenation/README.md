@@ -61,6 +61,26 @@ Posts.findAndCountAll({
   });
 ```
 
+## 에러
+
+Sequelize findAndCountAll 사용시 count가 배열 length만큼 카운팅되지 않고 더 많이 카운팅 되는 현상
+
+- Wrong count query for findAndCountAll with include #7225 검색
+
+```js
+const landingList = await Landing.findAndCountAll({
+  include: {
+    model: db.companies,
+    as: "companies",
+    attributes: ["name"]
+  },
+  // 아래 distinct: true를 추가하면 연결된 테이블로 인해 count가 바뀌는 현상을 박을 수 있다.
+  distinct: true,
+  limit,
+  offset
+});
+```
+
 <TagLinks />
 
 <Disqus />
