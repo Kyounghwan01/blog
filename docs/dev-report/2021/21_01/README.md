@@ -2,7 +2,7 @@
 
 ## 1월 이슈 요약
 
-- 블로그 방문자 월 4400명 달성 (GA 기준)
+- 블로그 방문자 월 4500명 달성 (GA 기준)
 - 토이 프로젝트 진행중 (https://khgg.netlify.app/)
 
 ## 에러 해결 모음
@@ -14,6 +14,10 @@
 ### Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
 
 - 서버에서 클라이언트로 `res.send`가 2번 들어가는 상황
+
+### Error: .post() requires callback functions but got a [object Undefined] not working
+
+- 없는 컨트롤러 함수 가져올 때 생기는 에러 (require 제대로 됬는지 확인!)
 
 ## 배운점
 
@@ -40,6 +44,7 @@
 
 ## mysql
 
+- Sequelize 1:N delete cascade [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-cascade)
 - sequelize join [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-join/)
 - sequelize multer 이용하여 이미지 업로드 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-multer/)
 - sequelize 페이지네이션 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-pagenation/)
