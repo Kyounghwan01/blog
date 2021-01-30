@@ -38,7 +38,7 @@ module.exports = {
                 link: "https://sales-statistics.netlify.com/"
               },
               {
-                text: "롤전적조회 (react 제작중)",
+                text: "롤전적조회 (react)",
                 link: "https://khgg.netlify.app/"
               }
             ]

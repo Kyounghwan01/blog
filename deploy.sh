@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#29] feat: sequelize cascade delete 추가"
+git commit -m "fix: 토이프로젝트 제작중 -> 완료"
 git push origin master
 
 # build

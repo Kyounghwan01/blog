@@ -3,7 +3,7 @@
 ## 1월 이슈 요약
 
 - 블로그 방문자 월 4500명 달성 (GA 기준)
-- 토이 프로젝트 진행중 (https://khgg.netlify.app/)
+- 토이 프로젝트 완성 (https://khgg.netlify.app/)
 
 ## 에러 해결 모음
 
