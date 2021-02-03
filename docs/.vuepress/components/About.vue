@@ -69,29 +69,34 @@
               </tr>
               <tr>
                 <td class="td-center"><strong>projects</strong></td>
-                <td>제휴사 랜딩페이지 어드민<br /></td>
+                <td>제휴사 랜딩 페이지 관리 어드민화</td>
               </tr>
             </tbody>
           </table>
           <div class="experinces-description">
             <div class="experinces-description-content">
               <div class="experinces-description__content__header">
-                제휴사 랜딩페이지 어드민
+                제휴사 랜딩 페이지 관리 어드민화
               </div>
               <div class="experinces-description__content__desc">
                 <div class="experinces-description__content__desc__title">
                   이미지로 구성된 html 파일에 버튼을 생성하고 버튼에 액션을
-                  부여하는 기능 어드민.
+                  부여하는 기능 </br>
+                  기능을 부여한 페이지 리스트 (crud) 구현 (front, back 구현)
                 </div>
                 <ul>
-                  <li>19.12 ~ current</li>
+                  <li>20.12 ~ 21.1</li>
                   <li>
                     <div class="skill-tag">react</div>
                     <div class="skill-tag">mobx</div>
+                    <div class="skill-tag">express</div>
+                    <div class="skill-tag">mysql sequelize</div>
                   </li>
-                  <li>드래그앤 드롭으로 버튼 위치 조정</li>
+                  <li>드래그앤 드롭으로 버튼 위치 조절</li>
                   <li>resize 기능으로 버튼 크기 조절</li>
+                  <li>리스트, 필터, 페이지네이션 등등</li>
                   <li>pc용 모바일용으로 구분하여 적응형 css 구현</li>
+                  <li>express, sequelize로 crud 구현</li>
                 </ul>
               </div>
             </div>

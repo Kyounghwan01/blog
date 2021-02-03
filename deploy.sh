@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 토이프로젝트 제작중 -> 완료"
+git commit -m "fix: about 수정"
 git push origin master
 
 # build
