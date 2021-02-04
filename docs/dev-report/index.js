@@ -4,7 +4,7 @@ module.exports = {
     {
       collapsable: true,
       title: "2021",
-      children: ["2021/21_01/"]
+      children: ["2021/21_01/", "2021/21_02/"]
     },
     {
       collapsable: true,
