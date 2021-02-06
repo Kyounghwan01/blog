@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: vue3 composition api 추가"
+git commit -m "[#30] feat: composition api vs vuex, composable 추가"
 git push origin master
 
 # build

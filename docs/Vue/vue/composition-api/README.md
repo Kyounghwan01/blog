@@ -2,11 +2,11 @@
 title: vue3 composition api 사용법
 meta:
   - name: description
-    content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect
+    content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect, props, vuex, composable
   - property: og:title
-    content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect
+    content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect, props, vuex, composable
   - property: og:description
-    content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect
+    content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect, props, vuex, composable
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vue/composition-api/
 tags: ["vue"]
@@ -54,9 +54,9 @@ export default {
 
 setup 훅 내부에 data와 function을 구성합니다.
 
-이때 구성되는 **data는 아직 반응형이 아닙니다/**
+이때 구성되는 **data는 아직 반응형이 아닙니다**
 
-```vue
+```vue {12,13}
 <template>
   <div class="home">
     <p>{{ name }} {{ age }}</p>
@@ -86,7 +86,7 @@ export default {
 
 둘의 차이는 코드에서 설명하겠습니다.
 
-```vue
+```vue {3,14-15,17-23,25}
 <template>
   <div class="home">
     <p>{{ person1.name }} {{ person1.value }}</p>
@@ -140,7 +140,7 @@ watchEffect 내부에 사용된 변수가 바뀌면 watchEffect가 실행됩니�
 
 watchEffect는 처음 컴포넌트가 랜더될 때 최초 1회 실행됩니다. 그 이후 watchEffect 내부에 있는 변수가 바뀔 때마다 재실행됩니다.
 
-```vue {28-33}
+```vue {27-32}
 <template>
   <div class="home">
     <input type="text" v-model="search" />
@@ -229,6 +229,198 @@ export default {
 };
 </script>
 ```
+
+## props
+
+부모 컴포넌트에서 props를 내릴 경우 사용하는 방법에 대해 알아보겠습니다!
+
+props는 상위에서 어떤 props를 받을 것인지 알려준 후, setup에서 `props.xxx`로 접근합니다.
+
+아래는 home -> postList로 props를 내리고 postList에서 props를 받아 사용하는 법, 그리고 home에서 postList 컴포넌트를 사용하는 방법에 대한 예시입니다!
+
+### Home (parent component)
+
+```vue {4,9,15}
+<template>
+  <dlv class="home">
+    <!-- child 컴포넌트에게 props 내림 -->
+    <PostList :posts="posts" />
+  </div>
+</template>
+<script>
+  // 사용할 컴포넌트 import
+  import PostList from '../components/PostList.vue'
+  import { ref } from 'vue';
+
+  export default {
+    name: 'Home',
+    // 사용할 컴포넌트를 넣어줍니다.
+    components: { PostList },
+
+    setup() {
+      const posts = ref([
+        { title: '1번 타이틀', body: '1번 제목', id: 1 },
+        { title: '2번 타이틀', body: '2번 제목', id: 2 },
+      ]);
+
+      return { posts }
+    }
+  }
+</script>
+```
+
+### Posts (child components)
+
+```vue {9-13}
+<template>
+  <div>
+    {{ post.title }}
+    {{ post.body }}
+  </div>
+</template>
+<script>
+export default {
+  // 사용할 props를 배열내에 정의합니다.
+  props: ["posts"],
+  setup(props) {
+    console.log(props.posts); // 받은 prop 사용가능
+  }
+};
+</script>
+```
+
+## life-cycle
+
+setup 함수 내에서도 라이플사이클 훅을 사용할 수 있습니다. 옵션 api 라이플사이클 명칭에서 on을 앞에 붙이면 됩니다.
+
+```
+mounted -> onMounted
+unmounted -> onUnmounted
+updated -> onUpdated
+```
+
+```vue {12-14}
+<template>
+  <div>
+    {{ post.title }}
+    {{ post.body }}
+  </div>
+</template>
+<script>
+export default {
+  // 사용할 props를 배열내에 정의합니다.
+  props: ["posts"],
+  setup(props) {
+    onMounted(() => console.log("component mounted"));
+    onUnmounted(() => console.log("component onUnmounted"));
+    onUpdated(() => console.log("component onUpdated"));
+    console.log(props.posts); // 받은 prop 사용가능
+  }
+};
+</script>
+```
+
+composition api 밑에 옵션 api 라이플사이클 훅을 동시에 사용 하면 두 동일한 함수가 2번 호출됩니다.
+
+```vue {12,18-20}
+<template>
+  <div>
+    {{ post.title }}
+    {{ post.body }}
+  </div>
+</template>
+<script>
+export default {
+  // 사용할 props를 배열내에 정의합니다.
+  props: ["posts"],
+  setup(props) {
+    onMounted(() => console.log("component mounted"));
+    onUnmounted(() => console.log("component onUnmounted"));
+    onUpdated(() => console.log("component onUpdated"));
+    console.log(props.posts); // 받은 prop 사용가능
+  }
+
+  mounted() {
+    console.log("component mounted in option api")
+  }
+};
+</script>
+```
+
+## utils 함수 재사용 (composable)
+
+기존 vue2에서는 재사용을 위한 함수를 mixins에 포함시켜 사용하였습니다. mixins에 함수가 추가될 때마다 더욱 데이터 추적이 어려웠기에 확장성이 매우 불리하였습니다.
+
+composition api를 사용함으로 재사용하는 util 함수를 import export 가능하게 되었고 좀 더 데이터 추적 및 사용하기 쉽게 변경되었습니다.
+
+아래는 getPosts라는 utils 함수를 만들고 사용할 컴포넌트에서 사용하는 예시입니다
+
+vue3에서는 composable이라고 부릅니다
+
+### src/composables/getPosts.js
+
+이 함수는 여러 컴포넌트에서 재사용 가능합니다
+
+만약 ref가 아닌 reactive를 사용한다면 return 부분에서 toRefs로 감싸줘야 반응성이 유지됩니다.
+
+```js
+import { ref } from "vue";
+const getPosts = () => {
+  const posts = ref([]);
+  const error = ref(null);
+
+  const load = async () => {
+    try {
+      // 예시 api
+      let res = await fetch("http://localhost:3000/posts");
+      if (!res.isSuccess) {
+        throw Error("fail");
+      }
+      posts.value = await res.json();
+    } catch (err) {
+      error.value = err.message;
+    }
+  };
+
+  return { posts, err, load };
+};
+
+export default getPosts;
+```
+
+### Home (composables 함수 사용하는 컴포넌트)
+
+```vue
+<template>
+  <dlv class="home">
+    <div v-if="error">{{ error }}</div>
+    <div v-if="posts.length">
+      <PostList :posts="posts" />
+    </div>
+    <div v-else>loading...</div>
+  </div>
+</template>
+<script>
+// 사용할 컴포넌트 import
+import PostList from '../components/PostList.vue';
+import getPosts from '../composables/getPosts';
+
+export default {
+  name: 'Home',
+  components: { PostList },
+
+  setup() {
+    const { posts, error, load } = getPosts();
+
+    load();
+
+    return { posts, error };
+  };
+}
+</script>
+```
+
+## vuex (작성중)
 
 <TagLinks />
 
