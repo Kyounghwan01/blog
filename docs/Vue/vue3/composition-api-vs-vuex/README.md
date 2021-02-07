@@ -8,8 +8,8 @@ meta:
   - property: og:description
     content: vue3 composition api vs vuex, vue, computed, reactive, ref, watch, watchEffect, props, vuex
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vue/composition-api-vs-vuex/
-tags: ["vue"]
+    content: https://kyounghwan01.github.io/blog/Vue/vue3/composition-api-vs-vuex/
+tags: ["vue", "vuex"]
 ---
 
 ## composition api는 vuex를 대체할 수 있는가
@@ -88,3 +88,7 @@ vuex의 또다른 장점은 많은 플러그인이 지원된다는 것입니다.
 소규모 프로젝트에서는 composition api를 사용하여 전역으로 상태관리를 하여도 상관이 없지만 프로젝트가 커짐에 따라 디버깅 및 다른 플러그인 추가가 필수불가결인 상황에 닥치게 됩니다.
 
 그렇기에 composition api가 위 2가지 이유를 개선하지 않는 이상은 계속 vuex를 사용하게 될 것같습니다.
+
+<TagLinks />
+
+<Disqus />

@@ -8,8 +8,8 @@ meta:
   - property: og:description
     content: vue3 composition api 사용법, vue, computed, reactive, ref, watch, watchEffect, props, vuex, composable
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vue/composition-api/
-tags: ["vue"]
+    content: https://kyounghwan01.github.io/blog/Vue/vue3/composition-api/
+tags: ["vue", "vuex"]
 ---
 
 # vue3 composition api 사용법
@@ -420,7 +420,9 @@ export default {
 </script>
 ```
 
-## vuex (작성중)
+## vuex
+
+vuex에 대한 포스팅은 따로 분리합니다 [composition api에서 vuex 사용하기](https://kyounghwan01.github.io/blog/Vue/vue3/composition-api-vuex/)
 
 <TagLinks />
 
