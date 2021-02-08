@@ -49,7 +49,7 @@ module.exports = {
     ],
     sidebar: createSidebar()
   },
-  base: "/",
+  base: "/blog/",
   plugins: [
     [
       "vuepress-plugin-google-adsense",
