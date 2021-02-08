@@ -54,7 +54,7 @@ module.exports = {
     [
       "vuepress-plugin-google-adsense",
       {
-        google_ad_client: "ca-pub-5384867576714820", // ca-pub-0000000000000000
+        google_ad_client: "ca-pub-6192551181326997", // ca-pub-0000000000000000
         enable_page_level_ads: true
       }
     ],
