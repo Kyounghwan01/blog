@@ -9,6 +9,16 @@ const createSidebar = () => {
 };
 
 module.exports = {
+  head: [
+    [
+      "script",
+      {
+        "data-ad-client": "ca-pub-5384867576714820",
+        async: true,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      }
+    ]
+  ],
   title: "기억보다 기록을",
   description: "개발 공부, 에러 해결을 기록하는 기술 블로그입니다!",
   "google-site-verification": "J993cuJJ-yFppfJKY8rMx3SzsN-3ZMBEM4uY7Jj075A",
@@ -52,6 +62,13 @@ module.exports = {
   base: "/blog/",
   plugins: [
     [
+      "vuepress-plugin-google-adsense",
+      {
+        google_ad_client: "ca-pub-5384867576714820", // ca-pub-0000000000000000
+        enable_page_level_ads: true
+      }
+    ],
+    [
       "@vuepress/google-analytics",
       {
         ga: "UA-172169202-1" // UA-00000000-0
@@ -59,14 +76,7 @@ module.exports = {
     ],
     ["@vuepress/back-to-top"],
     ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }],
-    ["@vuepress/last-updated"],
-    [
-      "vuepress-plugin-google-adsense",
-      {
-        google_ad_client: "ca-pub-5384867576714820", // ca-pub-0000000000000000
-        enable_page_level_ads: true
-      }
-    ]
+    ["@vuepress/last-updated"]
   ]
   // markdown: {
   //   lineNumbers: true
