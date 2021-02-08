@@ -9,16 +9,7 @@ const createSidebar = () => {
 };
 
 module.exports = {
-  head: [
-    [
-      "script",
-      {
-        "data-ad-client": "ca-pub-5384867576714820",
-        async: true,
-        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      }
-    ]
-  ],
+  head: [["meta", { name: "icon", content: "/images/logo.png" }]],
   title: "기억보다 기록을",
   description: "개발 공부, 에러 해결을 기록하는 기술 블로그입니다!",
   "google-site-verification": "J993cuJJ-yFppfJKY8rMx3SzsN-3ZMBEM4uY7Jj075A",
