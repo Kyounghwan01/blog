@@ -12,7 +12,7 @@ meta:
 tags: ["vue", "vuex"]
 ---
 
-## composition api는 vuex를 대체할 수 있는가
+# composition api는 vuex를 대체할 수 있는가
 
 vuex의 탄생 이유는 전역으로 상태를 관리하고, prop drilling 하는 것을 방지하여 데이터의 흐름을 명확히 하기 위함이였습니다.
 

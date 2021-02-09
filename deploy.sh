@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: ads 코드 삽입"
+git commit -m "[#30] feat: composition api + vuex"
 git push origin master
 
 # build
