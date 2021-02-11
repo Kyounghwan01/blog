@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#30] feat: composition api + vuex"
+git commit -m "[#30] feat: teleport"
 git push origin master
 
 # build
