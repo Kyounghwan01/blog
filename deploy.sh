@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#30] feat: teleport"
+git commit -m "[#30] feat: vuex에서 ts 사용"
 git push origin master
 
 # build
