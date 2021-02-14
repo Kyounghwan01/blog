@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#30] feat: vuex에서 ts 사용"
+git commit -m "[#30] feat: vue3 - global state"
 git push origin master
 
 # build
