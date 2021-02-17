@@ -3,6 +3,7 @@
 ## 2월 이슈 요약
 
 - 캐롯 랜딩 어드민 프로젝트 종료
+- 블로그 방문자 월 5500명 (GA 기준)
 
 ## 에러 해결 모음
 
@@ -29,4 +30,20 @@ var corsOptions = {
 app.use(cors(corsOptions));
 ```
 
-<Disqus />
+## 배운점
+
+## vue3
+
+- [vue3 composition api 사용법](https://kyounghwan01.github.io/blog/Vue/vue3/composition-api/)
+
+- [composition api vs vuex](https://kyounghwan01.github.io/blog/Vue/vue3/composition-api-vs-vuex/)
+
+- [vue3에서 vuex 사용법](https://kyounghwan01.github.io/blog/Vue/vue3/composition-api-vuex)
+
+- [vue3 global 변수 다루기](https://kyounghwan01.github.io/blog/Vue/vue3/global-state/)
+
+- [vue3 teleport 사용법](https://kyounghwan01.github.io/blog/Vue/vue3/teleport/)
+
+- [vuex typescript 사용법](https://kyounghwan01.github.io/blog/Vue/vue3/vuex-ts/)
+
+## nest

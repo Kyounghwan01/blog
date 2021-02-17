@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: vue3 global 변수 다루기, vue, computed, reactive, ref, watch, watchEffect, props, vuex, composable
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vue3/teleport/
+    content: https://kyounghwan01.github.io/blog/Vue/vue3/global-state/
 tags: ["vue"]
 ---
 

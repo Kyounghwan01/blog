@@ -49,5 +49,3 @@
 - sequelize multer 이용하여 이미지 업로드 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-multer/)
 - sequelize 페이지네이션 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequelize-pagenation/)
 - express sequelize 예시 [정리](https://kyounghwan01.github.io/blog/etc/mysql/sequlize-basic-example/)
-
-<Disqus />
