@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 2월 이슈 수정"
+git commit -m "fix: 디렉토리 구조 수정"
 git push origin master
 
 # build

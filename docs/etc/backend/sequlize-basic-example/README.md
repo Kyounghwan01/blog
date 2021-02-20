@@ -1,17 +1,17 @@
 ---
-title: Node.js + Express + MySQL + Sequelize 1:n example
+title: Node.js + Express + MySQL + Sequelize example
 meta:
   - name: description
-    content: Node.js + Express + MySQL + Sequelize 1:n example
+    content: Node.js + Express + MySQL + Sequelize example
   - property: og:title
-    content: Node.js + Express + MySQL + Sequelize 1:n example
+    content: Node.js + Express + MySQL + Sequelize example
   - property: og:description
-    content: Node.js + Express + MySQL + Sequelize 1:n example
+    content: Node.js + Express + MySQL + Sequelize example
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/mysql/sequelize-one-to-many/
+    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-basic-example/
 ---
 
-# Node.js + Express + MySQL + Sequelize 1:n example
+# Node.js + Express + MySQL + Sequelize example
 
 이 포스팅에서는 Node.js + Express + MySQL + Sequelize를 사용하여 간단한 CRUD를 예시로 알아보겠습니다! 구현 이후에는 postman을 이용하여 직접 호출하는 것 까지 해보겠습니다
 
@@ -30,7 +30,6 @@ meta:
 | **ㅣㅡㅡ /tutorial.model.js**      |
 | **ㅣㅡ /routes**                   |
 | **ㅣㅡㅡ /tutorial.routes.js**     |
-| **ㅣㅡ firebase-messaging-sw.js**  |
 | **ㅣㅡ package.json**              |
 | **ㅣㅡ server.js**                 |
 
@@ -87,11 +86,6 @@ db.sequelize.sync();
 // db.sequelize.sync({ force: true }).then(() => {
 //   console.log("Drop and re-sync db.");
 // });
-
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "this is express server" });
-});
 
 require("./app/routes/turorial.routes")(app);
 

@@ -8,8 +8,8 @@ meta:
   - property: og:description
     content: aws lambda + api gateway로 서버 없이 백엔드 구축하기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vue/aws-lambda-api-gateway/
-tags: ["AWS"]
+    content: https://kyounghwan01.github.io/blog/etc/backend/aws-lambda-api-gateway/
+tags: ["aws"]
 ---
 
 # Lambda + api-gateway
@@ -115,22 +115,22 @@ const boardSchema = mongoose.Schema({
   history: [
     {
       date: {
-        type: String,
+        type: String
       },
       price: {
-        type: Number,
+        type: Number
       },
       memo: {
-        type: String,
+        type: String
       },
       staff: {
-        type: String,
+        type: String
       },
       count: {
-        type: Number,
-      },
-    },
-  ],
+        type: Number
+      }
+    }
+  ]
 });
 
 /* 하나의 연결 객체를 반복적으로 사용합니다. */
@@ -144,7 +144,7 @@ const connect = () => {
   //연결되있으면 connection에 연결 정보 날림
   return mongoose
     .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-    .then((conn) => {
+    .then(conn => {
       connection = conn;
       return connection;
     });
@@ -155,7 +155,7 @@ exports.handler = (event, context, callback) => {
   const corsHeader = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers":
-      "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+      "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token"
   };
 
   let operation = event.httpMethod;
@@ -172,13 +172,13 @@ exports.handler = (event, context, callback) => {
           if (event.queryStringParameters.name) {
             query.name = {
               $regex: event.queryStringParameters.name,
-              $options: "i",
+              $options: "i"
             };
           }
           if (event.queryStringParameters.content) {
             query.content = {
               $regex: event.queryStringParameters.content,
-              $option: "i",
+              $option: "i"
             };
           }
         }
@@ -192,13 +192,13 @@ exports.handler = (event, context, callback) => {
                 callback(null, {
                   headers: corsHeader,
                   statusCode: 500,
-                  body: JSON.stringify(error),
+                  body: JSON.stringify(error)
                 });
               } else {
                 callback(null, {
                   headers: corsHeader,
                   statusCode: 200,
-                  body: JSON.stringify(boards),
+                  body: JSON.stringify(boards)
                 });
               }
             })
@@ -215,19 +215,19 @@ exports.handler = (event, context, callback) => {
                 callback(null, {
                   statusCode: 500,
                   body: JSON.stringify(err),
-                  headers: corsHeader,
+                  headers: corsHeader
                 });
               } else if (!board) {
                 callback(null, {
                   statusCode: 500,
                   body: JSON.stringify("Board not found."),
-                  headers: corsHeader,
+                  headers: corsHeader
                 });
               } else {
                 callback(null, {
                   statusCode: 200,
                   body: JSON.stringify(board),
-                  headers: corsHeader,
+                  headers: corsHeader
                 });
               }
             })
@@ -247,7 +247,7 @@ exports.handler = (event, context, callback) => {
               callback(null, {
                 statusCode: 500,
                 body: err,
-                headers: corsHeader,
+                headers: corsHeader
               });
             } else {
               lastId = board ? board.id : 0;
@@ -257,7 +257,7 @@ exports.handler = (event, context, callback) => {
                 password,
                 address,
                 registreDate,
-                phone,
+                phone
               } = JSON.parse(event.body);
               const newBoard = new Board({
                 name,
@@ -265,7 +265,7 @@ exports.handler = (event, context, callback) => {
                 password,
                 address,
                 registreDate,
-                phone,
+                phone
               });
               newBoard.id = lastId + 1;
               // 새로운 글을 등록합니다.
@@ -274,13 +274,13 @@ exports.handler = (event, context, callback) => {
                   callback(null, {
                     statusCode: 500,
                     body: JSON.stringify(err),
-                    headers: corsHeader,
+                    headers: corsHeader
                   });
                 } else {
                   callback(null, {
                     statusCode: 200,
                     body: JSON.stringify(lastId + 1),
-                    headers: corsHeader,
+                    headers: corsHeader
                   });
                 }
               });
@@ -299,14 +299,14 @@ exports.handler = (event, context, callback) => {
           } else if (!board) {
             callback(null, {
               statusCode: 500,
-              body: JSON.stringify("Board not found."),
+              body: JSON.stringify("Board not found.")
             });
           } else {
             //게시물이 있다면 수정시 비밀번호
             if (board.password != password) {
               callback(null, {
                 statusCode: 500,
-                body: JSON.stringify("Password is incorrect."),
+                body: JSON.stringify("Password is incorrect.")
               });
             } else {
               //event : 사용자가 쓰는 곳, event.body : 사용자가 body에 넣은 자
@@ -316,7 +316,7 @@ exports.handler = (event, context, callback) => {
                 password,
                 address,
                 registreDate,
-                phone,
+                phone
               } = JSON.parse(event.body);
               // 사용자가 입력한 name, content, password에 맞게 정보를 변경합니다.
               Board.findOneAndUpdate(
@@ -326,12 +326,12 @@ exports.handler = (event, context, callback) => {
                 if (err) {
                   callback(null, {
                     statusCode: 500,
-                    body: JSON.stringify(err),
+                    body: JSON.stringify(err)
                   });
                 } else {
                   callback(null, {
                     statusCode: 200,
-                    body: JSON.stringify("success"),
+                    body: JSON.stringify("success")
                   });
                 }
               });
@@ -351,13 +351,13 @@ exports.handler = (event, context, callback) => {
           } else if (!board) {
             callback(null, {
               statusCode: 500,
-              body: JSON.stringify("Board not found."),
+              body: JSON.stringify("Board not found.")
             });
           } else {
             if (board.password != password) {
               callback(null, {
                 statusCode: 500,
-                body: JSON.stringify("Password is incorrect."),
+                body: JSON.stringify("Password is incorrect.")
               });
             } else {
               // 사용자가 입력한 번호에 해당하는 게시물을 삭제합니다.
@@ -365,12 +365,12 @@ exports.handler = (event, context, callback) => {
                 if (err) {
                   callback(null, {
                     statusCode: 500,
-                    body: JSON.stringify(err),
+                    body: JSON.stringify(err)
                   });
                 } else {
                   callback(null, {
                     statusCode: 200,
-                    body: JSON.stringify("success"),
+                    body: JSON.stringify("success")
                   });
                 }
               });
