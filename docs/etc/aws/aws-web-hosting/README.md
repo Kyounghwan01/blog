@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: aws 웹 호스팅을 위한 웹 서비스 살펴보기, s3, cloudfront, codebuild, codepipeline, iam
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/aws-web-hosting/
+    content: https://kyounghwan01.github.io/blog/etc/aws/aws-web-hosting/
 tags: ["aws"]
 ---
 

@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: aws lambda + api gateway로 서버 없이 백엔드 구축하기
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/aws-lambda-api-gateway/
+    content: https://kyounghwan01.github.io/blog/etc/aws/aws-lambda-api-gateway/
 tags: ["aws"]
 ---
 

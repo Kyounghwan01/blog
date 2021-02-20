@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Sequelize pagenation 예시, node.js, express, mysql
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-pagenation/
+    content: https://kyounghwan01.github.io/blog/etc/sequelize/sequelize-pagenation/
 ---
 
 # Sequelize pagenation 예시

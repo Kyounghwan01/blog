@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Sequelize 1:N delete cascade 예시, node.js, express, mysql,  delete multiple association, cascade
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-cascade/
+    content: https://kyounghwan01.github.io/blog/etc/sequelize/sequelize-cascade/
 ---
 
 # Sequelize 1:N delete cascade 예시

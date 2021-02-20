@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Sequelize table join 예시, node.js, express, mysql, table join, outer join, inner join, 중첩 테이블 쿼리 정의
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-join/
+    content: https://kyounghwan01.github.io/blog/etc/sequelize/sequelize-join/
 ---
 
 # Sequelize table join 예시

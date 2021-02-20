@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Node.js + Express + MySQL + Sequelize example
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-basic-example/
+    content: https://kyounghwan01.github.io/blog/etc/sequelize/sequelize-basic-example/
 ---
 
 # Node.js + Express + MySQL + Sequelize example

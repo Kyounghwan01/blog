@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Multer, sequelize를 이용하여 이미지 업로드 하기, node.js, express, mysql, react, blob, buffer
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-multer/
+    content: https://kyounghwan01.github.io/blog/etc/sequelize/sequelize-multer/
 ---
 
 # Multer, sequelize를 이용하여 이미지 업로드 하기

@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: Node.js + Express + MySQL + Sequelize 1:n example
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/sequelize-one-to-many/
+    content: https://kyounghwan01.github.io/blog/etc/sequelize/sequelize-one-to-many/
 ---
 
 # Node.js + Express + MySQL + Sequelize 1:n example

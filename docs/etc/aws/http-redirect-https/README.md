@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: aws cloudfront를 이용하여 http redirect to https
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/backend/http-redirect-https/
+    content: https://kyounghwan01.github.io/blog/etc/aws/http-redirect-https/
 tags: ["aws"]
 ---
 
