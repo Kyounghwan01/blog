@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: html - selector (선택자) 정리
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/html/mailto/
+    content: https://kyounghwan01.github.io/blog/etc/html/selector/
 tags: ["html", "css"]
 ---
 

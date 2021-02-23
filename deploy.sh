@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 디렉토리 구조 수정"
+git commit -m "feat: webp 추가"
 git push origin master
 
 # build
