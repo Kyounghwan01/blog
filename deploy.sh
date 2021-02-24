@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: webp 추가"
+git commit -m "feat: webapp phone call"
 git push origin master
 
 # build
