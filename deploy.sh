@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#32] feat: nest 문법, 개념, 세팅"
+git commit -m "[#32] feat: nest 컨트롤러, 서비스, 엔티티"
 git push origin master
 
 # build
