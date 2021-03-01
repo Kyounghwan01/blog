@@ -22,6 +22,12 @@ db는 따로 연결하지 않고 로컬 서버로만 사용합니다
 
 nest가 express에 비해 어느 면이 다르고 어느 면이 훨씬 좋은지 알아보는 것이 중점입니다! (validation 자동화, 에러핸들링 자동화, typescript 강제화로 타입 디버깅 , status code 자동 기입 등등)
 
+## 글 모음
+
+- [nest 개념 및 세팅 #1](https://kyounghwan01.github.io/blog/etc/nest/intro/)
+- [nest 컨트롤러, 서비스, 엔티티 만들기 #2](https://kyounghwan01.github.io/blog/etc/nest/controller-service/)
+- [nest validation과 dto #3](https://kyounghwan01.github.io/blog/etc/nest/validation-dto/)
+
 ## nest 란?
 
 코드 없이 개략적인 이론만 기술하기 가볍게 읽고 넘어가주세요

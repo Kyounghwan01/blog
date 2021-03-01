@@ -31,7 +31,6 @@ tags: ["nest"]
 | 프로젝트 구조                |
 | :--------------------------- |
 | **/src**                     |
-| **ㅣㅡ user**                |
 | **ㅣㅡ /user.controller.ts** |
 | **ㅣㅡ /user.module.ts**     |
 | **ㅣㅡ /user.entities.ts**   |
@@ -202,7 +201,7 @@ export class UserController {
 
 컨트롤러에서 서비스를 사용하기 위해서는 모듈내에 컨트롤러, 서비스가 정의되어야 한다는 점을 기억하지면 좋을 것 같습니다
 
-다음 글에서는 nest에서 validation하는 방법에 대해 알아보겠습니다.\
+다음 글에서는 nest에서 validation하는 방법에 대해 알아보겠습니다.
 
 <TagLinks />
 
