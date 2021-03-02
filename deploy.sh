@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "[#32] feat: nest validation과 dto"
+git commit -m "fix: 2월 일기 수정"
 git push origin master
 
 # build

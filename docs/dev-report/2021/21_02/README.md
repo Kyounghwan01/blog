@@ -4,6 +4,8 @@
 
 - 캐롯 랜딩 어드민 프로젝트 종료
 - 블로그 방문자 월 5500명 (GA 기준)
+- vue3 공부
+- nest 공부
 
 ## 에러 해결 모음
 
@@ -47,3 +49,7 @@ app.use(cors(corsOptions));
 - [vuex typescript 사용법](https://kyounghwan01.github.io/blog/Vue/vue3/vuex-ts/)
 
 ## nest
+
+- [nest 개념 및 세팅 #1](https://kyounghwan01.github.io/blog/etc/nest/intro/)
+- [nest 컨트롤러, 서비스, 엔티티 만들기 #2](https://kyounghwan01.github.io/blog/etc/nest/controller-service/)
+- [nest validation과 dto #3](https://kyounghwan01.github.io/blog/etc/nest/validation-dto/)
