@@ -62,4 +62,4 @@ event 객체에 속해있는 target과 currentTarget의 차이점을 알아보�
 
 <TagLinks />
 
-<Disqus />
+<Comment />

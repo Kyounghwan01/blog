@@ -55,4 +55,4 @@ npx cra-bundle-analyzer
 이제 이 파일을 가지고 초기 로딩 시간을 줄여봅시다! [다음 포스팅](https://kyounghwan01.github.io/blog/React/optimize-performance/code-splitting/)에서 계속됩니다.
 
 <TagLinks />
-<Disqus />
+<Comment />

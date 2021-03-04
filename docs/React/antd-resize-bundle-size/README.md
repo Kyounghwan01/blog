@@ -67,4 +67,4 @@ import Button from "antd-mobile/lib/list";
 
 <TagLinks />
 
-<Disqus />
+<Comment />

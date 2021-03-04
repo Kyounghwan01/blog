@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 2월 일기 수정"
+git commit -m "fix: 댓글시스템 disque -> github 으로 변경"
 git push origin master
 
 # build

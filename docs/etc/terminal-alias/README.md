@@ -54,4 +54,4 @@ source ~/.zshrc
 
 <TagLinks />
 
-<Disqus />
+<Comment />

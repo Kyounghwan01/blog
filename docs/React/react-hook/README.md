@@ -394,4 +394,4 @@ const onDecrease = () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

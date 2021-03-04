@@ -216,4 +216,4 @@ vuepress에서 배포를 위해 `build`명령을 실행하면, docs에 있는 �
 
 <TagLinks />
 
-<Disqus />
+<Comment />

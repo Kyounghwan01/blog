@@ -3,4 +3,4 @@
 <TagList />
 <TagLinks />
 
-<Disqus />
+<Comment />

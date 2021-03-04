@@ -88,4 +88,4 @@ Item 메소드를 씀으로 sections의 값들에 접근하고 그중에서 styl
 
 <TagLinks />
 
-<Disqus />
+<Comment />

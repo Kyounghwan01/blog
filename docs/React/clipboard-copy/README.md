@@ -72,4 +72,4 @@ export default function ClipboardCopy() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

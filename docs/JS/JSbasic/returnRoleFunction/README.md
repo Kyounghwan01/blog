@@ -70,4 +70,4 @@ fun();
 
 <TagLinks />
 
-<Disqus />
+<Comment />

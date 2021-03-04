@@ -325,4 +325,4 @@ export default function Test() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

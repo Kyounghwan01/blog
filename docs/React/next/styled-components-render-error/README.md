@@ -91,4 +91,4 @@ export default class MyDocument extends Document {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

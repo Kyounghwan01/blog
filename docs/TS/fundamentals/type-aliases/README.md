@@ -71,4 +71,4 @@ type X = Omit<XYZ, "x" | "y">;
 
 <TagLinks />
 
-<Disqus />
+<Comment />

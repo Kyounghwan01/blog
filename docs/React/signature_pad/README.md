@@ -74,4 +74,4 @@ export default Signature;
 
 <TagLinks />
 
-<Disqus />
+<Comment />

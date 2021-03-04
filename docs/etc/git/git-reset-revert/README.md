@@ -185,4 +185,4 @@ revert는 되돌리는 커밋이 중간에 있을때 커밋 해쉬를 넣어서 
 
 <TagLinks />
 
-<Disqus />
+<Comment />

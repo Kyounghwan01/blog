@@ -47,4 +47,4 @@ data() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

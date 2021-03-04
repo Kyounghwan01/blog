@@ -66,4 +66,4 @@ tags: ["python"]
 
 <TagLinks />
 
-<Disqus />
+<Comment />

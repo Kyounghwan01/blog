@@ -99,4 +99,4 @@ Promise.request1().then(data => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

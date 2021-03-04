@@ -139,4 +139,4 @@ plugins: [
 
 <TagLinks />
 
-<Disqus />
+<Comment />

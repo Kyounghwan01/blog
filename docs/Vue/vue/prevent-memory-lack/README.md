@@ -81,4 +81,4 @@ export const actions = {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

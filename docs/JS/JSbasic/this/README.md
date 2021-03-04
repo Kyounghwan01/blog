@@ -343,4 +343,4 @@ programmer.upgrade(1.1);
 
 <TagLinks />
 
-<Disqus />
+<Comment />

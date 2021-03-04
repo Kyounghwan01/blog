@@ -253,4 +253,4 @@ case GET_USER_TICKET_SUCCESS:
 
 <TagLinks />
 
-<Disqus />
+<Comment />

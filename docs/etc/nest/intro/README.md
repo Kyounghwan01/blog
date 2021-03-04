@@ -172,4 +172,4 @@ nest는 req는 위에서 알아본대로 어노테이션을 이용하여 받고 
 
 <TagLinks />
 
-<Disqus />
+<Comment />

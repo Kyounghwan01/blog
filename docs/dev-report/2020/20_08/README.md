@@ -197,4 +197,4 @@ declare interface Window {
 - [컴포넌트 npm에 배포하기](https://kyounghwan01.github.io/blog/etc/make-npm/publish-npm-react-component/)
 - [여러 컴포넌트 npm에 배포하기](https://kyounghwan01.github.io/blog/etc/make-npm/publish-npm-react-multi-component/)
 
-<Disqus />
+<Comment />

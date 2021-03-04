@@ -52,4 +52,4 @@ meta:
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -123,4 +123,4 @@ useEffect(() => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

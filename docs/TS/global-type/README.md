@@ -89,4 +89,4 @@ new Vue({
 
 <TagLinks />
 
-<Disqus />
+<Comment />

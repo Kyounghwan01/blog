@@ -255,4 +255,4 @@ firebase.messaging.isSupported();
 - 수강권 연장 기능
   - 업그레이드 기능에서 동일한 수강권 선택시, 기존 수강권 횟수만큼 추가
 
-<Disqus />
+<Comment />

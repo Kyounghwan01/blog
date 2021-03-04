@@ -30,13 +30,13 @@ state의 변화는 앞 포스팅에서 말했듯 단방향으로 `view`에서 `D
 ```js
 const store = new Vuex.Store({
   state: {
-    count: 0,
+    count: 0
   },
   mutations: {
     increment(state) {
       state.count++;
-    },
-  },
+    }
+  }
 });
 ```
 
@@ -52,4 +52,4 @@ store.commit("increment");
 
 <TagLinks />
 
-<Disqus />
+<Comment />

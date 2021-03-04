@@ -41,4 +41,4 @@
 - react로 다크모드 만들기 [정리](https://kyounghwan01.github.io/blog/etc/CSS/dark-mode/)
 - 웹 싸인 [정리](https://kyounghwan01.github.io/blog/React/signature_pad/)
 
-<Disqus />
+<Comment />

@@ -168,4 +168,4 @@ npm unpublish 패키지이름 -f
 
 <TagLinks />
 
-<Disqus />
+<Comment />

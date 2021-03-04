@@ -68,4 +68,4 @@ const routes = [
 
 <TagLinks />
 
-<Disqus />
+<Comment />

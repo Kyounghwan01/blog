@@ -64,4 +64,4 @@ Sitemap: https://kyounghwan01.github.io/blog/sitemap.xml
 
 <TagLinks />
 
-<Disqus />
+<Comment />

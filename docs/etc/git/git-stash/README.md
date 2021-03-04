@@ -41,4 +41,4 @@ git stash clear
 
 <TagLinks />
 
-<Disqus />
+<Comment />

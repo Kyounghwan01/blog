@@ -413,4 +413,4 @@ module.exports = {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

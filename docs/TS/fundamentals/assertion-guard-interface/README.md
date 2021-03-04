@@ -154,4 +154,4 @@ if (isDev(tony)) {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

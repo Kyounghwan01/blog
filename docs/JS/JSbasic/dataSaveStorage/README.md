@@ -160,4 +160,4 @@ sessionStorage.clear();
 
 <TagLinks />
 
-<Disqus />
+<Comment />

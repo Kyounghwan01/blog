@@ -80,4 +80,4 @@ git checkout HEAD~3
 
 <TagLinks />
 
-<Disqus />
+<Comment />

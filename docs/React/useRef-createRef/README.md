@@ -128,4 +128,4 @@ class형 컴포넌트에서 ref를 잡아야하는 경우 `React.createRef`를 �
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -68,4 +68,4 @@ tags: ["react", "optimize-performance"]
 
 <TagLinks />
 
-<Disqus />
+<Comment />

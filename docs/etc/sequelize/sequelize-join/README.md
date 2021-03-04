@@ -123,4 +123,4 @@ exports.getLandings = async (req, res) => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

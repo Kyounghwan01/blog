@@ -125,4 +125,4 @@ export default class App extends Component {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

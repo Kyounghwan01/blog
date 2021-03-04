@@ -93,14 +93,14 @@ export default {
   data() {
     return {
       childData: "child",
-      active: false,
+      active: false
     };
   },
   methods: {
     close() {
       this.active = false;
-    },
-  },
+    }
+  }
 };
 </script>
 ```
@@ -153,4 +153,4 @@ export default {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

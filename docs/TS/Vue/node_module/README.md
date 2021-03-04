@@ -94,4 +94,4 @@ declare module "lodash" {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

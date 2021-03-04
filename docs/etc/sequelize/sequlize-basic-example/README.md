@@ -400,4 +400,4 @@ delete -> `http://localhost:8080/api/tutorials/1`
 
 <TagLinks />
 
-<Disqus />
+<Comment />

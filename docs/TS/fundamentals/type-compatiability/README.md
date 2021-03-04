@@ -94,4 +94,4 @@ notempty2 = notempty1; // Type 'NotEmpty<string>' is not assignable to type 'Not
 
 <TagLinks />
 
-<Disqus />
+<Comment />

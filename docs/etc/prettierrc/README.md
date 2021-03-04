@@ -59,4 +59,4 @@ tags: ["settings"]
 
 <TagLinks />
 
-<Disqus />
+<Comment />

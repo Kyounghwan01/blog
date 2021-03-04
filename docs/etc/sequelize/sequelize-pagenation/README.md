@@ -83,4 +83,4 @@ const landingList = await Landing.findAndCountAll({
 
 <TagLinks />
 
-<Disqus />
+<Comment />

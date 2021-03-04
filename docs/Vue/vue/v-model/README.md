@@ -25,9 +25,9 @@ tags: ["vue"]
 export default {
   data() {
     return {
-      checkBox: false,
+      checkBox: false
     };
-  },
+  }
 };
 </script>
 ```
@@ -49,9 +49,9 @@ export default {
 export default {
   data() {
     return {
-      text: "",
+      text: ""
     };
-  },
+  }
 };
 </script>
 ```
@@ -66,13 +66,13 @@ export default {
 <script>
 export default {
   props: {
-    value: String,
+    value: String
   },
   data() {
     return {
-      text: "",
+      text: ""
     };
-  },
+  }
 };
 </script>
 ```
@@ -83,4 +83,4 @@ export default {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

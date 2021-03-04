@@ -132,4 +132,4 @@ function on_ReadyStateChange() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -388,4 +388,4 @@ exports.handler = (event, context, callback) => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

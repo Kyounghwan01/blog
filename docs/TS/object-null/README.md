@@ -125,4 +125,4 @@ if문을 사용하면 같은 케이스에 계속 if문을 써야하니 당연히
 
 <TagLinks />
 
-<Disqus />
+<Comment />

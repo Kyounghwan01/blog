@@ -65,4 +65,4 @@ window.mobiscrollConfirm = mobiscroll.confirm;
 - redux의 액션 및 reselect, immer, thunk 등 라이브러리를 붙여야 할 기능을 redux-toolkit에서 모두 지원한다.
 - [정리](https://kyounghwan01.github.io/blog/React/redux/redux-toolkit/)
 
-<Disqus />
+<Comment />

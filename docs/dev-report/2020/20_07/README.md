@@ -107,4 +107,4 @@ const PropRefComponent = ({refs}) => {
 
 - [정리](https://kyounghwan01.github.io/blog/기타/html/img-onload)
 
-<Disqus />
+<Comment />

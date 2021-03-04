@@ -186,4 +186,4 @@ Promise.resolve()
 
 <TagLinks />
 
-<Disqus />
+<Comment />

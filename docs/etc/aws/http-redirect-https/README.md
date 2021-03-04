@@ -29,4 +29,4 @@ route53을 통해 도메인에 서비스를 배포하면 초기에 http로 할�
 
 <TagLinks />
 
-<Disqus />
+<Comment />

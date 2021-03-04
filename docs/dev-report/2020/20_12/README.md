@@ -38,4 +38,4 @@
 
 - netlify 환경변수 추가하기 [정리](https://kyounghwan01.github.io/blog/etc/netlify-env/)
 
-<Disqus />
+<Comment />

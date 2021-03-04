@@ -75,4 +75,4 @@ function click(e) {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

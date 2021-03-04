@@ -106,4 +106,4 @@ document.write(result + "일 남았습니다.");
 
 <TagLinks />
 
-<Disqus />
+<Comment />

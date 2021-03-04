@@ -110,4 +110,4 @@ id를 가져와서 바디에 적용하는 방식은 동일하고, 추가된 clas
 
 <TagLinks />
 
-<Disqus />
+<Comment />

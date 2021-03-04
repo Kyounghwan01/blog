@@ -369,4 +369,4 @@ fetchCovidSummary().then(res => res.data.Message);
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -59,4 +59,4 @@ feat: 프렌즈 지원하기 버튼에 GA 이벤트 태그 추가 (PP-2345)
 
 <TagLinks />
 
-<Disqus />
+<Comment />

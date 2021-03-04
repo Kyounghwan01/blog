@@ -166,4 +166,4 @@ MobX는 다음과 같은 특징을 가지고 있습니다.
 
 <TagLinks />
 
-<Disqus />
+<Comment />

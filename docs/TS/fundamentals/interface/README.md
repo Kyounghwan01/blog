@@ -299,4 +299,4 @@ numberOfProducts.forEach(function(products) {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

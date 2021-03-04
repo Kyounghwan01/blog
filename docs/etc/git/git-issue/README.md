@@ -83,4 +83,4 @@ git push origin -d 이슈번호 && git branch -d 이슈번호
 
 <TagLinks />
 
-<Disqus />
+<Comment />

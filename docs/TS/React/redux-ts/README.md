@@ -203,4 +203,4 @@ export default CounterContainer;
 
 <TagLinks />
 
-<Disqus />
+<Comment />

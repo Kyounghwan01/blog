@@ -63,4 +63,4 @@ conflict난 코드를 수정하고 `git add <path>`로 다시 git에 staging 시
 
 <TagLinks />
 
-<Disqus />
+<Comment />

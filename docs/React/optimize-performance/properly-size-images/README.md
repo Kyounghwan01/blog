@@ -79,4 +79,4 @@ https://img.kr/image_${width}x${height}.png
 
 <TagLinks />
 
-<Disqus />
+<Comment />

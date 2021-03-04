@@ -351,7 +351,7 @@ function useDefaultES6(a = 1, b = 2, c = 3) {
 function makeIterator(array) {
   var nextIndex = 0;
   return {
-    next: function () {
+    next: function() {
       return nextIndex < array.length
         ? { value: array[nextIndex++], done: false }
         : { done: true };
@@ -436,4 +436,4 @@ import Test from "componrnts/Test";
 - 미수금 결제일시 로직 수정
 - 타입스크립트..
 
-<Disqus />
+<Comment />

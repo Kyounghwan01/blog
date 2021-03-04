@@ -131,4 +131,4 @@ constructor() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

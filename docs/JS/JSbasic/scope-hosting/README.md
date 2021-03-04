@@ -254,4 +254,4 @@ d(); //awdawd
 
 <TagLinks />
 
-<Disqus />
+<Comment />

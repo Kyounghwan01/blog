@@ -84,4 +84,4 @@ git push origin qa (현재 브랜치: qa)
 </style>
 ```
 
-<Disqus />
+<Comment />

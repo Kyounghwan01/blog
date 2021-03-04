@@ -40,7 +40,7 @@ const [count, setCount] = useState(0);
 
 useEffect(() => {
   // state = 0
-  setCount((state) => state + 1);
+  setCount(state => state + 1);
 }, []);
 ```
 
@@ -91,4 +91,4 @@ useEffect(() => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

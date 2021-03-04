@@ -78,4 +78,4 @@ arr1.flatMap(x => [x * 2]);
 
 <TagLinks />
 
-<Disqus />
+<Comment />

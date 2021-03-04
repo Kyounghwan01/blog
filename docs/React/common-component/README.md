@@ -115,4 +115,4 @@ import "./App.css";
 
 <TagLinks />
 
-<Disqus />
+<Comment />

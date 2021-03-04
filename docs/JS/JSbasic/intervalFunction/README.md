@@ -107,4 +107,4 @@ self.scrollState = setTimeout(function() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

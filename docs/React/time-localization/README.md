@@ -58,4 +58,4 @@ const getServerTime = async () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

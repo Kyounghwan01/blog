@@ -96,4 +96,4 @@ console.log(res); // [결과1, 결과2, 결과3]
 
 <TagLinks />
 
-<Disqus />
+<Comment />

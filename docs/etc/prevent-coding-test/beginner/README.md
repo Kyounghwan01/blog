@@ -394,7 +394,7 @@ const c = a.map((el, index) => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />
 
 ## 지정된 문자열의 모든 경우의 수
 

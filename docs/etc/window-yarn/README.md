@@ -32,4 +32,4 @@ yarn : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\xxx/xxx
 
 <TagLinks />
 
-<Disqus />
+<Comment />

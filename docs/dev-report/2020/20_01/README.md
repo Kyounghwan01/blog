@@ -88,4 +88,4 @@ export default {
 //network에는 https://urlname?type="type"&filter="filter"로 찍힌다.
 ```
 
-<Disqus />
+<Comment />

@@ -338,4 +338,4 @@ export function Counter() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

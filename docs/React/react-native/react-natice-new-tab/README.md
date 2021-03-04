@@ -74,4 +74,4 @@ react-native에서 작업은 여기 까지 하기면 되고, 이제 웹으로 �
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -151,4 +151,4 @@ itemList.appendChild(li);
 
 <TagLinks />
 
-<Disqus />
+<Comment />

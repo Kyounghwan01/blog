@@ -61,4 +61,4 @@ const blobSupported = new Blob(["ä"]).size === 2; // Boolean
 
 <TagLinks />
 
-<Disqus />
+<Comment />

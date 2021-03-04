@@ -38,4 +38,4 @@ phoneCall("01022349891");
 
 <TagLinks />
 
-<Disqus />
+<Comment />

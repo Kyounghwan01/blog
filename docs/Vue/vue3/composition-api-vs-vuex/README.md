@@ -91,4 +91,4 @@ vuex의 또다른 장점은 많은 플러그인이 지원된다는 것입니다.
 
 <TagLinks />
 
-<Disqus />
+<Comment />

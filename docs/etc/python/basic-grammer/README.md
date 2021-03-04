@@ -134,4 +134,4 @@ for i in level:
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -269,4 +269,4 @@ this.$cookies.get("keyName");
 this.$cookies.remove("keyName");
 ```
 
-<Disqus />
+<Comment />

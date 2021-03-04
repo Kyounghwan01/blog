@@ -33,4 +33,4 @@ mkdir .vuepress/public
 
 <TagLinks />
 
-<Disqus />
+<Comment />

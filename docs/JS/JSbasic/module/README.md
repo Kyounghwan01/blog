@@ -83,4 +83,4 @@ console.log("e^π = " + exp(pi));
 
 <TagLinks />
 
-<Disqus />
+<Comment />

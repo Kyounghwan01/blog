@@ -191,4 +191,4 @@ const byId = (state, action) => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

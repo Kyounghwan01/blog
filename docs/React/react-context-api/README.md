@@ -273,4 +273,4 @@ TT.defaultProps = {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -265,4 +265,4 @@ export class UserService {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

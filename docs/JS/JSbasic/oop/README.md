@@ -304,4 +304,4 @@ var ec = new ElectricCar("ki");
 
 <TagLinks />
 
-<Disqus />
+<Comment />

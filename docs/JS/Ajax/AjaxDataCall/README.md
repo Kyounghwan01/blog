@@ -130,4 +130,4 @@ ourRequest.send();
 
 <TagLinks />
 
-<Disqus />
+<Comment />

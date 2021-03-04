@@ -177,4 +177,4 @@ export default Vue.extend({
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -49,4 +49,4 @@ crlf와 lf가 만나면 conflict가 일어나는데 , 코드상 다른 부분이
 
 <TagLinks />
 
-<Disqus />
+<Comment />

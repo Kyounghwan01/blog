@@ -676,4 +676,4 @@ defaultParams(1, undefined, 4); // [1, 2, 4]
 
 <TagLinks />
 
-<Disqus />
+<Comment />

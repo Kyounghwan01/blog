@@ -50,4 +50,4 @@ aws에 빌드된 웹 서비스를 호스팅 시키려면 총 6가지의 웹 서�
 - cloudfront에 먼저 배포가 되고, 배포된 결과물을 route53의 dns에 넣습니다.
 
 <TagLinks />
-<Disqus />
+<Comment />

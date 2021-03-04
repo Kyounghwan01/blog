@@ -320,4 +320,4 @@ export default function Trans() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

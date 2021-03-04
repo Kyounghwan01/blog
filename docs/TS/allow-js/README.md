@@ -63,4 +63,4 @@ TS로 만든 프로젝트에서 JS 파일이 필요할 때, 사용하는 방법�
 
 <TagLinks />
 
-<Disqus />
+<Comment />

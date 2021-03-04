@@ -45,4 +45,4 @@ pointer-events 속성이 명시되지 않은 상태로 리셋해 버립니다. S
 
 <TagLinks />
 
-<Disqus />
+<Comment />

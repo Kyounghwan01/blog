@@ -155,9 +155,9 @@ export default {
   props: {
     parentData: {
       type: String,
-      default: "mother",
-    },
-  },
+      default: "mother"
+    }
+  }
 };
 ```
 
@@ -183,8 +183,8 @@ export default {
   methods: {
     methodTest() {
       // something...
-    },
-  },
+    }
+  }
 };
 ```
 
@@ -221,12 +221,12 @@ export default class Home extend Vue {
 export default {
   components: {
     testComponent1,
-    testComponent2,
+    testComponent2
   },
   filters: {
-    testFilter,
+    testFilter
   },
-  mixins: [testMixins1, testMixins2],
+  mixins: [testMixins1, testMixins2]
 };
 ```
 
@@ -302,4 +302,4 @@ export default class Home extend Vue {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

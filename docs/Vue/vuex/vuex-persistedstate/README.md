@@ -93,33 +93,33 @@ const store = new Vuex.Store({
 ```js
 //src/store/moduleName.js
 const state = {
-  id: 1,
+  id: 1
 };
 
 const getters = {
-  get_id: (state) => state.id,
+  get_id: state => state.id
 };
 
 const mutations = {
   UPDATE_ID(state, ids) {
     state.id = ids;
-  },
+  }
 };
 
 const actions = {
   update_id({ commit, state }, data) {
     commit("UPDATE_ID", data);
-  },
+  }
 };
 
 export default {
   strict: process.env.NODE_ENV !== "production",
   state: {
-    ...state,
+    ...state
   },
   getters,
   mutations,
-  actions,
+  actions
 };
 ```
 
@@ -181,4 +181,4 @@ path라는 옵션을 통해 배열안에 넣는 store만 localstorage에 저장�
 
 <TagLinks />
 
-<Disqus />
+<Comment />

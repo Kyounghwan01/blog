@@ -41,8 +41,8 @@ export default {
         var audio = new Audio(sound);
         audio.play();
       }
-    },
-  },
+    }
+  }
 };
 </script>
 ```
@@ -52,4 +52,4 @@ export default {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

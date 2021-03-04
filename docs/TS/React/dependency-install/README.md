@@ -90,4 +90,4 @@ interface를 declare했다면 이제 이 파일을 ts가 읽으라고 path를 �
 
 <TagLinks />
 
-<Disqus />
+<Comment />

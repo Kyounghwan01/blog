@@ -112,4 +112,4 @@ return (
 
 <TagLinks />
 
-<Disqus />
+<Comment />

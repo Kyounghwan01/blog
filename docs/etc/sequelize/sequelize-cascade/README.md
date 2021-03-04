@@ -274,4 +274,4 @@ exports.deleteUserById = async (req, res) => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

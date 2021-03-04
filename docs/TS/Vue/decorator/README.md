@@ -60,4 +60,4 @@ export default class Home extend Vue {}
 
 <TagLinks />
 
-<Disqus />
+<Comment />

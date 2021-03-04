@@ -180,4 +180,4 @@ o1.name = "lee"; // {name : 'kim'}
 
 <TagLinks />
 
-<Disqus />
+<Comment />

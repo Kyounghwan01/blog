@@ -32,7 +32,7 @@ tags: ["vue"]
 export default {
   data() {
     return {
-      time: "2020-01-23 10:00" as string,
+      time: "2020-01-23 10:00" as string
     };
   },
   computed: {
@@ -44,9 +44,9 @@ export default {
       set(value: string) {
         //value === '12:11'
         this.time = `${this.time.slice(0, -6)} ${value}`;
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 ```
@@ -55,4 +55,4 @@ export default {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -92,4 +92,4 @@ npm uninstall ... --global
 
 <TagLinks />
 
-<Disqus />
+<Comment />

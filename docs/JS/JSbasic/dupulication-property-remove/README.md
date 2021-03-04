@@ -93,4 +93,4 @@ example.filter(
 
 <TagLinks />
 
-<Disqus />
+<Comment />

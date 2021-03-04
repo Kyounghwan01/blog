@@ -73,4 +73,4 @@ export default Example;
 
 <TagLinks />
 
-<Disqus />
+<Comment />

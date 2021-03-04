@@ -59,4 +59,4 @@ date() {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

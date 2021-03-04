@@ -33,4 +33,4 @@ import { mapGetters } from 'vuex'
 
 <TagLinks />
 
-<Disqus />
+<Comment />

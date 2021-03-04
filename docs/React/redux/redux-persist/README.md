@@ -95,4 +95,4 @@ ReactDOM.render(<Root />, document.getElementById("root"));
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -103,4 +103,4 @@ function Success({ location }) {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

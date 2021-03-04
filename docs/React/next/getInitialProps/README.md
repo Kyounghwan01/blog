@@ -359,4 +359,4 @@ router.push(
 
 <TagLinks />
 
-<Disqus />
+<Comment />

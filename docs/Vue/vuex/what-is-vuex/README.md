@@ -37,4 +37,4 @@ vuex는 여러 컴포넌트에서 공유하는 상태 관리에는 유용하지�
 
 <TagLinks />
 
-<Disqus />
+<Comment />

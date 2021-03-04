@@ -254,4 +254,4 @@ export default inject("store")(observer(TTT2));
 
 <TagLinks />
 
-<Disqus />
+<Comment />

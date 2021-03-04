@@ -81,12 +81,12 @@ export default {
   props: {
     show: Boolean,
     point: Number,
-    close: Function,
-  },
+    close: Function
+  }
 };
 </script>
 ```
 
 <TagLinks />
 
-<Disqus />
+<Comment />

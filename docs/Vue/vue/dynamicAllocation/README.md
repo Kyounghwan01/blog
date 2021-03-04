@@ -92,4 +92,4 @@ export default {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

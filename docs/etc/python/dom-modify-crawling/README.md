@@ -99,4 +99,4 @@ driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
 <TagLinks />
 
-<Disqus />
+<Comment />

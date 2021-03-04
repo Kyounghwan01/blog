@@ -198,4 +198,4 @@ dispatch(setCount(data));
 
 <TagLinks />
 
-<Disqus />
+<Comment />

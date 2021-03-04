@@ -54,4 +54,4 @@ buyProduct(params, 1, "껌");
 
 <TagLinks />
 
-<Disqus />
+<Comment />

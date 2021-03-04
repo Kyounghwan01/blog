@@ -150,4 +150,4 @@ tags: ["VuePress", "Tags", "vue"]
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -46,4 +46,4 @@ dev와 produce환경과 웹팩, minify를 하기에 성능에 차이가 있습�
 production 빌드는 `npm run build`를 통해 나온 파일을 실행하여, 성능 측정합니다.
 
 <TagLinks />
-<Disqus />
+<Comment />

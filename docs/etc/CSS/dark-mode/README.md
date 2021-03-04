@@ -92,4 +92,4 @@ const Background = styled.div`
 
 <TagLinks />
 
-<Disqus />
+<Comment />

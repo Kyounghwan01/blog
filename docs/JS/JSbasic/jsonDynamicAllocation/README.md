@@ -70,4 +70,4 @@ const person = { [name]: "nkh" }; // {who: 'nkh'}
 
 <TagLinks />
 
-<Disqus />
+<Comment />

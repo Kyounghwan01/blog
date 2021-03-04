@@ -265,4 +265,4 @@ const fetchEmployee = async (
 
 <TagLinks />
 
-<Disqus />
+<Comment />

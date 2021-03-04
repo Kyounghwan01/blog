@@ -108,4 +108,4 @@ const RefExample = () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

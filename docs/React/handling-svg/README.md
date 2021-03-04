@@ -83,4 +83,4 @@ import { ReactComponent as Reservation } from "assets/icon-24-reservation.svg";
 
 <TagLinks />
 
-<Disqus />
+<Comment />

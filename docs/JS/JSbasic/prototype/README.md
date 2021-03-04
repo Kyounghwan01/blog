@@ -179,4 +179,4 @@ Object.prototype.hoho; //123;
 
 <TagLinks />
 
-<Disqus />
+<Comment />

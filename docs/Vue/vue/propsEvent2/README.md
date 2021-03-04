@@ -32,12 +32,12 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   computed() {
     this.list = this.list.reverse();
-  },
+  }
 };
 </script>
 ```
@@ -55,15 +55,15 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   methods: {
     deleteList(index) {
       //배열의 중간 요소 제거
       this.list.splice(index, 1);
-    },
-  },
+    }
+  }
 };
 </script>
 ```
@@ -112,14 +112,14 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
     reversedList() {
       return this.list.reverse();
-    },
-  },
+    }
+  }
 };
 </script>
 ```
@@ -135,15 +135,15 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       //중복 이름 사용 금지
-      list: JSON.parse(this.list),
+      list: JSON.parse(this.list)
     };
-  },
+  }
 };
 </script>
 ```
@@ -155,4 +155,4 @@ export default {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

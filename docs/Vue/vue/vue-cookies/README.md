@@ -84,9 +84,9 @@ this.$cookies.isKey("test");
 this.$cookies.keys().join("\n");
 
 //모든 쿠키 다 지우기
-this.$cookies.keys().forEach((cookie) => this.$cookies.remove(cookie));
+this.$cookies.keys().forEach(cookie => this.$cookies.remove(cookie));
 ```
 
 <TagLinks />
 
-<Disqus />
+<Comment />

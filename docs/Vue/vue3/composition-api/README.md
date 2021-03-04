@@ -426,4 +426,4 @@ vuex에 대한 포스팅은 따로 분리합니다 [composition api에서 vuex �
 
 <TagLinks />
 
-<Disqus />
+<Comment />

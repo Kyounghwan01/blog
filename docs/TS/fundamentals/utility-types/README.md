@@ -182,4 +182,4 @@ const apple: Omit<Product, "stock"> = {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

@@ -45,4 +45,4 @@ NODE_PATH=src
 ```
 
 <TagLinks />
-<Disqus />
+<Comment />

@@ -194,4 +194,4 @@ const RNListener = () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

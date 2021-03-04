@@ -63,4 +63,4 @@ jsx에서 tsx로 바꿨는데 아무 에러가 뜨지 않는 경우 코드 에�
 
 <TagLinks />
 
-<Disqus />
+<Comment />

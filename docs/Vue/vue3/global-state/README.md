@@ -136,4 +136,4 @@ export default defineComponent({
 
 <TagLinks />
 
-<Disqus />
+<Comment />

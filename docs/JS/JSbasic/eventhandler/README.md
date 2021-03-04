@@ -92,4 +92,4 @@ reg(document.body, "keypress", function(event) {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

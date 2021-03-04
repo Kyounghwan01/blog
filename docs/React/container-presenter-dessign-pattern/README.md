@@ -91,4 +91,4 @@ const Commentlist = comments => (
 
 <TagLinks />
 
-<Disqus />
+<Comment />

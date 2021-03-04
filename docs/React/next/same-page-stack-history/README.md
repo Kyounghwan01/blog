@@ -114,5 +114,5 @@ const IntroComponent = () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />
 ```

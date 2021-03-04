@@ -44,4 +44,4 @@ meta:
 
 <TagLinks />
 
-<Disqus />
+<Comment />

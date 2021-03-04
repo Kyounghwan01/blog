@@ -57,4 +57,4 @@ const getToken = async () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

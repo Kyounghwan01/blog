@@ -205,4 +205,4 @@ export class UserController {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

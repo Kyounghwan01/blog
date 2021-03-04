@@ -53,3 +53,29 @@ app.use(cors(corsOptions));
 - [nest 개념 및 세팅 #1](https://kyounghwan01.github.io/blog/etc/nest/intro/)
 - [nest 컨트롤러, 서비스, 엔티티 만들기 #2](https://kyounghwan01.github.io/blog/etc/nest/controller-service/)
 - [nest validation과 dto #3](https://kyounghwan01.github.io/blog/etc/nest/validation-dto/)
+
+```html
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBbpcePYPq4NbodO2TsQtb8cjVctb9pYz4",
+    authDomain: "joshua-test-deb36.firebaseapp.com",
+    projectId: "joshua-test-deb36",
+    storageBucket: "joshua-test-deb36.appspot.com",
+    messagingSenderId: "135986493087",
+    appId: "1:135986493087:web:659749c64679b83bedd4aa",
+    measurementId: "G-TF8L8M9EJB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+```

@@ -207,4 +207,4 @@ docker-compose run --rm composer install
 - 타입 호환 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/type-compatiability/)
 - 타입 추론/단언/가드 [정리](https://kyounghwan01.github.io/blog/TS/Fundamentals/assertion-guard-interface/)
 
-<Disqus />
+<Comment />

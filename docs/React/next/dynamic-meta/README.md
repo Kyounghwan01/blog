@@ -58,4 +58,4 @@ Test.getInitialProps = () => {
 
 <TagLinks />
 
-<Disqus />
+<Comment />

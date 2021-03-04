@@ -71,4 +71,4 @@ git commit -m "~"
 
 <TagLinks />
 
-<Disqus />
+<Comment />

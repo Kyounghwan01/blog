@@ -176,4 +176,4 @@ content.nextSibling.nextSibling.style.border = "4px solid #ff0000";
 
 <TagLinks />
 
-<Disqus />
+<Comment />

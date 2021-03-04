@@ -116,4 +116,4 @@ df.to_excel('dart.xlsx')
 
 <TagLinks />
 
-<Disqus />
+<Comment />

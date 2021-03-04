@@ -144,4 +144,4 @@ dispatch(thisIsFunction());
 - redux의 비동기를 위한 미들웨어
 - [정리](https://kyounghwan01.github.io/blog/React/redux/redux-saga/)
 
-<Disqus />
+<Comment />

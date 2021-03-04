@@ -85,4 +85,4 @@ console.log(sortable); // {Zoe: 60, Ahri: 200, Aatrox: 300, Garen: 400, Asche: 1
 
 <TagLinks />
 
-<Disqus />
+<Comment />
