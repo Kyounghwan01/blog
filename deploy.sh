@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 댓글시스템 disque -> github 으로 변경"
+git commit -m "feat: utterances github 댓글 사용법 추가"
 git push origin master
 
 # build

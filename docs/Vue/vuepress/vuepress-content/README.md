@@ -1,18 +1,18 @@
 ---
-title: vuePress 댓글 기능 추가하기
+title: vuePress 댓글 기능 Disqus로 추가하기
 meta:
   - name: description
-    content: vuePress 댓글 기능 추가하기
+    content: vuePress 댓글 기능 Disqus로 추가하기
   - property: og:title
-    content: vuePress 댓글 기능 추가하기, Disqus
+    content: vuePress 댓글 기능 Disqus로 추가하기, Disqus
   - property: og:description
-    content: vuePress 댓글 기능 추가하기, Disqus
+    content: vuePress 댓글 기능 Disqus로 추가하기, Disqus
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-content/
 tags: ["vuepress"]
 ---
 
-# vuePress 댓글 기능 추가
+# vuePress 댓글 기능 Disqus로 추가하기
 
 댓글을 가장 추가하기 쉬운 `Disqus`를 사용합니다.<br>
 `Disqus` 홈페이지에 접속하여, 현재 가지고 계신 블로그를 등록하면, `https://~~~~~/embed.js`라는 url를 `Disqus`에서 제공할 것입니다. 그 값을 꼭 복사하신 후 아래로 진행하시면 되겠습니다.<br>
