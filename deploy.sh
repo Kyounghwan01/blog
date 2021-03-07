@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: utterances github 댓글 사용법 추가"
+git commit -m "feat: java 기초 추가"
 git push origin master
 
 # build
