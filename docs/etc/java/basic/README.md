@@ -2,11 +2,11 @@
 title: java 기본 개념
 meta:
   - name: description
-    content: java 기본 개념
+    content: java 기본 개념, package, class, property, method, constructor, private, 생성자, static, getter, setter, extends, 상속, interface, 인터페이스, 추상화, 다형성, override, 오버라이드, super, abstract, lambda, try catch finally, 에러핸들링, ArrayList, HashMap
   - property: og:title
-    content: java 기본 개념
+    content: java 기본 개념, package, class, property, method, constructor, private, 생성자, static, getter, setter, extends, 상속, interface, 인터페이스, 추상화, 다형성, override, 오버라이드, super, abstract, lambda, try catch finally, 에러핸들링, ArrayList, HashMap
   - property: og:description
-    content: java 기본 개념
+    content: java 기본 개념, package, class, property, method, constructor, private, 생성자, static, getter, setter, extends, 상속, interface, 인터페이스, 추상화, 다형성, override, 오버라이드, super, abstract, lambda, try catch finally, 에러핸들링, ArrayList, HashMap
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/java/basic/
 tags: ["java"]
@@ -547,3 +547,7 @@ boolean b = map.isEmpty(); // true
 ## 에러처리
 
 javascript와 마찬가지로 try catch finally를 사용한다
+
+<TagLinks />
+
+<Comment />

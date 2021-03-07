@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: java 기초 추가"
+git commit -m "fix: java 기초 meta 수정"
 git push origin master
 
 # build
