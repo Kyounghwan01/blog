@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: java 기초 meta 수정"
+git commit -m "test: iframe, ga api test"
 git push origin master
 
 # build
