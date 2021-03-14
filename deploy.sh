@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "test: iframe, ga api test"
+git commit -m "test: iframe, ga api 제거"
 git push origin master
 
 # build

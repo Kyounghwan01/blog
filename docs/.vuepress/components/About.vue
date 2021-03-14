@@ -285,26 +285,27 @@
       </div>
       <div class="content mgb-20">
         <p style="font-size: 20px; font-weight: bold;">바닐라코딩 6기 수료</p>
-        <span> {{test}}</span>
+        <span>(19.04 ~ 19.11)</span>
       </div>
     </div>
+      <!-- <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="600"
+        height="300"
+        src="https://khgg.netlify.app/"
+        allow="autoplay; encrypted-media" 
+        allowfullscreen
+      />
 
-    <div :key="i.id" v-for="i in items">
-      <h2>{{i.first_name}} {{i.last_name}}</h2>
-    <img :src="i.avatar"/>
-</div>
-<iframe id="inlineFrameExample"
-    title="Inline Frame Example"
-    width="300"
-    height="200"
-    src="https://khgg.netlify.app/">
-</iframe>
-
+    <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="600"
+        height="300"
+        src="https://sales-statistics.netlify.app/"
+    /> -->
   </div>
 </template>
 <script>
-const axios = require('axios');
-
 export default {
   data() {
     return {
@@ -312,11 +313,12 @@ export default {
       items: []
     };
   },
-  async created() {
-    const res = await axios.get('https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A223486794&start-date=2020-01-01&end-date=yesterday&metrics=ga%3Asessions&access_token=ya29.a0AfH6SMC1QDVSBpqpFaT1VMkBZqy4lY0S3rl1Zlz-4nP-Elt3eESrsBiKY7D8Wt6lvenvCtCBkkCxEaL9Za8zXKSFJoQ5SdVZx0FIxeh4ve7rcV3SCWW052nqc5M4iSVVXIiTq3MlZcQpDCS_t_6a2AGppWozuR4')
-    console.log(res)
-    this.items = res.data.data;
-  }
+  methods:{
+      // onClickRedirect: function () {   
+      //   console.log(1)
+      //     window.open("https://google.com", "_blank");    
+      // }
+    }
 }
 </script>
 
