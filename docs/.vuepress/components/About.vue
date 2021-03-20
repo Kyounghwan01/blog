@@ -288,40 +288,8 @@
         <span>(19.04 ~ 19.11)</span>
       </div>
     </div>
-      <!-- <iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="600"
-        height="300"
-        src="https://khgg.netlify.app/"
-        allow="autoplay; encrypted-media" 
-        allowfullscreen
-      />
-
-    <iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="600"
-        height="300"
-        src="https://sales-statistics.netlify.app/"
-    /> -->
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      test: '(19.04 ~ 19.11)',
-      items: []
-    };
-  },
-  methods:{
-      // onClickRedirect: function () {   
-      //   console.log(1)
-      //     window.open("https://google.com", "_blank");    
-      // }
-    }
-}
-</script>
-
 
 <style scoped>
 .container {
