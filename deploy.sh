@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: 3월 일기 추가"
+git commit -m "test: redirect new blog"
 git push origin master
 
 # build
