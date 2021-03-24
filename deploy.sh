@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: sql 기본 추가"
+git commit -m "feat: 3월 일기 추가"
 git push origin master
 
 # build
