@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "test: redirect new blog"
+git commit -m "fix: google adsense key change"
 git push origin master
 
 # build
