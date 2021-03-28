@@ -100,3 +100,17 @@ source ~/.zshrc
 - 시간 역전 현상 (시작시간이 끝 시간부터 뒤인 경우) 모두 예외 처리하여 해당 이벤트 발생시 noti로 알려주고, ref를 통해 오류가 나는 input으로 자동 이동
 
 <Comment />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- test -->
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6192551181326997"
+     data-ad-slot="2597549423"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

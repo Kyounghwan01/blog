@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: google adsense key change"
+git commit -m "test: google adsense 광고 테스트"
 git push origin master
 
 # build
