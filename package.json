@@ -21,8 +21,9 @@
     "@vuepress/plugin-back-to-top": "^1.5.2",
     "@vuepress/plugin-google-analytics": "^1.5.2",
     "@vuepress/plugin-last-updated": "^1.5.2",
+    "vue-google-adsense": "^1.9.2",
+    "vue-script2": "^2.1.0",
     "vuepress": "^1.5.2",
-    "vuepress-plugin-google-adsense": "^0.1.1",
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "dependencies": {

@@ -101,16 +101,4 @@ source ~/.zshrc
 
 <Comment />
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- test -->
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6192551181326997"
-     data-ad-slot="2597549423"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<CallAdsense />
