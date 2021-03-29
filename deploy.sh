@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "test: google adsense 광고 테스트"
+git commit -m "feat: svelte 기본"
 git push origin master
 
 # build

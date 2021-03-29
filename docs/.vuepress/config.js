@@ -1,4 +1,13 @@
-const routes = ["Tag", "Vue", "React", "JS", "TS", "etc", "dev-report"];
+const routes = [
+  "Tag",
+  "Vue",
+  "React",
+  "Svelte",
+  "JS",
+  "TS",
+  "etc",
+  "dev-report"
+];
 
 const createSidebar = () => {
   const sidebar = {};
@@ -27,6 +36,7 @@ module.exports = {
       { text: "Tag", link: "/tag/" },
       { text: "React", link: "/React/" },
       { text: "Vue", link: "/Vue/" },
+      { text: "Svelte", link: "/Svelte/" },
       { text: "JS", link: "/JS/" },
       { text: "TS", link: "/TS/" },
       { text: "기타", link: "/etc/" },
