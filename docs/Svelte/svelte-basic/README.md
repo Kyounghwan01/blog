@@ -724,6 +724,156 @@ let multiSelect = ['banana', 'cherry'];
 <button on:click={() => reset = !reset}> reset </button>
 ```
 
+## 인라인 핸들러 사용 추천
+
+- vue, react에서는 jsx내부에 함수를 정의하면 리렌더링 될때마다 인라인 함수도 다시 정의되어야 하기에 메모리를 잡아먹어 사용하지 말라고 권장한다
+- 그러나 svelte는 인라인 핸들러를 사용하는 것이 더 유리하다
+- 일단 스벨트는 가상돔이 없고, 자신이 컴파일러이기에 인라인 핸들러를 사용해서 메모리 사용에 불이익이 없다고한다
+- 두번째 이유는 인라인으로 사용시 `할당(=)`을 하지 않아도 데이터 갱신이 이루어진다는 것이다 아래 코드로 알아보자
+
+```md
+<script>
+	const fr = [
+		{id: 1, name: '1'},
+		{id: 2, name: '2'},
+		{id: 3, name: '3'}
+	]
+
+	// 인라인으로 사용하지 않은 경우 자기자신을 할당해줘야 데이터 갱신이 이루어진다
+	function assign(fr) {
+		fr.name += '!';
+		// 갱신을 위해서 자기 자신을 할당해준다
+		fr = fr;
+	}
+</script>
+
+{#each fr as fruit (fruit.id)}
+
+<div on:click={() => assign(fruit)}>
+{fruit.name}
+</div>
+{/each}
+
+{#each fr as fruit (fruit.id)}
+
+<!-- 인라인 핸들러를 사용할 경우 값 바꾸는 로직은 있으나 할당하는 로직이 없어도 갱신이 이루어진다 -->
+<div on:click={() => fruit.name += '!'}>
+{fruit.name}
+</div>
+{/each}
+```
+
+## 다중 이벤트 핸들러
+
+- svelte는 하나의 element에 여러 이벤트 핸들러를 붙일수있다
+
+```md
+<button on:click={increse} on:click={() => console.log(1) on:click={test}>
+click
+</button>
+```
+
+## 이벤트 수식어
+
+- preventDefault 수식어
+
+```md
+<a href="https://naver.com" target="\_blank" on:click|preventDefault={clickHandler}>naver
+</a>
+```
+
+- stopPropagation - 이벤트 버블링 방지
+- 동일한 방식으로 caputre 속성 사용 가능
+
+```md
+<a href="https://naver.com" target="\_blank" on:click|preventDefault|stopPropagetion={clickHandler}>naver
+</a>
+```
+
+## props 비구조할당
+
+- 아래 세 패턴 모드 같은 로직
+
+```md
+{#each users as user}
+<User
+		name={user.name}
+		age={user.age}
+		email={user.email}
+	/>
+{/each}
+
+{#each users as {name, age, email}}
+<User {name} {age} {email} />
+{/each}
+
+{#each users as user}
+<User {...user} />
+{/each}
+```
+
+## 자식에서 부모로 dispatcher
+
+- 부모의 값을 바꾸기 위해 자식 컴포넌트에서 부모 컴포넌트로 요청을 보낸다
+
+```md
+<script>
+	import {createEventDispatcher} from 'svelte'l
+	export let todo;
+	const dispatch = createEventDispatcher();
+
+	const deleteTodo() {
+		dispatch('deleteMe', {
+			todoId: todo.id
+		});
+	}
+</script>
+
+<button on:click={deleteTodo}>x</button>
+```
+
+#### 부모 컴포넌트
+
+- 자식 컴포넌트에서 dispatch로 정의한 이름(deleteMe)이 부모컴포넌트의 on:xxx에서 반응한다
+
+```md
+<script>
+const deleteTodo = (event) => {
+	// 자식에서 만든 dispatch의 두번째 인자는 부모 함수의 event.detail에 들어감
+	const { todoId } = event.detail;
+	console.log(todoId);
+}
+</script>
+
+<Todo {todo} on:deleteMe={deleteTodo}>
+```
+
+### dispatcher없이 쓰는 forwarding
+
+- js에서 쓰는 별도 이벤트 핸들러(on:click)면 dispatcher 없이 자식 -> 부모 함수 올림 가능 (forwarding 이라 부름)
+
+#### 자식
+
+```md
+<!-- dispatcher없이 click만 사용하면 부모로 함수가 전달됨 -->
+<button on:click>
+ prarne
+</button>
+```
+
+#### 부모
+
+```md
+<script>
+	import Component2 from './Component2.svelte';
+	const handler = (e) => {
+		console.log(e.currentTarget);
+	}
+</script>
+<!-- 자식으로부터 전달된 click 함수 발동 -->
+<Component2 on:click={handler}/>
+```
+
 <TagLinks />
 
 <Comment />
