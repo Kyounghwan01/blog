@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: svelte 인라인핸들러, 다중 핸들러, 이벤트 수식어, dispatcher 추가"
+git commit -m "test: ads.txt"
 git push origin master
 
 # build
