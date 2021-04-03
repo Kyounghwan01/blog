@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: svelte context api, $$props, $$restProps"
+git commit -m "feat: svelte slot"
 git push origin master
 
 # build

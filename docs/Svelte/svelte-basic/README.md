@@ -1010,6 +1010,143 @@ color라는 input에서 사용하지 않는 property까지 들어갑니다 이�
 <input type="password" maxlength="3" color="red" style="color: red" />
 ```
 
+## slot
+
+- vue의 slot과 동일합니다 사용되는 컴포넌트의 children 속성이 import한 컴포넌트 내부에 들어가는 원리입니다
+
+### 자식
+
+```md
+<!-- SlotExample -->
+<script>
+  export let block;
+</script>
+
+<button class:block>
+  <slot>
+		<!-- 부모에서 슬롯 내부에 정의한 컨텐츠 없으면 아래 'default btn' 사용 -->
+		default btn
+	</slot>
+</button>
+
+<style>
+  .block {
+    display: block;
+  }
+</style>
+```
+
+## 부모
+
+```md
+<script>
+  import SlotExample from "./SlotExample.svelte";
+</script>
+
+<SlotExample />
+<SlotExample block>test solt</SlotExample>
+```
+
+## 이름 가지는 slot
+
+### 부모
+
+```md
+<script>
+  import SlotExample from "./SlotExample.svelte";
+</script>
+
+<SlotExample>
+	<!-- 슬롯에 넣을때 style이 정의된 채로 넣어준다 -->
+  <h2 slot="age">3123</h2>
+  <div slot="name">
+    <p>named</p>
+    <p>slot!</p>
+  </div>
+</SlotExample>
+
+<style>
+  h2 {
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+  }
+</style>
+```
+
+- 주의!! slot에 넣고 slot이 정의된 컴포넌트에서 style을 정의하는 것이 아니라, slot 컴포넌트를 import한 부모 컴포넌트에서 스타일을 다 정의해주고 slot 내부에 dom을 넣어줘야한다
+
+## 자식
+
+```md
+<button class:block>
+	<!-- name인 slot이 없다면 default btn이 render됨 -->
+  <slot name="name">default btn</slot>
+  <slot name="age">1</slot>
+</button>
+```
+
+## \$\$slots
+
+- 슬롯을 사용하면 `$$slot`의 변수에 slot 내에 사용한 데이터가 담깁니다 (이름을 가진 slot만 담김)
+
+## 범위를 가지는 slot (let 디렉티브)
+
+- let 디렉티브를 이용해서 slot에서 정의한 data를 사용할 수 있습니다
+
+### 자식
+
+```md
+<script>
+  export let block;
+  let domain = "@naver.com"; // 부모에서 domain를 부르면 @naver.com이 담긴다
+  console.log($$slots); // {name: true, age: true, email: true}
+</script>
+
+<!-- 범위 슬록, $$slots -->
+<button class:block>
+  <slot name="name">default btn</slot>
+  <hr />
+  <slot name="age">1</slot>
+  {#if $$slots.email}
+    <hr />
+    <slot name="email" {domain} alsoSlot="alsoSlot">zz{domain}</slot>
+  {/if}
+</button>
+
+<style>
+  .block {
+    display: block;
+  }
+</style>
+```
+
+### 부모
+
+```md
+<script>
+  import SlotExample from "./SlotExample.svelte";
+</script>
+
+<SlotExample block>
+  <h2 slot="age">29</h2>
+  <div slot="name">
+    <p>im</p>
+  </div>
+</SlotExample>
+
+<SlotExample>
+  <h2 slot="age">3123</h2>
+  <div slot="name">
+    <p>named</p>
+    <p>slot!</p>
+  </div>
+	<!-- test@naver.com -->
+  <div slot="email" let:domain let:alsoSlot>test{domain} / {alsoSlot}</div>
+</SlotExample>
+```
+
 <TagLinks />
 
 <Comment />
