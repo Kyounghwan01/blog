@@ -1147,6 +1147,241 @@ color라는 input에서 사용하지 않는 property까지 들어갑니다 이�
 </SlotExample>
 ```
 
+## store
+
+store의 객체는 subscribe, update, set 이 있다
+
+- subscribe의 경우 store 값이 변경되면 subscribe 함수 실행된다
+- update의 경우 store의 값을 바꿀 때 호출하며, update 함수의 return 값으로 writable 값이 바뀐다
+- set은 호출한 store 객체를 원하는 값으로 바꿈
+
+### store.js
+
+```js
+import { writable } from "svelte/store";
+
+// 1번인수: 정의할 값
+// 2번인수: subscribe가 1명이상일때 최초 한번만 실행 (2,3,4 증가해도 다시 실행 안됨), return 문은 count의 모든 구독 취소시 실행
+export let count = writable(0, () => {
+  console.log("count subscribe가 1명 이상일 경우 실행됨");
+
+  return () => {
+    console.log("count subscribe가 0명이 되면 실행됨");
+  };
+});
+```
+
+### 수동 구독 방법
+
+- 아래 코드는 svelte의 store 객체를 subscribe, update, set을 이용하여 수동으로 구독하는 방법입니다
+- 수동 구독의 경우 subscribe 한 값을 onDestory에서 모두 구독 취소해야합니다
+- store.js 같이 svelte 컴포넌트가 아닌 곳에서는 자동 구독이 불가하여 수동 구독으로 구현해야합니다
+
+```md
+<script>
+	import {onDestory} from 'svelte';
+	import {count} from './store.js';
+
+	let number;
+	const unSubscribeCount = count.subscribe(e => {
+		// store에 있는 count값이 변경되면 이 함수가 실행됨
+		number = c;
+	})
+
+	const increse = () => {
+		// update 함수에 return을 시키면 store 값이 return 값으로 할당된다
+		count.update(c => {
+			return c + 1;
+		});
+	}
+
+	const resetCount = () => {
+		// set은 store 값을 원하는 값으로 바로 바꿈
+		count.set(0);
+	}
+
+	onDestory(() => {
+		// count 구독을 취소한다
+		unSubscribeCount();
+	})
+</script>
+
+<h2>{number}</h2>
+```
+
+### 자동 구독으로 개선
+
+- 자동 구독의 경우 컴포넌트가 파괴시(onDestory 발동 조건) 자동으로 모든 store 값을 구독 취소
+- 거의 대부분의 경우 `$store` 객체로 사용합니다
+- svelte 컴포넌트 내에서는 자동 구독을 사용하나, store.js 같이 svelte 컴포넌트가 아닌 곳에서는 자동 구독이 불가하여 수동 구독으로 구현해야합니다
+
+```md
+<script>
+	import {count} from './store.js';
+
+	const increse = () => {
+		$count += 1;
+	}
+
+	const resetCount = () => {
+		$count = 0;
+	}
+
+</script>
+
+<h2>{$count}</h2>
+```
+
+### readable
+
+- store에 writable이 있듯 readable도 존재한다
+- 말 그대로 읽기 전용이며 컴포넌트에서 자동 구독을 해도 그 값을 바꿀 수 없다
+- 단, 생성한 store에서 처음 구독을 할때 한번 바꿀 수 있다
+
+```js
+// store.js
+import { readable } from "svelte/store";
+
+const userData = {
+  name: "nkh",
+  age: 29,
+  email: "noh5524@gmail.com",
+  token: "d8d8w71nwncm133444"
+};
+
+export let user = readable(userData, set => {
+  console.log("user 구독자가 1명 이상일때 찍히는 콘솔");
+  // readable은 2번째 인수로 set이 들어온다.
+  // 컴포넌트에서는 readable 값을 변경할 수 없으나 맨처음 구독이 시작되는 순간에 처음이자 마지막으로 값을 바꿀 수 있다.
+  delete userData.token;
+  set(userData);
+  return () => {
+    console.log("user 구독자가 0명일 때 찍히는 콘솔");
+  };
+});
+```
+
+#### 사용하는 component
+
+```md
+<script>
+	import {user} from './store.js';
+
+	console.log(user); // readable 값이기 때문에 set, update 메소드가 없다
+
+	const setReadableData = () => {
+		$user.age = 999 // error!!
+	}
+</script>
+
+<span>{\$user.age}</span>
+```
+
+### 계산된 스토어 (derived)
+
+- vue의 computed와 같은 느낌
+- writable, readable 값 모두 핸들링 가능
+- 컴포넌트에서 `$값`으로 호출시 readable 값과 동일하게 describe 메소드만 사용 가능 (set, update 사용 불가)
+- 의존하고 있는 writable 값이 변경시 derived 값도 같이 갱신
+
+```js
+// store.js
+import { writable, derived } from "svelte/store";
+
+export let count = writable(1);
+
+// writable, readable 값 모두 핸들링 가능
+export let double = derived(count, $count => {
+  // $count는 count 즉, 1이다
+  // count가 변경시 double도 같이 갱신되어 리렌더링됨
+  return $count * 2;
+});
+
+// 여러 값 가져와야한다면 배열로 만들고 내부로 가져옴
+export let total = derived([count, double], ([$count, $double], set) => {
+  // derived는 writable과 달리 값이 바뀔때마다 계속 호출됨
+  console.log("total 구독자가 1명 이상일때 호출"); // 2. 여기가 호출되어 total 값이 바뀜
+  set($count + $double);
+  // return $count + $double; 위와 동일
+
+  return () => {
+    console.log("total 구독자가 0명 일때"); // 1. writable과 다르게 의존하고 있는 값이 변경되면 맨처음 이 구문이 실행되어 한번 초기화 하고
+  };
+});
+
+export let initalValue = derived(
+  count,
+  ($count, set) => {
+    // 어떤 값을 가지고 computed하는데 일정한 시간이 걸릴때 이 값은 undefined를 return한다
+    // 이때 undefined 값을 보정해주기 위해 dervied 함수의 3번째 인자로 대신할 값을 넣어준다
+    setTimeout(() => {
+      set($count + 1);
+    }, 1000);
+  },
+  "최초 계산 로딩 중 ..."
+);
+```
+
+### store getter
+
+- `$~`값을 이용하면 store 값을 컴포넌트가 구독해야하는데, 구독하지않고 단순 값만 조회하려고 할때 사용
+- writable, derived, readable 모두 사용 가능하고, 컴포넌트가 아닌 스토어 및 js 파일 모두에서 사용 가능
+
+```md
+<script>
+	import {get} from 'svelte/store';
+	import {count} from './store';
+
+	console.log(get(count)); // 1
+</script>
+```
+
+### 스토어 사용 종합 예시
+
+#### store.js
+
+```js
+import { writable, get } from "svelte/store";
+
+const _fruits = writable([
+  { id: 1, name: "apple" },
+  { id: 2, name: "banana" }
+]);
+
+export let fruits = {
+  ..._fruits,
+  getList: () => get(_fruits).map(f => f.name),
+  setItem: name => {
+    _fruits.update($f => {
+      $f.push({
+        id: $f.length + 1,
+        name
+      });
+      return $f;
+    });
+  }
+};
+```
+
+#### component
+
+```md
+<script>
+import { fruits } from './store.js';
+
+let value
+</script>
+<input bind:value />
+<button on:click={() => fruits.setItem(value)}>add fruits</button>
+<button on:click={() => console.log(fruits.getList())}>get fruits</button>
+
+<ul>
+ {#each $fruits as {id, name} (id)}
+	<li>{name}</li>
+ {/each}
+</ul>
+```
+
 <TagLinks />
 
 <Comment />

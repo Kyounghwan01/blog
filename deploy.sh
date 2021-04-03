@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: svelte slot"
+git commit -m "feat: svelte store"
 git push origin master
 
 # build
