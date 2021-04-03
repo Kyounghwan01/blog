@@ -1382,6 +1382,83 @@ let value
 </ul>
 ```
 
+## action
+
+- redux, vuex, mobx의 store action이 아닙니다
+- svelte에서 사용하는 action이라는 기능으로 `use` 리덱티브를 이용합니다
+- 해당 element에 접근하여 아래와 같은 기능을 만들때 유용하게 사용합니다
+
+```
+타사 라이브러리와 인터페이스
+lazy-loading image
+tooltips
+커스텀 이벤트 핸들러
+```
+
+#### 액션 함수 형태
+
+```js
+action = (node: HTMLElement, parm: any) => {
+	update?: (param: any) => void;
+	destroy?: () => void;
+}
+```
+
+#### 간단한 액션 예제
+
+```md
+<script>
+  let width = 200;
+
+  const zoom = (node, options = {}) => {
+    const { width = 300, height = 400, zoom = 1.2 } = options;
+
+    node.style.transition = "1s";
+    node.style.width = `${width}px`;
+    node.style.height = `${height}px`;
+    const zoomIn = () => {
+      node.style.transform = `scale(${zoom})`;
+    };
+
+    const zoomOut = () => {
+      node.style.transform = "scale(1)";
+    };
+
+    node.addEventListener("mouseenter", zoomIn);
+    node.addEventListener("mouseleave", zoomOut);
+
+    return {
+      update(opts) {
+        console.log(opts);
+        node.style.width = `${opts.width}px`;
+      },
+      destory() {
+        node.removeEventListener("mouseenter", zoomIn);
+        node.removeEventListener("mouseleave", zoomOut);
+      }
+    };
+  };
+</script>
+
+<button on:click={() => (width += 20)}>size up</button>
+
+<div use:zoom />
+
+<div
+  use:zoom={{
+    width,
+    height: 100,
+    zoom: 1.5
+  }}
+/>
+
+<style>
+  div {
+    background-color: tomato;
+  }
+</style>
+```
+
 <TagLinks />
 
 <Comment />
