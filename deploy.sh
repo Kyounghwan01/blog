@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "test: ads.txt"
+git commit -m "feat: svelte context api, $$props, $$restProps"
 git push origin master
 
 # build

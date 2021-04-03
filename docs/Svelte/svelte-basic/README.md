@@ -874,6 +874,142 @@ const deleteTodo = (event) => {
 <Component2 on:click={handler}/>
 ```
 
+## context api
+
+- context의 공유 범위는 setContext를 하는 컴포넌트를 포함하여 하위 컴포넌트만 공유가능하다 (형제 컴포넌트 및 부모 컴포넌트에서 getContext사용시 undefined 리턴)
+
+### 부모 컴포넌트
+
+```md
+<script>
+  import { getContext, setContext } from "svelte";
+  import GetCont from "./GetCont.svelte";
+  setContext("pm", 10000);
+	// setContext한 컴포넌트에서 getContext 사용 가능
+  const pm = getContext("pm"); // 10000
+</script>
+
+<main>context tets {pm}</main>
+<GetCont />
+```
+
+### 자식 컴포넌트
+
+```md
+<script>
+  import { getContext } from "svelte";
+  const pm = getContext("pm"); // 10000
+</script>
+
+<h3>test {pm}</h3>
+```
+
+## context api module
+
+### 자식
+
+```md
+<script context="module">
+  // module로 사용될때만 반돌함
+  // app.svelte에서 이 컴포넌트를 가져와서 import 하는 순간에만 초기화됨
+  // 이 컴포넌트를 사용하는 모든 화면에 대해 전역 데이터로 사용됨
+  // 주의!!! context="module"내의 값은 값은 바뀌나 화면을 바꾸는 갱신으로는 사용되지 않음
+  export let count = 0;
+</script>
+
+<script>
+  import { getContext } from "svelte";
+  const pm = getContext("pm");
+</script>
+
+<h3>test {pm}</h3>
+```
+
+### 부모
+
+```md
+<script>
+  import { getContext, setContext } from "svelte";
+  import GetCont, {count} from "./GetCont.svelte";
+</script>
+
+<button onclick={() => console.log(count)}>get count</button>
+
+<GetCont />
+```
+
+## $$props / $$restProps
+
+부모 컴포넌트를 통해 하위 컴포넌트로 여러 props를 내릴수있습니다 그럴때마다 하위 컴포넌트는 내려받은 props를 다 정의해야합니다 부모에서 내린 값을 가공 없이 자식이 다 쓴다면 굳이 props를 다 정의할 필요가 없어보입니다. 그래서 `$$props`와 `$$restProps`를 사용합니다
+
+`$$props`와 `$$restProps`를 사용하면 부모에서 내린 prop에 대한 정의 없이 자식 컴포넌트에서 사용 가능합니다
+
+### 부모
+
+- 부모가 자식으로 value, type, maxLength, color를 내립니다
+
+```md
+<script>
+  import ExampleInput from "./ExampleInput.svelte";
+  let inputValue = "";
+</script>
+
+<ExampleInput
+  bind:value={inputValue}
+  type="password"
+  maxLength="3"
+  color="red"
+/>
+```
+
+### 자식
+
+- 자식은 부모에서 준 value, type, maxLength, color를 사용합니다
+- type, maxLength는 html에서 사용하는 속성으로 재가공 없이 다시 자식 컴포넌트에서 사용합니다 이럴때 `$$props`또는 `$$restProps`를 사용합니다
+
+```md
+<script>
+  export let value;
+  export let color;
+  // $$props; ->
+  // $$restProps; -> Input내부에서 value, color는 사용되지 않으니까 별도의속성으로 전개됨
+  // 속성과 중복될수있음 0> 분리해서 사용할라면 restProps
+
+  // 컴포넌트를 통해 부모가 전해준 props을 받을 수 있는데, 모든 데이터를 props로 넣기 귀찮으니까 내장 객체를 넣는데 명시적으로 넣던가 암시적으로 넣던가
+  // 명시적으로 props를 넣은 경우를 제외한 props를 암시적으로넣을
+  // 내장객체이니까 별도의 선언 없이 사용가능
+</script>
+
+<input bind:value style="color: {color};" {...`$$props`} />
+
+<input bind:value style="color: {color};" {...`$$restProps`} />
+```
+
+### $$props와 $$restProps의 차이
+
+- $$props는 부모에서 넘겨준 모든 prop이 $$props를 사용하는 dom의 property로 들어갑니다. 예를 들면 위의 예제의 경우 value, color, type, maxLength가 아래와 같이 들어갑니다
+
+```html
+<input type="password" maxlength="3" color="red" style="color: red" />
+```
+
+color라는 input에서 사용하지 않는 property까지 들어갑니다 이는 버그를 만들수 있는 방법일 수 있습니다
+
+그래서 `$$restProps`를 사용합니다
+
+`$$restProps`는 컴포넌트에 명시적으로 정의한 property를 제외한 나머지를 dom의 property에 주입합니다
+
+```html
+<!-- svelte에서 아래와 같이 value, color를 명시적으로 정의하고 나머지를  restProps를 이용하여 주입하면 -->
+<input bind:value style="color: {color};" {...`$$restProps`} />
+
+<!-- 실제 html dom에는 아래와 같이 렌더됩니다 (restProps 사용한 경우) -->
+<input type="password" maxlength="3" style="color: red" />
+
+<!-- $$props를 사용한 경우 -->
+<input type="password" maxlength="3" color="red" style="color: red" />
+```
+
 <TagLinks />
 
 <Comment />
