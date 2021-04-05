@@ -1459,6 +1459,190 @@ action = (node: HTMLElement, parm: any) => {
 </style>
 ```
 
+## 컴포넌트 재귀 호출 (self)
+
+- svelte에서는 자기자신 컴포넌트를 재귀적으로 호출할 수 있다
+
+### App.svelte
+
+```md
+<script>
+	import Address from './Address.svelte';
+	let address = {
+		label: '대한민국',
+		children: [
+			{
+				label: '경기',
+				children: [{label: '수원'}, {label: '하남'}]
+			},{label: '강원', children: [{label:'강릉'}, {label: '속초'}]}
+		]
+	}
+</script>
+
+<Address {address} />
+```
+
+### Address.svelte
+
+```md
+<script>
+	export let address;
+</script>
+
+<ul>
+	<li>
+		{address.label}
+		{#if address.children}
+			<!-- children이 있으면 self로 Address 컴포넌트 재귀 호출 -->
+			{#each address.children as address}
+				<!-- 		자기자신 (Address.svelte) 호출		 -->
+				<svelte:self {address} />
+			{/each}
+		{/if}
+		</li>
+</ul>
+```
+
+## 동적 컴포넌트 랜더링
+
+- 작성중
+
+## window
+
+```md
+<script>
+	let key = '';
+	let innerWidth;
+</script>
+<!-- window 객체 안쓰고 이벤트 연결 -->
+
+<svelte:window
+on:keydown={e => key = e.key}
+bind:innerWidth
+bind:innerHeight
+bind:outerWidth
+bind:online
+bind:scrollX
+bind:scrollY
+/>
+```
+
+## svelte head body
+
+- svelte에서는 head에 바로 접근 할 수 있다.
+- 상대경로로 head 내에 들어가는 파일들은 public 파일에 넣어줘야하다 (내부환경에 접근 불가) `public/main.css`
+
+```md
+<svelte:head>
+
+<link rel="stylesheet" href="./main.css">
+</svelte:head>
+
+<svelte:body on:mousemove={e => console.log(e.clientX, e.clientY)} />
+```
+
+## options (immutable)
+
+props으로 객체를 줄경우
+
+- 컴포넌트에 가변성 데이터 (객체, 배열, 함수) 데이터를 넣으면 데이터가 항상 바뀔 것이라고 인지한다
+- 객체의 일부분만 바뀌어도 svelte는 객체의 전체가 바뀐 것으로 인지하여
+- 해당 객체를 참조하고 있는 모든 element를 리렌더링 한다 (afterUpdate가 element가 객체를 참조하고 있는 수만큼 재실행 된다)
+- 그래서 prop으로 객체가 아닌 원시값 (string, number)로 내려주거나 가변적인 값을 불변한다고 지정하는 svelte에 있는 options을 사용한다
+
+### App.svelte
+
+```md
+<script>
+import Fruit from './Fruit.svelte';
+
+let fruits = [{id: 1, name: 'apple'}, {id: 2, name: 'banana'}, {id: 3, name: 'orange'}]
+</script>
+
+<!-- prop으로 내려주는 객체에 새로운 객체 주입 -->
+
+<button on:click={() => {
+fruits[0] = {id: 1, name: 'apple'};
+fruits = fruits
+}}>
+update!
+</button>
+
+{#each fruits as fruit (fruit.id)}
+<Fruit {fruit} />
+{/each}
+```
+
+### Fruit.svelte
+
+```md
+<script>
+	import {afterUpdate} from 'svelte';
+	export let fruit;
+	// immutable을 사용하면 fruit는 가변하는 값이 아닌 불변하는 값으로 인지
+	// 불변하는 값으로 인지했는데 새로운 데이터가 들어오게 되면 svelte는 기존 fruit === 새로운 fruit 비교 (참조하는 메모리 위치가 같으면 true)
+	// apple은 참조 주소가 다르니 false임으로 갱신되고 banana, orange는 주소값이 바뀌지 않아 true이므로 갱신되지 않는다
+
+	let updateCount = 0;
+
+	afterUpdate(() => {
+		// svelte.options 가 없다면 진짜로 바뀌는 apple 말고도 banana, orange도 update된것으로 인지한다 (fruit 객체의 주소가 바뀌었기 때문에 전체가 변한 것이라고 인지하기 때문)
+		updateCount += 1;
+	})
+</script>
+
+<!-- 불필요한 리렌더링을 막기위해 아래 코드 주입 -->
+
+<svelte:options immutable />
+
+<div>{fruit.name}({updateCount})</div>
+```
+
+## options (accessors)
+
+- 외부에서 특정 컴포넌트의 값에 접근하기 위해 사용
+- accessors와 immutable 동시 사용 가능
+
+### Inner.svelte
+
+```md
+<script>
+	let age = 29;
+	export let name = 'nkh'
+	export function getAge() {
+		console.log(age);
+	}
+</script>
+
+<svelte:options accessors />
+
+<h1 on:click={getAge}>{name}</h1>
+```
+
+### App.svelte
+
+```md
+<script>
+	import Inner from './Inner.svelte';
+
+	let innerComponent;
+
+	function handler() {
+		// 원래는 외부의 컴포넌트가 내부의 컴포넌트 값을 사용하는 것이 불가능하다
+		// 그러나 내부의 컴포넌트에서 <svelte:options accessors />를 열어주면 내부 컴포넌트의 값을 사용할 수 있다 (대신 innerComponent 값에 export을 해줘야한다)
+		console.log(innerComponent);
+		console.log(innerComponent.name); // 'nkh'
+		console.log(innerComponent.getAge()); // 29
+	}
+</script>
+
+<button on:click={handler}>
+	Toggle!
+</button>
+<!-- bind:this로 innerComponent 값이 InnerComponent 컴포넌트가 된다 -->
+<InnerComponent bind:this={innerComponent}>
+```
+
 <TagLinks />
 
 <Comment />

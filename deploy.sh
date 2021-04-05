@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "feat: svelte action"
+git commit -m "feat: svelte self window head options"
 git push origin master
 
 # build
