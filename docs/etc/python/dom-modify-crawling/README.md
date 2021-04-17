@@ -80,7 +80,7 @@ driver.get('https://www.google.com/')
 # # js 실행
 # driver.execute_script('alert(‘hello world!!’);')
 id = "'osc9245@naver.com'"
-password = "'db124578'"
+password = "xxxxxxxx"
 driver.get('https://nid.naver.com/nidlogin.login')
 driver.execute_script("document.getElementsByName('id')[0].value=" + id)
 driver.execute_script("document.getElementsByName('pw')[0].value=" + password)
