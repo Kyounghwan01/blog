@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: 4월 개발일기 추가"
+git commit -m "docs: svelte 글로벌 scss 추가"
 git push origin master
 
 # build
