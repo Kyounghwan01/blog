@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: svelte 글로벌 scss 추가"
+git commit -m "docs: nginx 사용법"
 git push origin master
 
 # build

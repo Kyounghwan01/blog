@@ -1,12 +1,12 @@
 ---
-title: svelte - 스벨트 기본 문법
+title: 스벨트 기본 문법
 meta:
   - name: description
-    content: svelte - 스벨트 기본 문법, 조건문, 반복문, 반응성, store, writable
+    content: svelte, 스벨트 기본 문법, 조건문, 반복문, 반응성, store, writable
   - property: og:title
-    content: svelte - 스벨트 기본 문법, 조건문, 반복문, 반응성, store, writable
+    content: svelte, 스벨트 기본 문법, 조건문, 반복문, 반응성, store, writable
   - property: og:description
-    content: svelte - 스벨트 기본 문법, 조건문, 반복문, 반응성, store, writable
+    content: svelte, 스벨트 기본 문법, 조건문, 반복문, 반응성, store, writable
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Svelte/svelte-basic/
 tags: ["svelte"]

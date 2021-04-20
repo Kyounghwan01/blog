@@ -1,12 +1,12 @@
 ---
-title: svelte - 글로벌 scss 적용하는 법
+title: 글로벌 scss 적용하는 법
 meta:
   - name: description
-    content: svelte - 글로벌 scss 적용하는 법
+    content: 글로벌 scss 적용하는 법, svelte, scss, svelte-preprocess
   - property: og:title
-    content: svelte - 글로벌 scss 적용하는 법
+    content: 글로벌 scss 적용하는 법, svelte, scss, svelte-preprocess
   - property: og:description
-    content: svelte - 글로벌 scss 적용하는 법
+    content: 글로벌 scss 적용하는 법, svelte, scss, svelte-preprocess
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Svelte/global-scss/
 tags: ["svelte"]
