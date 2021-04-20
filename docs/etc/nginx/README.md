@@ -57,7 +57,7 @@ react를 예로 들면 react 프로젝트에서 `yarn build`를 실행하면 `sr
 
 편의를 위해 `dist`파일 위치를 아래와 같이 가정합니다 `/User/Joshua/Desktop/source/Nginx-test/public/dist` (절대경로 써주셔야해요!)
 
-```conf
+```
 http {
   include /etc/nginx/mime.types;
   server_tokens off;
