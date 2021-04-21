@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: nginx 사용법"
+git commit -m "docs: svelte 운영환경 콘솔제거, 절대경로 설정 추가"
 git push origin master
 
 # build
