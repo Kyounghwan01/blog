@@ -7,8 +7,7 @@
 
 * svelte 이론 공부
 * svelte trello clone web (토이프로젝트) 작업 중
-
-## 에러 해결 모음
+* 정규직 전환 이후 많아진 일의 양.. 집에 오면 내 공부를 할 수가 없네 ㅠ
 
 ### 구글 애드센스
 
@@ -24,4 +23,11 @@
 
 - [svelte 기본](https://kyounghwan01.github.io/blog/Svelte/svelte-basic/)
 - 위 포스팅 기능별로 쪼개는 작업 필요
+- [절대경로 사용법](https://kyounghwan01.github.io/blog/Svelte/alias/)
+- [글로벌 scss 적용](https://kyounghwan01.github.io/blog/Svelte/global-scss/)
+- [production 환경에서 console 제거하기](https://kyounghwan01.github.io/blog/Svelte/production-remove-console/)
 - svelte trello clone web 작업 중
+
+## nginx
+
+- [mac에서 nginx 사용법](https://kyounghwan01.github.io/blog/etc/nginx/)

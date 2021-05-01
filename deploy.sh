@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: svelte 운영환경 콘솔제거, 절대경로 설정 추가"
+git commit -m "fix: 4월 일기 수정"
 git push origin master
 
 # build
