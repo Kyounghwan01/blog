@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "fix: 4월 일기 수정"
+git commit -m "docs: react boolean 값 안바뀔때 함수형 업데이트 사용 추가"
 git push origin master
 
 # build
