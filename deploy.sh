@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: 앱 딥링크 추가"
+git commit -m "docs: 동영상 배속 추가"
 git push origin master
 
 # build
