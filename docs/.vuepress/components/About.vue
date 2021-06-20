@@ -69,10 +69,61 @@
               </tr>
               <tr>
                 <td class="td-center"><strong>projects</strong></td>
-                <td>제휴사 랜딩 페이지 관리 어드민화</td>
+                <td>핸드폰 액정 안심 보험 개발 <br /> 자동차 사고 보상(긴급출동) 개발 <br /> 제휴사 랜딩 페이지 관리 어드민화</td>
               </tr>
             </tbody>
           </table>
+
+          <div class="experinces-description">
+            <div class="experinces-description-content">
+              <div class="experinces-description__content__header">
+                핸드폰 액정 안심 보험 개발
+              </div>
+              <div class="experinces-description__content__desc">
+                <div class="experinces-description__content__desc__title">
+                  <a href="https://www.carrotins.com/mobile/calculation/general/crystalDamage/intro/" target="_blank">핸드폰 액정 안심 보험</a> 모바일 페이지 개발<br/>
+                </div>
+                <ul>
+                  <li>21.05 ~ 21.06</li>
+                  <li>
+                    <div class="skill-tag">next</div>
+                    <div class="skill-tag">mobx</div>
+                    <div class="skill-tag">styled-components</div>
+                  </li>
+                  <li>앱 네이티브 기능(폰 내부정보 가져오기, permission)을 위한 앱과 웹앱 간 브릿지 작업</li>
+                  <li>공통 컴포넌트 정리</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="experinces-description">
+            <div class="experinces-description-content">
+              <div class="experinces-description__content__header">
+                자동차 사고 보상(긴급출동) 개발
+              </div>
+              <div class="experinces-description__content__desc">
+                <div class="experinces-description__content__desc__title">
+                  <a href="https://www.carrotins.com/mobile/reward/accident/reception/" target="_blank">자동차 사고시 긴급출동, 현장출동, 출동 현황, 사고 처리결과</a> 모바일 페이지 개발<br/>
+                </div>
+                <ul>
+                  <li>21.03 ~ 21.06</li>
+                  <li>
+                    <div class="skill-tag">next</div>
+                    <div class="skill-tag">mobx</div>
+                    <div class="skill-tag">styled-components</div>
+                    <div class="skill-tag">naverMap</div>
+                    <div class="skill-tag">Geolocation API</div>
+                  </li>
+                  <li>앱 네이티브 기능(위치 permission)을 위한 앱과 웹앱 간 브릿지 작업</li>
+                  <li>Geolocation API를 이용하여 현재 위치 가져오기</li>
+                  <li>가져온 위치 기반 naver map으로 실시간 위치 정보 화면 개발</li>
+                  <li>sk 네트웍스 협업(긴급출동시(급유,견인 등) skn 정보 활용)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div class="experinces-description">
             <div class="experinces-description-content">
               <div class="experinces-description__content__header">
