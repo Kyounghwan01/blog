@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "test: git token test"
+git commit -m "docs: 6월 개발일기"
 git push origin master
 
 # build

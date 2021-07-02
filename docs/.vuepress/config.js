@@ -54,6 +54,10 @@ module.exports = {
             text: "toy-project",
             items: [
               {
+                text: "트렐로 클론 (svelte)",
+                link: "https://svelte-trello.netlify.app/"
+              },
+              {
                 text: "매출분석 (vue + aws-lambda)",
                 link: "https://sales-statistics.netlify.com/"
               },
