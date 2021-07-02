@@ -5,7 +5,7 @@
 - 6월 블로그 방문자 92,154명, 전체 기간 472,364명
   - 이전 컨텐츠가 seo 점수를 높게 받아 더 많은 유입량을 가져오고 있음 (과거 컨텐츠 내용 보강 필요)
 
-<img src="~@source/.vuepress/public/image/2021_06_user_count.png" width="180" height="300">
+<center><img src="~@source/.vuepress/public/image/2021_06_user_count.png" width="180" height="300" /></center>
 
 ## 배운점
 

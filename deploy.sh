@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: 6월 개발일기"
+git commit -m "docs: md 이미지 삽입 리사이즈 추가"
 git push origin master
 
 # build
