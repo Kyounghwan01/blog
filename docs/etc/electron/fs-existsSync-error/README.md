@@ -40,10 +40,19 @@ const { desktopCapturer } = window.require("electron");
 const electron = window.require("electron");
 ```
 
+## 다른 해결법
+
+서칭을 해보니 ``window.require(xxx)`로 해결하는 방법이 좋지 않은 방법이라고 하네요.
+
+그 레퍼런스에서는 yarn eject를 해서 webpack 설정을 바꾸는 방법으로 해결하고 있습니다.
+
+저는 eject해서 얻는 장점보다 더 단점이 많다고 생각하는 사람이라 따라하지는 않았습니다 링크 걸어드리니 참조 하시면 좋을 것 같습니다~
+
+- [electron/electron#7300 (comment)](https://github.com/electron/electron/issues/7300#issuecomment-496006781)
+
 ## 참고
 
-- (Requiring electron outside of main.js causes a TypeError #7300
-  )[https://github.com/electron/electron/issues/7300]
+- [Requiring electron outside of main.js causes a TypeError #7300](https://github.com/electron/electron/issues/7300)
 
 <TagLinks />
 

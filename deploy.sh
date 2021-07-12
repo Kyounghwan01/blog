@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: 일렉트론 에러 2종 추가"
+git commit -m "docs: 오타 수정"
 git push origin master
 
 # build

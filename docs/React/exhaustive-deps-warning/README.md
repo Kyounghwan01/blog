@@ -2,11 +2,11 @@
 title: React.js - exhaustive-deps-warning 해결법
 meta:
   - name: description
-    content: React.js - exhaustive-deps-warning
+    content: React.js - exhaustive-deps-warning, react, react-hook
   - property: og:title
-    content: React.js - exhaustive-deps-warning
+    content: React.js - exhaustive-deps-warning, react, react-hook
   - property: og:description
-    content: React.js - exhaustive-deps-warning
+    content: React.js - exhaustive-deps-warning, react, react-hook
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/exhaustive-deps-warning/
 tags: ["react"]
@@ -50,7 +50,6 @@ useEffect(() => {
 const getInitNoti = async () => {
   const res = await apis.notification.getNotice(params);
   setNotiData(res.data.user_notices);
-  }));
 };
 
 useEffect(() => {
@@ -64,7 +63,6 @@ useEffect(() => {
 const getInitNoti = async () => {
   const res = await apis.notification.getNotice(params);
   setNotiData(res.data.user_notices);
-  }));
 };
 
 useEffect(() => {
@@ -78,7 +76,6 @@ useEffect(() => {
 const getInitNoti = useCallback(async () => {
   const res = await apis.notification.getNotice(params);
   setNotiData(res.data.user_notices);
-  }));
 }, [params]);
 
 useEffect(() => {
