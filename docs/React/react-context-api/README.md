@@ -14,16 +14,11 @@ tags: ["react"]
 
 # react context api 개념 & 예시
 
-> vue로 프로젝트를 진행 중, 새로운 프로젝트가 추가되어 이번에는 react로 진행하기로 하였습니다
-> state management을 예전처럼 redux로 하려했으나 같이 일하는 프론트 개발자분이 react를 전혀 모르셔서 redux까지 업무에 포함시키는 것이 무거울 것이라 생각하여 다른 상태관리방법이 없는지 찾던 중,
-> context api가 눈에 띄여 공부해보았고, 그 개념과 예시를 남깁니다
-
 ## context api란?
 
-> react는 16.3 버전부터 정식적으로 [context api](https://reactjs.org/docs/context.html)를 지원하고 있습니다. 일반적으로 부모와 자식간 props를 날려 state를 변화시키는 것과는 달리 context api는 컴포넌트간 간격이 없습니다.
+> react는 16.3 버전부터 정식적으로 [context api](https://reactjs.org/docs/context.html)를 지원하고 있습니다. 일반적으로 부모와 자식간 props를 날려 state를 변화시키는 것과는 달리 context api는 컴포넌트 간 간격이 없습니다.
 > 즉, 컴포넌트를 건너띄고 다른 컴포넌트에서 state, function을 사용할 수 있습니다.
-> 또한 redux의 많은 어려운 개념보다 context api는 딱 3가지의 개념만 알면 바로 적용가능합니다.
-> `Provider`, `Consumer`, `createContext`이 3가지만 알면 되죠
+> 또한 redux의 많은 어려운 개념보다 context api는 `Provider`, `Consumer`, `createContext` 개념만 알면 적용가능합니다.
 
 ## 언제 쓰는가
 
@@ -31,11 +26,12 @@ context는 컴포넌트안에서 전역적으로 데이터를 공유하도록 �
 
 ## API
 
+- api에 대한 정보만 파악하시고 하단에 예제가 있으니 그때 따라하면서 습득하시면 좋을 것 같습니다.
+
 ### React.createContext
 
-```
+```js
 const MyStore = React.createContext(defaultValue);
-
 ```
 
 - context 객체를 만듭니다. 컴포넌트가 이 context를 가지려면 해당 컴포넌트 상위에 `provider`로 부터 context를 정의한 변수 `myStore`를 감싸면 됩니다
@@ -270,6 +266,183 @@ TT.defaultProps = {
 
 ```
 ````
+
+## 모달 만들기 예제
+
+- 모달은 portal 기능을 사용해서 최대한 컴포넌트가 영향을 안받는 위치에 모달을 생성 합니다
+- context api를 이용해서 전역에서 사용하도록 개발합니다
+- context에 여러 props을 받아 모달내에서 props을 받도록 개발합니다
+- nextJS를 이용해서 만들었습니다 react를 사용하시는 분은 그에 맞게 개발 하시면 됩니다!
+
+### context
+
+#### context/Modal/Provider.js
+
+- 먼저 modal context 파일을 만듭니다
+
+```js
+// /context/Modal/Provider.js
+import React, { useState } from "react";
+
+export const ModalContext = React.createContext();
+
+const ModalProvider = ({ children }) => {
+  const [data, setData] = useState({
+    component: null,
+    modalProps: {},
+    isOpen: false
+  });
+
+  const showModal = ({ component, modalProps = {} }) => {
+    setData({ ...data, component, modalProps, isOpen: true });
+  };
+
+  const hideModal = () => {
+    setData({ ...data, isOpen: false });
+  };
+
+  return (
+    <ModalContext.Provider value={{ ...data, showModal, hideModal }}>
+      {children}
+    </ModalContext.Provider>
+  );
+};
+
+export default ModalProvider;
+```
+
+- 모달에 들어올 컴포넌트, props, 모달이 열리고 닫히는 함수, 모달의 열고 닫는 flag 값을 세팅합니다.
+
+#### context/ModalRoot.js
+
+- 모달이 들어갈 컴포넌트를 만듭니다
+
+```js
+import React from "react";
+import { ModalContext } from "./Modal/Provider";
+import Portal from "../components/Portal";
+
+const ModalRoot = () => {
+  const {
+    component: Component,
+    isOpen,
+    hideModal,
+    modalProps
+  } = React.useContext(ModalContext);
+
+  return (
+    Component &&
+    isOpen && (
+      <Portal selector="#portal">
+        <Component {...modalProps} isOpen={isOpen} hideModal={hideModal} />
+      </Portal>
+    )
+  );
+};
+
+export default ModalRoot;
+```
+
+#### context/index.js
+
+```js
+import ModalRoot from "./ModalRoot";
+import ModalProvider, { ModalContext } from "./Modal/Provider";
+
+export { ModalRoot, ModalProvider, ModalContext };
+```
+
+### components/Portal.js
+
+- 포탈 컴포넌트를 만듭니다 selector로 들어오는 값에 portal이 들어갑니다
+
+```js
+import ReactDOM from "react-dom";
+
+const Portal = props => {
+  const element =
+    typeof window !== "undefined" && document.querySelector(props.selector);
+  return element && props.children
+    ? ReactDOM.createPortal(props.children, element)
+    : null;
+};
+
+export default Portal;
+```
+
+### components/Modal1.js
+
+- 모달에 들어갈 컴포넌트
+
+```js
+function Modal1({ hideModal, title, desc }) {
+  return (
+    <>
+      <div>{title}</div>
+      <div>{desc}</div>
+      <div>
+        <button type="button" onClick={hideModal}>
+          끔
+        </button>
+      </div>
+    </>
+  );
+}
+export default Modal1;
+```
+
+### pages/app.js
+
+```js
+// pages/_app.js
+import { ModalProvider } from "../context";
+
+function App({ Component, pageProps }) {
+  return (
+    <ModalProvider>
+      <div id="portal"></div>
+      <Component {...pageProps} />
+    </ModalProvider>
+  );
+}
+
+export default App;
+```
+
+### pages/index.js
+
+```js
+import { useContext } from "react";
+import { ModalContext, ModalRoot } from "../context";
+import styles from "../styles/Home.module.css";
+
+export default function Home() {
+  // context에서 받은 함수를 세팅합니다
+  const { showModal, hideModal } = useContext(ModalContext);
+
+  const Modal1Up = () => {
+    // dynamic import
+    import("../components/Modal1").then(({ default: Component }) => {
+      showModal({
+        // context로 컴포넌트와 props를 넘깁니다
+        component: Component,
+        modalProps: {
+          title: "h2h2h2h2h2h2",
+          desc: "h3h3h3h3h3"
+        }
+      });
+    });
+  };
+
+  return (
+    <div className={styles.container}>
+      <ModalRoot />
+      <button onClick={Modal1Up}>모달1 업</button>
+      <button onClick={hideModal}>모달하이드</button>
+    </div>
+  );
+}
+```
 
 <TagLinks />
 

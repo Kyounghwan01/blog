@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: 오타 수정"
+git commit -m "docs: context api 내용 보강"
 git push origin master
 
 # build
