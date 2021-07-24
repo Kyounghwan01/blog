@@ -2,11 +2,11 @@
 title: JavaScript - JSON 객체 Key값 동적 할당하기
 meta:
   - name: description
-    content: JavaScript - JSON 객체 Key값 동적 할당하기
+    content: JavaScript - JSON 객체 Key값 동적 할당하기, js, html, css, 웹개발, 개발자, 프론트엔드, 백엔드, web
   - property: og:title
-    content: JavaScript - JSON 객체 Key값 동적 할당하기
+    content: JavaScript - JSON 객체 Key값 동적 할당하기, js, html, css, 웹개발, 개발자, 프론트엔드, 백엔드, web
   - property: og:description
-    content: JavaScript - JSON 객체 Key값 동적 할당하기
+    content: JavaScript - JSON 객체 Key값 동적 할당하기, js, html, css, 웹개발, 개발자, 프론트엔드, 백엔드, web
   - property: og:url
     content: https://kyounghwan01.github.io/blog/JS/JSbasic/jsonDynamicAllocation/
 tags: ["JS"]

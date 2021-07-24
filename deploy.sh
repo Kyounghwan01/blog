@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: getElementById 내용 보강"
+git commit -m "docs: canvas 에러 추가"
 git push origin master
 
 # build
