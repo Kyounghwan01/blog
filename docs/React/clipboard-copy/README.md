@@ -49,7 +49,7 @@ export default function ClipboardCopy() {
     textarea.value = text;
     textarea.style.top = 0;
     textarea.style.left = 0;
-    textarea.style.display = "fixed";
+    textarea.style.position = "fixed";
 
     // 흐름 3.
     document.body.appendChild(textarea);
