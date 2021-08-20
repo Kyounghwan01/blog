@@ -17,6 +17,7 @@ jobs:
         BUILD_SCRIPT: yarn && yarn docs:build
         TARGET_BRANCH: gh-pages
         BUILD_DIR: docs/.vuepress/dist
+      #
       # run: |
       #   cd docs/.vuepress/dist
       #   git config --global user.email "noh5524@gmail.com"
