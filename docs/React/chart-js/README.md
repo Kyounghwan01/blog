@@ -1,3 +1,19 @@
+---
+title: chartjs 예시
+meta:
+  - name: description
+    content: chartjs 예시
+  - property: og:title
+    content: chartjs 예시
+  - property: og:description
+    content: chartjs 예시
+  - property: og:url
+    content: https://kyounghwan01.github.io/blog/React/chart-js
+tags: ["react"]
+---
+
+# chartJS 예시
+
 react-chartjs radar 차트 예시
 
 
@@ -96,3 +112,8 @@ const RadarChart = () => {
 export default RadarChart;
 
 ```
+
+
+<TagLinks />
+
+<Comment />

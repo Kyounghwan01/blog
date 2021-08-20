@@ -8,8 +8,8 @@ meta:
   - property: og:description
     content: react에서 canvas에 image 넣을 때 에러 해결법, Failed to execute drawImage on CanvasRenderingContext2D The provided value is not of type (CSSImageValue or HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas or VideoFrame), js, html, css, 웹개발, 개발자, 프론트엔드, 백엔드, web, react
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/JS/JSbasic/addEventListener/
-tags: ["JS"]
+    content: https://kyounghwan01.github.io/blog/React/canvas-drawImage-error/
+tags: ["react"]
 ---
 
 # react에서 canvas에 image 넣을 때 에러 해결법
