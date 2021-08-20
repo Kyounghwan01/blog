@@ -1,0 +1,22 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Install and Build
+      run: |
+        yarn
+        yarn docs:build
+    - name: Deploy Build Files
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      run: |
+        cd docs/.vuepress/dist
+        git init
+        git add -A
+        git commit -m 'deploy with vuepress'
+        git push -f git@github.com:Kyounghwan01/blog.git master:gh-pages
