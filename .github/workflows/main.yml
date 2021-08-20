@@ -9,8 +9,8 @@ jobs:
 
     - name: Install and Build
       run: |
-        npm install
-        npm run docs:build
+        yarn
+        yarn docs:build
 
     - name: Deploy Build Files
       env:

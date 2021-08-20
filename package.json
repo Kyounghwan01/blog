@@ -23,7 +23,7 @@
     "@vuepress/plugin-last-updated": "^1.5.2",
     "vue-google-adsense": "^1.9.2",
     "vue-script2": "^2.1.0",
-    "vuepress": "^1.5.2",
+    "vuepress": "^1.8.2",
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "dependencies": {
