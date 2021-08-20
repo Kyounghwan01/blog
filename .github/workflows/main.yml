@@ -7,11 +7,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
+    - name: Install and Build
+      run: |
+        npm install
+        npm run docs:build
+
+    - name: Deploy Build Files
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: username/repo
-        TARGET_BRANCH: master
-        BUILD_SCRIPT: yarn && yarn docs:build
-        BUILD_DIR: docs/.vuepress/dist/
+      run: |
+        cd docs/.vuepress/dist
+        git init
+        git add -A
+        git commit -m 'deploy with vuepress'
+        git push -f git@github.com:Kyounghwan01/blog.git master:gh-pages
