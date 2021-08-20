@@ -1,7 +1,11 @@
 module.exports = function(dirName) {
+  // const envValue = process.env.NODE_ENV
+  //   ? { "43": 4, "61": 6, "54": 5 }
+  //   : { "43": 3, "61": 1, "54": 4 };
+
   const envValue = process.env.NODE_ENV
     ? { "43": 4, "61": 6, "54": 5 }
-    : { "43": 3, "61": 1, "54": 4 };
+    : { "43": 4, "61": 6, "54": 5 };
 
   const fs = require("fs");
 
@@ -41,7 +45,8 @@ module.exports = function(dirName) {
     });
   }
 
-  const filePath = process.env.NODE_ENV ? `./docs/${dirName}` : `./${dirName}`;
+  // const filePath = process.env.NODE_ENV ? `./docs/${dirName}` : `./${dirName}`;
+  const filePath = `./docs/${dirName}`;
 
   getFiles(filePath);
   const res = listsNesting.concat(nesting).concat(once);
