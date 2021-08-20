@@ -7,18 +7,21 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Install and Build
-      run: |
-        yarn
-        yarn docs:build
+    # - name: Install and Build
+    #   run: |
+    #     yarn
+    #     yarn docs:build
     - name: Deploy Build Files
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      run: |
-        cd docs/.vuepress/dist
-        git config --global user.email "noh5524@gmail.com"
-        git config --global user.name "Kyounghwan01"
-        git init
-        git add -A
-        git commit -m 'deploy with vuepress'
-        git push -f git@github.com:Kyounghwan01/blog.git master:gh-pages
+        BUILD_SCRIPT: yarn && yarn docs:build
+        TARGET_BRANCH: gh-pages
+        BUILD_DIR: docs/.vuepress/dist
+      # run: |
+      #   cd docs/.vuepress/dist
+      #   git config --global user.email "noh5524@gmail.com"
+      #   git config --global user.name "Kyounghwan01"
+      #   git init
+      #   git add -A
+      #   git commit -m 'deploy with vuepress'
+      #   git push -f git@github.com:Kyounghwan01/blog.git master:gh-pages
