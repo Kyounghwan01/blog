@@ -14,6 +14,7 @@ const createSidebar = () => {
   for (const route of routes) {
     Object.assign(sidebar, require("../" + route));
   }
+  console.log(sidebar);
   return sidebar;
 };
 

@@ -5,7 +5,7 @@ set -e
 
 git pull
 git add -A
-git commit -m "docs: 오타 수정"
+git commit -m "feature: github action 자동배포"
 git push origin master
 
 # build
