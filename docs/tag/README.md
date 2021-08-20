@@ -1,6 +1,0 @@
-# Tag
-
-<TagList />
-<TagLinks />
-
-<Comment />
