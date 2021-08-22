@@ -2,3 +2,5 @@ node_modules
 .DS_store
 deploy.sh
 yarn.lock
+.cache
+.temp

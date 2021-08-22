@@ -33,7 +33,7 @@ module.exports = {
   "google-site-verification": "J993cuJJ-yFppfJKY8rMx3SzsN-3ZMBEM4uY7Jj075A",
   themeConfig: {
     nav: [
-      { text: "Tag", link: "/tag/" },
+      { text: "Tag", link: "/Tag/" },
       { text: "React", link: "/React/" },
       { text: "Vue", link: "/Vue/" },
       { text: "Svelte", link: "/Svelte/" },
@@ -71,7 +71,8 @@ module.exports = {
         ]
       }
     ],
-    sidebar: createSidebar()
+    sidebar: createSidebar(),
+    lastUpdated: '최근변경일',
   },
   base: "/blog/",
   plugins: [
