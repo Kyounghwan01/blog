@@ -14,6 +14,6 @@ features:
   - title: 개발일기
     details: 회사 생활 중 개발 에러모음 / 개발 공부 내역
   - title: Info
-    details: About, Github, 경력 등등
+    details: About, Github, 경력 등등awdawdawd
 footer: Copyright 2021. Kyounghwan all rights reserved.
 ---
