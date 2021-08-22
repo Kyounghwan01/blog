@@ -10,6 +10,10 @@
 
 https://kyounghwan01.github.io/blog/
 
+## dev 블로그 서버
+
+https://dev-kyounghwan01.netlify.app/
+
 ## 목적
 
 - 오류와 해결한 과정을 기록합니다.
