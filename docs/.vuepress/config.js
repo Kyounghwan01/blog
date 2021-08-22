@@ -74,7 +74,7 @@ module.exports = {
     sidebar: createSidebar(),
     lastUpdated: '최근변경일',
   },
-  base: "/blog/",
+  base: "/",
   plugins: [
     // [
     //   "vuepress-plugin-google-adsense",
