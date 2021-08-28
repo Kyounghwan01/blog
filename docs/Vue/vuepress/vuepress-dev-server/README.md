@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: vuePress dev 서버 만들기, github, actions, vue, vuepress, ci, cd
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-github-actions/
+    content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-dev-server/
 tags: ["vuepress"]
 ---
 
@@ -60,7 +60,6 @@ https://www.netlify.com/ 여기에 접속하시고 New site from Git 클릭 후 
 이후 사용하는 리포를 클릭후 Branch to deploy에 develop-gh-pages 브랜치를 넣어줍니다. 나머지는 아무것도 건들이지 않고 Deploy site 버튼을 눌러주면 완료됩니다.
 
 위 방법을 이상없이 완료하시면 develop-gh-pages에 코드가 푸시되면 netlify에서 코드 푸시를 감지하여 배포해줍니다.
-
 
 <TagLinks />
 
