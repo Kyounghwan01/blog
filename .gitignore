@@ -4,3 +4,4 @@ deploy.sh
 yarn.lock
 .cache
 .temp
+.idea
