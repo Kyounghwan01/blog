@@ -72,7 +72,7 @@ module.exports = {
       }
     ],
     sidebar: createSidebar(),
-    lastUpdated: '최근변경일',
+    lastUpdated: "최근변경일"
   },
   base: "/blog/",
   plugins: [
@@ -90,6 +90,7 @@ module.exports = {
       }
     ],
     ["@vuepress/back-to-top"],
+    ["vuepress-plugin-code-copy"],
     ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }],
     ["@vuepress/last-updated"]
   ]
