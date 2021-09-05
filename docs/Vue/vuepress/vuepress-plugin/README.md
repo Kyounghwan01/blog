@@ -2,11 +2,11 @@
 title: vuePress plugin 사용법
 meta:
   - name: description
-    content: vuePress plugin 사용법
+    content: vuePress plugin 사용법, plugin-back-to-top, sitemap, last-updated, vuepress-plugin-code-copy
   - property: og:title
-    content: vuePress plugin 사용법
+    content: vuePress plugin 사용법, plugin-back-to-top, sitemap, last-updated, vuepress-plugin-code-copy
   - property: og:description
-    content: vuePress plugin 사용법
+    content: vuePress plugin 사용법, plugin-back-to-top, sitemap, last-updated, vuepress-plugin-code-copy
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-plugin/
 tags: ["vuepress"]
@@ -37,11 +37,13 @@ devDependencies에 vuepress가 설치되어 있는 지 꼭 확인합니다.<br>
 첫번째 플러그인은 vuepress에서 공식 추천한 플러그인 입니다.<br>
 블로그 글을 읽고 스크롤이 바닥에 위치하면 맨위로 올려주는 버튼이 만들어지는 플러그인입니다.
 
-1. 설치
+### 설치
 
-- yarn add -D @vuepress/plugin-back-to-top
+```sh
+yarn add -D @vuepress/plugin-back-to-top
+```
 
-2. 사용
+### 사용
 
 ```js
 // .vuepress/config.js
@@ -56,11 +58,13 @@ module.export = {
 
 두번째 플러그인은 구글 애널리틱스입니다. 블로그에 어떤 글이 인기가 많은지, 어느날, 특정 시간때에 유입량이 많은지 데이터로 보여주는 기능입니다.
 
-1. 설치
+### 설치
 
-- yarn add -D @vuepress/plugin-google-analytics
+```sh
+yarn add -D @vuepress/plugin-google-analytics
+```
 
-2. 사용
+### 사용
 
 ```js
 // .vuepress/config.js
@@ -72,12 +76,11 @@ plugins: [
         ga: // UA-00000000-0
       }
     ],
-    ["@vuepress/back-to-top"],
   ]
 }
 ```
 
-3. ga 등록
+### ga 등록
 
 - [구글 애널리틱스](https://analytics.google.com/analytics) 여기 들어가셔서 블로그 사이트 등록하시면 위와 같이 `UA-00000000-0` 같은 키가 나옵니다. 그 값을 `["@vuepress/google-analytics", {ga: xxxx}]`여기에 넣어주시면 됩니다.
 
@@ -85,23 +88,19 @@ plugins: [
 
 이 기능은 구글 서치콘솔에서 seo 작업을 할때, sitemap이 필요한 경우 html을 xml로 바꿔주는 기능입니다.
 
-1. 설치
+### 설치
 
-- yarn add -D vuepress-plugin-sitemap
+```sh
+yarn add -D vuepress-plugin-sitemap
+```
 
-2. 사용
+### 사용
 
 ```js
 // .vuepress/config.js
 module.export = {
 plugins: [
-    [
-      "@vuepress/google-analytics",
-      {
-        ga: // UA-00000000-0
-      }
-    ],
-    ["@vuepress/back-to-top"],
+    ...,
     ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }]
   ]
 }
@@ -112,27 +111,48 @@ plugins: [
 
 ## last-updated
 
-추가시 게시글의 맨 밑에 게시글의 마지막 수정일이 기재됩니다.
+- 추가시 게시글의 맨 밑에 게시글의 마지막 수정일이 기재됩니다.
+- `lastUpdated` 값을 바꾸면 Last-updated가 원하는 값으로 바뀝니다.
 
-1. 설치
+### 설치
 
-- yarn add -D @vuepress/plugin-last-updated
+```sh
+yarn add -D @vuepress/plugin-last-updated
+```
 
-2. 사용
+### 사용
+
+```js
+// .vuepress/config.js
+module.export = {
+  themeConfig: {
+    lastUpdated: "최근변경일"
+  },
+  plugins: [
+    ...,
+    ["@vuepress/last-updated"],
+  ]
+}
+```
+
+## 코드 복사 플러그인
+
+- 예시 코드 블럭을 만들 경우 해당 코드를 복사하는 기능을 가진 플러그인입니다.
+
+### 설치
+
+```sh
+yarn add -D vuepress-plugin-code-copy
+```
+
+### 사용
 
 ```js
 // .vuepress/config.js
 module.export = {
 plugins: [
-    [
-      "@vuepress/google-analytics",
-      {
-        ga: // UA-00000000-0
-      }
-    ],
-    ["@vuepress/back-to-top"],
-    ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }],
-    ["@vuepress/last-updated"],
+    ...,
+    ["vuepress-plugin-code-copy"],
   ]
 }
 ```
