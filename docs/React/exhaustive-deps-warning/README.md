@@ -40,6 +40,7 @@ useEffect(() => {
 const [count, setCount] = useState(0);
 
 useEffect(() => {
+  if (count > 10) return;
   // state = 0
   setCount(state => state + 1);
 }, []);
