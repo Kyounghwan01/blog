@@ -28,6 +28,7 @@ React Hook useEffect has a missing dependency: 'xxx'. Either include it or remov
 const [count, setCount] = useState(0);
 
 useEffect(() => {
+  if (count > 10) return;
   setCount(count + 1);
 }, [count]);
 ```
