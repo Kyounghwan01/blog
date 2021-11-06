@@ -12,7 +12,7 @@ meta:
 tags: ["react-native", "react"]
 ---
 
-# 모달 만들기
+# video 만들기
 
 react-native에서 video를 재생하는 방법에 대해 알아보겠습니다.
 
