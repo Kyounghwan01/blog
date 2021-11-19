@@ -2,11 +2,11 @@
 title: progress bar 만들기
 meta:
   - name: description
-    content: react-native progress bar 만들기, 애니메이션, number, count, react, Animated
+    content: react-native progress bar 만들기, 애니메이션, number, count, react, Animated, progress-bar
   - property: og:title
-    content: react-native progress bar 만들기, 애니메이션, number, count, react, Animated
+    content: react-native progress bar 만들기, 애니메이션, number, count, react, Animated, progress-bar
   - property: og:description
-    content: react-native progress bar 만들기, 애니메이션, number, count, react, Animated
+    content: react-native progress bar 만들기, 애니메이션, number, count, react, Animated, progress-bar
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-native/animated-number/
 tags: ["react-native"]
@@ -18,7 +18,7 @@ tags: ["react-native"]
 
 - 위 gif와 같이 progress bar를 만들어보겠습니다.
 
-- 예시코드에서는 styled-components를 사용했습니다. styled-components를 사용하지 않으시면 styleSheet로 css 스타일링 하시면 됩니다.
+- 예시코드에서는 `styled-components`를 사용했습니다. `styled-components`를 사용하지 않으시면 `styleSheet`로 css 스타일링 하시면 됩니다.
 
 ## 코드
 
