@@ -7,8 +7,18 @@
     >
       #{{ tag }}
     </router-link>
+
+    <Profile />
   </div>
 </template>
+
+<script>
+import Profile from "./Profile.vue";
+export default {
+  name: "TagLinks",
+  components: { Profile }
+};
+</script>
 
 <style scoped>
 .tags {
