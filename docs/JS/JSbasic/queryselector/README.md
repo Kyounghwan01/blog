@@ -31,8 +31,8 @@ querySelector와 사용 방법은 동일하며 선택자를 선택하여 배열�
 
 아래 코드와 같이 ","를 사용하면 여러 요소를 한번에 가져올 수 있습니다.
 
-```
-querySelectorAll("#id,.class")
+```js
+querySelectorAll("#id,.class");
 ```
 
 ### 예시
@@ -72,17 +72,17 @@ section.style.border = "1px solid #ff0000";
 ### js(querySelectorAll)
 
 ```js
-var sections = document.querySelectorAll("#sections , #sections .section");
+const sections = document.querySelectorAll("#sections , #sections .section");
 console.log(sections.constructor.name);
-for (var i = 0; i < sections.length; i++) {
-  var item = sections.item(i);
+for (const i = 0; i < sections.length; i++) {
+  const item = sections.item(i);
   item.style.border = "1px solid #ff0000";
 }
 ```
 
 for문을 통해 section클래스와 id를 가진 모든 요소에 border가 쳐졌습니다.
 
-Item 메소드를 씀으로 sections의 값들에 접근하고 그중에서 style 속성에 들어가 border를 만드는 과정입니다. Item에 관한 내용은 이후에 포스팅 하겠습니다.
+item 메소드를 씀으로 sections의 값들에 접근하고 그중에서 style 속성에 들어가 border를 만드는 과정입니다. item 관한 내용은 이후에 포스팅 하겠습니다.
 
 [참조](https://www.w3schools.com/jsref/met_nodelist_item.asp)
 
