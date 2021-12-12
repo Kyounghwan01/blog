@@ -1,8 +1,8 @@
 <template>
-  <body>
-    <header class="header">
+  <body class="sementic-example-body">
+    <header class="sementic-example-header">
       <span>header</span>
-      <nav class="nav">
+      <nav class="sementic-example-nav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -10,15 +10,15 @@
         </ul>
       </nav>
     </header>
-    <main class="main">
-      <article class="article">
+    <main class="sementic-example-main">
+      <article class="sementic-example-article">
         article
-        <section class="section">section1</section>
-        <section class="section">section2</section>
+        <section class="sementic-example-section">section1</section>
+        <section class="sementic-example-section">section2</section>
       </article>
-      <aside class="asice">aside</aside>
+      <aside class="sementic-example-aside">aside</aside>
     </main>
-    <footer class="footer">footer</footer>
+    <footer class="sementic-example-footer">footer</footer>
   </body>
 </template>
 
@@ -29,57 +29,57 @@ export default {
 </script>
 
 <style scope>
-body {
+.sementic-example-body {
   padding: 0;
   margin: 10px;
 }
-.header {
+.sementic-example-header {
   height: 50px;
   border: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header span {
+.sementic-example-header span {
   margin-left: 20px;
 }
-.nav {
+.sementic-example-nav {
   border: 1px solid green;
   height: 30px;
 }
-.nav ul {
+.sementic-example-nav ul {
   display: flex;
   margin: 5px 20px 0 0;
   align-items: center;
   justify-content: center;
 }
-.nav ul li {
+.sementic-example-nav ul li {
   margin-right: 50px;
 }
-.main {
+.sementic-example-main {
   border: 1px solid blue;
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
-.article {
+.sementic-example-article {
   padding: 10px;
   border: 1px solid gray;
   width: 90%;
 }
-.section {
+.sementic-example-section {
   padding: 10px;
   border: 1px solid dodgerblue;
   width: 90%;
   margin-bottom: 10px;
   height: 30px;
 }
-.aside {
+.sementic-example-aside {
   padding: 10px;
   border: 1px solid navy;
   width: 10%;
 }
-.footer {
+.sementic-example-footer {
   height: 30px;
   border: 1px solid purple;
 }
