@@ -1,5 +1,5 @@
 ---
-title: Element.getBoundingClientRect() - react애서 사용하기
+title: Element.getBoundingClientRect() - react에서 사용하기
 meta:
   - name: description
     content: Element.getBoundingClientRect(), 뷰포트 기준으로 엘리먼트 위치 알아내기, viewport, javascript, js, getElementById, react 예시
@@ -38,35 +38,35 @@ useRef를 이용하여 dom을 잡고 해당 dom에 getBoundingClientRect 메소�
 top 위치에 따라서 `hideElement`를 true 또는 false로 변경합니다.
 
 ```js
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 function GetBoundingClientReactExample() {
   const [hideElement, setHideElement] = useState(false);
-	const scrollRef = useRef(null);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     if (!scrollRef.current) return;
-		window.addEventListener('scroll', yScrollEvent);
-		return () => {
-			window.removeEventListener('scroll', yScrollEvent);
-		};
+    window.addEventListener("scroll", yScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", yScrollEvent);
+    };
   }, [scrollRef.current]);
 
   const yScrollEvent = () => {
-		const scroll = scrollRef.current.getBoundingClientRect();
+    const scroll = scrollRef.current.getBoundingClientRect();
     console.log(scroll);
-		setHideElement(scroll.top <= -100);
-	};
+    setHideElement(scroll.top <= -100);
+  };
 
   return (
-    <div style={{ height: '300vh', background: '#eee' }} ref={scrollRef}>
+    <div style={{ height: "300vh", background: "#eee" }} ref={scrollRef}>
       {!hideElement && (
-        <div style={{ position: 'fixed', background: '#fff' }}>
+        <div style={{ position: "fixed", background: "#fff" }}>
           <span>스크롤을 일정 수치만큼 내리면 이 영역은 사라집니다!</span>
         </div>
       )}
     </div>
-  )
+  );
 }
 ```
 
