@@ -7,4 +7,5 @@
 - nest
 - sequelize
 - 파이썬
+- firebase
 - 기타 등등

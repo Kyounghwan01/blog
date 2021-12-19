@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: 프레임워크와 라이브러리의 차이
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/etc/CSS/diff-pramework-library/
+    content: https://kyounghwan01.github.io/blog/etc/diff-pramework-library/
 ---
 
 # 프레임워크 vs 라이브러리
