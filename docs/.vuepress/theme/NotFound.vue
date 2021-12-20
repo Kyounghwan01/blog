@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-container">
+  <div class="not-found-container">
     <div class="content">
       <h1>404</h1>
 
@@ -24,6 +24,11 @@ export default {
 };
 </script>
 <style scoped>
+.not-found-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
 .route-button {
   color: #fff;
   background-color: #3eaf7c;
