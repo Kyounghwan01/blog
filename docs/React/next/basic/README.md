@@ -323,6 +323,10 @@ export default () => (
 
 next.js가 해당 컴포넌트가 mount 할때, Head내 태그들을 페이지의 HTML의 Head에 포함 시킵니다. 마찬가지로 unMount 할때, 해당 태그를 제거합니다.
 
+## dynamic meta tag
+- 위 예시처럼 정적으로 태그를 달때도 있지만 정적으로 들어가야할 태그가 바뀔 경우도 있습니다.
+- [next.js meta tag 동적 content 할당하기](https://kyounghwan01.github.io/blog/React/next/dynamic-meta) 이 글에서 동적으로 meta 태그에 값을 할당하는 방법에 대해 알아볼 수 있습니다.
+
 ## production 배포
 
 ```
