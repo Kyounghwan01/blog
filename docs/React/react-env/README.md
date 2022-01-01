@@ -50,7 +50,7 @@ module.exports = {
 ## next에서 dotenv 사용하기
 
 - next에서는 react와 다르게 설정을 해야합니다.`webpack.config.ts`가 아닌 `next.config.js`에 아래와 같이 추가합니다.
-- typescript를 사용하더라도 `next.config.**js**`로 파일을 만드셔야 에러가 뜨지 않습니다.
+- typescript를 사용하더라도 `next.config.**js**`로 파일을 만드셔야 에러가 뜨지 않습니다.«
 
 ```js
 const Dotenv = require("dotenv-webpack");
@@ -63,6 +63,10 @@ module.exports = withTM({
   }
 });
 ```
+
+## nextjs에서 dotenv 사용시 주의사항
+
+- nextjs는 env 사용시 `NEXT_PUBLIC_`를 붙여야 합니다. (react는 `REACT_APP_`)
 
 <TagLinks />
 
