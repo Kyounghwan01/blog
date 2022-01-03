@@ -2,11 +2,11 @@
 title: 환경변수 설정
 meta:
   - name: description
-    content: react 환경변수 설정, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback, env, react env undefined, react env not working, next, nextjs, nextJS
+    content: react 환경변수 설정, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback, env, react env undefined, react env not working, next
   - property: og:title
     content: react 환경변수 설정
   - property: og:description
-    content: react 환경변수 설정, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback, env, react env undefined, react env not working, next, nextjs, nextJS
+    content: react 환경변수 설정, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback, env, react env undefined, react env not working, next
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-env/
 tags: ["react"]
@@ -32,9 +32,9 @@ tags: ["react"]
 yarn add dotenv-webpack
 ```
 
-### webpack.config.ts
+### webpack.config.js
 
-```ts
+```js
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
@@ -50,7 +50,7 @@ module.exports = {
 ## next에서 dotenv 사용하기
 
 - next에서는 react와 다르게 설정을 해야합니다.`webpack.config.ts`가 아닌 `next.config.js`에 아래와 같이 추가합니다.
-- typescript를 사용하더라도 `next.config.**js**`로 파일을 만드셔야 에러가 뜨지 않습니다.«
+- typescript를 사용하더라도 `next.config.**js**`로 파일을 만드셔야 에러가 뜨지 않습니다.
 
 ```js
 const Dotenv = require("dotenv-webpack");
