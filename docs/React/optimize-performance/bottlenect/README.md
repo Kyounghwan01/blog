@@ -1,18 +1,18 @@
 ---
-title: react - lighthouse를 이용해 성능 최적화 하기 (bottlenect 코드 찾고 성능 최적화)
+title: react - lighthouse를 이용해 성능 최적화 하기 (bottleneck 코드 찾고 성능 최적화)
 meta:
   - name: description
-    content: react - lighthouse를 이용해 성능 최적화 하기, performance, bottlenect 코드 찾고 성능 최적화
+    content: react - lighthouse를 이용해 성능 최적화 하기, performance, bottleneck 코드 찾고 성능 최적화
   - property: og:title
     content: react - lighthouse를 이용해 성능 최적화 하기 - 초기 렌더링 시간 감소하기
   - property: og:description
-    content: react - lighthouse를 이용해 성능 최적화 하기, performance, bottlenect 코드 찾고 성능 최적화
+    content: react - lighthouse를 이용해 성능 최적화 하기, performance, bottleneck 코드 찾고 성능 최적화
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/optimize-performance/bottlenect 코드 찾고 성능 최적화/
+    content: https://kyounghwan01.github.io/blog/React/optimize-performance/bottlenect/
 tags: ["react", "optimize-performance"]
 ---
 
-# lighthouse를 이용해 성능 최적화 하기 (bottlenect 코드 찾고 성능 최적화)
+# lighthouse를 이용해 성능 최적화 하기 (bottleneck 코드 찾고 성능 최적화)
 
 [lighthouse를 통해 perfomance를 측정하였습니다](https://kyounghwan01.github.io/blog/React/optimize-performance/intro/) 그중 오늘은 `Minify JavaScript`, `reduce JS execution time` 부분을 해결하겠습니다.
 
