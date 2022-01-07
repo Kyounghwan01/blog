@@ -138,7 +138,7 @@ export default class CustomDocument extends Document {
 ```
 
 - 이곳에서 console은 서버에서만 보이고 클라이언트에서는 안보입니다.
-- render 요소는 방영하지만 페이지 구성요소만 반영되고 js는 반영안하기에 console은 반영 하지 않습니다. 즉, componentDidMount 같은 훅도 실행이 안됩니다. 정말 static한 상황만 부여됩니다.
+- render 요소는 반영하지만 페이지 구성 요소만 반영되고 js는 반영 하지 않기 때문에 console은 보이지 않습니다. 즉, componentDidMount 같은 훅도 실행 되지 않습니다. 정말 static한 상황에만 사용합니다.
 
 ## \_app.tsx
 
@@ -150,15 +150,16 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-- 이곳에서 렌더링 하는 값은 무조건 모든 페이지에 영향을 준다
-- 최초로 실행되는 것은 \_app.tsx.
-- \_app은 클라이언트에서 띄우길 바라는 전체 컴포넌트 → 공통 레이아웃임으로 최초 실행되며 내부에 컴포넌트들을 실행함
-- 내부에 컴포넌트가 있다면 전부 실행하고 html의 body로 구성됨
-- Component, pageProps를 받음
-- 여기서 props로 받은 Component는 요청한 페이지이다. GET / 요청을 보냈다면, Component 에는 /pages/index.js 파일이 props로 내려오게 된다. pageProps는 페이지 getInitialProps를 통해 내려 받은 props들을 말한다
-- 그 다음 \_document.tsx가 실행됨
-- 페이지를 업데이트 하기전에 원하는 방식으로 페이지를 업데이트 하는 통로
-- \_app.tsx에서 consle.log 실행시 client, server둘다 콘솔 찍힘
+- 이곳에서 렌더링 하는 값은 모든 페이지에 영향을 줍니다.
+- 최초로 실행되는 것은 `_app.tsx`
+- `_app.tsx`은 클라이언트에서 띄우길 바라는 전체 컴포넌트 → 공통 레이아웃임으로 최초 실행되며 내부에 컴포넌트들을 실행함
+- 내부에 컴포넌트가 있다면 전부 실행하고 html의 body로 구성
+- Component, pageProps를 받습니다.
+  - 여기서 props로 받은 Component는 요청한 페이지입니다. GET `/` 요청을 보냈다면, Component 에는 `/pages/index.js` 파일이 props로 내려오게 됩니다.
+  - pageProps는 페이지 getInitialProps를 통해 내려 받은 props들을 말합니다.
+- 그 다음 `_document.tsx`가 실행됨
+- 페이지를 업데이트 하기 전에 원하는 방식으로 페이지를 업데이트 하는 통로
+- `_app.tsx`에서 console.log 실행시 client, server 둘다 콘솔 찍힙니다. (localhost:3000 웹과 터미널에서 둘다 콘솔 보임)
 
 ## import style component
 
@@ -178,7 +179,7 @@ export default function Home() {
   return (
     <div>
       <Heading heading="heading" />
-      <h1>ttt</h1>
+      <h1>스타일</h1>
     </div>
   );
 }
@@ -200,7 +201,7 @@ h1.red {
 
 보통 페이지간 이동은 a 태그를 사용하나 next에서는 사용하지 않습니다.
 
-a 태그를 사용하면 처음 페이지에 진입시 번들 파일을 받고, a 태그에 의해 라우팅 되면 다시 번들 파일을 받기 때문입니다. 또한 redux을 쓰시는 경우 라면 store의 state 값이 증발되는 현상도 일어납니다. 그렇기 때문에 a 태그는 전혀 다른 사이트로 페이지를 이동시켜 다시 돌아오지 않는 경우만 사용하고, 그 이외에는 모두 `Link` 태그를 사용합니다.
+a 태그를 사용하면 처음 페이지에 진입시 번들 파일을 받고, a 태그에 의해 라우팅 되면 다시 번들 파일을 받기 때문입니다. 또한 redux을 쓰시는 경우 store의 state 값이 증발되는 현상도 일어납니다. 그렇기 때문에 a 태그는 전혀 다른 사이트로 페이지를 이동시켜 다시 돌아오지 않는 경우만 사용하고, 그 이외에는 모두 `Link` 태그를 사용합니다.
 
 ```tsx
 import Link from "next/link";
@@ -246,7 +247,7 @@ export default () => {
 
 ## prefetching
 
-백그라운드에서 페이지를 미리 가져옵니다. 기본값은 true. `<Link />`뷰포트에있는 모든 항목 (초기 또는 스크롤을 통해)이 미리로드됩니다. 정적 생성 을 사용하는 JSON페이지는 더 빠른 페이지 전환을 위해 데이터가 포함 된 파일을 미리로드 합니다.
+백그라운드에서 페이지를 미리 가져옵니다. 기본값은 true. `<Link />`뷰포트에있는 모든 항목 (초기 또는 스크롤을 통해)이 미리 로드됩니다. 정적 생성을 사용하는 JSON페이지는 더 빠른 페이지 전환을 위해 데이터가 포함 된 파일을 미리 로드합니다.
 
 이건 Link 컴포넌트를 사용해서 이뤄지는건데요. 링크 컴포넌트를 렌더링할때 `<Link prefetch href="...">` 형식으로 prefetch 값을 전달해주면 데이터를 먼저 불러온다음에 라우팅을 시작합니다.
 
@@ -254,7 +255,7 @@ export default () => {
 
 ## next/router 사용법
 
-react의 router.push와 동일합니다.
+`react`의 `react-router-dom`과 사용 방법은 거의 유사합니다.
 
 link에 있는 preferch 기능도 사용 가능합니다.
 
@@ -324,6 +325,7 @@ export default () => (
 next.js가 해당 컴포넌트가 mount 할때, Head내 태그들을 페이지의 HTML의 Head에 포함 시킵니다. 마찬가지로 unMount 할때, 해당 태그를 제거합니다.
 
 ## dynamic meta tag
+
 - 위 예시처럼 정적으로 태그를 달때도 있지만 정적으로 들어가야할 태그가 바뀔 경우도 있습니다.
 - [next.js meta tag 동적 content 할당하기](https://kyounghwan01.github.io/blog/React/next/dynamic-meta) 이 글에서 동적으로 meta 태그에 값을 할당하는 방법에 대해 알아볼 수 있습니다.
 
@@ -335,6 +337,10 @@ npm run start
 ```
 
 localhost:3000 으로 접속시 배포된 버전을 로컬로 확인 가능합니다.
+
+## material-ui 사용하기
+
+- [nextjs에서 material-ui 사용하기](https://kyounghwan01.github.io/blog/React/next/mui/)
 
 <TagLinks />
 
