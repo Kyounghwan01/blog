@@ -2,13 +2,11 @@
 title: next.js에서 material-ui 사용하기 (typescript)
 meta:
   - name: description
-    content: next.js에서 material-ui 사용하기, react, next, seo, ssr, dynamic meta content, getInitialProps, mui,
-    typescript
+    content: next.js에서 material-ui 사용하기, react, next, seo, ssr, dynamic meta content, getInitialProps, mui
   - property: og:title
     content: next.js에서 material-ui 사용하기
   - property: og:description
-    content: next.js에서 material-ui 사용하기, react, seo, ssr, mui,
-    typescript
+    content: next.js에서 material-ui 사용하기, react, seo, ssr, mui
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/next/mui/
 tags: ["react", "next", "ts"]
