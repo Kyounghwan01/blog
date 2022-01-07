@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="profile">
+  <div class="profile" @mouseover="upHere = true" @mouseleave="upHere = false">
     <img class="profile__image" src="./img/profile.png" />
     <div class="profile__content">
       <div class="profile__name">
@@ -31,7 +31,7 @@
           </svg>
         </div>
 
-        <a href="mailto:noh5524@gmail.com">
+        <a class="profile-mail">
           <svg
             width="20"
             height="20"
@@ -45,6 +45,9 @@
             ></path>
           </svg>
         </a>
+        <div class="mail-box" v-if="!!upHere" @click="doCopy">
+          noh5524@gmail.com
+        </div>
       </div>
       <div class="profile__desc">
         이 글이 도움이 되셨다면! 깃헙 스타 부탁드립니다 😊😄
@@ -55,7 +58,32 @@
 
 <script>
 export default {
-  name: "Profile"
+  name: "Profile",
+  data() {
+    return {
+      upHere: false
+    };
+  },
+  methods: {
+    doCopy() {
+      if (!document.queryCommandSupported("copy")) {
+        return alert("복사하기가 지원되지 않는 브라우저입니다.");
+      }
+
+      const textarea = document.createElement("textarea");
+      textarea.value = "noh5524@gmail.com";
+      textarea.style.top = 0;
+      textarea.style.left = 0;
+      textarea.style.position = "fixed";
+
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("클립보드에 이메일 주소가 복사되었습니다!");
+    }
+  }
 };
 </script>
 
@@ -100,5 +128,19 @@ export default {
 }
 a {
   color: rgb(45, 61, 80);
+}
+.profile__name {
+  display: flex;
+  align-items: center;
+}
+.mail-box {
+  margin-left: 10px;
+  border-radius: 6px;
+  padding: 3px 5px;
+  color: white;
+  background: rgb(45, 61, 80);
+}
+.mail-box:hover {
+  cursor: pointer;
 }
 </style>
