@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: react-query 개념 및 정리, react, react16, hook, useState, useRef, useMemo, useEffect, useReducer, useCallback, useQuery 동기적으로 실행
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/react-query/
+    content: https://kyounghwan01.github.io/blog/React/react-query/basic/
 tags: ["react"]
 ---
 
