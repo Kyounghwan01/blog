@@ -44,29 +44,29 @@ module.exports = {
       {
         text: "Info",
         items: [
-          { text: "About", link: "/about/" },
+          // { text: "About", link: "/about/" },
           { text: "Github", link: "https://github.com/Kyounghwan01" },
           {
             text: "블로그 건의하기",
             link: "https://github.com/Kyounghwan01/blog/issues/20"
-          },
-          {
-            text: "toy-project",
-            items: [
-              {
-                text: "트렐로 클론 (svelte)",
-                link: "https://svelte-trello.netlify.app/"
-              },
-              {
-                text: "매출분석 (vue + aws-lambda)",
-                link: "https://sales-statistics.netlify.com/"
-              },
-              {
-                text: "롤전적조회 (react)",
-                link: "https://khgg.netlify.app/"
-              }
-            ]
           }
+          // {
+          //   text: "toy-project",
+          //   items: [
+          //     {
+          //       text: "트렐로 클론 (svelte)",
+          //       link: "https://svelte-trello.netlify.app/"
+          //     },
+          //     {
+          //       text: "매출분석 (vue + aws-lambda)",
+          //       link: "https://sales-statistics.netlify.com/"
+          //     },
+          //     {
+          //       text: "롤전적조회 (react)",
+          //       link: "https://khgg.netlify.app/"
+          //     }
+          //   ]
+          // }
           // { text: "It's my seat - web", link: "https://www.knowgari.com/" }
         ]
       }
