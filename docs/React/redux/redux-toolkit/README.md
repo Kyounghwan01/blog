@@ -326,9 +326,71 @@ export function Counter() {
 }
 ```
 
+## useSelector 안티패턴
+
+- 개발하던 도중 `useSelector`를 잘못 이용하면 리렌더링을 무지하게 많이 한다는 것을 보었습니다. useSelector는 react-redux에서 가져오는 것이니 redux-toolkit을 안쓰셔도 redux를 쓴다면 알아두시면 좋을 것 같아 추가로 작성합니다.
+
 ## 정리
 
 저는 지금 진행하는 프로젝트에 saga에 의해 액션 타입, 액션이 너무 많이 늘어나고, 추가 개발을 진행할 때도 디버깅은 편하지만, 공수가 많이 들어 `redux-toolkit`을 사용하는 것을 건의할 예정입니다. 한번 정리해보니 저것을 쓰면 많은 패키지도 삭제되고, 코드양도 많이 줄어드는 이점이 보이기 때문입니다. 위 예제로 이해가 되지 않으신 분들은 [cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript) 여기에 들어가셔서 프로젝트 코드를 분석해보시기 바랍니다.
+
+예를 들어 아래와 같은 todoSlice에 initalState가 있습니다.
+
+```js
+type stateType = {
+  title: { name: string, content: number }
+  todoList: {name: string, content: number}[]
+};
+
+const initialState: stateType = {
+  title: { name: "ttttt", content: 0 },
+  todoList: []
+};
+```
+
+그리고 이 값들을 사용하기 위해 컴포넌트에서 아래와 같이 사용합니다.
+
+```ts
+const { title, todoList } = useSelector((state: RootState) => state.todo);
+```
+
+여기에는 심각한 문제가 있습니다. title이 바뀌면 title을 사용하는 컴포넌트는 당연히 리렌더링 되겠지만 값이 바뀌지 않은 todoList를 바라보는 컴포넌트도 리렌더링됩니다.
+
+이것을 막기 위해 아래와 같이 useSelector를 바꿀 수 있습니다.
+
+```ts
+const title = useSelector((state: RootState) => state.todo.title);
+const todoList = useSelector((state: RootState) => state.todo.todoList);
+```
+
+이렇게 사용하면 title이 바뀌여도 todoList를 바라보는 컴포넌트는 리렌더링 되지 않습니다. 그런데 slice에 엄청 많은 state들을 가져올텐데 그걸 한줄한줄 다 쓴다는 것은 말도 안되죠. 그래서 react-redux에서 제공해주는 `shallowEqual`를 사용합니다. 간단히 말해 이전값과 바뀐 값을 비교하여 같으면 리렌더링 안하고 다르면 리렌더링 합니다. 하지만 shallowEqual이기 때문에 객체의 가장 밖에 있는 값들을 모두 비교해줍니다.
+
+아래 예시를 통해 shallowEqual에 대해 설명 하겠습니다.
+
+```js
+const obj = {
+  nkh: {
+    age: 3,
+    name: 2,
+    city: 1
+  },
+  joshua: 1,
+  kally: [{ id: 1 }]
+};
+```
+
+위처럼 값이 있을때 가장 바깥의 객체는 obj.nkh, obj.joshua, obj.kally입니다. shallowEqual는 obj.nkh, obj.joshua, obj.kally이 값이 바뀌었냐만 비교하고 object.kally[0]의 값이 바뀐 것은 비교하지 않습니다.
+
+그래서 이 `shallowEqual`를 이용하면 한줄한줄 쓰는 코드를 아래와 같이 개선 할 수 있습니다.
+
+```ts
+const { title, todoList } = useSelector((state: RootState) => ({
+  title: state.education.title,
+  todoList: state.education.todoList
+}));
+```
+
+둘중 하나의 방법으로 useSelector를 사용하면 불필요하게 리렌더링 하는 일을 막을 수 있습니다.
 
 ### 참조
 
