@@ -330,10 +330,6 @@ export function Counter() {
 
 - 개발하던 도중 `useSelector`를 잘못 이용하면 리렌더링을 무지하게 많이 한다는 것을 보었습니다. useSelector는 react-redux에서 가져오는 것이니 redux-toolkit을 안쓰셔도 redux를 쓴다면 알아두시면 좋을 것 같아 추가로 작성합니다.
 
-## 정리
-
-저는 지금 진행하는 프로젝트에 saga에 의해 액션 타입, 액션이 너무 많이 늘어나고, 추가 개발을 진행할 때도 디버깅은 편하지만, 공수가 많이 들어 `redux-toolkit`을 사용하는 것을 건의할 예정입니다. 한번 정리해보니 저것을 쓰면 많은 패키지도 삭제되고, 코드양도 많이 줄어드는 이점이 보이기 때문입니다. 위 예제로 이해가 되지 않으신 분들은 [cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript) 여기에 들어가셔서 프로젝트 코드를 분석해보시기 바랍니다.
-
 예를 들어 아래와 같은 todoSlice에 initalState가 있습니다.
 
 ```js
@@ -391,6 +387,10 @@ const { title, todoList } = useSelector((state: RootState) => ({
 ```
 
 둘중 하나의 방법으로 useSelector를 사용하면 불필요하게 리렌더링 하는 일을 막을 수 있습니다.
+
+## 정리
+
+저는 지금 진행하는 프로젝트에 saga에 의해 액션 타입, 액션이 너무 많이 늘어나고, 추가 개발을 진행할 때도 디버깅은 편하지만, 공수가 많이 들어 `redux-toolkit`을 사용하는 것을 건의할 예정입니다. 한번 정리해보니 저것을 쓰면 많은 패키지도 삭제되고, 코드양도 많이 줄어드는 이점이 보이기 때문입니다. 위 예제로 이해가 되지 않으신 분들은 [cra-template-redux-typescript](https://github.com/reduxjs/cra-template-redux-typescript) 여기에 들어가셔서 프로젝트 코드를 분석해보시기 바랍니다.
 
 ### 참조
 
