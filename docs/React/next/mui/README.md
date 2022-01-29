@@ -9,12 +9,12 @@ meta:
     content: next.js에서 material-ui 사용하기, react, seo, ssr, mui
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/next/mui/
-tags: ["react", "next", "ts"]
+tags: ["react", "next", "TS"]
 ---
 
 # next.js에서 material-ui 사용하기
 
-nextjs에서 mui(material-ui)를 적용하는 방법에 대해 알아보겠습니다. 이 이후에는 다음은 styled-components와 mui를 동시에 사용하는 방법, 마지막에는 글로벌 style를 이용하여 다크모드 만드는 방법까지 알아보도록 하겠습니다.
+nextjs에서 mui(material-ui)를 적용하는 방법에 대해 알아보겠습니다. 이 이후에는 다음은 [styled-components와 mui를 동시에 사용하는 방법](https://kyounghwan01.github.io/blog/React/next/mui-styled), 마지막에는 글로벌 style를 이용하여 다크모드 만드는 방법까지 알아보도록 하겠습니다.
 
 타입스크립트 기반 예제로 이루어져있습니다.
 
@@ -85,7 +85,7 @@ MyDocument.getInitialProps = async ctx => {
 
 - 프로젝트를 처음 구상하고 실행하면 브라우저마다 각기 다른 기본 css가 default로 설정 되어 있다는 것을 알 수 있습니다. 이때 우리는 정상적인 구현을 위해 모든 브라우저가 일관적으로 보이도록 해야합니다. 그래서 우리는 css를 전역에서 normalize 하기 위해 `<CssBaseline />`를 사용합니다. `<CssBaseline />`는 앱의 최상단에 넣어주면 알아서 normalize 해줍니다.
 
-```ts
+```tsx
 // _app.tsx
 import type { AppProps } from "next/app";
 import CssBaseline from "@mui/material/CssBaseline";
