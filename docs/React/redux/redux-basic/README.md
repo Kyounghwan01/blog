@@ -178,7 +178,7 @@ redux의 함수는 **무조건** 동기적으로 데이터가 흘러갑니다.<b
 그러나 웹은 언제나 비동기로 사용자 경험을 높이는 것이 중요합니다.<br>
 그래서 나온것이 `redux-saga`입니다. <br>
 redux을 사용하면서 redux-saga도 동시에 사용함으로 비동기의 유연함도 같이 가져갈 수 있습니다.<br>
-다음 포스팅에서 `redux-saga`에 대해 알아보겠습니다.
+다음 포스팅에서 [redux-saga](https://kyounghwan01.github.io/blog/React/redux/redux-saga)에 대해 알아보겠습니다.
 
 ## 에러
 
@@ -195,6 +195,19 @@ dispatch(setCount);
 // action이 함수면 아래처럼
 dispatch(setCount(data));
 ```
+
+## typescript + redux
+
+- [redux + typeScript 사용법](https://kyounghwan01.github.io/blog/TS/React/redux-ts/)
+
+## typescript + redux-saga
+
+- [redux-saga + typescript](https://kyounghwan01.github.io/blog/TS/React/redux-saga-ts/)
+
+## typescript + redux-toolkit
+
+- action 만들고 불변성 유지하고 이런것들 너무 귀찮지만 redux를 사용하고 싶은 사람을 위한 라이브러리
+- [redux-toolkit 알아보기](https://kyounghwan01.github.io/blog/React/redux/redux-toolkit)
 
 <TagLinks />
 

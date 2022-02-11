@@ -9,7 +9,7 @@ meta:
     content: redux - typeScript 사용법
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/React/redux-ts/
-tags: ["react", "TS"]
+tags: ["react", "TS", "redux"]
 ---
 
 # redux - typeScript 사용법

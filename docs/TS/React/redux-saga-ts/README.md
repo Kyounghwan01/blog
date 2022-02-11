@@ -9,7 +9,7 @@ meta:
     content: typescript에 redux saga 추가하기 예제
   - property: og:url
     content: https://kyounghwan01.github.io/blog/TS/React/redux-ts/
-tags: ["react", "TS"]
+tags: ["react", "redux", "TS"]
 ---
 
 # typescript에 redux saga 추가하기 예제
@@ -158,3 +158,7 @@ export default function* counterSaga() {
   yield all([fork(watchChangeCount)]);
 }
 ```
+
+<TagLinks />
+
+<Comment />
