@@ -34,13 +34,13 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "Tag", link: "/Tag/" },
-      { text: "React", link: "/React/" },
+      { text: "React", link: "/React/a-tag-trap/" },
       { text: "Vue", link: "/Vue/" },
       { text: "Svelte", link: "/Svelte/" },
       { text: "JS", link: "/JS/" },
       { text: "TS", link: "/TS/" },
       { text: "기타", link: "/etc/" },
-      { text: "개발일기", link: "/dev-report/" },
+      // { text: "개발일기", link: "/dev-report/" },
       {
         text: "Info",
         items: [
