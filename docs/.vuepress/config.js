@@ -34,7 +34,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "Tag", link: "/Tag/" },
-      { text: "React", link: "/React/a-tag-trap/" },
+      { text: "React", link: "/React/" },
       { text: "Vue", link: "/Vue/" },
       { text: "Svelte", link: "/Svelte/" },
       { text: "JS", link: "/JS/" },
