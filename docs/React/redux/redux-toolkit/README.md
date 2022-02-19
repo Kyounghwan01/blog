@@ -380,13 +380,45 @@ const obj = {
 그래서 이 `shallowEqual`를 이용하면 한줄한줄 쓰는 코드를 아래와 같이 개선 할 수 있습니다.
 
 ```ts
-const { title, todoList } = useSelector((state: RootState) => ({
-  title: state.education.title,
-  todoList: state.education.todoList
-}));
+const { title, todoList } = useSelector(
+  (state: RootState) => ({
+    title: state.education.title,
+    todoList: state.education.todoList
+  }),
+  shallowEqual
+);
 ```
 
 둘중 하나의 방법으로 useSelector를 사용하면 불필요하게 리렌더링 하는 일을 막을 수 있습니다.
+
+## hooks로 useSelector 개선
+
+- 위처럼 shallowEqual를 사용하려면 매번 RootState와 shallowEqual를 import 해줘야합니다. hooks로 만들어서 사용하면 쉽게 사용할 수 있을 것 같습니다.
+
+### useSelectorTyped.ts
+
+```ts
+// useSelectorTyped.ts
+import { useSelector, shallowEqual } from "react-redux";
+import { RootState } from "app/store";
+
+export default function useSelectorTyped<T>(fn: (state: RootState) => T): T {
+  return useSelector(fn, shallowEqual);
+}
+```
+
+### 사용하는 컴포넌트
+
+```tsx
+import useSelectorTyped from "features/useSelectorTyped";
+
+const Index = () => {
+  const { title, todoList } = useSelectorTyped(state => ({
+    title: state.education.title,
+    todoList: state.education.todoList
+  }));
+};
+```
 
 ## 정리
 
