@@ -1,5 +1,5 @@
 ---
-title: svg 다루기
+title: react, next에서 svg 다루기
 meta:
   - name: description
     content: React.js - svg 다루기 react, next svg, next

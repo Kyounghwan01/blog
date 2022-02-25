@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: styled-components 개념 및 예시, react, redux, 환경설정, global theme, 글로벌 스타일, props, mixins
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/React/styled-components/
+    content: https://kyounghwan01.github.io/blog/React/styled-components/basic/
 tags: ["react", "styled-components"]
 ---
 

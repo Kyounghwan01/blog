@@ -8,7 +8,7 @@ meta:
   - property: og:description
     content: styled-components typscript로 세팅하기, global css, reset css, theme setting
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/React/styled-components-preset/
+    content: https://kyounghwan01.github.io/blog/React/styled-components/styled-components-preset/
 tags: ["react", "TS", "styled-components"]
 ---
 
