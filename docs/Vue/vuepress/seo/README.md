@@ -2,11 +2,11 @@
 title: vuePress seo 최적화 (sitemap, robots)
 meta:
   - name: description
-    content: vuePress seo 최적화 (sitemap, robots, google, blog)
+    content: vuePress seo 최적화 (sitemap, robots, google search console, google adsense, google analytics, blog)
   - property: og:title
-    content: vuePress seo 최적화 (sitemap, robots)
+    content: vuePress seo 최적화 (sitemap, robots, google search console, google adsense, google analytics)
   - property: og:description
-    content: vuePress seo 최적화 (sitemap, robots)
+    content: vuePress seo 최적화 (sitemap, robots, google search console, google adsense, google analytics)
   - property: og:url
     content: https://kyounghwan01.github.io/blog/Vue/vuepress/seo/
 tags: ["vuepress"]
@@ -61,6 +61,20 @@ User-agent: *
 Allow: /
 Sitemap: https://kyounghwan01.github.io/blog/sitemap.xml
 ```
+
+## robots.txt 배포 확인
+
+위 단계를 모두 따라오시고 배포까지 하셨다면 `https://your_blog_url/robots.txt`에 접속하셔서
+
+```
+User-agent: *
+Allow: /
+Sitemap: https://your_blog_url/sitemap.xml
+```
+
+이 정상적으로 뜨는 지 확인해보시면 됩니다.
+
+404가 뜨면 정상적으로 배포 되지 않아, 구글 서치 콘솔에서 robots.txt를 읽을 수 없습니다.
 
 <TagLinks />
 
