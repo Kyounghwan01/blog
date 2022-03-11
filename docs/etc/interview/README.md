@@ -1,18 +1,18 @@
 ---
-title: 프론트엔드 면접 면접관으로 지원자에게 느낀점
+title: 면접 느낀점
 meta:
   - name: description
-    content: 프론트엔드 면접 면접관으로 지원자에게 느낀점, react, next, seo, ssr, 프론트엔드, 인턴, 개발자 면접
+    content: 면접 느낀점, react, next, seo, ssr, 프론트엔드, 인턴, 개발자 면접
   - property: og:title
-    content: 프론트엔드 면접 면접관으로 지원자에게 느낀점
+    content: 면접 느낀점
   - property: og:description
-    content: 프론트엔드 면접 면접관으로 지원자에게 느낀점, react, seo, ssr, 프론트엔드, 인턴, 개발자 면접
+    content: 면접 느낀점, react, seo, ssr, 프론트엔드, 인턴, 개발자 면접
   - property: og:url
     content: https://kyounghwan01.github.io/blog/etc/interview/
 tags: ["etc"]
 ---
 
-# 프론트엔드 면접 면접관으로 지원자에게 느낀점
+# 면접 느낀점
 
 최근에 프론트엔드 직무 인턴을 뽑는다고 면접관으로 여러번 들어가게 되었습니다.
 차후 면접에서 좋은 데이터로 쓰일 것 같아 면접관들이 공통적으로 긍정적으로 평가한 부분과 부정적으로 평가한 부분을 정리합니다.
