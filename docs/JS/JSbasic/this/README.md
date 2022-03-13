@@ -65,57 +65,77 @@ function foo() {
 foo();
 ```
 
-## 2. 점 방식
+## 2. 암시적 바인딩
 
-- `nkh . foo()` : foo함수에서의 `this`는 `nkh`을 가리킵니다.
-
-```js
-var age = 100;
-
-var nkh = {
-  age: 35,
-  foo: function foo() {
-    console.log(this.age);
-  }
-};
-
-nkh.foo(); // 점 앞의 값(nkh)이 this값에 할당된다.
-
-/*
-nkh.foo(); = 
-function foo(){
-    console.log(nkh.age);
-  }
-*/
-```
+- 함수 호출이 객체의 property로 호출되면 this는 해당 객체에 바인딩됩니다.
+- `nkh.foo()` : foo함수에서의 `this`는 `nkh`을 가리킵니다.
+- 2 depth 이상 함수 호출이 들어가면 상위 스코프의 this로 바인딩됩니다.
 
 ```js
-function foo() {
-  console.log(this.age);
-}
 var age = 100;
 var nkh = {
   age: 36,
   foo: foo
 };
-var wan = {
-  age: 32,
-  foo: foo
-};
+
+function foo() {
+  console.log(this.age);
+}
+
 var fn = nkh.foo;
 
 nkh.foo(); // 36
-wan.foo(); // 32
 fn(); // 100
+```
+
+- 암시적 바인딩을 콜백으로 넘겨주면 바인딩이 끊깁니다.
+
+```js
+function foo() {
+  console.log(this.age);
+}
+
+const nkh = {
+  age: 30,
+  foo: foo
+};
+
+function callbackFoo(func) {
+  func();
+}
+
+callbackFoo(nkh.foo); // undefined
+```
+
+### arrow function과 함께 사용하는 암시적 바인딩
+
+arrow function을 사용하면 말이 달라집니다. arrow function의 this는 렉시컬 this를 따르기 때문에 상위 this 값을 바인딩합니다.
+
+```js
+const foo = {
+  bar: 100,
+  baz: () => console.log(this.bar) // 렉시컬 this는 global this, global this가 없으므로 undefined
+};
+
+foo.baz();
+
+const foo = {
+  bar: 100,
+  baz: function() {
+    console.log(this.bar);
+  } // 100
+};
+
+foo.baz();
 ```
 
 ## 3. function.prototype.call, apply, bind
 
-- 위 세가지 함수는 `this` 값을 개발자 마음대로 지정 할 수 있습니다.
+- 명시적 바인딩의 `this`는 위 세함수의 파라미터로 들어온 객체로 바인딩됩니다.
 
 ### 3-1. function.prototype.call()
 
-- [call](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call)함수의 인자 값으로 변수를 넣어줌으로 `this`를 변수로 할당한다. 아무 인자도 넣지 않으면 `일반 함수 실행`과 동일합니다.
+- [call](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call)함수의 인자 값으로 변수를 넣어줌으로 `this`를 변수로 할당됩니다. 아무 인자도 넣지 않으면 `일반 함수 실행`과 동일하여 글로벌 스코프로 this가 바인딩됩니다.
 
 ```js
 var age = 100;
@@ -131,14 +151,14 @@ var nkh = {
 foo(); // 100
 foo.call(); // 100
 foo.call(nkh); // 36
-// foo를 실행하고, this 값을 ken으로 지정함 => this는 ken이다
+// foo를 실행하고, this 값을 nkh으로 지정함 => this는 nkh이다
 // call : foo 함수를 실행한다 call에 인자를 줌으로 this를 지정한다.
 ```
 
 - `call` 함수의 인자 값으로 첫 번째는 `this` 에 할당하는 값, 두 번째 부터는 호출하는 함수에 대한 인자 목록을 무제한으로 넣을 수 있습니다.
 
 ```js
-//call은 인자를 무제한 받는다. this는 ken을 받고 뒤 1,2,3은 foo의 인자 값으로 들어간다.
+//call은 인자를 무제한 받는다. this는 nkh을 받고 뒤 1,2,3은 foo의 인자 값으로 들어간다.
 function foo(a, b, c) {
   console.log(this.age);
   console.log(a, b, c);
@@ -186,13 +206,6 @@ foo.apply(nkh, [1, 2, 3, 4, 5, 6]);
 */
 // 2번째 인자의 요소를 배열로 무제한 줄수있고 순서대로 a,b,c로 들어감
 // 배열에 맞는 조건이면 apply  (apply은 인자가 2개 this가리키는 것, 배열)
-
-//bind
-
-//foo.bind(nkh)
-//bind : function.prototype.bind는 function에 인자로 넘긴 this가 바인딩된 새로운 함수를 리턴한다.
-var checkbindthis = foo.bind(this);
-checkbindthis(nkh, 123);
 ```
 
 ### 3-3. function.prototype.bind()
