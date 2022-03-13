@@ -57,7 +57,7 @@ foo(); // 100
 ```js
 "use strict";
 
-var name = "ken";
+var name = "nkh";
 
 function foo() {
   console.log(this.name); // 'this' === undefined // error
@@ -67,24 +67,24 @@ foo();
 
 ## 2. 점 방식
 
-- `ken . foo()` : foo함수에서의 `this`는 `ken`을 가리킵니다.
+- `nkh . foo()` : foo함수에서의 `this`는 `nkh`을 가리킵니다.
 
 ```js
 var age = 100;
 
-var ken = {
+var nkh = {
   age: 35,
   foo: function foo() {
     console.log(this.age);
   }
 };
 
-ken.foo(); // 점 앞의 값(ken)이 this값에 할당된다.
+nkh.foo(); // 점 앞의 값(nkh)이 this값에 할당된다.
 
 /*
-ken.foo(); = 
+nkh.foo(); = 
 function foo(){
-    console.log(ken.age);
+    console.log(nkh.age);
   }
 */
 ```
@@ -94,7 +94,7 @@ function foo() {
   console.log(this.age);
 }
 var age = 100;
-var ken = {
+var nkh = {
   age: 36,
   foo: foo
 };
@@ -102,9 +102,9 @@ var wan = {
   age: 32,
   foo: foo
 };
-var fn = ken.foo;
+var fn = nkh.foo;
 
-ken.foo(); // 36
+nkh.foo(); // 36
 wan.foo(); // 32
 fn(); // 100
 ```
@@ -123,14 +123,14 @@ function foo() {
   console.log(this.age);
 }
 
-var ken = {
+var nkh = {
   age: 36,
   log: foo
 };
 
 foo(); // 100
 foo.call(); // 100
-foo.call(ken); // 36
+foo.call(nkh); // 36
 // foo를 실행하고, this 값을 ken으로 지정함 => this는 ken이다
 // call : foo 함수를 실행한다 call에 인자를 줌으로 this를 지정한다.
 ```
@@ -143,8 +143,8 @@ function foo(a, b, c) {
   console.log(this.age);
   console.log(a, b, c);
 }
-const ken = { age: 123 };
-foo.call(ken, 1, 2, 3);
+const nkh = { age: 123 };
+foo.call(nkh, 1, 2, 3);
 /*
 123
 1 2 3
@@ -162,14 +162,14 @@ function foo() {
   console.log(this.age);
 }
 
-var ken = {
+var nkh = {
   age: 36,
   log: foo
 };
 
 foo(); // 100
 foo.call(); // 100
-foo.apply(ken); // 36 => this : ken
+foo.apply(nkh); // 36 => this : nkh
 ```
 
 ```js
@@ -177,9 +177,9 @@ function foo(a, b, c) {
   console.log(this.age);
   console.log(a, b, c);
 }
-const ken = { age: 123 };
-// foo.call(ken,1,2,3,4,5,6);
-foo.apply(ken, [1, 2, 3, 4, 5, 6]);
+const nkh = { age: 123 };
+// foo.call(nkh,1,2,3,4,5,6);
+foo.apply(nkh, [1, 2, 3, 4, 5, 6]);
 /*
 123
 1 2 3
@@ -189,10 +189,10 @@ foo.apply(ken, [1, 2, 3, 4, 5, 6]);
 
 //bind
 
-//foo.bind(ken)
+//foo.bind(nkh)
 //bind : function.prototype.bind는 function에 인자로 넘긴 this가 바인딩된 새로운 함수를 리턴한다.
 var checkbindthis = foo.bind(this);
-checkbindthis(ken, 123);
+checkbindthis(nkh, 123);
 ```
 
 ### 3-3. function.prototype.bind()
@@ -204,16 +204,16 @@ var age = 100;
 function foo() {
   console.log(this.age);
 }
-var ken = {
+var nkh = {
   age: 35,
   log: foo
 };
 // 새로운 함수를 반환
-var bar = foo.bind(ken);
+var bar = foo.bind(nkh);
 var baz = foo;
 bar(); // 35
 baz(); // 100
-foo.call(ken); // 35
+foo.call(nkh); // 35
 ```
 
 - 부분 적용 함수
@@ -226,10 +226,10 @@ function foo() {
   console.log(this.age);
   console.log(arguments);
 }
-var ken = {
+var nkh = {
   age: 34
 };
-var bar = foo.bind(ken, 1, 2, 3);
+var bar = foo.bind(nkh, 1, 2, 3);
 bar(1, 2, 3, 4, 5);
 /*
 34

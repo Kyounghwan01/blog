@@ -179,7 +179,7 @@ obj.arr = null; //null
 {
   const bagooni = {
     items: ["gold", "silver", "bronze"],
-    owner: "ken huh",
+    owner: "nkh",
     address: 11101
   };
 
@@ -520,11 +520,11 @@ result;
 // Example #1
 
 //
-function logName(name = "ken") {
+function logName(name = "nkh") {
   console.log(name);
 }
 
-logName(); //ken
+logName(); //nkh
 logName("wan"); //wan
 
 // Example #2
@@ -566,7 +566,7 @@ logNumber(undefined); // Getting number , 666리턴
  */
 
 // Example #1
-const s = "ken";
+const s = "nkh";
 console.log(`my name is ${s}`);
 ```
 
@@ -615,7 +615,7 @@ const multiply = (a, b) => a * b;
 let name = "ni";
 
 const obj = {
-  name: "ken",
+  name: "nkh",
   logName: () => {
     console.log(this.name);
     console.log(arguments);
