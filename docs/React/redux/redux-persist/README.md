@@ -56,7 +56,7 @@ import studio from "./studio";
   // blacklist -> 그것만 제외합니다
 };
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   auth,
   board,
   studio
@@ -78,6 +78,7 @@ import { Provider } from "react-redux";
 ➋ import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
 import configureStore from "./store";
+import { rootReducer } from "./reducers";
 
 const store = createStore(rootReducer);
 ➌ const persistor = persistStore(store);
