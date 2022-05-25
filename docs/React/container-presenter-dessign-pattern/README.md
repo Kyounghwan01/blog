@@ -21,7 +21,7 @@ tags: ["react"]
 - 로직을 수행하는 컴포넌트와, markup을 통해 ui를 보여주는 컴포넌트가 분리된 패턴입니다.<br> 그에 따라 앱의 기능과 ui에 대한 구분이 쉬워집니다.
 - 같은 state를 다른 container에게 props 내림으로 상태를 공유 할 수 있습니다.
 - 로직수행, markUp이 다른 컴포넌트에서 하기 때문에 유지보수가 쉽고, 재사용성이 뛰어납니다. 특히, markup 변경에 매우 유연합니다.
-- 동일한 마크업, 컨테이너 레이아웃 (header, footer)는 반복해서 작성하지 않도 `this.props.children` 구현 할 수 있습니다.
+- 동일한 마크업, 컨테이너 레이아웃 (header, footer)는 반복해서 작성하지 않아도 `this.props.children` 구현 할 수 있습니다.
 
 ## presentational component
 

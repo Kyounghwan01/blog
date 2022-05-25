@@ -31,7 +31,7 @@ function handleClick() {
 
 setCounter 이후 setCounter2가 실행되기 전에 counter 값을 DOM에 리렌더링 시키고 싶을때는 어떻게 해야하지? 라는 문제가 생기게 됩니다. 그때 사용하는 것이 `flushSync`입니다.
 
-아래 한가지 더 예시와 개발중 많이 생긱는 문제 그리고 `flushSync` 사용법에 대해 알아보겠습니다.
+아래 한가지 더 예시와 개발중 많이 생기는 문제 그리고 `flushSync` 사용법에 대해 알아보겠습니다.
 
 ## 스크롤 예시
 
