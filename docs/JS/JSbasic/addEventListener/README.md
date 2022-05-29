@@ -52,6 +52,13 @@ function click(e) {
 
 위와 같이 작성하면 버튼 추가시에도 똑같은 코드를 재작성 할 필요 없이 자동으로 이벤트가 등록됩니다.
 
+<iframe src="https://codesandbox.io/embed/frosty-architecture-eqs47y?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="frosty-architecture-eqs47y"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ### 자주 사용하는 이벤트의 종류
 
 - **click** – 마우스버튼을 클릭하고 버튼에서 손가락을 떼면 발생한다.
