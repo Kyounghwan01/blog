@@ -105,6 +105,13 @@ self.scrollState = setTimeout(function() {
 //setTimeout이 실행되면 상수를 리턴 함으로 true로 바뀐다.
 ```
 
+<iframe src="https://codesandbox.io/embed/setinterval-clearinterval-snetzh?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="setInterval-clearInterval"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 <TagLinks />
 
 <Comment />
