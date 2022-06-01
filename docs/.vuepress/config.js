@@ -79,12 +79,12 @@ module.exports = {
     //     enable_page_level_ads: true
     //   }
     // ],
-    // [
-    //   "@vuepress/google-analytics",
-    //   {
-    //     ga: "UA-172169202-1" // UA-00000000-0
-    //   }
-    // ],
+    [
+      "@vuepress/google-analytics",
+      {
+        ga: "UA-172169202-1" // UA-00000000-0
+      }
+    ],
     ["@vuepress/back-to-top"],
     ["vuepress-plugin-code-copy"],
     ["sitemap", { hostname: "https://kyounghwan01.github.io/blog/" }],
