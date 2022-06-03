@@ -96,7 +96,7 @@ http {
 conf 파일 수정을 완료했다면 아래 명령어로 nginx를 재시작 합니다
 
 ```
-brew service restart nginx
+brew services restart nginx
 ```
 
 성공적으로 완료되면 `localhost`로 접속시 `dist`파일이 실행됩니다!
