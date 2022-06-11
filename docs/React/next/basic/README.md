@@ -329,6 +329,33 @@ next.js가 해당 컴포넌트가 mount 할때, Head내 태그들을 페이지�
 - 위 예시처럼 정적으로 태그를 달때도 있지만 정적으로 들어가야할 태그가 바뀔 경우도 있습니다.
 - [next.js meta tag 동적 content 할당하기](https://kyounghwan01.github.io/blog/React/next/dynamic-meta) 이 글에서 동적으로 meta 태그에 값을 할당하는 방법에 대해 알아볼 수 있습니다.
 
+## dynamic component import
+
+- dynamic component import는 react에서 lazy하게 component를 import 해오는 방식과 유사합니다.
+- dynamic하게 처음 보여줘도 안되는 컴포넌트는 import 하지 않게 됨으로, 초기 화면 렌더링 속도를 상승시키기 위해 사용합니다.
+- 주의점은 페이지에 진입할때 맨처음 보이는 컴포넌트라면 dynamic 메소드를 사용할 이유가 없습니다. (왜 그런지 모르겠다면 dynamic components를 사용하는 이유에 대해 다시 생각해보시기 바랍니다)
+- 아래 예시로 next에서 사용하는 방법과 typescript에서 component에 props을 내려줄때 type 정의를 어떻게 하는지 알아봅니다.
+
+```tsx
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
+
+const DynamicComponent = dynamic<{ nowTab: number }>(() =>
+  import("./DynamicComponent")
+);
+
+const Index = () => {
+  const [nowTab, setNowTab] = useState(0);
+
+  return (
+    <>
+      {nowTab === 0 && <div>0 tab</div>}
+      {nowTab === 1 && <DynamicComponent nowTab={nowTab} />}
+    </>
+  );
+};
+```
+
 ## production 배포
 
 ```
