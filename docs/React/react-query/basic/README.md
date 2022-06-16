@@ -145,7 +145,7 @@ function Todos() {
 ## useQuery 동기적으로 실행
 
 - 위에서 설명드린대로 `enabled` 옵션을 사용하면 useQuery를 동기적으로 사용 가능합니다.
-- useQuery의 3번째 인자로 옵션값이 들어가는데 그 옵션의 enabled에 값을 넣으면 그 값이 true일때 useQuery를 실횅합니다. 이것을 이용하면 동기적으로 함수를 실행 할 수 있습니다.
+- useQuery의 3번째 인자로 옵션값이 들어가는데 그 옵션의 enabled에 값을 넣으면 그 값이 true일때 useQuery를 실행합니다. 이것을 이용하면 동기적으로 함수를 실행 할 수 있습니다.
 
 ```jsx
 const { data: todoList, error, isFetching } = useQuery("todos", fetchTodoList);
