@@ -82,7 +82,7 @@ let b = a;
 // 그러나 개발자는 b가 10
 // 즉, number임을 알기 때문에 b에 number를 강제로 assertion 한다
 
-let b = a as string;
+let b = a as number;
 ```
 
 DOM Api를 조작할 때, 가장 많이 사용합니다. (querySelector, getElementById 등등)
