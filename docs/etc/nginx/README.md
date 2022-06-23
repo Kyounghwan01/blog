@@ -93,10 +93,16 @@ http {
 
 ## nginx 재시작
 
-conf 파일 수정을 완료했다면 아래 명령어로 nginx를 재시작 합니다
+- conf 파일 수정을 완료했다면 아래 명령어로 nginx를 재시작 합니다
 
 ```
 brew services restart nginx
+```
+
+- 리눅스에서 nginx 재시작
+
+```
+supervisorctl start nginx
 ```
 
 성공적으로 완료되면 `localhost`로 접속시 `dist`파일이 실행됩니다!
@@ -104,6 +110,10 @@ brew services restart nginx
 ## nginx 종료
 
 `nginx -s stop`
+
+## nginx 실행 중인지 확인
+
+`ps -ef | grep nginx`
 
 <TagLinks />
 
