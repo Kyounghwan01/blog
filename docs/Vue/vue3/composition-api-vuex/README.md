@@ -27,7 +27,7 @@ vuex 세팅하는 법과 vuex를 module화 하는 방법까지 알아보도록 �
 vuex 설치
 
 ```
-yarn install vuex
+yarn add vuex
 ```
 
 ### main.js에 store 세팅
@@ -74,7 +74,7 @@ useStore 훅을 사용하여 store에 접근합니다.
   <div>
     <h1>This is an about page</h1>
     {{ counter }}
-    {{ times2 }}
+    {{ test.times2 }}
     <button @click="inc">inc</button>
   </div>
 </template>
