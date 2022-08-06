@@ -2,13 +2,13 @@
 title: typescript - 기본 타입
 meta:
   - name: description
-    content: typescript - 기본 타입
+    content: typescript - 기본 타입, react, 타입스크립트, 제네릭, generic
   - property: og:title
-    content: typescript - 기본 타입
+    content: typescript - 기본 타입, react, 타입스크립트, 제네릭, generic
   - property: og:description
-    content: typescript - 기본 타입, ts, ts 기본 문법
+    content: typescript - 기본 타입, ts, ts 기본 문법, react, 타입스크립트, 제네릭, generic
   - property: og:url
-    content: https://kyounghwan01.github.io/blog/TS/Fundamentals/basic/
+    content: https://kyounghwan01.github.io/blog/TS/fundamentals/basic/
 tags: ["TS"]
 ---
 
@@ -44,23 +44,51 @@ const b: undefined = undefined;
 
 ## object
 
-- 필수 속성 : 해당 속성이 없으면 에러 도출
+### 필수 속성
+
+- 해당 속성이 없으면 에러 도출
 
 ```ts
 const required: { name: string; age: number } = { name: "nkh", age: 999 };
 ```
 
-- 선택 속성 : 꼭 없어도 되는 속성 하지만 있다면 타입을 맞춰야함, `?`를 붙인다
+### 필수속성이지만 바로 정의 하고 싶지 않은 경우
+
+- 타입 단언(as)의 속성을 이용하면 인터페이스 정의 시점에서 object를 채워주지 않아도 에러가 도출 되지 않습니다.
+
+```ts
+const required = {} as { name: string; age: number }; // 에러 없음
+```
+
+### 선택 속성
+
+- 꼭 없어도 되는 속성 하지만 있다면 타입을 맞춰야함, `?`를 붙인다
 
 ```ts
 const selection: { name: string; age?: number } = { name: "nkh" };
 ```
 
-- 읽기 전용 속성 : 읽기만 가능하고 재할당 금지, cons와 비슷한 기능
+### 필수 속성으로 정의된 인터페이스를 전부 선택 속성으로 바꿈 (Partial)
+
+```ts
+const required: Partial<{ name: string; age: number }> = {};
+```
+
+### 읽기 전용 속성
+
+- 읽기만 가능하고 재할당 금지, const와 비슷한 기능
 
 ```ts
 const readOnly: {readOnly name: string} = {name: "nkh"}
 //readOnly.name = 'error' - 재할당 불가
+```
+
+### 빈 object 타입 정의
+
+- 빈 object를 의미하는 타입은 아래와 같습니다
+
+```ts
+const emptyObject: Record<string, never> = {};
 ```
 
 ## array
