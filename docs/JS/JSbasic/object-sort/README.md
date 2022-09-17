@@ -32,7 +32,7 @@ const champ = {
 };
 var sortable = [];
 for (var name in champ) {
-  sortable.push([vehicle, champ[name]]);
+  sortable.push([name, champ[name]]);
 }
 
 sortable.sort(function(a, b) {
@@ -76,11 +76,12 @@ const champ = {
 };
 
 const test = Object.entries(champ).sort(([, a], [, b]) => a - b);
-console.log(test) // [["Zoe", 60], ["Ahri", 200], ["Aatrox", 300], ["Garen", 400], ["Ashe", 1000]]
+console.log(test); // [["Zoe", 60], ["Ahri", 200], ["Aatrox", 300], ["Garen", 400], ["Ashe", 1000]]
 
-const sortable = Object.fromEntries(Object.entries(champ).sort(([, a], [, b]) => a - b));
+const sortable = Object.fromEntries(
+  Object.entries(champ).sort(([, a], [, b]) => a - b)
+);
 console.log(sortable); // {Zoe: 60, Ahri: 200, Aatrox: 300, Garen: 400, Asche: 1000}
-];
 ```
 
 <TagLinks />
