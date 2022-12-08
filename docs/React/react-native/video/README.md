@@ -78,7 +78,7 @@ export default VideoPlayer;
 
 ## 참고
 
-제가 사욯하지 않은 많은 property가 있습니다. 추가 기능을 사용하기 원하시면 [react-native-video](https://www.npmjs.com/package/react-native-video) 이곳에서 참조하시기 바랍니다!
+이외에도 많은 property가 있습니다. [react-native-video](https://www.npmjs.com/package/react-native-video) 이곳에서 다른 property를 참조하시기 바랍니다!
 
 <TagLinks />
 
