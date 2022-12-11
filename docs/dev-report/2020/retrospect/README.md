@@ -1,16 +1,3 @@
----
-title: 주니어 웹 개발자의 2020년 회고
-meta:
-  - name: description
-    content: 주니어 웹 개발자의 2020년 회고 2020년은 개발을 처음 배우고 처음 웹 개발자로 일을 시작하게 되어 뜻 저에게는 상징성이 있는 한 해였습니다. 바닐라코딩 부트캠프, 개발자 취업, 코딩테스트, 면접, react, vue, web, 프론트엔드, 백엔드, 풀스택, 면접팁, 이직, 경력직
-  - property: og:title
-    content: 주니어 웹 개발자의 2020년 회고
-  - property: og:description
-    content: 주니어 웹 개발자의 2020년 회고 2020년은 개발을 처음 배우고 처음 웹 개발자로 일을 시작하게 되어 뜻 저에게는 상징성이 있는 한 해였습니다. 바닐라코딩 부트캠프, 개발자 취업, 코딩테스트, 면접, react, vue, web, 프론트엔드, 백엔드, 풀스텍, 면접팁, 이직, 경력직
-  - property: og:url
-    content: https://kyounghwan01.github.io/blog/dev-report/2020/retrospect/
----
-
 # 주니어 웹 개발자의 2020년 회고
 
 2020년은 개발적으로도 인간적으로도 블로그도 많이 성장했던 한 해였습니다.
