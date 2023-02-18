@@ -219,7 +219,7 @@ const Index = () => (
 );
 ```
 
-## 동적 url
+## 동적 url (dynamic route)
 
 가변적으로 변하는 url에 대해 동적 url을 지원합니다.
 `[]` 문법으로 동적 페이지를 생성하는 동적 url을 만들 수 있습니다.
@@ -244,6 +244,13 @@ export default () => {
 위처럼 작성하면 `localhost:3000/123` 으로 접속시 postid 가 123으로 나옵니다.
 
 `pages/[값].tsx` 왼쪽 페이지 구조의 값은 `router.query.값`과 동일합니다.
+
+### Optional catch all routes
+
+- dynamic route를 사용하고 싶지 않을 때가 있습니다. 이럴때는 dynamic page를 optional하게 주는 문법을 사용하면 가능합니다
+- `[[...page]].tsx`와 같은 형식으로 파일을 만들면 됩니다. `[page].tsx`와 다른 점은 `router.query.page`의 값이 배열로 담기는 것입니다.
+- 예를들어 `page/test/[[...page]].tsx` 가 경로일때, url을 `/test/1/2/3`으로 들어왔다면 `roueter.query.page`의 값은 `['1','2','3']`이렇게 들어오게 됩니다.
+- `roueter.query.page`의 타입은 undefined, string, string[]으로 페이지 변경에 따라 보여줄 컴포넌트가 다르다면 이 세타입에 대한 조건을 모두 걸어줘야합니다.
 
 ## prefetching
 
