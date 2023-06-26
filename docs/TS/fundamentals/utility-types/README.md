@@ -180,6 +180,16 @@ const apple: Omit<Product, "stock"> = {
 };
 ```
 
+- 여러개 타입 제외할때 (multiple key) `|`를 씁니다.
+
+```ts
+const apple: Omit<Product, "stock" | "brand"> = {
+  id: 1,
+  name: "red apple",
+  price: 1000,
+};
+```
+
 <TagLinks />
 
 <Comment />
