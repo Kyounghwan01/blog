@@ -57,7 +57,7 @@ import { DefaultSeo } from "next-seo";
 const DEFAULT_SEO = {
   title: "meta head title에 들어가는 값",
   description: "meta head description에 들어가는 값",
-  canonical: "https://www.carrotins.com",
+  canonical: "https://www.123.com",
   openGraph: {
     type: "website",
     locale: "ko_KR",
