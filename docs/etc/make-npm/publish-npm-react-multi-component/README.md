@@ -111,7 +111,7 @@ yarn publish:npm
 npm publish
 ```
 
-- 에러가 나면 [이전 포스팅](https://kyounghwan01.github.io/blog/기타/make-npm/publish-npm/)을 꼭 보고 다시 시도해주세요
+- 에러가 나면 [이전 포스팅](https://kyounghwan01.github.io/blog/etc/make-npm/publish-npm/)을 꼭 보고 다시 시도해주세요
 
 ## 프로젝트 배포 확인
 
