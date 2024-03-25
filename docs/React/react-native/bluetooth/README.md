@@ -88,6 +88,14 @@ ios도 스캔시 해당 기기의 고유 serviceUuid로 필터를 걸어줘야�
 
 iot 개발자들은 기기의 용량이 적기 때문에 byte 단위로 소통하고, 통신도 byte array로 들어오기 때문에 16진수로 변환하고 byte array를 연결하고 별 이상한 짓을 해야 사람이 읽을 수 있는 값으로 변환 된다. 보낼때도 byte array로 변환하여 보내야 한다. 맨처음 이 값을 읽고 보내는 과정에서 무슨 말인지 몰라 삽질을 많이 하였다. esp bluefi 문서를 보면서 진짜 방탈출 하는 기분으로 도큐먼트를 해석한 시간만 꼬박 하루를 보냈다.
 
+### rn에서 ble disconnect시 disconnect이 제대로 되지 않는 점
+
+위에서 본 `ble disconnect가 안되는 상황`과 동일한 상황이다. 해당 로직을 ios를 개발하신 분이 짠거라 ios는 해당 이슈가 없기에 고려하지 않고 하나의 기기에 여러 connection을 넣어도 disconnect에 이상이 없는 줄 알고 개발 하였다.
+
+다시 한번 리마인드 하면, ios는 한 기기에 대해 다중 connection을 넣어도 가장 최근 connection을 한 객체에 의해 데이터 통신 및 disconnect할때의 객체가 유지되어 모든 통신이 정상적으로 되지만 and는 여러 커넥션시 최초에 커넥션 한 ble 객체값을 알아야 disconnect가 됨으로 여러 connection을 하면 disconnect가 제대로 되지 않는다.
+
+그렇기에 scan시 해당 기기가 여러번 scan에 걸릴텐데, 최초 1회만 connection을 맺어줘야만 제대로 동작할 수 있다.
+
 ### 앞으로도 삽질은 계속 될 것 같다..
 
 ## and, ios ci/cd 구성
