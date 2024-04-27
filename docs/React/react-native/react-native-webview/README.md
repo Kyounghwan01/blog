@@ -14,6 +14,8 @@ tags: ["react-native", "react"]
 
 # react-native webview
 
+- react-native 버전은 "0.73.2", react-native-webview 버전은 "^13.8.6"입니다.
+
 ## rn 프로젝트 및 웹 뷰 라이브러리 설치
 
 ```sh
@@ -25,9 +27,6 @@ npx react-native run-ios
 
 // npm 다운로드시 해야하는 설정
 npm install react-native-webview
-
-// already link 확인
-react-native link react-native-webview
 
 // RNCWebview not found 같이 node_module을 못읽는 에러 발생시 ios node_module 설치 안했기 때문
 cd ios
@@ -44,145 +43,132 @@ pod install
 
 ## rn에 webview 추가하기
 
-이후 포스팅에서 firebase cloud message를 추가할 것입니다.
-fcm은 프로젝트의 가장 최상단 (App.js)에 위치해야만 한다고 docs에 있습니다.
-그러므로 webview는 app.js의 하위 컴포넌트에서 구성하겠습니다.
+- 중요한 부분은 useRef를 이용하여 webview를 ref로 잡는 부분입니다.
+- ref를 잡은 변수를 이용하여 rn과 webview간 통신을 합니다.
 
-```js
-//App.js
-const App = () => {
-  // 웹뷰와 rn과의 소통은 아래의 ref 값을 이용하여 이루어집니다.
-  let webviewRef = useRef();
+```tsx
+import { useRef, useState } from "react";
+import { WebView, WebViewMessageEvent } from "react-native-webview";
 
-  /** 웹뷰 ref */
-  const handleSetRef = _ref => {
-    webviewRef = _ref;
-  };
+const Index = () => {
+  const webviewRef = useRef<any>();
 
-  /** webview 로딩 완료시 */
-  const handleEndLoading = e => {
+  // rn에서 웹뷰로 변수 호출
+  const handleEndLoading = (loadingState: string) => {
+    if (!webviewRef) return;
     console.log("handleEndLoading");
     /** rn에서 웹뷰로 정보를 보내는 메소드 */
-    webviewRef.postMessage("로딩 완료시 webview로 정보를 보내는 곳");
+    webviewRef.current.postMessage(
+      JSON.stringify({ type: "LOADING", data: loadingState })
+    );
   };
 
-  return (
-    <WebviewContainer
-      webviewRef={webviewRef}
-      handleSetRef={handleSetRef}
-      handleEndLoading={handleEndLoading}
-    />
-  );
-};
-```
+  const handleIsApp = () => {
+    if (!webviewRef) return;
+    webviewRef.current.postMessage(
+      JSON.stringify({ type: "IS_APP", data: "true" })
+    );
+  };
 
-```js
-import { WebView } from "react-native-webview";
+  // 웹뷰에서 rn으로 함수 또는 변수 호출
+  const onMessageFromWebView = ({ nativeEvent }: WebViewMessageEvent) => {
+    const { type, data } = JSON.parse(nativeEvent.data);
+    console.log(type, data);
 
-const WebviewContainer = ({ handleSetRef, handleEndLoading }) => {
-  const url = "localhost:3000";
-
-  /** 웹뷰에서 rn으로 값을 보낼때 거치는 함수 */
-  const handleOnMessage = ({ nativeEvent: { data } }) => {
-    // data에 웹뷰에서 보낸 값이 들어옵니다.
-    console.log(data);
+    if (type === "goBack") {
+      navigation.goBack();
+    } else if (type === "title") {
+      setTitle(data);
+    } else if (type === "share") {
+      setShare(data);
+    }
   };
 
   return (
     <WebView
-      onLoadEnd={handleEndLoading}
-      onMessage={handleOnMessage}
-      ref={handleSetRef}
-      source={{ uri }}
+      bounces={false}
+      // 웹뷰가 앱에 맨 처음 load 시작 되는 함수
+      onLoadStart={() => {
+        handleEndLoading("start");
+      }}
+      // 웹뷰가 앱에 맨 처음 load 종료 될때 트리거 되는 함수
+      onLoadEnd={() => {
+        handleEndLoading("end");
+        handleIsApp();
+      }}
+      onMessage={onMessageFromWebView}
+      ref={webviewRef}
+      source={{ uri: `웹뷰 url` }}
     />
   );
 };
 ```
 
-## 웹뷰에서 rn으로 데이터 송신
+## webview 로직
 
-웹뷰 -> rn으로 데이터를 보내는 예시입니다.
-노트북, 컴퓨터로 접속하는 웹에는 없지만 모바일로 웹에 접속하면 해당 웹에는 `ReactNativeWebView` 객체가 생성됩니다.
-이 객체를 이용하면 rn에게 데이터를 전달할 수 있습니다.
+- 아래 로직은 webview가 띄워질때 웹에서 띄워진건지, 앱을 통한건지 구분하는 로직을 포함합니다.
+- 중요하게 봐야할 곳은 android, ios에서 들어오는 webview를 불러오는 객체가 달라 구분해야한다는 점입니다.
 
-### 예시
+```tsx
+"use client";
+import React, { useEffect, useState } from "react";
+import styled, { css } from "styled-components";
+import ContentNext from "../../../../../public/icons/content-next.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
 
-```js
-const requestPermission = () => {
-  if (window.ReactNativeWebView) {
-    // 모바일이라면 모바일의 카메라 권한을 물어보는 액션을 전달합니다.
-    window.ReactNativeWebView.postMessage(
-      JSON.stringify({ type: "REQ_CAMERA_PERMISSION" })
-    );
-  } else {
-    // 모바일이 아니라면 모바일 아님을 alert로 띄웁니다.
-    alert({ message: ERROR_TYPES.notMobile });
-  }
-};
-```
+const Page = ({ params }: { params: { page: string } }) => {
+  const [msg, setMsg] = useState<{ type: string; data: string } | null>(null);
+  const [isApp, setIsApp] = useState(false);
 
-위처럼 webview에 함수를 만들고 `requestPermission`함수를 실행하면, 우리가 rn에서 정의한 `onMessage` 메소드에 넣어준 함수가 실행됩니다.
-
-```js
-/** 웹뷰에서 rn으로 값을 보낼때 거치는 함수 */
-const handleOnMessage = ({ nativeEvent: { data } }) => {
-  console.log(data); // { type: "REQ_CAMERA_PERMISSION" }
-};
-```
-
-## rn에서 webview로 데이터 송신
-
-다음은 rn -> webview로 데이터를 보내는 예시입니다.
-rn에서는 `webviewRef.postMessage({type: TOKEN, data: xxxxx});`를 이용하여 webview로 데이터를 전송합니다.
-
-위 함수를 이용해 전송하면 웹뷰에서는 웹뷰 프로젝트의 최상단에 rn 정보를 listen한다는 함수를 실행합니다.
-react-router를 사용한 예시는 아래와 같습니다.
-
-```js
-// routes.js
-export default function Routes() {
-  return (
-    <Router>
-      <RNListener>
-      <Switch>
-        ...
-      </Switch>
-    </Router>
-  )
-}
-```
-
-위처럼 어느 라우트에서든 `RNListener`가 실행되도록 만들어줍니다,
-다음으로 `RNListener`입니다.
-rn에서 `webviewRef.postMessage({type: TOKEN, data: xxxxx});`으로 전송을 보냈다고 가정한다면
-
-```jsx
-const RNListener = () => {
-  /** react native 환경에서만 가능 */
-  const listener = event => {
-    const { data, type } = JSON.parse(event.data);
-    if (type === "TOKEN") {
-      // type이 TOKEN이기 때문에 이곳에 콘솔이 찍히게 됩니다.
-      console.log(data) // xxxxx
-      ...
-    } else if (type === "NOTIFICATION") {
-      ...
+  // rn에서 Webview로 보낸 값을 수신하는 함수
+  const listener = (event: any) => {
+    console.log("webview listener", event.data);
+    const appData = JSON.parse(event.data);
+    if (appData.type === "LOADING") {
+      setMsg(JSON.parse(event.data));
+    } else if (appData.type === "IS_APP") {
+      setIsApp(true);
     }
   };
 
-  if (window.ReactNativeWebView) {
-    /** android */
-    document.addEventListener("message", listener);
-    /** ios */
-    window.addEventListener("message", listener);
-  } else {
-    // 모바일이 아니라면 모바일 아님을 alert로 띄웁니다.
-    alert({ message: ERROR_TYPES.notMobile });
-  }
+  useEffect(() => {
+    // android, ios 구분하는 코드
+    const receiver = navigator.userAgent.includes("Android")
+      ? document
+      : window;
+    receiver.addEventListener("message", listener);
+    postMessage("title", "상단 타이틀에 올 값입니다.");
+    postMessage("share", true);
+  }, []);
+
+  // webview에서 rn으로 값을 송신하는 함수
+  const postMessage = (type: string, data: any) => {
+    if (!window.ReactNativeWebView) {
+      // 이 값이 없는 경우 모바일이 아니다.
+      return;
+    }
+    window.ReactNativeWebView?.postMessage(JSON.stringify({ type, data }));
+  };
+
+  return (
+    <Container>
+      {isApp ? (
+        <>
+          {msg && msg.data === "end" && (
+            <>앱내에 띄워진 웹뷰가 로딩이 완료되면 실행되는 곳</>
+          )}
+        </>
+      ) : (
+        <>모바일 웹에서 띄워지는 웹뷰 영역</>
+      )}
+    </Container>
+  );
 };
 ```
-
-**주의 사항**은 rn을 듣는 listener 함수가 android와 ios가 다름을 인지하고 확실히 분기처리 해야합니다.
 
 ## ios webview console 띄우기
 
