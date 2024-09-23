@@ -106,6 +106,14 @@ and, ios는 해당 파일이 변경되면 fastlane로 버전 및 빌드 및 배�
 
 이건 한글로 되있는 동영상이 많아서 비교적 쉽게 구현하였다.
 
+## android bluetooth scan callback error
+
+- 안드 6.0 마시멜로 이상부터는 ble scan callback을 받으려면 위치 권한을 받고, 실제 유저가 위치서비스를 실행해야한다. 안하면 scan 시작은 되는데, scancallback에 아무런 정보가 들어오지 않는다.
+
+- ios는 위치를 꺼도 scancallback이 들어온다.
+
+
+
 <TagLinks />
 
 <Comment />
