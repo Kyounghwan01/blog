@@ -9,7 +9,7 @@ meta:
     content: react-native, ios, fastlane, certs, profile, appstore
   - property: og:url
     content: https://kyounghwan01.github.io/blog/React/react-native/ios-cert/
-tags: ["react-native"]
+tags: ["react-native", "react"]
 ---
 
 # ios 인증서 갱신
