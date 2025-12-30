@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript - 바로 쓸 수 있는 es6 정리 | 기억보다 기록을</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-GK96B5Q500"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-GK96B5Q500');</script>
+    <script data-ad-client="ca-pub-6192551181326997" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="JavaScript - 바로 쓸 수 있는 es6 정리, const,...,비구조할당,객체키할당">
+    <meta property="og:title" content="JavaScript - 바로 쓸 수 있는 es6 정리">
+    <meta property="og:description" content="JavaScript - 바로 쓸 수 있는 es6 정리">
+    <meta property="og:url" content="https://kyounghwan01.github.io/blog/JS/JSbasic/es2015/">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.c7398947.css" as="style"><link rel="preload" href="/blog/assets/js/app.931262f3.js" as="script"><link rel="preload" href="/blog/assets/js/4.a9445ddb.js" as="script"><link rel="preload" href="/blog/assets/js/2.f265073a.js" as="script"><link rel="preload" href="/blog/assets/js/31.041821ff.js" as="script"><link rel="preload" href="/blog/assets/js/3.8c25584d.js" as="script"><link rel="preload" href="/blog/assets/js/18.7cb4e78a.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.5186a403.js"><link rel="prefetch" href="/blog/assets/js/100.8d469c70.js"><link rel="prefetch" href="/blog/assets/js/101.94833735.js"><link rel="prefetch" href="/blog/assets/js/102.2c2f7505.js"><link rel="prefetch" href="/blog/assets/js/103.82105a15.js"><link rel="prefetch" href="/blog/assets/js/104.40ba7e0c.js"><link rel="prefetch" href="/blog/assets/js/105.fc076757.js"><link rel="prefetch" href="/blog/assets/js/106.aa0e1208.js"><link rel="prefetch" href="/blog/assets/js/107.b27464d0.js"><link rel="prefetch" href="/blog/assets/js/108.efd16fee.js"><link rel="prefetch" href="/blog/assets/js/109.dfc7fc5c.js"><link rel="prefetch" href="/blog/assets/js/11.05c69441.js"><link rel="prefetch" href="/blog/assets/js/110.5a92a3bd.js"><link rel="prefetch" href="/blog/assets/js/111.03af117b.js"><link rel="prefetch" href="/blog/assets/js/112.b3c6e414.js"><link rel="prefetch" href="/blog/assets/js/113.793ad79c.js"><link rel="prefetch" href="/blog/assets/js/114.2f50fd79.js"><link rel="prefetch" href="/blog/assets/js/115.89c16f76.js"><link rel="prefetch" href="/blog/assets/js/116.5fd3513d.js"><link rel="prefetch" href="/blog/assets/js/117.37b9281a.js"><link rel="prefetch" href="/blog/assets/js/118.1d2c7835.js"><link rel="prefetch" href="/blog/assets/js/119.c1af4e85.js"><link rel="prefetch" href="/blog/assets/js/12.d007eefe.js"><link rel="prefetch" href="/blog/assets/js/120.89aeee85.js"><link rel="prefetch" href="/blog/assets/js/121.05e088f8.js"><link rel="prefetch" href="/blog/assets/js/122.ecfde980.js"><link rel="prefetch" href="/blog/assets/js/123.f65eb429.js"><link rel="prefetch" href="/blog/assets/js/124.88513264.js"><link rel="prefetch" href="/blog/assets/js/125.109fec84.js"><link rel="prefetch" href="/blog/assets/js/126.bb98b2a6.js"><link rel="prefetch" href="/blog/assets/js/127.cb427408.js"><link rel="prefetch" href="/blog/assets/js/128.62286f3a.js"><link rel="prefetch" href="/blog/assets/js/129.73d84a7d.js"><link rel="prefetch" href="/blog/assets/js/13.5413bd59.js"><link rel="prefetch" href="/blog/assets/js/130.22526b51.js"><link rel="prefetch" href="/blog/assets/js/131.b0b424cc.js"><link rel="prefetch" href="/blog/assets/js/132.0f8cd80e.js"><link rel="prefetch" href="/blog/assets/js/133.84c3ba96.js"><link rel="prefetch" href="/blog/assets/js/134.44ad9744.js"><link rel="prefetch" href="/blog/assets/js/135.ae6be18a.js"><link rel="prefetch" href="/blog/assets/js/136.fb32477a.js"><link rel="prefetch" href="/blog/assets/js/137.e8187024.js"><link rel="prefetch" href="/blog/assets/js/138.0ed1ba58.js"><link rel="prefetch" href="/blog/assets/js/139.f23cd416.js"><link rel="prefetch" href="/blog/assets/js/14.6cb013dc.js"><link rel="prefetch" href="/blog/assets/js/140.d66b68f7.js"><link rel="prefetch" href="/blog/assets/js/141.38aea085.js"><link rel="prefetch" href="/blog/assets/js/142.02aea752.js"><link rel="prefetch" href="/blog/assets/js/143.24e73f3e.js"><link rel="prefetch" href="/blog/assets/js/144.4961215c.js"><link rel="prefetch" href="/blog/assets/js/145.525d16a9.js"><link rel="prefetch" href="/blog/assets/js/146.658e63c1.js"><link rel="prefetch" href="/blog/assets/js/147.19a692b8.js"><link rel="prefetch" href="/blog/assets/js/148.7f0e38cd.js"><link rel="prefetch" href="/blog/assets/js/149.50d0d68d.js"><link rel="prefetch" href="/blog/assets/js/15.e29de84a.js"><link rel="prefetch" href="/blog/assets/js/150.120df742.js"><link rel="prefetch" href="/blog/assets/js/151.97fe437d.js"><link rel="prefetch" href="/blog/assets/js/152.817613a6.js"><link rel="prefetch" href="/blog/assets/js/153.605c9713.js"><link rel="prefetch" href="/blog/assets/js/154.5b4e1887.js"><link rel="prefetch" href="/blog/assets/js/155.4e29cbbb.js"><link rel="prefetch" href="/blog/assets/js/156.9c301e31.js"><link rel="prefetch" href="/blog/assets/js/157.cd421f93.js"><link rel="prefetch" href="/blog/assets/js/158.18e563f1.js"><link rel="prefetch" href="/blog/assets/js/159.5a290e4e.js"><link rel="prefetch" href="/blog/assets/js/16.6c65a01b.js"><link rel="prefetch" href="/blog/assets/js/160.9edcb4c5.js"><link rel="prefetch" href="/blog/assets/js/161.dcbac19e.js"><link rel="prefetch" href="/blog/assets/js/162.b0ecd9b3.js"><link rel="prefetch" href="/blog/assets/js/163.f128846a.js"><link rel="prefetch" href="/blog/assets/js/164.619408cd.js"><link rel="prefetch" href="/blog/assets/js/165.0d346034.js"><link rel="prefetch" href="/blog/assets/js/166.78572d82.js"><link rel="prefetch" href="/blog/assets/js/167.c9d89b8a.js"><link rel="prefetch" href="/blog/assets/js/168.22e11970.js"><link rel="prefetch" href="/blog/assets/js/169.5615f6fd.js"><link rel="prefetch" href="/blog/assets/js/17.5d08aa45.js"><link rel="prefetch" href="/blog/assets/js/170.d1b38841.js"><link rel="prefetch" href="/blog/assets/js/171.145d5ddb.js"><link rel="prefetch" href="/blog/assets/js/172.a1b90025.js"><link rel="prefetch" href="/blog/assets/js/173.1043f8ab.js"><link rel="prefetch" href="/blog/assets/js/174.86a37eca.js"><link rel="prefetch" href="/blog/assets/js/175.3e47de8f.js"><link rel="prefetch" href="/blog/assets/js/176.da892959.js"><link rel="prefetch" href="/blog/assets/js/177.5ea2066a.js"><link rel="prefetch" href="/blog/assets/js/178.8b0674e0.js"><link rel="prefetch" href="/blog/assets/js/179.550a3f19.js"><link rel="prefetch" href="/blog/assets/js/180.f1ff20ec.js"><link rel="prefetch" href="/blog/assets/js/181.10b12cef.js"><link rel="prefetch" href="/blog/assets/js/182.f2821c76.js"><link rel="prefetch" href="/blog/assets/js/183.6c9b696e.js"><link rel="prefetch" href="/blog/assets/js/184.abf56f9a.js"><link rel="prefetch" href="/blog/assets/js/185.c9239431.js"><link rel="prefetch" href="/blog/assets/js/186.c97aa2ec.js"><link rel="prefetch" href="/blog/assets/js/187.4c8c3ada.js"><link rel="prefetch" href="/blog/assets/js/188.ad4e71d3.js"><link rel="prefetch" href="/blog/assets/js/189.b6ccf2b0.js"><link rel="prefetch" href="/blog/assets/js/19.bce160c3.js"><link rel="prefetch" href="/blog/assets/js/190.e571134c.js"><link rel="prefetch" href="/blog/assets/js/191.b4e49083.js"><link rel="prefetch" href="/blog/assets/js/192.d85b13cb.js"><link rel="prefetch" href="/blog/assets/js/193.606d3e49.js"><link rel="prefetch" href="/blog/assets/js/194.5d77b216.js"><link rel="prefetch" href="/blog/assets/js/195.c8e69533.js"><link rel="prefetch" href="/blog/assets/js/196.7d961c59.js"><link rel="prefetch" href="/blog/assets/js/197.9dbf609a.js"><link rel="prefetch" href="/blog/assets/js/198.5d987c5e.js"><link rel="prefetch" href="/blog/assets/js/199.1a98095d.js"><link rel="prefetch" href="/blog/assets/js/20.2834605e.js"><link rel="prefetch" href="/blog/assets/js/200.70b68a72.js"><link rel="prefetch" href="/blog/assets/js/201.ae336ef6.js"><link rel="prefetch" href="/blog/assets/js/202.407270b6.js"><link rel="prefetch" href="/blog/assets/js/203.cbcb428a.js"><link rel="prefetch" href="/blog/assets/js/204.e4973beb.js"><link rel="prefetch" href="/blog/assets/js/205.d9914200.js"><link rel="prefetch" href="/blog/assets/js/206.990f9ae9.js"><link rel="prefetch" href="/blog/assets/js/207.4b8e5a93.js"><link rel="prefetch" href="/blog/assets/js/208.eea28b49.js"><link rel="prefetch" href="/blog/assets/js/209.63f323fe.js"><link rel="prefetch" href="/blog/assets/js/21.fee316e1.js"><link rel="prefetch" href="/blog/assets/js/210.2a1fb621.js"><link rel="prefetch" href="/blog/assets/js/211.a3d6209c.js"><link rel="prefetch" href="/blog/assets/js/212.3e00a674.js"><link rel="prefetch" href="/blog/assets/js/213.bf6aded1.js"><link rel="prefetch" href="/blog/assets/js/214.61beada6.js"><link rel="prefetch" href="/blog/assets/js/215.15e31a0a.js"><link rel="prefetch" href="/blog/assets/js/216.f1fe8402.js"><link rel="prefetch" href="/blog/assets/js/217.e85bb42b.js"><link rel="prefetch" href="/blog/assets/js/218.b94be1bf.js"><link rel="prefetch" href="/blog/assets/js/219.961a3561.js"><link rel="prefetch" href="/blog/assets/js/22.56af4709.js"><link rel="prefetch" href="/blog/assets/js/220.bffd53e1.js"><link rel="prefetch" href="/blog/assets/js/221.12733df3.js"><link rel="prefetch" href="/blog/assets/js/222.7c11dad3.js"><link rel="prefetch" href="/blog/assets/js/223.e7036d91.js"><link rel="prefetch" href="/blog/assets/js/224.85e50163.js"><link rel="prefetch" href="/blog/assets/js/225.a1293371.js"><link rel="prefetch" href="/blog/assets/js/226.e6f2562a.js"><link rel="prefetch" href="/blog/assets/js/227.297009e7.js"><link rel="prefetch" href="/blog/assets/js/228.caa31e29.js"><link rel="prefetch" href="/blog/assets/js/229.370785b1.js"><link rel="prefetch" href="/blog/assets/js/23.0369dc9b.js"><link rel="prefetch" href="/blog/assets/js/230.f347c5dd.js"><link rel="prefetch" href="/blog/assets/js/231.01b7b2f4.js"><link rel="prefetch" href="/blog/assets/js/232.db5f9e52.js"><link rel="prefetch" href="/blog/assets/js/233.21dd9b10.js"><link rel="prefetch" href="/blog/assets/js/234.b5fb8022.js"><link rel="prefetch" href="/blog/assets/js/235.6b7c41bd.js"><link rel="prefetch" href="/blog/assets/js/236.053eef62.js"><link rel="prefetch" href="/blog/assets/js/237.95e362fa.js"><link rel="prefetch" href="/blog/assets/js/238.37e75e24.js"><link rel="prefetch" href="/blog/assets/js/239.2ffb9e32.js"><link rel="prefetch" href="/blog/assets/js/24.03729d3c.js"><link rel="prefetch" href="/blog/assets/js/240.71d666f4.js"><link rel="prefetch" href="/blog/assets/js/241.849851c6.js"><link rel="prefetch" href="/blog/assets/js/242.c7255697.js"><link rel="prefetch" href="/blog/assets/js/243.0589be87.js"><link rel="prefetch" href="/blog/assets/js/244.8c1634fc.js"><link rel="prefetch" href="/blog/assets/js/245.9e0c1dc0.js"><link rel="prefetch" href="/blog/assets/js/246.8640af1d.js"><link rel="prefetch" href="/blog/assets/js/247.426a3b26.js"><link rel="prefetch" href="/blog/assets/js/248.4a96f0a2.js"><link rel="prefetch" href="/blog/assets/js/249.863af275.js"><link rel="prefetch" href="/blog/assets/js/25.82b281ff.js"><link rel="prefetch" href="/blog/assets/js/250.311af97e.js"><link rel="prefetch" href="/blog/assets/js/251.4a3d6640.js"><link rel="prefetch" href="/blog/assets/js/252.5296bc2f.js"><link rel="prefetch" href="/blog/assets/js/253.bbb04267.js"><link rel="prefetch" href="/blog/assets/js/254.72d1675b.js"><link rel="prefetch" href="/blog/assets/js/255.82c76ce4.js"><link rel="prefetch" href="/blog/assets/js/256.56e0d1be.js"><link rel="prefetch" href="/blog/assets/js/257.399cc6e3.js"><link rel="prefetch" href="/blog/assets/js/258.1db5a662.js"><link rel="prefetch" href="/blog/assets/js/259.40dc604f.js"><link rel="prefetch" href="/blog/assets/js/26.d6ceff6b.js"><link rel="prefetch" href="/blog/assets/js/260.2ca6faf0.js"><link rel="prefetch" href="/blog/assets/js/261.82545ade.js"><link rel="prefetch" href="/blog/assets/js/262.a31031bc.js"><link rel="prefetch" href="/blog/assets/js/263.7f23b3e5.js"><link rel="prefetch" href="/blog/assets/js/264.2657c8c6.js"><link rel="prefetch" href="/blog/assets/js/265.22587ffc.js"><link rel="prefetch" href="/blog/assets/js/266.2c3412f8.js"><link rel="prefetch" href="/blog/assets/js/267.c99e6825.js"><link rel="prefetch" href="/blog/assets/js/268.80c70647.js"><link rel="prefetch" href="/blog/assets/js/269.03a3e53a.js"><link rel="prefetch" href="/blog/assets/js/27.6f78faa5.js"><link rel="prefetch" href="/blog/assets/js/270.27fa6419.js"><link rel="prefetch" href="/blog/assets/js/271.59b6fa6d.js"><link rel="prefetch" href="/blog/assets/js/272.67407fe3.js"><link rel="prefetch" href="/blog/assets/js/273.afe7ff35.js"><link rel="prefetch" href="/blog/assets/js/274.422ddd40.js"><link rel="prefetch" href="/blog/assets/js/275.f2cdcc88.js"><link rel="prefetch" href="/blog/assets/js/276.b0e5f5ae.js"><link rel="prefetch" href="/blog/assets/js/277.282e7557.js"><link rel="prefetch" href="/blog/assets/js/278.1be14b75.js"><link rel="prefetch" href="/blog/assets/js/279.1e705b7b.js"><link rel="prefetch" href="/blog/assets/js/28.8aa1aa94.js"><link rel="prefetch" href="/blog/assets/js/280.12a7fcd2.js"><link rel="prefetch" href="/blog/assets/js/281.12f7b46e.js"><link rel="prefetch" href="/blog/assets/js/282.f05e82de.js"><link rel="prefetch" href="/blog/assets/js/283.3a1b285b.js"><link rel="prefetch" href="/blog/assets/js/284.45b973ba.js"><link rel="prefetch" href="/blog/assets/js/285.31f36de3.js"><link rel="prefetch" href="/blog/assets/js/286.7d7a655e.js"><link rel="prefetch" href="/blog/assets/js/287.dc7db303.js"><link rel="prefetch" href="/blog/assets/js/288.b557574b.js"><link rel="prefetch" href="/blog/assets/js/289.c16a5554.js"><link rel="prefetch" href="/blog/assets/js/29.b86e64af.js"><link rel="prefetch" href="/blog/assets/js/290.2c129f47.js"><link rel="prefetch" href="/blog/assets/js/291.578f71ed.js"><link rel="prefetch" href="/blog/assets/js/292.e0e7dbf2.js"><link rel="prefetch" href="/blog/assets/js/293.f5090a77.js"><link rel="prefetch" href="/blog/assets/js/294.cd211eb6.js"><link rel="prefetch" href="/blog/assets/js/295.b17a0f00.js"><link rel="prefetch" href="/blog/assets/js/296.72db81af.js"><link rel="prefetch" href="/blog/assets/js/297.1d6d35fd.js"><link rel="prefetch" href="/blog/assets/js/298.b72413a3.js"><link rel="prefetch" href="/blog/assets/js/299.f4e3c0b3.js"><link rel="prefetch" href="/blog/assets/js/30.c1ec4fb2.js"><link rel="prefetch" href="/blog/assets/js/300.35c58b9c.js"><link rel="prefetch" href="/blog/assets/js/301.10939e2f.js"><link rel="prefetch" href="/blog/assets/js/302.68ae1d4d.js"><link rel="prefetch" href="/blog/assets/js/303.6fd45e28.js"><link rel="prefetch" href="/blog/assets/js/304.08413893.js"><link rel="prefetch" href="/blog/assets/js/305.c3da5244.js"><link rel="prefetch" href="/blog/assets/js/306.43f9bce6.js"><link rel="prefetch" href="/blog/assets/js/307.85e3d449.js"><link rel="prefetch" href="/blog/assets/js/308.74e769a7.js"><link rel="prefetch" href="/blog/assets/js/309.e80618a3.js"><link rel="prefetch" href="/blog/assets/js/310.dd74067c.js"><link rel="prefetch" href="/blog/assets/js/311.fb346e33.js"><link rel="prefetch" href="/blog/assets/js/32.b1634bc2.js"><link rel="prefetch" href="/blog/assets/js/33.0cc7a735.js"><link rel="prefetch" href="/blog/assets/js/34.e0982e81.js"><link rel="prefetch" href="/blog/assets/js/35.8a9c8132.js"><link rel="prefetch" href="/blog/assets/js/36.9be5c01b.js"><link rel="prefetch" href="/blog/assets/js/37.73041c99.js"><link rel="prefetch" href="/blog/assets/js/38.b5aae6ab.js"><link rel="prefetch" href="/blog/assets/js/39.cbf80cb0.js"><link rel="prefetch" href="/blog/assets/js/40.a7fd2c40.js"><link rel="prefetch" href="/blog/assets/js/41.44ae195b.js"><link rel="prefetch" href="/blog/assets/js/42.45d7b35b.js"><link rel="prefetch" href="/blog/assets/js/43.bd9d3caa.js"><link rel="prefetch" href="/blog/assets/js/44.9bb5fcb4.js"><link rel="prefetch" href="/blog/assets/js/45.ee35edcb.js"><link rel="prefetch" href="/blog/assets/js/46.0be6c713.js"><link rel="prefetch" href="/blog/assets/js/47.bcb8c7b9.js"><link rel="prefetch" href="/blog/assets/js/48.1f7aefb7.js"><link rel="prefetch" href="/blog/assets/js/49.4a71ee53.js"><link rel="prefetch" href="/blog/assets/js/5.546c5040.js"><link rel="prefetch" href="/blog/assets/js/50.46ffed2a.js"><link rel="prefetch" href="/blog/assets/js/51.21f0343d.js"><link rel="prefetch" href="/blog/assets/js/52.eaa8ac96.js"><link rel="prefetch" href="/blog/assets/js/53.78c8c528.js"><link rel="prefetch" href="/blog/assets/js/54.72e06abc.js"><link rel="prefetch" href="/blog/assets/js/55.80d065c4.js"><link rel="prefetch" href="/blog/assets/js/56.0ce2b5a5.js"><link rel="prefetch" href="/blog/assets/js/57.26761c87.js"><link rel="prefetch" href="/blog/assets/js/58.7ef2df6d.js"><link rel="prefetch" href="/blog/assets/js/59.6e4b79c4.js"><link rel="prefetch" href="/blog/assets/js/6.aec86975.js"><link rel="prefetch" href="/blog/assets/js/60.018d68b1.js"><link rel="prefetch" href="/blog/assets/js/61.9e257bf1.js"><link rel="prefetch" href="/blog/assets/js/62.d41ab2f0.js"><link rel="prefetch" href="/blog/assets/js/63.acc05746.js"><link rel="prefetch" href="/blog/assets/js/64.8e7838a2.js"><link rel="prefetch" href="/blog/assets/js/65.024f9658.js"><link rel="prefetch" href="/blog/assets/js/66.570388e5.js"><link rel="prefetch" href="/blog/assets/js/67.effedd6f.js"><link rel="prefetch" href="/blog/assets/js/68.b257a9e7.js"><link rel="prefetch" href="/blog/assets/js/69.2bcff8c3.js"><link rel="prefetch" href="/blog/assets/js/7.5fd10343.js"><link rel="prefetch" href="/blog/assets/js/70.33c2f122.js"><link rel="prefetch" href="/blog/assets/js/71.732b7056.js"><link rel="prefetch" href="/blog/assets/js/72.2c48cf12.js"><link rel="prefetch" href="/blog/assets/js/73.113c1279.js"><link rel="prefetch" href="/blog/assets/js/74.a0d873f9.js"><link rel="prefetch" href="/blog/assets/js/75.2024547e.js"><link rel="prefetch" href="/blog/assets/js/76.9abec3c1.js"><link rel="prefetch" href="/blog/assets/js/77.875aa1b2.js"><link rel="prefetch" href="/blog/assets/js/78.819f1d6f.js"><link rel="prefetch" href="/blog/assets/js/79.12a65ca2.js"><link rel="prefetch" href="/blog/assets/js/8.48cea2d1.js"><link rel="prefetch" href="/blog/assets/js/80.3c991ff1.js"><link rel="prefetch" href="/blog/assets/js/81.2a604f16.js"><link rel="prefetch" href="/blog/assets/js/82.e7301eb6.js"><link rel="prefetch" href="/blog/assets/js/83.cceeff89.js"><link rel="prefetch" href="/blog/assets/js/84.2c06fd18.js"><link rel="prefetch" href="/blog/assets/js/85.ba6318e4.js"><link rel="prefetch" href="/blog/assets/js/86.70a1ef7f.js"><link rel="prefetch" href="/blog/assets/js/87.b88d612e.js"><link rel="prefetch" href="/blog/assets/js/88.7bebde5d.js"><link rel="prefetch" href="/blog/assets/js/89.68d01d1a.js"><link rel="prefetch" href="/blog/assets/js/9.edcfb5bf.js"><link rel="prefetch" href="/blog/assets/js/90.a49e88ef.js"><link rel="prefetch" href="/blog/assets/js/91.6bbbfd81.js"><link rel="prefetch" href="/blog/assets/js/92.e946dd38.js"><link rel="prefetch" href="/blog/assets/js/93.1bee92a2.js"><link rel="prefetch" href="/blog/assets/js/94.ebd7ac1e.js"><link rel="prefetch" href="/blog/assets/js/95.bcf46b56.js"><link rel="prefetch" href="/blog/assets/js/96.00546761.js"><link rel="prefetch" href="/blog/assets/js/97.e50f3493.js"><link rel="prefetch" href="/blog/assets/js/98.7d9def08.js"><link rel="prefetch" href="/blog/assets/js/99.eeb74be6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.c7398947.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1547b316><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">기억보다 기록을</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/Tag/" class="nav-link">
+  Tag
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/Svelte/" class="nav-link">
+  Svelte
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link router-link-active">
+  JS
+</a></div><div class="nav-item"><a href="/blog/TS/" class="nav-link">
+  TS
+</a></div><div class="nav-item"><a href="/blog/etc/" class="nav-link">
+  기타
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Info" class="dropdown-title"><span class="title">Info</span> <span class="arrow down"></span></button> <button type="button" aria-label="Info" class="mobile-dropdown-title"><span class="title">Info</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Kyounghwan01" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Kyounghwan01/blog/issues/20" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  블로그 건의하기
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/Tag/" class="nav-link">
+  Tag
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/Svelte/" class="nav-link">
+  Svelte
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link router-link-active">
+  JS
+</a></div><div class="nav-item"><a href="/blog/TS/" class="nav-link">
+  TS
+</a></div><div class="nav-item"><a href="/blog/etc/" class="nav-link">
+  기타
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Info" class="dropdown-title"><span class="title">Info</span> <span class="arrow down"></span></button> <button type="button" aria-label="Info" class="mobile-dropdown-title"><span class="title">Info</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Kyounghwan01" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Kyounghwan01/blog/issues/20" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  블로그 건의하기
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/JS/" aria-current="page" class="sidebar-link">Guide</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JSbasic</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/JS/JSbasic/Blob-url/" class="sidebar-link">image Blob 객체를 url로 바꾸어 img 띄우기</a></li><li><a href="/blog/JS/JSbasic/addEventListener/" class="sidebar-link">JavaScript - addEventListener 사용법</a></li><li><a href="/blog/JS/JSbasic/array-same-value/" class="sidebar-link">JavaScript - 배열 같은 값 추가</a></li><li><a href="/blog/JS/JSbasic/dataSaveStorage/" class="sidebar-link">JavaScript - local,session Storage 저장방법</a></li><li><a href="/blog/JS/JSbasic/dealingDate/" class="sidebar-link">JavaScript - new Date 날짜 다루기</a></li><li><a href="/blog/JS/JSbasic/dupulication-property-remove/" class="sidebar-link">JavaScript - 배열 내 객체 중복 id 값 제거</a></li><li><a href="/blog/JS/JSbasic/edit-video-play-rate/" class="sidebar-link">인터넷 강의, 동영상 배속 빠르게 하는 방법</a></li><li><a href="/blog/JS/JSbasic/es2015/" aria-current="page" class="active sidebar-link">JavaScript - 바로 쓸 수 있는 es6 정리</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#var-let-const" class="sidebar-link">var / let / const</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#rest-parameter" class="sidebar-link">Rest parameter</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#spread-operator" class="sidebar-link">spread operator</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#rest-spread-together" class="sidebar-link">Rest/Spread together</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#destructuring-비구조할당" class="sidebar-link">destructuring 비구조할당</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#default-parameter" class="sidebar-link">default parameter</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#string-interpolation" class="sidebar-link">String Interpolation</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#arrow-functions" class="sidebar-link">Arrow Functions</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#객체에-동적으로-키-저장" class="sidebar-link">객체에 동적으로 키 저장</a></li><li class="sidebar-sub-header"><a href="/blog/JS/JSbasic/es2015/#함수-default-값-설정" class="sidebar-link">함수 default 값 설정</a></li></ul></li><li><a href="/blog/JS/JSbasic/event-catch/" class="sidebar-link">JavaScript - 이벤트 버블링/캡쳐/위임</a></li><li><a href="/blog/JS/JSbasic/eventLoop/" class="sidebar-link">JavaScript - 동작원리 및 이벤트 루프 상세히 알아보기</a></li><li><a href="/blog/JS/JSbasic/eventhandler/" class="sidebar-link">JavaScript - 이벤트 핸들러 동작 과정</a></li><li><a href="/blog/JS/JSbasic/flat/" class="sidebar-link">JavaScript - 배열의 하위 배열 까지 합치는 flat(), flatMap() 사용법</a></li><li><a href="/blog/JS/JSbasic/for-await-of/" class="sidebar-link">JavaScript - async/await를 for loop에서 사용하기</a></li><li><a href="/blog/JS/JSbasic/get-image-origin-size/" class="sidebar-link">JavaScript - 이미지 width, height 값 가져오기</a></li><li><a href="/blog/JS/JSbasic/getBoundingClientRect/" class="sidebar-link">Element.getBoundingClientRect() - react에서 사용하기</a></li><li><a href="/blog/JS/JSbasic/getElementById/" class="sidebar-link">JavaScript - getElementbyId 사용법</a></li><li><a href="/blog/JS/JSbasic/htmlelement/" class="sidebar-link">JavaScript - Element 노드다루기</a></li><li><a href="/blog/JS/JSbasic/immutability/" class="sidebar-link">JavaScript - 불변성, Immutability 패턴</a></li><li><a href="/blog/JS/JSbasic/intervalFunction/" class="sidebar-link">JavaScript - setInterval, setTimeout 사용법</a></li><li><a href="/blog/JS/JSbasic/interview/" class="sidebar-link">면접 준비</a></li><li><a href="/blog/JS/JSbasic/jsonDynamicAllocation/" class="sidebar-link">JavaScript - JSON 객체 Key값 동적 할당하기</a></li><li><a href="/blog/JS/JSbasic/module/" class="sidebar-link">JavaScript - es6의 module 패턴 알아보기 (import, export)</a></li><li><a href="/blog/JS/JSbasic/object-sort/" class="sidebar-link">JavaScript - 객체 value로 정렬하기</a></li><li><a href="/blog/JS/JSbasic/oop/" class="sidebar-link">JavaScript - 예시로 배우는 객체지향프로그래밍 (oop)</a></li><li><a href="/blog/JS/JSbasic/prototype/" class="sidebar-link">JavaScript - prototype, 프로토타입 원리 이해하기</a></li><li><a href="/blog/JS/JSbasic/queryselector/" class="sidebar-link">JavaScript - querySelector, querySelectorAll 사용법</a></li><li><a href="/blog/JS/JSbasic/returnRoleFunction/" class="sidebar-link">JavaScript - 함수에서 return 역할</a></li><li><a href="/blog/JS/JSbasic/scope-hosting/" class="sidebar-link">JavaScript - scope / hoisting 알아보기</a></li><li><a href="/blog/JS/JSbasic/target-currentTarget/" class="sidebar-link">JavaScript - 이벤트에서 target과 currentTarget의 차이</a></li><li><a href="/blog/JS/JSbasic/this/" class="sidebar-link">자바스크립트에서 this의 규칙</a></li><li><a href="/blog/JS/JSbasic/thorw-locally/" class="sidebar-link">JavaScript - try catch 내에서 error 핸들링</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>functional-programming</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="es2015"><a href="#es2015" class="header-anchor">#</a> ES2015</h1> <h2 id="var-let-const"><a href="#var-let-const" class="header-anchor">#</a> var / let / const</h2> <h3 id="var"><a href="#var" class="header-anchor">#</a> var</h3> <ul><li>scope : functional</li> <li>Var 속성은 하단에서 정의해도 호이스팅에 의해 정의는 되나 undefined</li> <li>중복으로 정의하면 이후에 나온 변수로 overload된다.</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Using var declaration #1</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Using var declaration #2</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1~10</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
+</code></pre></div><h3 id="let"><a href="#let" class="header-anchor">#</a> let</h3> <ul><li>scope : {}에 의한 scope, var와 다르게 function에 의해 나눠지지 않고 if문 for문 등 {}에 의해 나뉜다.</li> <li>전역변수로 선언해도 window객체에 포함되지 않는다. (Ex 6 참조)</li> <li>var와 다르게 코드 상단부에 정의하지 않으면 ReferenceError 도출 (Ex 7 참조)</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  &quot;let&quot; variable declaration
+	es2015에서는 let으로 변수를 생성한다. 
+	
+ */</span>
+
+<span class="token comment">// Example #1</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> d <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token comment">/*
+  let으로 변수 선언하면 let의 스코프가 var와 다르다
+  let은 if문 내부에서만 접근 가능
+  var는 함수문 이외에는 전역변수로 취급
+  */</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// d가 정의되지 않음</span>
+
+<span class="token comment">// Example #2</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+<span class="token comment">// Example #3</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//let은 {} 중괄호 기준으로 블락형성</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0~9</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// i is not defined</span>
+
+<span class="token comment">// Example #4</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> i <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Example #5</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">let</span> jason <span class="token operator">=</span> <span class="token punctuation">{</span>
+    codename<span class="token operator">:</span> <span class="token string">&quot;blackbriar&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">kill</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//var target = operator;</span>
+      target <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> operator <span class="token operator">=</span> <span class="token punctuation">{</span>
+    codename<span class="token operator">:</span> <span class="token string">&quot;onion&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">answer</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;run away!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">//객체이므로 위치값을 주는 것 reference;</span>
+  <span class="token comment">//값 자체가 바뀌지 않는다.</span>
+  jason<span class="token punctuation">.</span><span class="token function">kill</span><span class="token punctuation">(</span>operator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">//console.log(jason.codename);</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>operator<span class="token punctuation">.</span>codename<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//onion</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jason<span class="token punctuation">.</span>codename<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//let 범위는 중괄호 이므로 undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>operator<span class="token punctuation">.</span>codename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #6</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;global&quot;</span>
+<span class="token comment">//let은 전역변수로 사용해도 언디파인;</span>
+<span class="token comment">//let은 한번 선언하면 동일한 식별자로 재선언 불가</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+
+<span class="token comment">// Example #7</span>
+<span class="token keyword">function</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined 호이스팅</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// ReferenceError - let은 변수를 선언해야지만 사용 가능(초기화)</span>
+  <span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #8</span>
+<span class="token comment">// Must Read &quot;Temporal Dead Zone&quot;: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> undeclaredVariable<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;undefined&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ReferenceError</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="const"><a href="#const" class="header-anchor">#</a> const</h3> <ul><li>한번 정의하면 못바꾸는 성질</li> <li>const 이름으로 된 변수에 객체를 정의할 경우 그 객체는 변경 가능 (Ex 2 참조)</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  &quot;const&quot; variable declaration
+
+ */</span>
+
+<span class="token comment">// Example #1</span>
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+foo <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// 못바꾼다</span>
+
+<span class="token comment">// Example #2</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  arr<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+obj <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// error</span>
+<span class="token comment">//obj에 관한 값만 못바꾸고 그 안의 값들은 다 바꿀 수 있다.</span>
+obj<span class="token punctuation">.</span>arr<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+obj<span class="token punctuation">.</span>arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 4</span>
+obj<span class="token punctuation">.</span>arr <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">//null</span>
+
+<span class="token punctuation">{</span>
+  <span class="token keyword">const</span> bagooni <span class="token operator">=</span> <span class="token punctuation">{</span>
+    items<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;gold&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;silver&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bronze&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    owner<span class="token operator">:</span> <span class="token string">&quot;nkh&quot;</span><span class="token punctuation">,</span>
+    address<span class="token operator">:</span> <span class="token number">11101</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> dodook <span class="token operator">=</span> <span class="token punctuation">{</span>
+    criminalRecord<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    careerLevel<span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+    storage<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">steal</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>storage<span class="token punctuation">[</span>target<span class="token punctuation">.</span>owner<span class="token punctuation">]</span> <span class="token operator">=</span> target<span class="token punctuation">.</span>items<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>careerLevel<span class="token operator">++</span><span class="token punctuation">;</span>
+      target<span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  dodook<span class="token punctuation">.</span><span class="token function">steal</span><span class="token punctuation">(</span>bagooni<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> police <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">catchDodook</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      dodook<span class="token punctuation">.</span>criminalRecord <span class="token operator">=</span> dodook<span class="token punctuation">.</span>criminalRecord <span class="token operator">||</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      dodook <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  police<span class="token punctuation">.</span><span class="token function">catchDodook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> prison <span class="token operator">=</span> <span class="token punctuation">{</span>
+  cells<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">addPrisoner</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> prisoner <span class="token operator">=</span> <span class="token punctuation">{</span>
+      name<span class="token operator">:</span> name<span class="token punctuation">,</span>
+      attitude<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>cells<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prisoner<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> saminjo <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;kjm&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;kks&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;by&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">startCatching</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>saminjo<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      prison<span class="token punctuation">.</span><span class="token function">addPrisoner</span><span class="token punctuation">(</span>saminjo<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      saminjo<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    count<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>saminjo<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;good job&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;try harder&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="rest-parameter"><a href="#rest-parameter" class="header-anchor">#</a> Rest parameter</h2> <ul><li>…으로 사용하며, … 뒤 나머지 매개변수들을 <strong>배열</strong>로 만들어 출력한다</li> <li>Argument : js내부인자로 …와 상관 없이 함수 안의 인자를 전부 다 가진다. 배열은 아니다.</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  rest parameter
+  - ...뒤의 값들을 매개변수로 만들어 나머지 값들을 배열로 넣는다.
+ */</span>
+
+<span class="token comment">// Example #1</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">...</span>c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// ['2','3','4','5']</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true -&gt; 배열이다!</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'5'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+<span class="token comment">// &quot;arguments&quot; is different</span>
+<span class="token comment">//함수에 들어온 인자 값을 전부다 가진다. 배열이 아닌 유사 배열</span>
+<span class="token keyword">function</span> <span class="token function">foo2</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">...</span>c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[1,2,3,4,5 ...]</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo2</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+<span class="token comment">// NO GOOD</span>
+<span class="token comment">// Rest parameter must be last parameter</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//나머지를 받는것이 ... 인데 ...뒤에 뭔가 있는건 불가능 하다</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="spread-operator"><a href="#spread-operator" class="header-anchor">#</a> spread operator</h2> <ul><li>rest parameter는 …뒤에 인자를 받으나 spread operator는 …뒤에 변수를 가진다.</li> <li>…변수를 사용함으로 변수를 그대로 넣어주는 효과를 가짐</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  spread operator ...으로 배열을 퍼지게 한다. 
+  rest parameter ...은 함수의 매개변수의 마지막에 쓰는 것.
+  
+ */</span>
+
+<span class="token comment">// Example #1</span>
+<span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> total <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr1<span class="token punctuation">,</span> <span class="token operator">...</span>arr2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [[6,6,6],2,3,4,5,6]</span>
+<span class="token comment">//...뒤에 있는 배열을 그 자리에 위치한다.</span>
+
+<span class="token comment">// Example #2</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 6</span>
+</code></pre></div><h2 id="rest-spread-together"><a href="#rest-spread-together" class="header-anchor">#</a> Rest/Spread together</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  Rest &amp; Spread together
+
+ */</span>
+
+<span class="token keyword">const</span> codingInstitutes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;FF&quot;</span><span class="token punctuation">,</span> grade<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;VC&quot;</span><span class="token punctuation">,</span> grade<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> mommy <span class="token operator">=</span> <span class="token punctuation">{</span>
+  money<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">decide</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>choices</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>money <span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> decision <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+      choices<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">choice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>decision <span class="token operator">&amp;&amp;</span> decision<span class="token punctuation">.</span>grade <span class="token operator">&lt;</span> choice<span class="token punctuation">.</span>grade<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          decision <span class="token operator">=</span> choice<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>decision<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          decision <span class="token operator">=</span> choice<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">return</span> decision<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> studentA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;kyuljungjangae&quot;</span><span class="token punctuation">,</span>
+  mommy<span class="token operator">:</span> mommy<span class="token punctuation">,</span>
+  <span class="token function-variable function">decide</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>institutes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> final <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>mommy<span class="token punctuation">.</span><span class="token function">decide</span><span class="token punctuation">(</span><span class="token operator">...</span>institutes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> final<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> result <span class="token operator">=</span> studentA<span class="token punctuation">.</span><span class="token function">decide</span><span class="token punctuation">(</span><span class="token operator">...</span>codingInstitutes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+
+result <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+
+<span class="token comment">// Hmm..</span>
+<span class="token keyword">var</span> agentA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  codeName<span class="token operator">:</span> <span class="token string">&quot;oi&quot;</span><span class="token punctuation">,</span>
+  powerLevel<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">999</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> agentAA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>agentA<span class="token punctuation">,</span>
+  category<span class="token operator">:</span> <span class="token string">&quot;chaeso&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>agentAA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="destructuring-비구조할당"><a href="#destructuring-비구조할당" class="header-anchor">#</a> destructuring 비구조할당</h2> <ul><li>기존의 문법을 부셔서 편리한 코딩을 위한 패치</li> <li>객체 호출 후, 객체의 인자 값으로 변수를 다시 만들어 정의 (Ex 1 참조)</li> <li>같은 방법으로 함수, 배열 정의 가능</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  destructuring - 비구조할당
+
+ */</span>
+
+<span class="token comment">// Example #1 - Object Destructuring</span>
+<span class="token keyword">var</span> address <span class="token operator">=</span> <span class="token punctuation">{</span>
+  city<span class="token operator">:</span> <span class="token string">&quot;new york&quot;</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token string">&quot;NY&quot;</span><span class="token punctuation">,</span>
+  zipcode<span class="token operator">:</span> <span class="token string">&quot;10003&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> <span class="token punctuation">{</span> city<span class="token punctuation">,</span> state <span class="token punctuation">}</span> <span class="token operator">=</span> address<span class="token punctuation">;</span>
+<span class="token comment">//새로운 변수안에 속성이 들어가고 그 것은 이전 변수의 이름이다.</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>city <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #2 - Object Destructuring</span>
+<span class="token keyword">var</span> address <span class="token operator">=</span> <span class="token punctuation">{</span>
+  city<span class="token operator">:</span> <span class="token string">&quot;new york&quot;</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token string">&quot;NY&quot;</span><span class="token punctuation">,</span>
+  zipcode<span class="token operator">:</span> <span class="token string">&quot;10003&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> city <span class="token operator">=</span> <span class="token string">&quot;seoul&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token punctuation">{</span> city<span class="token operator">:</span> c<span class="token punctuation">,</span> state<span class="token operator">:</span> s <span class="token punctuation">}</span> <span class="token operator">=</span> address<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> city <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #3 - Object Destructuring</span>
+<span class="token keyword">var</span> address <span class="token operator">=</span> <span class="token punctuation">{</span>
+  city<span class="token operator">:</span> <span class="token string">&quot;new york&quot;</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token string">&quot;NY&quot;</span><span class="token punctuation">,</span>
+  zipcode<span class="token operator">:</span> <span class="token string">&quot;10003&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">//매개변수를 비구조화</span>
+<span class="token keyword">function</span> <span class="token function">logAddress</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> city<span class="token punctuation">,</span> state <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>city <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">logAddress</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #4 - 객체 안에 객체 안에 객체 비구조화</span>
+<span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;Lee&quot;</span><span class="token punctuation">,</span>
+  address<span class="token operator">:</span> <span class="token punctuation">{</span>
+    zipCode<span class="token operator">:</span> <span class="token string">&quot;03068&quot;</span><span class="token punctuation">,</span>
+    city<span class="token operator">:</span> <span class="token string">&quot;Seoul&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span>
+  address<span class="token operator">:</span> <span class="token punctuation">{</span> city <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Seoul'</span>
+
+<span class="token comment">// Example #1 - Array Destructuring</span>
+<span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> <span class="token punctuation">[</span>one<span class="token punctuation">,</span> two<span class="token punctuation">,</span> three<span class="token punctuation">,</span> four<span class="token punctuation">,</span> five<span class="token punctuation">]</span> <span class="token operator">=</span> numbers<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> one <span class="token operator">=</span> number<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>one<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>two<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #2 - Array Destructuring</span>
+<span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> <span class="token punctuation">[</span>one<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> five<span class="token punctuation">]</span> <span class="token operator">=</span> numbers<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>one<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>five<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #3 - Array Destructuring</span>
+<span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> e<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b <span class="token operator">+</span> c <span class="token operator">+</span> d <span class="token operator">+</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #4 - Array Destructuring</span>
+<span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #5 - Array Destructuring</span>
+<span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">...</span>c<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//3,4,5</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> target<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> b <span class="token operator">=</span> target<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example #6 - Rest with Destructuring</span>
+<span class="token keyword">const</span> guicheokPeople <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">punish</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>people</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//  ...people = [[1,2,3,4,5]]</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>people<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> e<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> people<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">punish</span><span class="token punctuation">(</span>guicheokPeople<span class="token punctuation">)</span><span class="token punctuation">;</span>
+result<span class="token punctuation">;</span>
+</code></pre></div><h2 id="default-parameter"><a href="#default-parameter" class="header-anchor">#</a> default parameter</h2> <p>디폴트 파라미터 : 값이 없는 것을 방지한다. 값이 있으면 아무 효과 없다</p> <p>값이 undefined인가 아닌가에 따라 디폴트파라미터가 발동 or non 발동</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  default parameter
+
+ */</span>
+
+<span class="token comment">// Example #1</span>
+
+<span class="token comment">//</span>
+<span class="token keyword">function</span> <span class="token function">logName</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;nkh&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">logName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//nkh</span>
+<span class="token function">logName</span><span class="token punctuation">(</span><span class="token string">&quot;wan&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//wan</span>
+
+<span class="token comment">// Example #2</span>
+<span class="token keyword">function</span> <span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token parameter">num <span class="token operator">=</span> <span class="token number">666</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//666</span>
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//100</span>
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0</span>
+
+<span class="token comment">// Example #3</span>
+<span class="token keyword">function</span> <span class="token function">getNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Getting number..&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">666</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token parameter">num <span class="token operator">=</span> <span class="token function">getNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Getting number , 666리턴</span>
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 안출력</span>
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span>
+<span class="token function">logNumber</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Getting number , 666리턴</span>
+</code></pre></div><h2 id="string-interpolation"><a href="#string-interpolation" class="header-anchor">#</a> String Interpolation</h2> <p>`` : 중간에 변수를 넣을 때만 사용한다. 일반적인 string 값은 ''로 표현</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  String Interpolation (Template Literals)
+
+  http://jsbin.com/yilikal/edit?js,console
+
+ */</span>
+
+<span class="token comment">// Example #1</span>
+<span class="token keyword">const</span> s <span class="token operator">=</span> <span class="token string">&quot;nkh&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>s<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="arrow-functions"><a href="#arrow-functions" class="header-anchor">#</a> Arrow Functions</h2> <p>함수 선언식을 변형하여 쓰기 쉽게 만든 형태</p> <p>일반 함수방식과 다르게 this , argument 가 없다</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+  Arrow Functions
+
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+ */</span>
+
+<span class="token comment">// -&gt; thin arrow</span>
+<span class="token comment">// =&gt; fat arrow</span>
+<span class="token comment">// 표현식으로만 쓴다 : 할당이 되어야만 사용한다.</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token parameter">a</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//인자가 하나일 경우 소괄호 안써도 된다.</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token parameter">a</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//함수 안에서 실행하는 실행문이 1개 이다</span>
+<span class="token comment">//나오는 값이 자동으로 리턴 값이 된다.</span>
+<span class="token keyword">function</span> <span class="token function">multiply</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">multiply</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
+
+<span class="token comment">//function 키워드를 쓰면 this를 사용할 수 있는데</span>
+<span class="token comment">//가장 중요한 것은 this와 argument가 없다는 것이다.</span>
+
+<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&quot;ni&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;nkh&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">logName</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span><span class="token function">logName</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Arrow functions do not have its own`this`, `arguments`.</span>
+</code></pre></div><h2 id="객체에-동적으로-키-저장"><a href="#객체에-동적으로-키-저장" class="header-anchor">#</a> 객체에 동적으로 키 저장</h2> <ul><li>객체에 동적으로 키를 저장하는 방법은 이전에 <a href="https://kyounghwan01.github.io/blog/JS/JSbasic/jsonDynamicAllocation/" target="_blank" rel="noopener noreferrer">포스팅<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 한적이 있으나, 지금 기술하는 방법이 더 효율적입니다</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;who&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">&quot;nkh&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>위 처럼 객체의 키를 대괄호로 감싸 주면 변수의 값이 키에 할당 됩니다</li> <li>이때, 주의해야 할 점은 객체에 키가 할당된 이후에는 <code>name</code>값이 바뀌어도 <code>obj</code>의 키 값은 바뀌지 않는다는 점입니다.</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&quot;who&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">&quot;nkh&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+name <span class="token operator">=</span> <span class="token string">&quot;isChange&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { who: 'nkh' }</span>
+</code></pre></div><ul><li>키애 할당될 값 연산이 끝난 이후에, 객체에 할당하면 되겠습니다.</li></ul> <h2 id="함수-default-값-설정"><a href="#함수-default-값-설정" class="header-anchor">#</a> 함수 default 값 설정</h2> <ul><li>es6 자바스크립트에서 함수에 인자가 다 오지 않으면 default 값을 넣는 방법은 아래와 같았습니다.</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">useDefault</span><span class="token punctuation">(</span><span class="token parameter">_a<span class="token punctuation">,</span> _b<span class="token punctuation">,</span> _c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token keyword">typeof</span> _a <span class="token operator">===</span> <span class="token string">&quot;undefined&quot;</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> _a<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token keyword">typeof</span> _b <span class="token operator">===</span> <span class="token string">&quot;undefined&quot;</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> _b<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token keyword">typeof</span> _c <span class="token operator">===</span> <span class="token string">&quot;undefined&quot;</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> _c<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">useDefault</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+<span class="token function">useDefault</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 1]</span>
+</code></pre></div><ul><li>그러나 es6에서는 함수 인자에 값을 할당하여, 함수 호출시 인자가 할당되지 않으면, 선언시 default로 정한 값이 들어가게 됩니다.</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">defaultParams</span><span class="token punctuation">(</span><span class="token parameter">a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">defaultParams</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+<span class="token function">defaultParams</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+<span class="token function">defaultParams</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 4]</span>
+</code></pre></div><div class="tags" data-v-5cbc9417><a href="/blog/tag/#JS" data-v-5cbc9417>
+    #JS
+  </a> <div class="profile" data-v-d40996d0 data-v-5cbc9417><img src="/blog/assets/img/profile.363ccd73.png" class="profile__image" data-v-d40996d0> <div class="profile__content" data-v-d40996d0><div class="profile__name" data-v-d40996d0><span data-v-d40996d0>노경환</span> <div onClick="{window.open('https://github.com/Kyounghwan01/blog')}" class="profile__github" data-v-d40996d0><svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20" data-v-d40996d0><mask id="github" width="20" height="20" x="0" y="0" maskUnits="userSpaceOnUse" data-v-d40996d0><path fill="#ffffff" fill-rule="evenodd" d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z" clip-rule="evenodd" data-v-d40996d0></path></mask> <g mask="url(#github)" data-v-d40996d0><path fill="currentColor" d="M0 0h20v20H0z" data-v-d40996d0></path></g></svg></div> <a class="profile-mail" data-v-d40996d0><svg width="20" height="20" fill="none" viewBox="0 0 32 32" data-testid="email" data-v-d40996d0><path fill="currentColor" d="M16 16.871L1.019 5H30.98L16 16.871zm0 3.146L1 8.131V27h30V8.131L16 20.017z" data-v-d40996d0></path></svg></a> <!----></div> <div class="profile__desc" data-v-d40996d0>
+      이 글이 도움이 되셨다면! 깃헙 스타 부탁드립니다 😊😄 <br data-v-d40996d0></div></div></div></div> <div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">최근변경일:</span> <span class="time">12/30/2025, 2:40:23 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/JS/JSbasic/edit-video-play-rate/" class="prev">
+        인터넷 강의, 동영상 배속 빠르게 하는 방법
+      </a></span> <span class="next"><a href="/blog/JS/JSbasic/event-catch/">
+        JavaScript - 이벤트 버블링/캡쳐/위임
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.931262f3.js" defer></script><script src="/blog/assets/js/4.a9445ddb.js" defer></script><script src="/blog/assets/js/2.f265073a.js" defer></script><script src="/blog/assets/js/31.041821ff.js" defer></script><script src="/blog/assets/js/3.8c25584d.js" defer></script><script src="/blog/assets/js/18.7cb4e78a.js" defer></script>
+  </body>
+</html>
